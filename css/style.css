@@ -1085,7 +1085,7 @@ p {
   width: 100%;
   position: relative;
   height: 570px;
-  background: url(../images/fon.jpg) 0 0 no-repeat;
+  background: url(/images/fon.jpg) 0 0 no-repeat;
   background-size: 100% 634px;
   margin-bottom: 97px;
 }
@@ -1129,7 +1129,7 @@ p {
   width: 100%;
   position: relative;
   height: 570px;
-  /*background: url(../images/fon.jpg) 0 0 no-repeat;*/
+  /*background: url(/images/fon.jpg) 0 0 no-repeat;*/
   background-size: 100% 634px;
   margin-bottom: 97px;
 }
@@ -1572,20 +1572,20 @@ video[controls] {
 }
 
 .Company a[href^="fax:"] {
-  background: url(../fonts/printer.svg) 0 0 no-repeat;
+  background: url(/icons/printer.svg) 0 0 no-repeat;
 }
 
 .Company a[href^="tel:"] {
-  background: url(../fonts/ico_tel.svg) 0 0 no-repeat;
+  background: url(/icons/ico_tel.svg) 0 0 no-repeat;
 }
 
 .Company a[href^="mailto:"] {
-  background: url(../fonts/ico_mail.svg) 0 0 no-repeat;
+  background: url(/icons/ico_mail.svg) 0 0 no-repeat;
 }
 
 .Company a[href^="http:"],
 .Company a[href^="https:"] {
-  background: url(../fonts/ico_url.svg) 0 0 no-repeat;
+  background: url(/icons/ico_url.svg) 0 0 no-repeat;
 }
 
 .TopPanel__item_tel {
@@ -1624,18 +1624,6 @@ video[controls] {
 .ContentSPageGallery .img-thumbnail {
   width: 416px;
   height: auto;
-}
-
-@font-face {
-  font-family: "fontawesome";
-  src: url("../fonts/fontawesome_1.eot");
-  src:
-    url("../fonts/fontawesome.eot#iefix-e43dk9") format("embedded-opentype"),
-    url("../fonts/fontawesome.woff") format("woff"),
-    url("../fonts/fontawesome.ttf") format("truetype"),
-    url("../fonts/fontawesome.svg#fontawesome") format("svg");
-  font-weight: normal;
-  font-style: normal;
 }
 
 /* General style */
@@ -1876,7 +1864,7 @@ video[controls] {
 
 span.nav-prev:before {
   content: "";
-  background: url(../fonts/ico_arrow_left_gall.svg) 0 0 no-repeat;
+  background: url(/icons/ico_arrow_left_gall.svg) 0 0 no-repeat;
   background-size: contain;
   width: 49px;
   height: 49px;
@@ -1885,7 +1873,7 @@ span.nav-prev:before {
 
 span.nav-next:before {
   content: "";
-  background: url(../fonts/ico_arrow_right_gall.svg) 0 0 no-repeat;
+  background: url(/icons/ico_arrow_right_gall.svg) 0 0 no-repeat;
   background-size: contain;
   width: 49px;
   height: 49px;
@@ -1894,7 +1882,7 @@ span.nav-next:before {
 
 span.nav-close:before {
   content: "";
-  background: url(../fonts/ico_closegallery.svg) 0 0 no-repeat;
+  background: url(/icons/ico_closegallery.svg) 0 0 no-repeat;
   background-size: contain;
   width: 49px;
   height: 49px;
@@ -2010,7 +1998,7 @@ span.nav-close:before {
   top: 30px;
   width: 30px;
   height: 30px;
-  background: url(../fonts/ico_close.svg) center center no-repeat #f8f8f8;
+  background: url(/icons/ico_close.svg) center center no-repeat #f8f8f8;
   background-size: 60%;
   cursor: pointer;
   border: 1px solid transparent;
@@ -2019,7 +2007,7 @@ span.nav-close:before {
 
 #close-modal:hover,
 #close-modal2:hover {
-  background: url(../fonts/ico_close2.svg) center center no-repeat #db2a4a;
+  background: url(/icons/ico_close2.svg) center center no-repeat #db2a4a;
   background-size: 60%;
 }
 
@@ -2586,7 +2574,7 @@ html .container,
 .Filters.OPEN .FiltersBTN {
   width: 16px;
   height: 16px;
-  background: url(../fonts/ico_close.svg) 0 0 no-repeat;
+  background: url(/icons/ico_close.svg) 0 0 no-repeat;
   background-size: cover;
   font-size: 0;
   position: absolute;
@@ -2905,7 +2893,7 @@ html .container,
   width: 15px;
   height: 15px;
   display: inline-block;
-  background: url(../fonts/ico_sort_btn_top.svg) right 0 no-repeat transparent;
+  background: url(/icons/ico_sort_btn_top.svg) right 0 no-repeat transparent;
 }
 
 .SortBTN .sort[data-dir="asc"]:after {
@@ -2927,7 +2915,7 @@ html .container,
 
 .SortBTN .sort.active:after {
   content: "";
-  background: url(../fonts/ico_sort_btn_top_red.svg) right 0 no-repeat
+  background: url(/icons/ico_sort_btn_top_red.svg) right 0 no-repeat
     transparent;
 }
 
@@ -3081,7 +3069,7 @@ html .container,
 }
 
 .selectingCategory__item.active {
-  background: url(../fonts/ico_active.svg) 231px 21px transparent no-repeat;
+  background: url(/icons/ico_active.svg) 231px 21px transparent no-repeat;
   cursor: default;
 }
 
@@ -3989,7 +3977,7 @@ input[type="checkbox"] + label::before {
 }
 
 input[type="checkbox"]:checked + label::before {
-  background: url(../fonts/ico_checkbox.svg) 4px 5px #db2a4a no-repeat;
+  background: url(/icons/ico_checkbox.svg) 4px 5px #db2a4a no-repeat;
   background-size: 59%;
 }
 
@@ -4068,7 +4056,7 @@ button[disabled] {
   display: block;
   width: 57px;
   height: 40px;
-  background: url(../fonts/ico_kavichki.svg) 0 0 transparent no-repeat;
+  background: url(/icons/ico_kavichki.svg) 0 0 transparent no-repeat;
   background-size: cover;
   margin-bottom: 60px;
 }
@@ -4166,7 +4154,7 @@ button[disabled] {
   display: inline-block;
   margin: 0 69px 0 0px;
   padding: 5px 0 5px 57px;
-  background: url(../fonts/ico_linkpdf.svg) 0 center no-repeat;
+  background: url(/icons/ico_linkpdf.svg) 0 center no-repeat;
   color: #1a2248;
   text-decoration: none;
 }
@@ -4229,12 +4217,12 @@ button[disabled] {
 .ContactFormModal__wrp #close-modal {
   right: 20px;
   top: 20px;
-  background: url(../fonts/ico_close.svg) center center no-repeat;
+  background: url(/icons/ico_close.svg) center center no-repeat;
   background-size: 60%;
 }
 
 .ContactFormModal__wrp #close-modal:hover {
-  background: url(../fonts/ico_close2.svg) center center no-repeat #db2a4a;
+  background: url(/icons/ico_close2.svg) center center no-repeat #db2a4a;
   background-size: 50%;
 }
 
@@ -4823,7 +4811,7 @@ button[disabled] {
 } */
 
 .slick-ManePage__item_1 {
-  background-image: url(../images/slides/slaid1/1.jpg);
+  background-image: url(/images/slides/slide_1/1.jpg);
   background-size: 100% 100%;
 }
 
@@ -4840,7 +4828,7 @@ button[disabled] {
 } */
 
 .slick-ManePage__item_2 {
-  background-image: url(../images/slides/slide2/fire.gif);
+  background-image: url(/images/slides/slide_2/fire.gif);
   background-size: 100% 100%;
 }
 
@@ -4857,7 +4845,7 @@ button[disabled] {
 } */
 
 .slick-ManePage__item_3 {
-  background-image: url(../images/slides/slide3/mixer2.gif);
+  background-image: url(/images/slides/slide_3/mixer2.gif);
   background-size: 100% 100%;
 }
 
@@ -4874,7 +4862,7 @@ button[disabled] {
 } */
 
 .slick-ManePage__item_4 {
-  background-image: url(../images/slides/slide4/kap.gif);
+  background-image: url(/images/slides/slide_4/kap.gif);
   background-size: 100% 100%;
 }
 
@@ -4891,7 +4879,7 @@ button[disabled] {
 } */
 
 .slick-ManePage__item_5 {
-  background-image: url(../images/slides/slide5/Kaplya2.gif);
+  background-image: url(/images/slides/slide_5/Kaplya2.gif);
   background-size: 100% 100%;
 }
 
@@ -4908,12 +4896,12 @@ button[disabled] {
 } */
 
 .slick-ManePage__item_6 {
-  background-image: url(../images/slides/slide6/loop.gif);
+  background-image: url(/images/slides/slide_6/loop.gif);
   background-size: 100% 100%;
 }
 
 /*.slick-ManePage__item_8 {*/
-/*    background-image: url(../images/slides/slide7/fire2.gif);*/
+/*    background-image: url(/images/slides/slide_7/fire2.gif);*/
 /*    background-size: 100% 100%;*/
 /*}*/
 
@@ -4930,7 +4918,7 @@ button[disabled] {
 } */
 
 .slick-ManePage__item_7 {
-  background-image: url(../images/slides/slide7/palitra.gif);
+  background-image: url(/images/slides/slide_7/palitra.gif);
   background-size: 100% 100%;
 }
 
@@ -5212,7 +5200,7 @@ button[disabled] {
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  background: url(../images/slides/all.jpg) 0 -1px no-repeat #db2a4a;
+  background: url(/images/slides/all.jpg) 0 -1px no-repeat #db2a4a;
   color: #ffffff;
   text-decoration: none;
   outline: none;
@@ -5554,7 +5542,7 @@ button[disabled] {
 }
 
 .ContactInformationPage #footer {
-  /*background: url(../images/fon_footer.jpg) 0 bottom no-repeat;*/
+  /*background: url(/images/fon_footer.jpg) 0 bottom no-repeat;*/
   background-size: 100% 424px;
 }
 
@@ -5646,37 +5634,37 @@ button[disabled] {
 
 .PrideCompany__item_1 {
   /* border: 2px solid blueviolet; */
-  background-image: url(../images/slides/company/slide1/pridecompany_mp_1.jpg);
+  background-image: url(/images/slides/company/slide_1/pridecompany_mp_1.jpg);
   background-size: 100% 100%;
   transition: all 0.3s;
 }
 
 .PrideCompany__item_2 {
-  background-image: url(../images/slides/company/slide1/pridecompany_mp_2.jpg);
+  background-image: url(/images/slides/company/slide_1/pridecompany_mp_2.jpg);
   background-size: 100% 100%;
   transition: all 0.3s;
 }
 
 .PrideCompany__item_3 {
-  background-image: url(../images/slides/company/slide1/pridecompany_mp_3.jpg);
+  background-image: url(/images/slides/company/slide_1/pridecompany_mp_3.jpg);
   background-size: 100% 100%;
   transition: all 0.3s;
 }
 
 .PrideCompany__item_4 {
-  background-image: url(../images/slides/company/slide1/pridecompany_mp_4.jpg);
+  background-image: url(/images/slides/company/slide_1/pridecompany_mp_4.jpg);
   background-size: 100% 100%;
   transition: all 0.3s;
 }
 
 .PrideCompany__item_5 {
-  background-image: url(../images/slides/company/slide1/pridecompany_mp_5.jpg);
+  background-image: url(/images/slides/company/slide_1/pridecompany_mp_5.jpg);
   background-size: 100% 100%;
   transition: all 0.3s;
 }
 
 .PrideCompany__item_6 {
-  background-image: url(../images/slides/company/slide1/pridecompany_mp_6.jpg);
+  background-image: url(/images/slides/company/slide_1/pridecompany_mp_6.jpg);
   background-size: 100% 100%;
   transition: all 0.3s;
 }
@@ -5979,7 +5967,7 @@ button[disabled] {
 }
 
 .AboutCompany .BredTitleWRP {
-  background: url(../images/fon_footer.jpg) 0 top no-repeat;
+  background: url(/images/fon_footer.jpg) 0 top no-repeat;
   background-size: 100% 640px;
 }
 
@@ -6053,12 +6041,12 @@ button[disabled] {
 }
 
 .wrapper_bgdown {
-  background: url(../images/fon_footer.jpg) 0 bottom no-repeat;
+  background: url(/images/fon_footer.jpg) 0 bottom no-repeat;
   background-size: 100% 550px;
 }
 
 .wrapper_bgup {
-  background: url(../images/fon_footer.jpg) 0 top no-repeat;
+  background: url(/images/fon_footer.jpg) 0 top no-repeat;
   background-size: 100% 775px;
   padding-top: 100px;
 }

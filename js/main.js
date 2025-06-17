@@ -4231,7 +4231,7 @@ function resizeFunc() {
     var sizeInterval = $(window).width() / 13;
     var index = Number((e.pageX / sizeInterval).toFixed(0));
     document.getElementById("slide1_0").src =
-      "images/slides/slaid1/" + index + ".jpg";
+      "images/slides/slide_1/" + index + ".jpg";
   });
 }
 
