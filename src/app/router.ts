@@ -1,51 +1,54 @@
+import MainPage from '@/features/MainPage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
-import MainView from '../views/MainView.vue'
-import CompanyView from '../views/CompanyView.vue'
-import ContactView from '../views/ContactView.vue'
-import DocumentView from '../views/DocumentView.vue'
-import NotFoundView from '../views/NotFoundView.vue'
-
-const router = createRouter({
+export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'Main',
-      component: MainView,
+      component: MainPage,
       meta: { title: 'Главная | АО "СВЕТ"' },
     },
     {
       path: '/company',
       name: 'Company',
-      component: CompanyView,
+      component: () => {
+        import('@/features/CompanyPage.vue')
+      },
       meta: { title: 'Компания | АО "СВЕТ"' },
     },
     {
       path: '/kontakty',
       name: 'Contact',
-      component: ContactView,
+      component: () => {
+        import('@/features/ContactPage.vue')
+      },
       meta: { title: 'Контакты | АО "СВЕТ"' },
     },
     {
       path: '/contact',
       name: 'Contact',
-      component: ContactView,
+      component: () => {
+        import('@/features/ContactPage.vue')
+      },
       meta: { title: 'Контакты | АО "СВЕТ"' },
     },
     {
       path: '/document',
       name: 'Document',
-      component: DocumentView,
-      meta: { title: 'Доументы | АО "СВЕТ"' },
+      component: () => {
+        import('@/features/DocumentPage.vue')
+      },
+      meta: { title: 'Документы | АО "СВЕТ"' },
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
-      component: NotFoundView,
+      component: () => {
+        import('@/features/NotFoundPage.vue')
+      },
       meta: { title: 'Страница не найдена | АО "СВЕТ"' },
     },
   ],
 })
-
-export default router
