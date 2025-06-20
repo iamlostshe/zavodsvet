@@ -9635,7 +9635,7 @@
             b
           );
         }),
-        Bs = /[\*\.\?\(\)]/g,
+        Bs = /[*.?()]/g,
         Cs = w(function (a, c, b) {
           try {
             var d = b.replace("\\s", " ").replace(Bs, "");

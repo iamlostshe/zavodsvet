@@ -4,14 +4,14 @@ var AjaxForm = {
       document.write(
         '<script src="' +
           afConfig["assetsUrl"] +
-          'js/lib/jquery.form.min.js"><\/script>',
+          'js/lib/jquery.form.min.js"></script>',
       );
     }
     if (!jQuery().jGrowl) {
       document.write(
         '<script src="' +
           afConfig["assetsUrl"] +
-          'js/lib/jquery.jgrowl.min.js"><\/script>',
+          'js/lib/jquery.jgrowl.min.js"></script>',
       );
     }
 
