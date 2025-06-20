@@ -1,110 +1,23 @@
-<!doctype html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      name="viewport"
-    />
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-    <meta content="telephone=no" name="format-detection" />
-    <title>Документы :: АО "СВЕТ"</title>
-    <meta content name="keywords" />
-    <meta content name="description" />
-    <link href="/document/" rel="canonical" />
-    <link href="/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="/images/icons/SVET-Logo_57.png" sizes="57" />
-    <link href="/images/icons/SVET-Logo_60.png" sizes="60" />
-    <link href="/images/icons/SVET-Logo_72.png" sizes="72" />
-    <link href="/images/icons/SVET-Logo_76.png" sizes="76" />
-    <link href="/images/icons/SVET-Logo_114.png" sizes="114" />
-    <link href="/images/icons/SVET-Logo_120.png" sizes="120" />
-    <link href="/images/icons/SVET-Logo_144.png" sizes="144" />
-    <link href="/images/icons/SVET-Logo_152.png" sizes="152" />
-    <link href="/images/icons/SVET-Logo_180.png" sizes="180" />
-    <link
-      href="/images/icons/SVET-Logo_192.png"
-      rel="icon"
-      sizes="192"
-      type="image/png"
-    />
-    <link
-      href="/images/icons/favicon-star-16x16.png"
-      rel="icon"
-      sizes="32x32"
-      type="image/png"
-    />
-    <link
-      href="/images/icons/favicon-star-32x32.png"
-      rel="icon"
-      sizes="96x96"
-      type="image/png"
-    />
-    <link
-      href="/images/icons/favicon-star-96x96.png"
-      rel="icon"
-      sizes="16x16"
-      type="image/png"
-    />
-  </head>
-  <body class="ContactInformationPage">
-    <header id="header" class="SPage">
-      <div class="headerWRP">
-        <div class="TopPanel">
-          <!-- Логотип компании -->
-          <div class="TopPanel__item TopPanel__item_logo">
-            <a href id="Logo"
-              ><img alt="zavodsvet.ru" src="/images/icons/SVET-Logo_152.png"
-            /></a>
-          </div>
+// TODO: Создать шаблон vue для прикрепляемых файлов
 
-          <!-- Главное меню -->
-          <div class="TopPanel__item TopPanel__item_menu">
-            <div id="Menu">
-              <a class="Menu__item first" href="/">Главная</a>
-              <a href="https://rusglass.net/katalog/" class="Menu__item"
-                >Каталог</a
-              >
-              <!--                    <a class="Menu__item" href="https://vk.com/album-190827167_268582179">Галерея</a>-->
-              <a class="Menu__item" href="/company/">Компания</a>
-              <a class="Menu__item" href="/kontakty/">Контакты</a>
-              <a class="Menu__item last active" href="/document/">Документы</a>
-            </div>
-          </div>
-
-          <!-- Номер телефона -->
-          <div class="TopPanel__item TopPanel__item_tel">
-            <span itemprop="telephone">
-              <a class="LinkTelefon" href="tel:+73413933050"
-                >+7 341 393 30 50</a
-              ></span
-            >
-          </div>
-
-          <!-- Бургер, когда сжимается сайт -->
-          <div class="burgerWRP">
-            <div class="burger"></div>
-          </div>
-        </div>
-      </div>
-    </header>
-
+<template>
+  <div class="ContactInformationPage">
     <div class="BredTitleWRP"><h1 class="TitlePage">Документы</h1></div>
     <div class="wrapper">
       <div class="ContentSPage">
         <div>
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a href="./Кодекс%20этики.pdf" target="_blank"
             >Кодекс этики и служебного поведения работников АО "СВЕТ"</a
           ><br /><br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Политика%20в%20области%20качества,%20безопасности%20и%20экологии,%20в%20редакции%20от%2005.02.2021г.%20(418837%20v1).PDF"
             target="_blank"
             >Политика в области качества, безопасности и экологии, в редакции от
             05.02.2021г. (418837 v1)</a
           ><br /><br />
-          <!--            <img src="pdf_ico.png" width="25" height="25" alt="pdf">-->
+          <!--            <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf">-->
           <!--            <a href="./Ссылка%20на%20видеоролики%20Банка%20России%20по%20профилактике%20мошеничества.pdf" target="_blank">Ссылка на видеоролики Банка России по профилактике мошеничества</a><br><br>-->
 
           <br />
@@ -114,14 +27,14 @@
           <br />
           <h1>Январь 2025</h1>
           <br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Перечень%20Мероприятий%20по%20улучшению%20условий%20труда%20от%2017.01.25.pdf"
             target="_blank"
             >Перечень рекомендуемых мероприятий по улучшению условий труда</a
           ><br /><br />
 
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Сводная%20ведомость%20СОУТ%20от%2017.01.2025.pdf"
             target="_blank"
@@ -132,14 +45,14 @@
 
           <h1>Декабрь 2024</h1>
           <br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Перечень%20мероприятий%20СОУТ%20внеплановая%2002.12.24%20(528691%20v1).PDF"
             target="_blank"
             >Перечень рекомендуемых мероприятий по улучшению условий труда</a
           ><br /><br />
 
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Сводная%20ведомость%20СОУТ%20внеплановая%2002.12.24%20(528692%20v1).PDF"
             target="_blank"
@@ -150,14 +63,14 @@
           <br />
           <h1>Июнь 2024</h1>
           <br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Перечень%20мероприятий%20по%20СОУТ%2006%2024.pdf"
             target="_blank"
             >Перечень рекомендуемых мероприятий по улучшению условий труда</a
           ><br /><br />
 
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a href="./Сводная%20ведомость%20СОУТ%2006%2024.pdf" target="_blank"
             >Сводная ведомость результатов проведения специальной оценки условии
             труда</a
@@ -166,14 +79,14 @@
           <br />
           <h1>2024</h1>
           <br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Сводная%20ведомость%20результатов%20СОУТ%202024.pdf"
             target="_blank"
             >Сводная ведомость результатов проведения специальной оценки условии
             труда</a
           ><br /><br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Перечень%20рекомендуемых%20мероприятий%202024.pdf"
             target="_blank"
@@ -183,7 +96,7 @@
           <br />
           <h1>Ноябрь 2023</h1>
           <br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Сводная%20ведомость%20результов%20проведения%20специальной%20оценки%20условий%20труда%20%20Ноябрь%202023%20(Хлыбов).pdf"
             target="_blank"
@@ -193,7 +106,7 @@
           <br />
           <h1>Июнь 2022</h1>
           <br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Сводная%20ведомость%20результов%20проведения%20специальной%20оценки%20условий%20труда%20Июнь%202022.pdf"
             target="_blank"
@@ -203,7 +116,7 @@
           <br />
           <h1>Ноябрь 2021</h1>
           <br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Сводная%20ведомость%20результов%20проведения%20специальной%20оценки%20условий%20труда%20Ноябрь%202021.pdf"
             target="_blank"
@@ -213,7 +126,7 @@
           <br />
           <h1>Декабрь 2020</h1>
           <br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Сводная%20ведомость%20результов%20проведения%20специальной%20оценки%20условий%20труда%20Декабрь%202020.pdf"
             target="_blank"
@@ -223,14 +136,14 @@
           <br />
           <h1>Декабрь 2019</h1>
           <br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Сводная%20ведомость%20результов%20проведения%20специальной%20оценки%20условий%20труда%20(1)%20Декабрь%202019.pdf"
             target="_blank"
             >Сводная ведомость результатов проведения специальной оценки условии
             труда (1)</a
           ><br /><br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Сводная%20ведомость%20результов%20проведения%20специальной%20оценки%20условий%20труда%20Декабрь%202019%20(2).pdf"
             target="_blank"
@@ -239,7 +152,7 @@
           ><br /><br />
           <h1>Апрель 2019</h1>
           <br />
-          <img src="pdf_ico.png" width="25" height="25" alt="pdf" />
+          <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
           <a
             href="./Сводная%20ведомость%20результов%20проведения%20специальной%20оценки%20условий%20труда%20Апрель%202019.pdf"
             target="_blank"
@@ -251,28 +164,5 @@
       </div>
     </div>
     <div class="br br_100"></div>
-
-    <footer id="footer">
-      <div class="mainFooter">
-        <div class="wrapper">
-          <div class="mainFooter__WRP">
-            <div class="mainFooter__copy">
-              ©
-              <!--©-->
-              2022
-            </div>
-            <div class="mainFooter__tm">АО "СВЕТ".</div>
-            <!--                <div class="mainFooter__dev">Разработчик: Ларионов Анатолий Дмитриевич.</div>-->
-            <!--                <div class="mainFooter_space"></div>-->
-            <!--                <div class="mainFooter__web">Дизайнер: Поляков Александр Петрович.</div>-->
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Подключаем необходимые скрипты -->
-    <script async src="/js/tag.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/default.js"></script>
-  </body>
-</html>
+  </div>
+</template>

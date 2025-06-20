@@ -1,10 +1,9 @@
 @charset "UTF-8";
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,400;1,600;1,800&display=swap");
 
 html {
-  color: #000;
-  background: #fff;
   font-family: "Inter", sans-serif;
 }
 
@@ -109,7 +108,7 @@ select {
 input,
 textarea,
 select {
-  *font-size: 100%;
+  font-size: 100%;
 }
 
 input:active,
@@ -1852,7 +1851,6 @@ video[controls] {
 .icon:before,
 .icon:after {
   font-family: "fontawesome";
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -5465,18 +5463,12 @@ button[disabled] {
   }
 }
 
-.mainFooter {
-  /*border: 1px solid black;*/
+footer {
   width: 100%;
-  /*height: 8px;*/
-  /*line-height: 60px;*/
-  border-top: 1px solid grey;
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: normal;
+  line-height: 30px;
   font-size: 14px;
-  color: #1a2248;
-  opacity: 0.5;
+  background-color: #1a2248;
+  color: rgb(224, 224, 224);
 }
 
 @media only screen and (min-width: 319px) and (max-width: 2640px) {
@@ -5488,8 +5480,6 @@ button[disabled] {
 }
 
 .mainFooter__WRP {
-  /*border: 1px solid orange;*/
-  /*display: inline-table;*/
   display: grid;
   grid-template-rows: 0.1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
@@ -5522,23 +5512,6 @@ button[disabled] {
   .mainFooter__tm {
     text-align: left;
   }
-}
-
-.mainFooter__dev {
-  /*border: 1px solid saddlebrown;*/
-  grid-area: 3 / 2 / 4 / 3;
-  text-align: right;
-}
-
-.mainFooter__web {
-  /*border: 1px solid saddlebrown;*/
-  grid-area: 4 / 2 / 5 / 3;
-  text-align: right;
-  padding-right: 24px;
-}
-
-.mainFooter_space {
-  grid-area: 2 / 2 / 3 / 3;
 }
 
 .ContactInformationPage #footer {
