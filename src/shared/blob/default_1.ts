@@ -51,7 +51,7 @@ var AjaxForm = {
             if (!response.success) {
               AjaxForm.Message.error(response.message)
               if (response.data) {
-                var key, value, focused
+                let key, value, focused
                 for (key in response.data) {
                   if (response.data.hasOwnProperty(key)) {
                     if (!focused) {
@@ -84,7 +84,7 @@ var AjaxForm = {
       })
 
     $(document).on('keypress change', '.error', function () {
-      var key = $(this).attr('name')
+      const key = $(this).attr('name')
       $(this).removeClass('error')
       $('.error_' + key)
         .html('')

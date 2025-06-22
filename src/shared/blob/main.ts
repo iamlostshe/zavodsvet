@@ -12,11 +12,11 @@
   }
 })(function ($) {
   'use strict'
-  var Slick = window.Slick || {}
+  let Slick = window.Slick || {}
   Slick = (function () {
-    var instanceUid = 0
+    let instanceUid = 0
     function Slick(element, settings) {
-      var _ = this,
+      let _ = this,
         dataSettings
       _.defaults = {
         accessibility: true,
@@ -151,7 +151,7 @@
     return Slick
   })()
   Slick.prototype.activateADA = function () {
-    var _ = this
+    const _ = this
     _.$slideTrack
       .find('.slick-active')
       .attr({ 'aria-hidden': 'false' })
@@ -159,7 +159,7 @@
       .attr({ tabindex: '0' })
   }
   Slick.prototype.addSlide = Slick.prototype.slickAdd = function (markup, index, addBefore) {
-    var _ = this
+    const _ = this
     if (typeof index === 'boolean') {
       addBefore = index
       index = null
@@ -192,18 +192,18 @@
     _.reinit()
   }
   Slick.prototype.animateHeight = function () {
-    var _ = this
+    const _ = this
     if (
       _.options.slidesToShow === 1 &&
       _.options.adaptiveHeight === true &&
       _.options.vertical === false
     ) {
-      var targetHeight = _.$slides.eq(_.currentSlide).outerHeight(true)
+      const targetHeight = _.$slides.eq(_.currentSlide).outerHeight(true)
       _.$list.animate({ height: targetHeight }, _.options.speed)
     }
   }
   Slick.prototype.animateSlide = function (targetLeft, callback) {
-    var animProps = {},
+    const animProps = {},
       _ = this
     _.animateHeight()
     if (_.options.rtl === true && _.options.vertical === false) {
@@ -261,7 +261,7 @@
     }
   }
   Slick.prototype.getNavTarget = function () {
-    var _ = this,
+    let _ = this,
       asNavFor = _.options.asNavFor
     if (asNavFor && asNavFor !== null) {
       asNavFor = $(asNavFor).not(_.$slider)
@@ -269,11 +269,11 @@
     return asNavFor
   }
   Slick.prototype.asNavFor = function (index) {
-    var _ = this,
+    const _ = this,
       asNavFor = _.getNavTarget()
     if (asNavFor !== null && typeof asNavFor === 'object') {
       asNavFor.each(function () {
-        var target = $(this).slick('getSlick')
+        const target = $(this).slick('getSlick')
         if (!target.unslicked) {
           target.slideHandler(index, true)
         }
@@ -281,7 +281,7 @@
     }
   }
   Slick.prototype.applyTransition = function (slide) {
-    var _ = this,
+    const _ = this,
       transition = {}
     if (_.options.fade === false) {
       transition[_.transitionType] =
@@ -296,20 +296,20 @@
     }
   }
   Slick.prototype.autoPlay = function () {
-    var _ = this
+    const _ = this
     _.autoPlayClear()
     if (_.slideCount > _.options.slidesToShow) {
       _.autoPlayTimer = setInterval(_.autoPlayIterator, _.options.autoplaySpeed)
     }
   }
   Slick.prototype.autoPlayClear = function () {
-    var _ = this
+    const _ = this
     if (_.autoPlayTimer) {
       clearInterval(_.autoPlayTimer)
     }
   }
   Slick.prototype.autoPlayIterator = function () {
-    var _ = this,
+    let _ = this,
       slideTo = _.currentSlide + _.options.slidesToScroll
     if (!_.paused && !_.interrupted && !_.focussed) {
       if (_.options.infinite === false) {
@@ -326,7 +326,7 @@
     }
   }
   Slick.prototype.buildArrows = function () {
-    var _ = this
+    const _ = this
     if (_.options.arrows === true) {
       _.$prevArrow = $(_.options.prevArrow).addClass('slick-arrow')
       _.$nextArrow = $(_.options.nextArrow).addClass('slick-arrow')
@@ -351,7 +351,7 @@
     }
   }
   Slick.prototype.buildDots = function () {
-    var _ = this,
+    let _ = this,
       i,
       dot
     if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
@@ -365,7 +365,7 @@
     }
   }
   Slick.prototype.buildOut = function () {
-    var _ = this
+    const _ = this
     _.$slides = _.$slider.children(_.options.slide + ':not(.slick-cloned)').addClass('slick-slide')
     _.slideCount = _.$slides.length
     _.$slides.each(function (index, element) {
@@ -394,7 +394,7 @@
     }
   }
   Slick.prototype.buildRows = function () {
-    var _ = this,
+    let _ = this,
       a,
       b,
       c,
@@ -408,11 +408,11 @@
       slidesPerSection = _.options.slidesPerRow * _.options.rows
       numOfSlides = Math.ceil(originalSlides.length / slidesPerSection)
       for (a = 0; a < numOfSlides; a++) {
-        var slide = document.createElement('div')
+        const slide = document.createElement('div')
         for (b = 0; b < _.options.rows; b++) {
-          var row = document.createElement('div')
+          const row = document.createElement('div')
           for (c = 0; c < _.options.slidesPerRow; c++) {
-            var target = a * slidesPerSection + (b * _.options.slidesPerRow + c)
+            const target = a * slidesPerSection + (b * _.options.slidesPerRow + c)
             if (originalSlides.get(target)) {
               row.appendChild(originalSlides.get(target))
             }
@@ -433,13 +433,13 @@
     }
   }
   Slick.prototype.checkResponsive = function (initial, forceUpdate) {
-    var _ = this,
+    let _ = this,
       breakpoint,
       targetBreakpoint,
       respondToWidth,
       triggerBreakpoint = false
-    var sliderWidth = _.$slider.width()
-    var windowWidth = window.innerWidth || $(window).width()
+    const sliderWidth = _.$slider.width()
+    const windowWidth = window.innerWidth || $(window).width()
     if (_.respondTo === 'window') {
       respondToWidth = windowWidth
     } else if (_.respondTo === 'slider') {
@@ -507,7 +507,7 @@
     }
   }
   Slick.prototype.changeSlide = function (event, dontAnimate) {
-    var _ = this,
+    let _ = this,
       $target = $(event.currentTarget),
       indexOffset,
       slideOffset,
@@ -547,7 +547,7 @@
     }
   }
   Slick.prototype.checkNavigable = function (index) {
-    var _ = this,
+    let _ = this,
       navigables,
       prevNavigable
     navigables = _.getNavigableIndexes()
@@ -555,7 +555,7 @@
     if (index > navigables[navigables.length - 1]) {
       index = navigables[navigables.length - 1]
     } else {
-      for (var n in navigables) {
+      for (const n in navigables) {
         if (index < navigables[n]) {
           index = prevNavigable
           break
@@ -566,7 +566,7 @@
     return index
   }
   Slick.prototype.cleanUpEvents = function () {
-    var _ = this
+    const _ = this
     if (_.options.dots && _.$dots !== null) {
       $('li', _.$dots)
         .off('click.slick', _.changeSlide)
@@ -604,12 +604,12 @@
     $(window).off('load.slick.slick-' + _.instanceUid, _.setPosition)
   }
   Slick.prototype.cleanUpSlideEvents = function () {
-    var _ = this
+    const _ = this
     _.$list.off('mouseenter.slick', $.proxy(_.interrupt, _, true))
     _.$list.off('mouseleave.slick', $.proxy(_.interrupt, _, false))
   }
   Slick.prototype.cleanUpRows = function () {
-    var _ = this,
+    let _ = this,
       originalSlides
     if (_.options.rows > 0) {
       originalSlides = _.$slides.children().children()
@@ -618,7 +618,7 @@
     }
   }
   Slick.prototype.clickHandler = function (event) {
-    var _ = this
+    const _ = this
     if (_.shouldClick === false) {
       event.stopImmediatePropagation()
       event.stopPropagation()
@@ -626,7 +626,7 @@
     }
   }
   Slick.prototype.destroy = function (refresh) {
-    var _ = this
+    const _ = this
     _.autoPlayClear()
     _.touchObject = {}
     _.cleanUpEvents()
@@ -675,7 +675,7 @@
     }
   }
   Slick.prototype.disableTransition = function (slide) {
-    var _ = this,
+    const _ = this,
       transition = {}
     transition[_.transitionType] = ''
     if (_.options.fade === false) {
@@ -685,7 +685,7 @@
     }
   }
   Slick.prototype.fadeSlide = function (slideIndex, callback) {
-    var _ = this
+    const _ = this
     if (_.cssTransitions === false) {
       _.$slides.eq(slideIndex).css({ zIndex: _.options.zIndex })
       _.$slides.eq(slideIndex).animate({ opacity: 1 }, _.options.speed, _.options.easing, callback)
@@ -701,7 +701,7 @@
     }
   }
   Slick.prototype.fadeSlideOut = function (slideIndex) {
-    var _ = this
+    const _ = this
     if (_.cssTransitions === false) {
       _.$slides
         .eq(slideIndex)
@@ -712,7 +712,7 @@
     }
   }
   Slick.prototype.filterSlides = Slick.prototype.slickFilter = function (filter) {
-    var _ = this
+    const _ = this
     if (filter !== null) {
       _.$slidesCache = _.$slides
       _.unload()
@@ -722,11 +722,11 @@
     }
   }
   Slick.prototype.focusHandler = function () {
-    var _ = this
+    const _ = this
     _.$slider
       .off('focus.slick blur.slick')
       .on('focus.slick', '*', function (event) {
-        var $sf = $(this)
+        const $sf = $(this)
         setTimeout(function () {
           if (_.options.pauseOnFocus) {
             if ($sf.is(':focus')) {
@@ -737,7 +737,7 @@
         }, 0)
       })
       .on('blur.slick', '*', function (event) {
-        var $sf = $(this)
+        const $sf = $(this)
         if (_.options.pauseOnFocus) {
           _.focussed = false
           _.autoPlay()
@@ -745,14 +745,14 @@
       })
   }
   Slick.prototype.getCurrent = Slick.prototype.slickCurrentSlide = function () {
-    var _ = this
+    const _ = this
     return _.currentSlide
   }
   Slick.prototype.getDotCount = function () {
-    var _ = this
-    var breakPoint = 0
-    var counter = 0
-    var pagerQty = 0
+    const _ = this
+    let breakPoint = 0
+    let counter = 0
+    let pagerQty = 0
     if (_.options.infinite === true) {
       if (_.slideCount <= _.options.slidesToShow) {
         ++pagerQty
@@ -783,7 +783,7 @@
     return pagerQty - 1
   }
   Slick.prototype.getLeft = function (slideIndex) {
-    var _ = this,
+    let _ = this,
       targetLeft,
       verticalHeight,
       verticalOffset = 0,
@@ -884,11 +884,11 @@
     return targetLeft
   }
   Slick.prototype.getOption = Slick.prototype.slickGetOption = function (option) {
-    var _ = this
+    const _ = this
     return _.options[option]
   }
   Slick.prototype.getNavigableIndexes = function () {
-    var _ = this,
+    let _ = this,
       breakPoint = 0,
       counter = 0,
       indexes = [],
@@ -914,7 +914,7 @@
     return this
   }
   Slick.prototype.getSlideCount = function () {
-    var _ = this,
+    let _ = this,
       slidesTraversed,
       swipedSlide,
       swipeTarget,
@@ -923,7 +923,7 @@
     swipeTarget = _.swipeLeft * -1 + centerOffset
     if (_.options.swipeToSlide === true) {
       _.$slideTrack.find('.slick-slide').each(function (index, slide) {
-        var slideOuterWidth, slideOffset, slideRightBoundary
+        let slideOuterWidth, slideOffset, slideRightBoundary
         slideOuterWidth = $(slide).outerWidth()
         slideOffset = slide.offsetLeft
         if (_.options.centerMode !== true) {
@@ -942,11 +942,11 @@
     }
   }
   Slick.prototype.goTo = Slick.prototype.slickGoTo = function (slide, dontAnimate) {
-    var _ = this
+    const _ = this
     _.changeSlide({ data: { message: 'index', index: parseInt(slide) } }, dontAnimate)
   }
   Slick.prototype.init = function (creation) {
-    var _ = this
+    const _ = this
     if (!$(_.$slider).hasClass('slick-initialized')) {
       $(_.$slider).addClass('slick-initialized')
       _.buildRows()
@@ -972,7 +972,7 @@
     }
   }
   Slick.prototype.initADA = function () {
-    var _ = this,
+    const _ = this,
       numDotGroups = Math.ceil(_.slideCount / _.options.slidesToShow),
       tabControlIndexes = _.getNavigableIndexes().filter(function (val) {
         return val >= 0 && val < _.slideCount
@@ -984,14 +984,14 @@
       .attr({ tabindex: '-1' })
     if (_.$dots !== null) {
       _.$slides.not(_.$slideTrack.find('.slick-cloned')).each(function (i) {
-        var slideControlIndex = tabControlIndexes.indexOf(i)
+        const slideControlIndex = tabControlIndexes.indexOf(i)
         $(this).attr({
           role: 'tabpanel',
           id: 'slick-slide' + _.instanceUid + i,
           tabindex: -1,
         })
         if (slideControlIndex !== -1) {
-          var ariaButtonControl = 'slick-slide-control' + _.instanceUid + slideControlIndex
+          const ariaButtonControl = 'slick-slide-control' + _.instanceUid + slideControlIndex
           if ($('#' + ariaButtonControl).length) {
             $(this).attr({
               'aria-describedby': ariaButtonControl,
@@ -1003,7 +1003,7 @@
         .attr('role', 'tablist')
         .find('li')
         .each(function (i) {
-          var mappedSlideIndex = tabControlIndexes[i]
+          const mappedSlideIndex = tabControlIndexes[i]
           $(this).attr({ role: 'presentation' })
           $(this)
             .find('button')
@@ -1022,7 +1022,7 @@
         .attr({ 'aria-selected': 'true', tabindex: '0' })
         .end()
     }
-    for (var i = _.currentSlide, max = i + _.options.slidesToShow; i < max; i++) {
+    for (let i = _.currentSlide, max = i + _.options.slidesToShow; i < max; i++) {
       if (_.options.focusOnChange) {
         _.$slides.eq(i).attr({ tabindex: '0' })
       } else {
@@ -1032,7 +1032,7 @@
     _.activateADA()
   }
   Slick.prototype.initArrowEvents = function () {
-    var _ = this
+    const _ = this
     if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
       _.$prevArrow.off('click.slick').on('click.slick', { message: 'previous' }, _.changeSlide)
       _.$nextArrow.off('click.slick').on('click.slick', { message: 'next' }, _.changeSlide)
@@ -1043,7 +1043,7 @@
     }
   }
   Slick.prototype.initDotEvents = function () {
-    var _ = this
+    const _ = this
     if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
       $('li', _.$dots).on('click.slick', { message: 'index' }, _.changeSlide)
       if (_.options.accessibility === true) {
@@ -1061,14 +1061,14 @@
     }
   }
   Slick.prototype.initSlideEvents = function () {
-    var _ = this
+    const _ = this
     if (_.options.pauseOnHover) {
       _.$list.on('mouseenter.slick', $.proxy(_.interrupt, _, true))
       _.$list.on('mouseleave.slick', $.proxy(_.interrupt, _, false))
     }
   }
   Slick.prototype.initializeEvents = function () {
-    var _ = this
+    const _ = this
     _.initArrowEvents()
     _.initDotEvents()
     _.initSlideEvents()
@@ -1091,7 +1091,7 @@
     $(_.setPosition)
   }
   Slick.prototype.initUI = function () {
-    var _ = this
+    const _ = this
     if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
       _.$prevArrow.show()
       _.$nextArrow.show()
@@ -1101,7 +1101,7 @@
     }
   }
   Slick.prototype.keyHandler = function (event) {
-    var _ = this
+    const _ = this
     if (!event.target.tagName.match('TEXTAREA|INPUT|SELECT')) {
       if (event.keyCode === 37 && _.options.accessibility === true) {
         _.changeSlide({
@@ -1119,14 +1119,14 @@
     }
   }
   Slick.prototype.lazyLoad = function () {
-    var _ = this,
+    let _ = this,
       loadRange,
       cloneRange,
       rangeStart,
       rangeEnd
     function loadImages(imagesScope) {
       $('img[data-lazy]', imagesScope).each(function () {
-        var image = $(this),
+        const image = $(this),
           imageSource = $(this).attr('data-lazy'),
           imageSrcSet = $(this).attr('data-srcset'),
           imageSizes = $(this).attr('data-sizes') || _.$slider.attr('data-sizes'),
@@ -1173,10 +1173,10 @@
     }
     loadRange = _.$slider.find('.slick-slide').slice(rangeStart, rangeEnd)
     if (_.options.lazyLoad === 'anticipated') {
-      var prevSlide = rangeStart - 1,
+      let prevSlide = rangeStart - 1,
         nextSlide = rangeEnd,
         $slides = _.$slider.find('.slick-slide')
-      for (var i = 0; i < _.options.slidesToScroll; i++) {
+      for (let i = 0; i < _.options.slidesToScroll; i++) {
         if (prevSlide < 0) prevSlide = _.slideCount - 1
         loadRange = loadRange.add($slides.eq(prevSlide))
         loadRange = loadRange.add($slides.eq(nextSlide))
@@ -1197,7 +1197,7 @@
     }
   }
   Slick.prototype.loadSlider = function () {
-    var _ = this
+    const _ = this
     _.setPosition()
     _.$slideTrack.css({ opacity: 1 })
     _.$slider.removeClass('slick-loading')
@@ -1207,21 +1207,21 @@
     }
   }
   Slick.prototype.next = Slick.prototype.slickNext = function () {
-    var _ = this
+    const _ = this
     _.changeSlide({ data: { message: 'next' } })
   }
   Slick.prototype.orientationChange = function () {
-    var _ = this
+    const _ = this
     _.checkResponsive()
     _.setPosition()
   }
   Slick.prototype.pause = Slick.prototype.slickPause = function () {
-    var _ = this
+    const _ = this
     _.autoPlayClear()
     _.paused = true
   }
   Slick.prototype.play = Slick.prototype.slickPlay = function () {
-    var _ = this
+    const _ = this
     _.autoPlay()
     _.options.autoplay = true
     _.paused = false
@@ -1229,7 +1229,7 @@
     _.interrupted = false
   }
   Slick.prototype.postSlide = function (index) {
-    var _ = this
+    const _ = this
     if (!_.unslicked) {
       _.$slider.trigger('afterChange', [_, index])
       _.animating = false
@@ -1243,14 +1243,14 @@
       if (_.options.accessibility === true) {
         _.initADA()
         if (_.options.focusOnChange) {
-          var $currentSlide = $(_.$slides.get(_.currentSlide))
+          const $currentSlide = $(_.$slides.get(_.currentSlide))
           $currentSlide.attr('tabindex', 0).focus()
         }
       }
     }
   }
   Slick.prototype.prev = Slick.prototype.slickPrev = function () {
-    var _ = this
+    const _ = this
     _.changeSlide({ data: { message: 'previous' } })
   }
   Slick.prototype.preventDefault = function (event) {
@@ -1258,7 +1258,7 @@
   }
   Slick.prototype.progressiveLazyLoad = function (tryCount) {
     tryCount = tryCount || 1
-    var _ = this,
+    let _ = this,
       $imgsToLoad = $('img[data-lazy]', _.$slider),
       image,
       imageSource,
@@ -1308,7 +1308,7 @@
     }
   }
   Slick.prototype.refresh = function (initializing) {
-    var _ = this,
+    let _ = this,
       currentSlide,
       lastVisibleIndex
     lastVisibleIndex = _.slideCount - _.options.slidesToShow
@@ -1327,7 +1327,7 @@
     }
   }
   Slick.prototype.registerBreakpoints = function () {
-    var _ = this,
+    let _ = this,
       breakpoint,
       currentBreakpoint,
       l,
@@ -1354,7 +1354,7 @@
     }
   }
   Slick.prototype.reinit = function () {
-    var _ = this
+    const _ = this
     _.$slides = _.$slideTrack.children(_.options.slide).addClass('slick-slide')
     _.slideCount = _.$slides.length
     if (_.currentSlide >= _.slideCount && _.currentSlide !== 0) {
@@ -1386,7 +1386,7 @@
     _.$slider.trigger('reInit', [_])
   }
   Slick.prototype.resize = function () {
-    var _ = this
+    const _ = this
     if ($(window).width() !== _.windowWidth) {
       clearTimeout(_.windowDelay)
       _.windowDelay = window.setTimeout(function () {
@@ -1403,7 +1403,7 @@
     removeBefore,
     removeAll,
   ) {
-    var _ = this
+    const _ = this
     if (typeof index === 'boolean') {
       removeBefore = index
       index = removeBefore === true ? 0 : _.slideCount - 1
@@ -1426,7 +1426,7 @@
     _.reinit()
   }
   Slick.prototype.setCSS = function (position) {
-    var _ = this,
+    let _ = this,
       positionProps = {},
       x,
       y
@@ -1450,7 +1450,7 @@
     }
   }
   Slick.prototype.setDimensions = function () {
-    var _ = this
+    const _ = this
     if (_.options.vertical === false) {
       if (_.options.centerMode === true) {
         _.$list.css({ padding: '0px ' + _.options.centerPadding })
@@ -1476,12 +1476,12 @@
         ),
       )
     }
-    var offset = _.$slides.first().outerWidth(true) - _.$slides.first().width()
+    const offset = _.$slides.first().outerWidth(true) - _.$slides.first().width()
     if (_.options.variableWidth === false)
       _.$slideTrack.children('.slick-slide').width(_.slideWidth - offset)
   }
   Slick.prototype.setFade = function () {
-    var _ = this,
+    let _ = this,
       targetLeft
     _.$slides.each(function (index, element) {
       targetLeft = _.slideWidth * index * -1
@@ -1506,18 +1506,18 @@
     _.$slides.eq(_.currentSlide).css({ zIndex: _.options.zIndex - 1, opacity: 1 })
   }
   Slick.prototype.setHeight = function () {
-    var _ = this
+    const _ = this
     if (
       _.options.slidesToShow === 1 &&
       _.options.adaptiveHeight === true &&
       _.options.vertical === false
     ) {
-      var targetHeight = _.$slides.eq(_.currentSlide).outerHeight(true)
+      const targetHeight = _.$slides.eq(_.currentSlide).outerHeight(true)
       _.$list.css('height', targetHeight)
     }
   }
   Slick.prototype.setOption = Slick.prototype.slickSetOption = function () {
-    var _ = this,
+    let _ = this,
       l,
       item,
       option,
@@ -1566,7 +1566,7 @@
     }
   }
   Slick.prototype.setPosition = function () {
-    var _ = this
+    const _ = this
     _.setDimensions()
     _.setHeight()
     if (_.options.fade === false) {
@@ -1577,7 +1577,7 @@
     _.$slider.trigger('setPosition', [_])
   }
   Slick.prototype.setProps = function () {
-    var _ = this,
+    const _ = this,
       bodyStyle = document.body.style
     _.positionProp = _.options.vertical === true ? 'top' : 'left'
     if (_.positionProp === 'top') {
@@ -1638,7 +1638,7 @@
     _.transformsEnabled = _.options.useTransform && _.animType !== null && _.animType !== false
   }
   Slick.prototype.setSlideClasses = function (index) {
-    var _ = this,
+    let _ = this,
       centerOffset,
       allSlides,
       indexOffset,
@@ -1649,7 +1649,7 @@
       .attr('aria-hidden', 'true')
     _.$slides.eq(index).addClass('slick-current')
     if (_.options.centerMode === true) {
-      var evenCoef = _.options.slidesToShow % 2 === 0 ? 1 : 0
+      const evenCoef = _.options.slidesToShow % 2 === 0 ? 1 : 0
       centerOffset = Math.floor(_.options.slidesToShow / 2)
       if (_.options.infinite === true) {
         if (index >= centerOffset && index <= _.slideCount - 1 - centerOffset) {
@@ -1703,7 +1703,7 @@
     }
   }
   Slick.prototype.setupInfinite = function () {
-    var _ = this,
+    let _ = this,
       i,
       slideIndex,
       infiniteCount
@@ -1746,18 +1746,18 @@
     }
   }
   Slick.prototype.interrupt = function (toggle) {
-    var _ = this
+    const _ = this
     if (!toggle) {
       _.autoPlay()
     }
     _.interrupted = toggle
   }
   Slick.prototype.selectHandler = function (event) {
-    var _ = this
-    var targetElement = $(event.target).is('.slick-slide')
+    const _ = this
+    const targetElement = $(event.target).is('.slick-slide')
       ? $(event.target)
       : $(event.target).parents('.slick-slide')
-    var index = parseInt(targetElement.attr('data-slick-index'))
+    let index = parseInt(targetElement.attr('data-slick-index'))
     if (!index) index = 0
     if (_.slideCount <= _.options.slidesToShow) {
       _.slideHandler(index, false, true)
@@ -1766,7 +1766,7 @@
     _.slideHandler(index)
   }
   Slick.prototype.slideHandler = function (index, sync, dontAnimate) {
-    var targetSlide,
+    let targetSlide,
       animSlide,
       oldSlide,
       slideLeft,
@@ -1873,7 +1873,7 @@
     }
   }
   Slick.prototype.startLoad = function () {
-    var _ = this
+    const _ = this
     if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
       _.$prevArrow.hide()
       _.$nextArrow.hide()
@@ -1884,7 +1884,7 @@
     _.$slider.addClass('slick-loading')
   }
   Slick.prototype.swipeDirection = function () {
-    var xDist,
+    let xDist,
       yDist,
       r,
       swipeAngle,
@@ -1915,7 +1915,7 @@
     return 'vertical'
   }
   Slick.prototype.swipeEnd = function (event) {
-    var _ = this,
+    let _ = this,
       slideCount,
       direction
     _.dragging = false
@@ -1964,7 +1964,7 @@
     }
   }
   Slick.prototype.swipeHandler = function (event) {
-    var _ = this
+    const _ = this
     if (_.options.swipe === false || ('ontouchend' in document && _.options.swipe === false)) {
       return
     } else if (_.options.draggable === false && event.type.indexOf('mouse') !== -1) {
@@ -1991,7 +1991,7 @@
     }
   }
   Slick.prototype.swipeMove = function (event) {
-    var _ = this,
+    let _ = this,
       edgeWasHit = false,
       curLeft,
       swipeDirection,
@@ -2058,7 +2058,7 @@
     _.setCSS(_.swipeLeft)
   }
   Slick.prototype.swipeStart = function (event) {
-    var _ = this,
+    let _ = this,
       touches
     _.interrupted = true
     if (_.touchObject.fingerCount !== 1 || _.slideCount <= _.options.slidesToShow) {
@@ -2075,7 +2075,7 @@
     _.dragging = true
   }
   Slick.prototype.unfilterSlides = Slick.prototype.slickUnfilter = function () {
-    var _ = this
+    const _ = this
     if (_.$slidesCache !== null) {
       _.unload()
       _.$slideTrack.children(this.options.slide).detach()
@@ -2084,7 +2084,7 @@
     }
   }
   Slick.prototype.unload = function () {
-    var _ = this
+    const _ = this
     $('.slick-cloned', _.$slider).remove()
     if (_.$dots) {
       _.$dots.remove()
@@ -2101,12 +2101,12 @@
       .css('width', '')
   }
   Slick.prototype.unslick = function (fromBreakpoint) {
-    var _ = this
+    const _ = this
     _.$slider.trigger('unslick', [_, fromBreakpoint])
     _.destroy()
   }
   Slick.prototype.updateArrows = function () {
-    var _ = this,
+    let _ = this,
       centerOffset
     centerOffset = Math.floor(_.options.slidesToShow / 2)
     if (_.options.arrows === true && _.slideCount > _.options.slidesToShow && !_.options.infinite) {
@@ -2128,7 +2128,7 @@
     }
   }
   Slick.prototype.updateDots = function () {
-    var _ = this
+    const _ = this
     if (_.$dots !== null) {
       _.$dots.find('li').removeClass('slick-active').end()
       _.$dots
@@ -2138,7 +2138,7 @@
     }
   }
   Slick.prototype.visibility = function () {
-    var _ = this
+    const _ = this
     if (_.options.autoplay) {
       if (document[_.hidden]) {
         _.interrupted = true
@@ -2148,7 +2148,7 @@
     }
   }
   $.fn.slick = function () {
-    var _ = this,
+    let _ = this,
       opt = arguments[0],
       args = Array.prototype.slice.call(arguments, 1),
       l = _.length,
@@ -2164,7 +2164,7 @@
 })
 /*! device.js 0.1.57 */
 ;(function () {
-  var a, b, c, d, e, f, g, h, i
+  let a, b, c, d, e, f, g, h, i
   ;(window.device = {}),
     (b = window.document.documentElement),
     (i = window.navigator.userAgent.toLowerCase()),
@@ -2245,7 +2245,7 @@
       return -1 !== i.indexOf(a)
     }),
     (e = function (a) {
-      var c
+      let c
       return (c = new RegExp(a, 'i')), b.className.match(c)
     }),
     (a = function (a) {
@@ -2299,7 +2299,7 @@
       ? (module.exports = e())
       : (window.enterView = e.call(this))
 })(function () {
-  var e = function (e) {
+  const e = function (e) {
     function n() {
       g =
         window.requestAnimationFrame ||
@@ -2312,21 +2312,21 @@
     }
     function t() {
       if (h && 'number' == typeof h) {
-        var e = Math.min(Math.max(0, h), 1)
+        const e = Math.min(Math.max(0, h), 1)
         return q - e * q
       }
       return q
     }
     function i() {
-      var e = document.documentElement.clientHeight,
+      const e = document.documentElement.clientHeight,
         n = window.innerHeight || 0
       q = Math.max(e, n)
     }
     function o() {
       y = !1
-      var e = t()
+      const e = t()
       ;(A = A.filter(function (n) {
-        var t = n.getBoundingClientRect(),
+        const t = n.getBoundingClientRect(),
           i = t.top,
           o = i < e
         if (o && !n.__enter_view) {
@@ -2347,7 +2347,7 @@
       return t
     }
     function c(e) {
-      var n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : document
+      const n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : document
       return 'string' == typeof e
         ? f(n.querySelectorAll(e))
         : e instanceof NodeList
@@ -2363,7 +2363,7 @@
       window.addEventListener('resize', u, !0), window.addEventListener('scroll', r, !0), u()
     }
     function s() {
-      var e = l && m
+      const e = l && m
       e || console.error('must set selector and enter options'), n(), d(), a(), o()
     }
     var l = e.selector,
@@ -2411,7 +2411,7 @@
     return Math.round(a / b) * b
   }
   function g(a, b) {
-    var c = a.getBoundingClientRect(),
+    const c = a.getBoundingClientRect(),
       d = a.ownerDocument,
       e = d.documentElement,
       f = p(d)
@@ -2438,7 +2438,7 @@
   }
   function l(a) {
     a = String(a)
-    var b = a.split('.')
+    const b = a.split('.')
     return b.length > 1 ? b[1].length : 0
   }
   function m(a, b) {
@@ -2456,7 +2456,7 @@
     return a.classList ? a.classList.contains(b) : new RegExp('\\b' + b + '\\b').test(a.className)
   }
   function p(a) {
-    var b = void 0 !== window.pageXOffset,
+    const b = void 0 !== window.pageXOffset,
       c = 'CSS1Compat' === (a.compatMode || '')
     return {
       x: b ? window.pageXOffset : c ? a.documentElement.scrollLeft : a.body.scrollLeft,
@@ -2479,9 +2479,9 @@
           }
   }
   function r() {
-    var a = !1
+    let a = !1
     try {
-      var b = Object.defineProperty({}, 'passive', {
+      const b = Object.defineProperty({}, 'passive', {
         get: function () {
           a = !0
         },
@@ -2511,7 +2511,7 @@
   }
   function y(a, b, c) {
     if (c >= a.slice(-1)[0]) return 100
-    var d = x(c, a),
+    const d = x(c, a),
       e = a[d - 1],
       f = a[d],
       g = b[d - 1],
@@ -2520,7 +2520,7 @@
   }
   function z(a, b, c) {
     if (c >= 100) return a.slice(-1)[0]
-    var d = x(c, b),
+    const d = x(c, b),
       e = a[d - 1],
       f = a[d],
       g = b[d - 1]
@@ -2528,13 +2528,13 @@
   }
   function A(a, b, c, d) {
     if (100 === d) return d
-    var e = x(d, a),
+    const e = x(d, a),
       g = a[e - 1],
       h = a[e]
     return c ? (d - g > (h - g) / 2 ? h : g) : b[e - 1] ? a[e - 1] + f(d - a[e - 1], b[e - 1]) : d
   }
   function B(a, b, c) {
-    var d
+    let d
     if (('number' == typeof b && (b = [b]), !Array.isArray(b)))
       throw new Error('noUiSlider (' + $ + "): 'range' contains invalid value.")
     if (((d = 'min' === a ? 0 : 'max' === a ? 100 : parseFloat(a)), !h(d) || !h(b[0])))
@@ -2547,7 +2547,7 @@
   function C(a, b, c) {
     if (!b) return !0
     c.xSteps[a] = u([c.xVal[a], c.xVal[a + 1]], b) / t(c.xPct[a], c.xPct[a + 1])
-    var d = (c.xVal[a + 1] - c.xVal[a]) / c.xNumSteps[a],
+    const d = (c.xVal[a + 1] - c.xVal[a]) / c.xNumSteps[a],
       e = Math.ceil(Number(d.toFixed(3)) - 1),
       f = c.xVal[a] + c.xNumSteps[a] * e
     c.xHighestCompleteStep[a] = f
@@ -2559,7 +2559,7 @@
       (this.xNumSteps = [!1]),
       (this.xHighestCompleteStep = []),
       (this.snap = b)
-    var d,
+    let d,
       e = []
     for (d in a) a.hasOwnProperty(d) && e.push([a[d], d])
     for (
@@ -2613,7 +2613,7 @@
       throw new Error('noUiSlider (' + $ + "): 'animationDuration' option must be a number.")
   }
   function L(a, b) {
-    var c,
+    let c,
       d = [!1]
     if (('lower' === b ? (b = [!0, !1]) : 'upper' === b && (b = [!1, !0]), !0 === b || !1 === b)) {
       for (c = 1; c < a.handles; c++) d.push(b)
@@ -2694,7 +2694,7 @@
   function R(a, b) {
     if ('string' != typeof b)
       throw new Error('noUiSlider (' + $ + "): 'behaviour' must be a string containing options.")
-    var c = b.indexOf('tap') >= 0,
+    const c = b.indexOf('tap') >= 0,
       d = b.indexOf('drag') >= 0,
       e = b.indexOf('fixed') >= 0,
       f = b.indexOf('snap') >= 0,
@@ -2710,7 +2710,7 @@
     if (!1 !== b)
       if (!0 === b) {
         a.tooltips = []
-        for (var c = 0; c < a.handles; c++) a.tooltips.push(!0)
+        for (let c = 0; c < a.handles; c++) a.tooltips.push(!0)
       } else {
         if (((a.tooltips = k(b)), a.tooltips.length !== a.handles))
           throw new Error('noUiSlider (' + $ + '): must pass a formatter for all handles.')
@@ -2738,11 +2738,11 @@
       throw new Error('noUiSlider (' + $ + "): 'cssClasses' must be an object.")
     if ('string' == typeof a.cssPrefix) {
       a.cssClasses = {}
-      for (var c in b) b.hasOwnProperty(c) && (a.cssClasses[c] = a.cssPrefix + b[c])
+      for (const c in b) b.hasOwnProperty(c) && (a.cssClasses[c] = a.cssPrefix + b[c])
     } else a.cssClasses = b
   }
   function X(a) {
-    var b = {
+    const b = {
         margin: 0,
         limit: 0,
         padding: 0,
@@ -2822,11 +2822,11 @@
         d[f].t(b, c(a[f]) ? a[f] : e[f])
       }),
       (b.pips = a.pips)
-    var f = document.createElement('div'),
+    const f = document.createElement('div'),
       g = void 0 !== f.style.msTransform,
       h = void 0 !== f.style.transform
     b.transformRule = h ? 'transform' : g ? 'msTransform' : 'webkitTransform'
-    var i = [
+    const i = [
       ['left', 'top'],
       ['right', 'bottom'],
     ]
@@ -2834,11 +2834,11 @@
   }
   function Y(a, c, f) {
     function h(a, b) {
-      var c = ya.createElement('div')
+      const c = ya.createElement('div')
       return b && m(c, b), a.appendChild(c), c
     }
     function l(a, b) {
-      var d = h(a, c.cssClasses.origin),
+      const d = h(a, c.cssClasses.origin),
         e = h(d, c.cssClasses.handle)
       return (
         e.setAttribute('data-handle', b),
@@ -2855,9 +2855,9 @@
       return !!b && h(a, c.cssClasses.connect)
     }
     function u(a, b) {
-      var d = h(b, c.cssClasses.connects)
+      const d = h(b, c.cssClasses.connects)
       ;(ka = []), (la = []), la.push(t(d, a[0]))
-      for (var e = 0; e < c.handles; e++) ka.push(l(b, e)), (ta[e] = e), la.push(t(d, a[e + 1]))
+      for (let e = 0; e < c.handles; e++) ka.push(l(b, e)), (ta[e] = e), la.push(t(d, a[e + 1]))
     }
     function v(a) {
       m(a, c.cssClasses.target),
@@ -2869,10 +2869,10 @@
       return !!c.tooltips[b] && h(a.firstChild, c.cssClasses.tooltip)
     }
     function x() {
-      var a = ka.map(w)
+      const a = ka.map(w)
       Q('update', function (b, d, e) {
         if (a[d]) {
-          var f = b[d]
+          let f = b[d]
           !0 !== c.tooltips[d] && (f = c.tooltips[d].to(e[d])), (a[d].innerHTML = f)
         }
       })
@@ -2880,7 +2880,7 @@
     function y() {
       Q('update', function (a, b, d, e, f) {
         ta.forEach(function (a) {
-          var b = ka[a],
+          const b = ka[a],
             e = U(sa, a, 0, !0, !0, !0),
             g = U(sa, a, 100, !0, !0, !0),
             h = f[a],
@@ -2897,7 +2897,7 @@
       if ('count' === a) {
         if (b < 2)
           throw new Error('noUiSlider (' + $ + "): 'values' (>= 2) required for mode 'count'.")
-        var d = b - 1,
+        let d = b - 1,
           e = 100 / d
         for (b = []; d--; ) b[d] = d * e
         b.push(100), (a = 'positions')
@@ -2918,7 +2918,7 @@
       function d(a, b) {
         return (a + b).toFixed(7) / 1
       }
-      var f = {},
+      let f = {},
         g = va.xVal[0],
         h = va.xVal[va.xVal.length - 1],
         i = !1,
@@ -2933,7 +2933,7 @@
         c[0] !== g && (c.unshift(g), (i = !0)),
         c[c.length - 1] !== h && (c.push(h), (j = !0)),
         c.forEach(function (e, g) {
-          var h,
+          let h,
             l,
             m,
             n,
@@ -2964,14 +2964,14 @@
     }
     function B(a, b, d) {
       function e(a, b) {
-        var d = b === c.cssClasses.value,
+        const d = b === c.cssClasses.value,
           e = d ? k : l,
           f = d ? i : j
         return b + ' ' + e[c.ort] + ' ' + f[a]
       }
       function f(a, f) {
         f[1] = f[1] && b ? b(f[0], f[1]) : f[1]
-        var i = h(g, !1)
+        let i = h(g, !1)
         ;(i.className = e(f[1], c.cssClasses.marker)),
           (i.style[c.style] = a + '%'),
           f[1] &&
@@ -3000,7 +3000,7 @@
     }
     function D(a) {
       C()
-      var b = a.mode,
+      const b = a.mode,
         c = a.density || 1,
         d = a.filter || !1,
         e = a.values || !1,
@@ -3011,12 +3011,12 @@
       return (na = ra.appendChild(B(h, d, i)))
     }
     function E() {
-      var a = ja.getBoundingClientRect(),
+      const a = ja.getBoundingClientRect(),
         b = 'offset' + ['Width', 'Height'][c.ort]
       return 0 === c.ort ? a.width || ja[b] : a.height || ja[b]
     }
     function F(a, b, d, e) {
-      var f = function (f) {
+      const f = function (f) {
           return (
             !!(f = G(f, e.pageOffset, e.target || b)) &&
             !(ra.hasAttribute('disabled') && !e.doNotReject) &&
@@ -3035,21 +3035,21 @@
       )
     }
     function G(a, b, c) {
-      var d,
+      let d,
         e,
         f = 0 === a.type.indexOf('touch'),
         g = 0 === a.type.indexOf('mouse'),
         h = 0 === a.type.indexOf('pointer')
       if ((0 === a.type.indexOf('MSPointer') && (h = !0), f)) {
-        var i = function (a) {
+        const i = function (a) {
           return a.target === c || c.contains(a.target)
         }
         if ('touchstart' === a.type) {
-          var j = Array.prototype.filter.call(a.touches, i)
+          const j = Array.prototype.filter.call(a.touches, i)
           if (j.length > 1) return !1
           ;(d = j[0].pageX), (e = j[0].pageY)
         } else {
-          var k = Array.prototype.find.call(a.changedTouches, i)
+          const k = Array.prototype.find.call(a.changedTouches, i)
           if (!k) return !1
           ;(d = k.pageX), (e = k.pageY)
         }
@@ -3064,17 +3064,17 @@
       )
     }
     function H(a) {
-      var b = a - g(ja, c.ort),
+      let b = a - g(ja, c.ort),
         d = (100 * b) / E()
       return (d = j(d)), c.dir ? 100 - d : d
     }
     function I(a) {
-      var b = 100,
+      let b = 100,
         c = !1
       return (
         ka.forEach(function (d, e) {
           if (!d.hasAttribute('disabled')) {
-            var f = Math.abs(sa[e] - a)
+            const f = Math.abs(sa[e] - a)
             ;(f < b || (100 === f && 100 === b)) && ((c = e), (b = f))
           }
         }),
@@ -3091,7 +3091,7 @@
         0 !== b.buttonsProperty
       )
         return L(a, b)
-      var d = (c.dir ? -1 : 1) * (a.calcPoint - b.startCalcPoint)
+      const d = (c.dir ? -1 : 1) * (a.calcPoint - b.startCalcPoint)
       W(d > 0, (100 * d) / b.baseSize, b.locations, b.handleNumbers)
     }
     function L(a, b) {
@@ -3108,14 +3108,14 @@
         })
     }
     function M(a, b) {
-      var e
+      let e
       if (1 === b.handleNumbers.length) {
-        var f = ka[b.handleNumbers[0]]
+        const f = ka[b.handleNumbers[0]]
         if (f.hasAttribute('disabled')) return !1
         ;(e = f.children[0]), (ua += 1), m(e, c.cssClasses.active)
       }
       a.stopPropagation()
-      var g = [],
+      const g = [],
         h = F(oa.move, za, K, {
           target: a.target,
           handle: e,
@@ -3152,7 +3152,7 @@
     }
     function N(a) {
       a.stopPropagation()
-      var b = H(a.calcPoint),
+      const b = H(a.calcPoint),
         d = I(b)
       if (!1 === d) return !1
       c.events.snap || i(ra, c.cssClasses.tap, c.animationDuration),
@@ -3165,7 +3165,7 @@
         c.events.snap && M(a, { handleNumbers: [d] })
     }
     function O(a) {
-      var b = H(a.calcPoint),
+      const b = H(a.calcPoint),
         c = va.getStep(b),
         d = va.fromStepping(c)
       Object.keys(xa).forEach(function (a) {
@@ -3185,7 +3185,7 @@
         a.drag &&
           la.forEach(function (b, d) {
             if (!1 !== b && 0 !== d && d !== la.length - 1) {
-              var e = ka[d - 1],
+              const e = ka[d - 1],
                 f = ka[d],
                 g = [b]
               m(b, c.cssClasses.draggable),
@@ -3208,17 +3208,17 @@
           })
     }
     function R(a) {
-      var b = a && a.split('.')[0],
+      const b = a && a.split('.')[0],
         c = b && a.substring(b.length)
       Object.keys(xa).forEach(function (a) {
-        var d = a.split('.')[0],
+        const d = a.split('.')[0],
           e = a.substring(d.length)
         ;(b && b !== d) || (c && c !== e) || delete xa[a]
       })
     }
     function S(a, b, d) {
       Object.keys(xa).forEach(function (e) {
-        var f = e.split('.')[0]
+        const f = e.split('.')[0]
         a === f &&
           xa[e].forEach(function (a) {
             a.call(ma, wa.map(c.format.to), b, wa.slice(), d || !1, sa.slice())
@@ -3245,22 +3245,22 @@
       )
     }
     function V(a, b) {
-      var d = c.ort
+      const d = c.ort
       return (d ? b : a) + ', ' + (d ? a : b)
     }
     function W(a, b, c, d) {
-      var e = c.slice(),
+      let e = c.slice(),
         f = [!a, a],
         g = [a, !a]
       ;(d = d.slice()),
         a && d.reverse(),
         d.length > 1
           ? d.forEach(function (a, c) {
-              var d = U(e, a, e[a] + b, f[c], g[c], !1)
+              const d = U(e, a, e[a] + b, f[c], g[c], !1)
               !1 === d ? (b = 0) : ((b = d - e[a]), (e[a] = d))
             })
           : (f = g = [!0])
-      var h = !1
+      let h = !1
       d.forEach(function (a, d) {
         h = aa(a, c[a] + b, f[d], g[d]) || h
       }),
@@ -3274,12 +3274,12 @@
     }
     function Z(a, b) {
       ;(sa[a] = b), (wa[a] = va.fromStepping(b))
-      var d = 'translate(' + V(T(Y(b, 0) - Ba), '0') + ')'
+      const d = 'translate(' + V(T(Y(b, 0) - Ba), '0') + ')'
       ;(ka[a].style[c.transformRule] = d), ba(a), ba(a + 1)
     }
     function _() {
       ta.forEach(function (a) {
-        var b = sa[a] > 50 ? -1 : 1,
+        const b = sa[a] > 50 ? -1 : 1,
           c = 3 + (ka.length + b * a)
         ka[a].style.zIndex = c
       })
@@ -3289,10 +3289,10 @@
     }
     function ba(a) {
       if (la[a]) {
-        var b = 0,
+        let b = 0,
           d = 100
         0 !== a && (b = sa[a - 1]), a !== la.length - 1 && (d = sa[a])
-        var e = d - b,
+        const e = d - b,
           f = 'translate(' + V(T(Y(b, e)), '0') + ')',
           g = 'scale(' + V(e / 100, '1') + ')'
         la[a].style[c.transformRule] = f + ' ' + g
@@ -3307,7 +3307,7 @@
           !1 === a || isNaN(a) ? sa[b] : a)
     }
     function da(a, b) {
-      var d = k(a),
+      const d = k(a),
         e = void 0 === sa[0]
       ;(b = void 0 === b || !!b),
         c.animate && !e && i(ra, c.cssClasses.tap, c.animationDuration),
@@ -3326,17 +3326,17 @@
       da(c.start, a)
     }
     function fa() {
-      var a = wa.map(c.format.to)
+      const a = wa.map(c.format.to)
       return 1 === a.length ? a[0] : a
     }
     function ga() {
-      for (var a in c.cssClasses) c.cssClasses.hasOwnProperty(a) && n(ra, c.cssClasses[a])
+      for (const a in c.cssClasses) c.cssClasses.hasOwnProperty(a) && n(ra, c.cssClasses[a])
       for (; ra.firstChild; ) ra.removeChild(ra.firstChild)
       delete ra.noUiSlider
     }
     function ha() {
       return sa.map(function (a, b) {
-        var c = va.getNearbySteps(a),
+        let c = va.getNearbySteps(a),
           d = wa[b],
           e = c.thisStep.step,
           f = null
@@ -3346,7 +3346,7 @@
               ? c.thisStep.step
               : !1 !== c.stepBefore.step && d - c.stepBefore.highestStep),
           100 === a ? (e = null) : 0 === a && (f = null)
-        var g = va.countStepDecimals()
+        const g = va.countStepDecimals()
         return (
           null !== e && !1 !== e && (e = Number(e.toFixed(g))),
           null !== f && !1 !== f && (f = Number(f.toFixed(g))),
@@ -3355,12 +3355,12 @@
       })
     }
     function ia(a, b) {
-      var d = fa(),
+      const d = fa(),
         e = ['margin', 'limit', 'padding', 'range', 'animate', 'snap', 'step', 'format']
       e.forEach(function (b) {
         void 0 !== a[b] && (f[b] = a[b])
       })
-      var g = X(f)
+      const g = X(f)
       e.forEach(function (b) {
         void 0 !== a[b] && (c[b] = g[b])
       }),
@@ -3423,13 +3423,13 @@
     if (!a || !a.nodeName)
       throw new Error('noUiSlider (' + $ + '): create requires a single element, got: ' + a)
     if (a.noUiSlider) throw new Error('noUiSlider (' + $ + '): Slider was already initialized.')
-    var c = X(b, a),
+    const c = X(b, a),
       d = Y(a, c, b)
     return (a.noUiSlider = d), d
   }
   var $ = '11.1.0'
   ;(D.prototype.getMargin = function (a) {
-    var b = this.xNumSteps[0]
+    const b = this.xNumSteps[0]
     if (b && (a / b) % 1 != 0)
       throw new Error(
         'noUiSlider (' + $ + "): 'limit', 'margin' and 'padding' must be divisible by step.",
@@ -3446,7 +3446,7 @@
       return (a = A(this.xPct, this.xSteps, this.snap, a))
     }),
     (D.prototype.getNearbySteps = function (a) {
-      var b = x(a, this.xPct)
+      const b = x(a, this.xPct)
       return {
         stepBefore: {
           startValue: this.xVal[b - 2],
@@ -3466,7 +3466,7 @@
       }
     }),
     (D.prototype.countStepDecimals = function () {
-      var a = this.xNumSteps.map(l)
+      const a = this.xNumSteps.map(l)
       return Math.max.apply(null, a)
     }),
     (D.prototype.convert = function (a) {
@@ -3487,20 +3487,20 @@ $('.TopPanel').on('click', '.burger', function () {
 })
 
 $(function () {
-  var $propertiesForm = $('.mall-category-filter')
-  var $body = $('body')
+  const $propertiesForm = $('.mall-category-filter')
+  const $body = $('body')
   $body.on('click', '.js-mall-filter', function () {
-    var $input = $(this).find('input')
+    const $input = $(this).find('input')
     $(this).toggleClass('mall-filter__option--selected')
     $input.prop('checked', !$input.prop('checked'))
     $propertiesForm.trigger('submit')
   })
   $body.on('click', '.js-mall-clear-filter', function () {
-    var $parent = $(this).closest('.mall-property')
+    const $parent = $(this).closest('.mall-property')
     $parent.find(':input:not([type="checkbox"])').val('')
     $parent.find('input[type="checkbox"]').prop('checked', false)
     $parent.find('.mall-filter__option--selected').removeClass('mall-filter__option--selected')
-    var slider = $parent.find('.mall-slider-handles')[0]
+    const slider = $parent.find('.mall-slider-handles')[0]
     if (slider) {
       slider.noUiSlider.updateOptions({
         start: [slider.dataset.min, slider.dataset.max],
@@ -3520,7 +3520,7 @@ $(function () {
         }
         $('[data-filter]').hide()
         if (response.responseJSON.hasOwnProperty('filter')) {
-          for (var filter of Object.keys(response.responseJSON.filter)) {
+          for (const filter of Object.keys(response.responseJSON.filter)) {
             $('[data-filter="' + filter + '"]').show()
           }
         }
@@ -3539,7 +3539,7 @@ $(function () {
 
   //выбор категории
   $('.TitlePage_categoriyaBTN').click(function (e) {
-    var container = $(this).parent()
+    const container = $(this).parent()
     if (container.hasClass('open')) {
       container.removeClass('open')
     } else {
@@ -3595,9 +3595,9 @@ $(function () {
     $(this).addClass('active')
   })
 
-  var target = document.getElementById('videoBlock')
-  var modal = document.getElementById('modal')
-  var links = document.querySelectorAll('.video-link')
+  const target = document.getElementById('videoBlock')
+  const modal = document.getElementById('modal')
+  const links = document.querySelectorAll('.video-link')
   links.forEach(function (link) {
     //var url = link.getAttribute("data-video-url");
     link.addEventListener('click', function () {
@@ -3652,13 +3652,13 @@ $(function () {
 // });
 $(function () {
   $('input[type=file]').each(function () {
-    var $input = $(this),
+    const $input = $(this),
       $label = $input.next('.js-labelFile'),
       labelVal = $label.html()
 
     $input.hide()
     $input.on('change', function (element) {
-      var fileName = ''
+      let fileName = ''
       if (element.target.value) fileName = element.target.value.split('\\').pop()
       fileName
         ? $label.addClass('has-file').find('.js-fileName').html(fileName)
@@ -3810,10 +3810,10 @@ $('#YouWatchedWRP').slick({
 window.addEventListener('resize', resizeFunc)
 
 function resizeFunc() {
-  var w = $(window).width()
+  let w = $(window).width()
   w = w > 1312 ? 1312 : w
-  var h = (w / 1312) * 729
-  var h2 = (w / 1312) * 500
+  const h = (w / 1312) * 729
+  const h2 = (w / 1312) * 500
 
   $('.slick-ManePage').css({
     width: w + 'px',
@@ -3850,8 +3850,8 @@ function resizeFunc() {
   // });
 
   $('.slick-ManePage__item_1').on('mousemove', (e) => {
-    var sizeInterval = $(window).width() / 13
-    var index = Number((e.pageX / sizeInterval).toFixed(0))
+    const sizeInterval = $(window).width() / 13
+    const index = Number((e.pageX / sizeInterval).toFixed(0))
     document.getElementById('slide1_0').src = 'images/slides/slide_1/' + index + '.jpg'
   })
 }
@@ -3859,7 +3859,7 @@ function resizeFunc() {
 function readyFunc() {
   resizeFunc()
 
-  var vids = $('#video_background')
+  const vids = $('#video_background')
   $.each(vids, function () {
     this.controls = false
   })
@@ -3872,7 +3872,7 @@ $(document).ready(function () {
 //////////////////////////////////////////////////////////////////
 $(function () {
   // Filters
-  var body = $('body'),
+  const body = $('body'),
     fltBtns = $('.fltButtons'),
     fltFields = fltBtns.find('input.flt'),
     fltSliders = $('.mall-slider-handles'),
@@ -3888,7 +3888,7 @@ $(function () {
       !$(e.target).closest('.Filters__itemMenu').length &&
       !$(e.target).closest('.icoFltr').length
     ) {
-      let el = $(this)
+      const el = $(this)
       if (!el.hasClass('open')) {
         $('.fltButtons').removeClass('open')
       }
@@ -3902,7 +3902,7 @@ $(function () {
   })
   // Filters >>> sliders
   fltSliders.each(function () {
-    var el = this,
+    const el = this,
       idx = $(el).data('index')
     sliders[idx] = noUiSlider.create(el, {
       start: [el.dataset.start, el.dataset.end],
@@ -3919,14 +3919,14 @@ $(function () {
       },
     })
     sliders[idx].on('slide', function (values) {
-      let currBox = $(el).parents('.Filters__item'),
+      const currBox = $(el).parents('.Filters__item'),
         min = currBox.find('input.min'),
         max = currBox.find('input.max')
       min.val(parseInt(values[0]))
       max.val(parseInt(values[1]))
     })
     sliders[idx].on('change', function (values) {
-      let currBox = $(el).parents('.Filters__item'),
+      const currBox = $(el).parents('.Filters__item'),
         min = currBox.find('input.min'),
         max = currBox.find('input.max')
       $(el).parents('.Filters__item').find('input.min').trigger('change')
@@ -3935,7 +3935,7 @@ $(function () {
   // Filters >>> change
   fltFields.on('change', function () {
     fltBtns.each(function () {
-      var el = $(this),
+      let el = $(this),
         elems = el.find('input.flt'),
         filters = {
           checkbox: [],
@@ -3944,11 +3944,11 @@ $(function () {
         },
         check = false
       elems.each(function () {
-        let el = $(this),
+        const el = $(this),
           key = el.hasClass('number') ? 'number' : 'checkbox'
         switch (key) {
           case 'number':
-            let val = parseInt(el.val()),
+            const val = parseInt(el.val()),
               dataVal = parseInt(el.data('value'))
             if (val != dataVal) {
               filters.number.push({
@@ -3959,7 +3959,7 @@ $(function () {
             break
           case 'checkbox':
             if (el.prop('checked')) {
-              let name = el.attr('name')
+              const name = el.attr('name')
               if (
                 $.inArray(name, ['', '_color_transparent', '_color_ultraflint', '_color_brown'])
               ) {
@@ -3980,7 +3980,7 @@ $(function () {
             check = true
             el.addClass('active')
             if (key == 'number') {
-              let min = el.find('input.min'),
+              const min = el.find('input.min'),
                 max = el.find('input.max')
               el.find('.Filters__itemResalt').html(' (' + min.val() + '-' + max.val() + ')')
             }
@@ -3998,14 +3998,14 @@ $(function () {
   })
   // Filters >>> reset
   body.on('click', '.icoFltr, [data-action="clear_filters"]', function (e) {
-    let target = $(e.target)
+    const target = $(e.target)
     if (target.hasClass('icoFltr')) {
-      let box = target.parents('.fltButtons'),
+      const box = target.parents('.fltButtons'),
         fields = box.find('input')
       fields.each(function () {
-        let el = $(this)
+        const el = $(this)
         if (el.hasClass('number min')) {
-          let box = el.parents('.Filters__inputWRP'),
+          const box = el.parents('.Filters__inputWRP'),
             maxField = box.find('input.max'),
             slider = box.next('.mall-slider-handles').data('index')
           el.val(el.data('value'))
@@ -4018,12 +4018,12 @@ $(function () {
       box.removeClass('active').find('.Filters__itemResalt').html('')
     } else {
       fltBtns.each(function () {
-        let box = $(this),
+        const box = $(this),
           fields = box.find('input')
         fields.each(function () {
-          let el = $(this)
+          const el = $(this)
           if (el.hasClass('number min')) {
-            let box = el.parents('.Filters__inputWRP'),
+            const box = el.parents('.Filters__inputWRP'),
               maxField = box.find('input.max'),
               slider = box.next('.mall-slider-handles').data('index')
             el.val(el.data('value'))
@@ -4041,7 +4041,7 @@ $(function () {
   })
   // Sort
   $('body').on('click', '[data-action="toggle_sort"]', function () {
-    let el = $(this)
+    const el = $(this)
     if (!el.hasClass('active')) {
       $('[data-action="toggle_sort"]').removeClass('active')
       el.addClass('active')
@@ -4065,15 +4065,15 @@ function postFilters() {
   if (typeof pdoPage == 'undefined') {
     return
   } else {
-    let form = $('#filters'),
+    const form = $('#filters'),
       formData = form.serializeArray(),
       postData = [],
       sortData = $('[data-action="toggle_sort"].active')
     $.each(formData, function () {
-      let el = $('[name="' + this.name + '"]')
+      const el = $('[name="' + this.name + '"]')
       if (el.hasClass('number')) {
         if (el.hasClass('min')) {
-          let minVal = Number(el.val()),
+          const minVal = Number(el.val()),
             minDataVal = Number(el.data('value')),
             maxField = el.parents('.Filters__inputWRP').find('input.max'),
             maxVal = Number(maxField.val()),
@@ -4114,7 +4114,7 @@ function postFilters() {
           pushStateStr = response.get
         }
         if (typeof getUrlParams(window.location.href).page != 'undefined') {
-          let pageStr = 'page=' + getUrlParams(window.location.href).page
+          const pageStr = 'page=' + getUrlParams(window.location.href).page
           pushStateStr += pushStateStr ? '&' + pageStr : pageStr
         }
         pushStateStr = pushStateStr ? href + '?' + pushStateStr : href
@@ -4127,12 +4127,12 @@ function postFilters() {
 }
 
 function getUrlParams(url) {
-  var queryString = url ? url.split('?')[1] : window.location.search.slice(1),
+  let queryString = url ? url.split('?')[1] : window.location.search.slice(1),
     obj = {}
   if (queryString) {
     queryString = queryString.split('#')[0]
-    var arr = queryString.split('&')
-    for (var i = 0; i < arr.length; i++) {
+    const arr = queryString.split('&')
+    for (let i = 0; i < arr.length; i++) {
       var a = arr[i].split('='),
         paramNum = undefined,
         paramName = a[0].replace(/\[\d*\]/, function (v) {

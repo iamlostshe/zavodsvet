@@ -35,8 +35,8 @@
       return false
     }
     path = path.split('.')
-    var obj = miniShop2.Callbacks
-    for (var i = 0; i < path.length; i++) {
+    let obj = miniShop2.Callbacks
+    for (let i = 0; i < path.length; i++) {
       if (obj[path[i]] == undefined) {
         return false
       }
@@ -54,8 +54,8 @@
   }
   miniShop2.Callbacks.remove = function (path, name) {
     path = path.split('.')
-    var obj = miniShop2.Callbacks
-    for (var i = 0; i < path.length; i++) {
+    let obj = miniShop2.Callbacks
+    for (let i = 0; i < path.length; i++) {
       if (obj[path[i]] == undefined) {
         return false
       }
@@ -97,11 +97,11 @@
       })
       .on('submit', miniShop2.form, function (e) {
         e.preventDefault()
-        var $form = $(this)
-        var action = $form.find(miniShop2.action).val()
+        const $form = $(this)
+        const action = $form.find(miniShop2.action).val()
 
         if (action) {
-          var formData = $form.serializeArray()
+          const formData = $form.serializeArray()
           formData.push({
             name: miniShop2.actionName,
             value: action,
@@ -120,7 +120,7 @@
     miniShop2.Gallery.initialize()
   }
   miniShop2.controller = function () {
-    var self = this
+    const self = this
     switch (self.sendData.action) {
       case 'cart/add':
         miniShop2.Cart.add()
@@ -145,13 +145,13 @@
     }
   }
   miniShop2.send = function (data, callbacks, userCallbacks) {
-    var runCallback = function (callback, bind) {
+    const runCallback = function (callback, bind) {
       if (typeof callback == 'function') {
         return callback.apply(bind, Array.prototype.slice.call(arguments, 2))
       } else if (typeof callback == 'object') {
-        for (var i in callback) {
+        for (const i in callback) {
           if (callback.hasOwnProperty(i)) {
-            var response = callback[i].apply(bind, Array.prototype.slice.call(arguments, 2))
+            const response = callback[i].apply(bind, Array.prototype.slice.call(arguments, 2))
             if (response === false) {
               return false
             }
@@ -173,15 +173,15 @@
     }
 
     // set action url
-    var formActionUrl = miniShop2.sendData.$form ? miniShop2.sendData.$form.attr('action') : false
-    var url = formActionUrl
+    const formActionUrl = miniShop2.sendData.$form ? miniShop2.sendData.$form.attr('action') : false
+    const url = formActionUrl
       ? formActionUrl
       : miniShop2Config.actionUrl
         ? miniShop2Config.actionUrl
         : document.location.href
     // set request method
-    var formMethod = miniShop2.sendData.$form ? miniShop2.sendData.$form.attr('method') : false
-    var method = formMethod ? formMethod : 'post'
+    const formMethod = miniShop2.sendData.$form ? miniShop2.sendData.$form.attr('method') : false
+    const method = formMethod ? formMethod : 'post'
 
     // callback before
     if (runCallback(callbacks.before) === false || runCallback(userCallbacks.before) === false) {
@@ -254,7 +254,7 @@
       )
     },
     add: function () {
-      var callbacks = miniShop2.Cart.callbacks
+      const callbacks = miniShop2.Cart.callbacks
       callbacks.add.response.success = function (response) {
         this.Cart.status(response.data)
       }
@@ -265,7 +265,7 @@
       )
     },
     remove: function () {
-      var callbacks = miniShop2.Cart.callbacks
+      const callbacks = miniShop2.Cart.callbacks
       callbacks.remove.response.success = function (response) {
         this.Cart.remove_position(miniShop2.Utils.getValueFromSerializedArray('key'))
         this.Cart.status(response.data)
@@ -277,7 +277,7 @@
       )
     },
     change: function () {
-      var callbacks = miniShop2.Cart.callbacks
+      const callbacks = miniShop2.Cart.callbacks
       callbacks.change.response.success = function (response) {
         if (typeof response.data.key == 'undefined') {
           this.Cart.remove_position(miniShop2.Utils.getValueFromSerializedArray('key'))
@@ -297,7 +297,7 @@
         location.reload()
       } else {
         //var $cart = $(miniShop2.Cart.cart);
-        var $miniCart = $(miniShop2.Cart.miniCart)
+        const $miniCart = $(miniShop2.Cart.miniCart)
         if (
           status['total_count'] > 0 &&
           !$miniCart.hasClass(miniShop2.Cart.miniCartNotEmptyClass)
@@ -313,7 +313,7 @@
       }
     },
     clean: function () {
-      var callbacks = miniShop2.Cart.callbacks
+      const callbacks = miniShop2.Cart.callbacks
       callbacks.clean.response.success = function (response) {
         this.Cart.status(response.data)
       }
@@ -399,13 +399,13 @@
             'change',
             miniShop2.Order.order + ' input,' + miniShop2.Order.order + ' textarea',
             function () {
-              var $this = $(this)
-              var key = $this.attr('name')
-              var value = $this.val()
+              const $this = $(this)
+              const key = $this.attr('name')
+              const value = $this.val()
               miniShop2.Order.add(key, value)
             },
           )
-        var $deliveryInputChecked = $(
+        const $deliveryInputChecked = $(
           miniShop2.Order.deliveryInput + ':checked',
           miniShop2.Order.order,
         )
@@ -413,14 +413,14 @@
       }
     },
     updatePayments: function (payments) {
-      var $paymentInputs = $(miniShop2.Order.paymentInput, miniShop2.Order.order)
+      const $paymentInputs = $(miniShop2.Order.paymentInput, miniShop2.Order.order)
       $paymentInputs
         .attr('disabled', true)
         .prop('disabled', true)
         .closest(miniShop2.Order.inputParent)
         .hide()
       if (payments.length > 0) {
-        for (var i in payments) {
+        for (const i in payments) {
           if (payments.hasOwnProperty(i)) {
             $paymentInputs
               .filter(miniShop2.Order.paymentInputUniquePrefix + payments[i])
@@ -436,11 +436,11 @@
       }
     },
     add: function (key, value) {
-      var callbacks = miniShop2.Order.callbacks
-      var old_value = value
+      const callbacks = miniShop2.Order.callbacks
+      const old_value = value
       callbacks.add.response.success = function (response) {
         ;(function (key, value, old_value) {
-          var $field = $('[name="' + key + '"]', miniShop2.Order.order)
+          let $field = $('[name="' + key + '"]', miniShop2.Order.order)
           switch (key) {
             case 'delivery':
               $field = $(miniShop2.Order.deliveryInputUniquePrefix + response.data[key])
@@ -471,7 +471,7 @@
       }
       callbacks.add.response.error = function () {
         ;(function (key) {
-          var $field = $('[name="' + key + '"]', miniShop2.Order.order)
+          const $field = $('[name="' + key + '"]', miniShop2.Order.order)
           if ($field.attr('type') == 'checkbox' || $field.attr('type') == 'radio') {
             $field.closest(miniShop2.Order.inputParent).addClass('error')
           } else {
@@ -480,7 +480,7 @@
         })(key)
       }
 
-      var data = {
+      const data = {
         key: key,
         value: value,
       }
@@ -488,23 +488,23 @@
       miniShop2.send(data, miniShop2.Order.callbacks.add, miniShop2.Callbacks.Order.add)
     },
     getcost: function () {
-      var callbacks = miniShop2.Order.callbacks
+      const callbacks = miniShop2.Order.callbacks
       callbacks.getcost.response.success = function (response) {
         $(miniShop2.Order.orderCost, miniShop2.Order.order).text(
           miniShop2.Utils.formatPrice(response.data['cost']),
         )
       }
-      var data = {}
+      const data = {}
       data[miniShop2.actionName] = 'order/getcost'
       miniShop2.send(data, miniShop2.Order.callbacks.getcost, miniShop2.Callbacks.Order.getcost)
     },
     clean: function () {
-      var callbacks = miniShop2.Order.callbacks
+      const callbacks = miniShop2.Order.callbacks
       callbacks.clean.response.success = function () {
         location.reload()
       }
 
-      var data = {}
+      const data = {}
       data[miniShop2.actionName] = 'order/clean'
       miniShop2.send(data, miniShop2.Order.callbacks.clean, miniShop2.Callbacks.Order.clean)
     },
@@ -522,7 +522,7 @@
         return false
       }
 
-      var callbacks = miniShop2.Order.callbacks
+      const callbacks = miniShop2.Order.callbacks
       callbacks.submit.before = function () {
         $(':button, a', miniShop2.Order.order).attr('disabled', true).prop('disabled', true)
       }
@@ -551,12 +551,12 @@
           .removeClass('error')
           .closest(miniShop2.Order.inputParent)
           .removeClass('error')
-        for (var i in response.data) {
+        for (const i in response.data) {
           if (response.data.hasOwnProperty(i)) {
-            var key = response.data[i]
+            const key = response.data[i]
             //var $field = $('[name="' + response.data[i] + '"]', miniShop2.Order.order);
             //$field.addClass('error').closest(miniShop2.Order.inputParent).addClass('error');
-            var $field = $('[name="' + key + '"]', miniShop2.Order.order)
+            const $field = $('[name="' + key + '"]', miniShop2.Order.order)
             if ($field.attr('type') == 'checkbox' || $field.attr('type') == 'radio') {
               $field.closest(miniShop2.Order.inputParent).addClass('error')
             } else {
@@ -572,14 +572,14 @@
       )
     },
     getrequired: function (value) {
-      var callbacks = miniShop2.Order.callbacks
+      const callbacks = miniShop2.Order.callbacks
       callbacks.getrequired.response.success = function (response) {
         $('[name]', miniShop2.Order.order)
           .removeClass('required')
           .closest(miniShop2.Order.inputParent)
           .removeClass('required')
-        var requires = response.data['requires']
-        for (var i = 0, length = requires.length; i < length; i++) {
+        const requires = response.data['requires']
+        for (let i = 0, length = requires.length; i < length; i++) {
           $('[name=' + requires[i] + ']', miniShop2.Order.order)
             .addClass('required')
             .closest(miniShop2.Order.inputParent)
@@ -593,7 +593,7 @@
           .removeClass('required')
       }
 
-      var data = {
+      const data = {
         id: value,
       }
       data[miniShop2.actionName] = 'order/getrequired'
@@ -663,7 +663,7 @@
       )
     },
     formatPrice: function (price) {
-      var pf = miniShop2Config.price_format
+      const pf = miniShop2Config.price_format
       price = this.number_format(price, pf[0], pf[1], pf[2])
 
       if (miniShop2Config.price_format_no_zeros && pf[0] > 0) {
@@ -674,7 +674,7 @@
       return price
     },
     formatWeight: function (weight) {
-      var wf = miniShop2Config.weight_format
+      const wf = miniShop2Config.weight_format
       weight = this.number_format(weight, wf[0], wf[1], wf[2])
 
       if (miniShop2Config.weight_format_no_zeros && wf[0] > 0) {
@@ -689,7 +689,7 @@
       // original by: Jonas Raoni Soares Silva (http://www.jsfromhell.com)
       // improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
       // bugfix by: Michael White (http://crestidg.com)
-      var i, j, kw, kd, km
+      let i, j, kw, kd, km
 
       // input sanitation & defaults
       if (isNaN((decimals = Math.abs(decimals)))) {
@@ -726,7 +726,7 @@
       if (!$.isArray(arr)) {
         arr = miniShop2.sendData.formData
       }
-      for (var i = 0, length = arr.length; i < length; i++) {
+      for (let i = 0, length = arr.length; i < length; i++) {
         if (arr[i].name == name) {
           return arr[i].value
         }
@@ -737,7 +737,7 @@
 
   $(document).ready(function ($) {
     miniShop2.initialize()
-    var html = $('html')
+    const html = $('html')
     html.removeClass('no-js')
     if (!html.hasClass('js')) {
       html.addClass('js')

@@ -11,7 +11,7 @@
     : t(e)
 })('undefined' != typeof window ? window : this, function (C, e) {
   'use strict'
-  var t = [],
+  const t = [],
     r = Object.getPrototypeOf,
     s = t.slice,
     g = t.flat
@@ -43,7 +43,7 @@
       noModule: !0,
     }
   function b(e, t, n) {
-    var r,
+    let r,
       i,
       o = (n = n || E).createElement('script')
     if (((o.text = e), t))
@@ -57,12 +57,12 @@
         ? n[o.call(e)] || 'object'
         : typeof e
   }
-  var f = '3.5.1',
+  const f = '3.5.1',
     S = function (e, t) {
       return new S.fn.init(e, t)
     }
   function p(e) {
-    var t = !!e && 'length' in e && e.length,
+    const t = !!e && 'length' in e && e.length,
       n = w(e)
     return (
       !m(e) && !x(e) && ('array' === n || 0 === t || ('number' == typeof t && 0 < t && t - 1 in e))
@@ -80,7 +80,7 @@
         return null == e ? s.call(this) : e < 0 ? this[e + this.length] : this[e]
       },
       pushStack: function (e) {
-        var t = S.merge(this.constructor(), e)
+        const t = S.merge(this.constructor(), e)
         return (t.prevObject = this), t
       },
       each: function (e) {
@@ -117,7 +117,7 @@
         )
       },
       eq: function (e) {
-        var t = this.length,
+        const t = this.length,
           n = +e + (e < 0 ? t : 0)
         return this.pushStack(0 <= n && n < t ? [this[n]] : [])
       },
@@ -130,7 +130,7 @@
     }),
     (S.extend = S.fn.extend =
       function () {
-        var e,
+        let e,
           t,
           n,
           r,
@@ -168,7 +168,7 @@
       },
       noop: function () {},
       isPlainObject: function (e) {
-        var t, n
+        let t, n
         return (
           !(!e || '[object Object]' !== o.call(e)) &&
           (!(t = r(e)) ||
@@ -177,7 +177,7 @@
         )
       },
       isEmptyObject: function (e) {
-        var t
+        let t
         for (t in e) return !1
         return !0
       },
@@ -191,7 +191,7 @@
         )
       },
       each: function (e, t) {
-        var n,
+        let n,
           r = 0
         if (p(e)) {
           for (n = e.length; r < n; r++) if (!1 === t.call(e[r], r, e[r])) break
@@ -199,7 +199,7 @@
         return e
       },
       makeArray: function (e, t) {
-        var n = t || []
+        const n = t || []
         return (
           null != e && (p(Object(e)) ? S.merge(n, 'string' == typeof e ? [e] : e) : u.call(n, e)), n
         )
@@ -216,7 +216,7 @@
         return r
       },
       map: function (e, t, n) {
-        var r,
+        let r,
           i,
           o = 0,
           a = []
@@ -234,8 +234,8 @@
         n['[object ' + t + ']'] = t.toLowerCase()
       },
     )
-  var d = (function (n) {
-    var e,
+  const d = (function (n) {
+    let e,
       d,
       b,
       o,
@@ -272,7 +272,7 @@
       H = t.push,
       O = t.slice,
       P = function (e, t) {
-        for (var n = 0, r = e.length; n < r; n++) if (e[n] === t) return n
+        for (let n = 0, r = e.length; n < r; n++) if (e[n] === t) return n
         return -1
       },
       R =
@@ -344,7 +344,7 @@
       ee = /[+~]/,
       te = new RegExp('\\\\[\\da-fA-F]{1,6}' + M + '?|\\\\([^\\r\\n\\f])', 'g'),
       ne = function (e, t) {
-        var n = '0x' + e.slice(1) - 65536
+        const n = '0x' + e.slice(1) - 65536
         return (
           t ||
           (n < 0
@@ -381,7 +381,7 @@
               L.apply(e, O.call(t))
             }
           : function (e, t) {
-              var n = e.length,
+              let n = e.length,
                 r = 0
               while ((e[n++] = t[r++]));
               e.length = n - 1
@@ -389,7 +389,7 @@
       }
     }
     function se(t, e, n, r) {
-      var i,
+      let i,
         o,
         a,
         s,
@@ -438,7 +438,7 @@
       return g(t.replace($, '$1'), e, n, r)
     }
     function ue() {
-      var r = []
+      const r = []
       return function e(t, n) {
         return r.push(t + ' ') > b.cacheLength && delete e[r.shift()], (e[t + ' '] = n)
       }
@@ -447,7 +447,7 @@
       return (e[S] = !0), e
     }
     function ce(e) {
-      var t = C.createElement('fieldset')
+      let t = C.createElement('fieldset')
       try {
         return !!e(t)
       } catch (e) {
@@ -457,12 +457,12 @@
       }
     }
     function fe(e, t) {
-      var n = e.split('|'),
+      let n = e.split('|'),
         r = n.length
       while (r--) b.attrHandle[n[r]] = t
     }
     function pe(e, t) {
-      var n = t && e,
+      let n = t && e,
         r = n && 1 === e.nodeType && 1 === t.nodeType && e.sourceIndex - t.sourceIndex
       if (r) return r
       if (n) while ((n = n.nextSibling)) if (n === t) return -1
@@ -475,7 +475,7 @@
     }
     function he(n) {
       return function (e) {
-        var t = e.nodeName.toLowerCase()
+        const t = e.nodeName.toLowerCase()
         return ('input' === t || 'button' === t) && e.type === n
       }
     }
@@ -497,7 +497,7 @@
         return (
           (o = +o),
           le(function (e, t) {
-            var n,
+            let n,
               r = a([], e.length, o),
               i = r.length
             while (i--) e[(n = r[i])] && (e[n] = !(t[n] = e[n]))
@@ -511,13 +511,13 @@
     for (e in ((d = se.support = {}),
     (i = se.isXML =
       function (e) {
-        var t = e.namespaceURI,
+        const t = e.namespaceURI,
           n = (e.ownerDocument || e).documentElement
         return !Y.test(t || (n && n.nodeName) || 'HTML')
       }),
     (T = se.setDocument =
       function (e) {
-        var t,
+        let t,
           n,
           r = e ? e.ownerDocument || e : p
         return (
@@ -553,27 +553,27 @@
             })),
             d.getById
               ? ((b.filter.ID = function (e) {
-                  var t = e.replace(te, ne)
+                  const t = e.replace(te, ne)
                   return function (e) {
                     return e.getAttribute('id') === t
                   }
                 }),
                 (b.find.ID = function (e, t) {
                   if ('undefined' != typeof t.getElementById && E) {
-                    var n = t.getElementById(e)
+                    const n = t.getElementById(e)
                     return n ? [n] : []
                   }
                 }))
               : ((b.filter.ID = function (e) {
-                  var n = e.replace(te, ne)
+                  const n = e.replace(te, ne)
                   return function (e) {
-                    var t = 'undefined' != typeof e.getAttributeNode && e.getAttributeNode('id')
+                    const t = 'undefined' != typeof e.getAttributeNode && e.getAttributeNode('id')
                     return t && t.value === n
                   }
                 }),
                 (b.find.ID = function (e, t) {
                   if ('undefined' != typeof t.getElementById && E) {
-                    var n,
+                    let n,
                       r,
                       i,
                       o = t.getElementById(e)
@@ -595,7 +595,7 @@
                       : void 0
                 }
               : function (e, t) {
-                  var n,
+                  let n,
                     r = [],
                     i = 0,
                     o = t.getElementsByTagName(e)
@@ -615,7 +615,7 @@
             (v = []),
             (d.qsa = K.test(C.querySelectorAll)) &&
               (ce(function (e) {
-                var t
+                let t
                 ;(a.appendChild(e).innerHTML =
                   "<a id='" +
                   S +
@@ -639,7 +639,7 @@
               ce(function (e) {
                 e.innerHTML =
                   "<a href='' disabled='disabled'></a><select disabled='disabled'><option/></select>"
-                var t = C.createElement('input')
+                const t = C.createElement('input')
                 t.setAttribute('type', 'hidden'),
                   e.appendChild(t).setAttribute('name', 'D'),
                   e.querySelectorAll('[name=d]').length && v.push('name' + M + '*[*^$|!~]?='),
@@ -666,7 +666,7 @@
             (y =
               t || K.test(a.contains)
                 ? function (e, t) {
-                    var n = 9 === e.nodeType ? e.documentElement : e,
+                    const n = 9 === e.nodeType ? e.documentElement : e,
                       r = t && t.parentNode
                     return (
                       e === r ||
@@ -686,7 +686,7 @@
             (D = t
               ? function (e, t) {
                   if (e === t) return (l = !0), 0
-                  var n = !e.compareDocumentPosition - !t.compareDocumentPosition
+                  let n = !e.compareDocumentPosition - !t.compareDocumentPosition
                   return (
                     n ||
                     (1 &
@@ -709,7 +709,7 @@
                 }
               : function (e, t) {
                   if (e === t) return (l = !0), 0
-                  var n,
+                  let n,
                     r = 0,
                     i = e.parentNode,
                     o = t.parentNode,
@@ -734,7 +734,7 @@
     (se.matchesSelector = function (e, t) {
       if ((T(e), d.matchesSelector && E && !N[t + ' '] && (!s || !s.test(t)) && (!v || !v.test(t))))
         try {
-          var n = c.call(e, t)
+          const n = c.call(e, t)
           if (n || d.disconnectedMatch || (e.document && 11 !== e.document.nodeType)) return n
         } catch (e) {
           N(t, !0)
@@ -746,7 +746,7 @@
     }),
     (se.attr = function (e, t) {
       ;(e.ownerDocument || e) != C && T(e)
-      var n = b.attrHandle[t.toLowerCase()],
+      let n = b.attrHandle[t.toLowerCase()],
         r = n && j.call(b.attrHandle, t.toLowerCase()) ? n(e, t, !E) : void 0
       return void 0 !== r
         ? r
@@ -763,7 +763,7 @@
       throw new Error('Syntax error, unrecognized expression: ' + e)
     }),
     (se.uniqueSort = function (e) {
-      var t,
+      let t,
         n = [],
         r = 0,
         i = 0
@@ -775,7 +775,7 @@
     }),
     (o = se.getText =
       function (e) {
-        var t,
+        let t,
           n = '',
           r = 0,
           i = e.nodeType
@@ -831,7 +831,7 @@
             )
           },
           PSEUDO: function (e) {
-            var t,
+            let t,
               n = !e[6] && e[2]
             return G.CHILD.test(e[0])
               ? null
@@ -847,7 +847,7 @@
         },
         filter: {
           TAG: function (e) {
-            var t = e.replace(te, ne).toLowerCase()
+            const t = e.replace(te, ne).toLowerCase()
             return '*' === e
               ? function () {
                   return !0
@@ -857,7 +857,7 @@
                 }
           },
           CLASS: function (e) {
-            var t = m[e + ' ']
+            let t = m[e + ' ']
             return (
               t ||
               ((t = new RegExp('(^|' + M + ')' + e + '(' + M + '|$)')) &&
@@ -872,7 +872,7 @@
           },
           ATTR: function (n, r, i) {
             return function (e) {
-              var t = se.attr(e, n)
+              let t = se.attr(e, n)
               return null == t
                 ? '!=' === r
                 : !r ||
@@ -893,7 +893,7 @@
             }
           },
           CHILD: function (h, e, t, g, v) {
-            var y = 'nth' !== h.slice(0, 3),
+            const y = 'nth' !== h.slice(0, 3),
               m = 'last' !== h.slice(-4),
               x = 'of-type' === e
             return 1 === g && 0 === v
@@ -901,7 +901,7 @@
                   return !!e.parentNode
                 }
               : function (e, t, n) {
-                  var r,
+                  let r,
                     i,
                     o,
                     a,
@@ -962,7 +962,7 @@
                 }
           },
           PSEUDO: function (e, o) {
-            var t,
+            let t,
               a =
                 b.pseudos[e] ||
                 b.setFilters[e.toLowerCase()] ||
@@ -973,7 +973,7 @@
                 ? ((t = [e, e, '', o]),
                   b.setFilters.hasOwnProperty(e.toLowerCase())
                     ? le(function (e, t) {
-                        var n,
+                        let n,
                           r = a(e, o),
                           i = r.length
                         while (i--) e[(n = P(e, r[i]))] = !(t[n] = r[i])
@@ -986,12 +986,12 @@
         },
         pseudos: {
           not: le(function (e) {
-            var r = [],
+            const r = [],
               i = [],
               s = f(e.replace($, '$1'))
             return s[S]
               ? le(function (e, t, n, r) {
-                  var i,
+                  let i,
                     o = s(e, null, r, []),
                     a = e.length
                   while (a--) (i = o[a]) && (e[a] = !(t[a] = i))
@@ -1018,7 +1018,7 @@
               V.test(n || '') || se.error('unsupported lang: ' + n),
               (n = n.replace(te, ne).toLowerCase()),
               function (e) {
-                var t
+                let t
                 do {
                   if ((t = E ? e.lang : e.getAttribute('xml:lang') || e.getAttribute('lang')))
                     return (t = t.toLowerCase()) === n || 0 === t.indexOf(n + '-')
@@ -1028,7 +1028,7 @@
             )
           }),
           target: function (e) {
-            var t = n.location && n.location.hash
+            const t = n.location && n.location.hash
             return t && t.slice(1) === e.id
           },
           root: function (e) {
@@ -1044,7 +1044,7 @@
           enabled: ge(!1),
           disabled: ge(!0),
           checked: function (e) {
-            var t = e.nodeName.toLowerCase()
+            const t = e.nodeName.toLowerCase()
             return ('input' === t && !!e.checked) || ('option' === t && !!e.selected)
           },
           selected: function (e) {
@@ -1064,11 +1064,11 @@
             return Q.test(e.nodeName)
           },
           button: function (e) {
-            var t = e.nodeName.toLowerCase()
+            const t = e.nodeName.toLowerCase()
             return ('input' === t && 'button' === e.type) || 'button' === t
           },
           text: function (e) {
-            var t
+            let t
             return (
               'input' === e.nodeName.toLowerCase() &&
               'text' === e.type &&
@@ -1085,19 +1085,19 @@
             return [n < 0 ? n + t : n]
           }),
           even: ve(function (e, t) {
-            for (var n = 0; n < t; n += 2) e.push(n)
+            for (let n = 0; n < t; n += 2) e.push(n)
             return e
           }),
           odd: ve(function (e, t) {
-            for (var n = 1; n < t; n += 2) e.push(n)
+            for (let n = 1; n < t; n += 2) e.push(n)
             return e
           }),
           lt: ve(function (e, t, n) {
-            for (var r = n < 0 ? n + t : t < n ? t : n; 0 <= --r; ) e.push(r)
+            for (let r = n < 0 ? n + t : t < n ? t : n; 0 <= --r; ) e.push(r)
             return e
           }),
           gt: ve(function (e, t, n) {
-            for (var r = n < 0 ? n + t : n; ++r < t; ) e.push(r)
+            for (let r = n < 0 ? n + t : n; ++r < t; ) e.push(r)
             return e
           }),
         },
@@ -1121,7 +1121,7 @@
       return r
     }
     function be(s, e, t) {
-      var u = e.dir,
+      const u = e.dir,
         l = e.next,
         c = l || u,
         f = t && 'parentNode' === c,
@@ -1132,7 +1132,7 @@
             return !1
           }
         : function (e, t, n) {
-            var r,
+            let r,
               i,
               o,
               a = [k, p]
@@ -1156,7 +1156,7 @@
     function we(i) {
       return 1 < i.length
         ? function (e, t, n) {
-            var r = i.length
+            let r = i.length
             while (r--) if (!i[r](e, t, n)) return !1
             return !0
           }
@@ -1172,7 +1172,7 @@
         v && !v[S] && (v = Ce(v)),
         y && !y[S] && (y = Ce(y, e)),
         le(function (e, t, n, r) {
-          var i,
+          let i,
             o,
             a,
             s = [],
@@ -1181,7 +1181,7 @@
             c =
               e ||
               (function (e, t, n) {
-                for (var r = 0, i = t.length; r < i; r++) se(e, t[r], n)
+                for (let r = 0, i = t.length; r < i; r++) se(e, t[r], n)
                 return n
               })(h || '*', n.nodeType ? [n] : n, []),
             f = !d || (!e && h) ? c : Te(c, s, d, n, r),
@@ -1229,7 +1229,7 @@
           ),
           c = [
             function (e, t, n) {
-              var r = (!o && (n || t !== w)) || ((i = t).nodeType ? u(e, t, n) : l(e, t, n))
+              const r = (!o && (n || t !== w)) || ((i = t).nodeType ? u(e, t, n) : l(e, t, n))
               return (i = null), r
             },
           ];
@@ -1263,7 +1263,7 @@
       (b.setFilters = new me()),
       (h = se.tokenize =
         function (e, t) {
-          var n,
+          let n,
             r,
             i,
             o,
@@ -1300,7 +1300,7 @@
         }),
       (f = se.compile =
         function (e, t) {
-          var n,
+          let n,
             v,
             y,
             m,
@@ -1318,7 +1318,7 @@
               (m = 0 < (y = i).length),
               (x = 0 < v.length),
               (r = function (e, t, n, r, i) {
-                var o,
+                let o,
                   a,
                   s,
                   u = 0,
@@ -1359,7 +1359,7 @@
         }),
       (g = se.select =
         function (e, t, n, r) {
-          var i,
+          let i,
             o,
             a,
             s,
@@ -1418,7 +1418,7 @@
         return null == e.getAttribute('disabled')
       }) ||
         fe(R, function (e, t, n) {
-          var r
+          let r
           if (!n)
             return !0 === e[t]
               ? t.toLowerCase()
@@ -1453,8 +1453,8 @@
     (S.isXMLDoc = d.isXML),
     (S.contains = d.contains),
     (S.escapeSelector = d.escape)
-  var h = function (e, t, n) {
-      var r = [],
+  const h = function (e, t, n) {
+      const r = [],
         i = void 0 !== n
       while ((e = e[t]) && 9 !== e.nodeType)
         if (1 === e.nodeType) {
@@ -1471,7 +1471,7 @@
   function A(e, t) {
     return e.nodeName && e.nodeName.toLowerCase() === t.toLowerCase()
   }
-  var N = /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i
+  const N = /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i
   function D(e, n, r) {
     return m(n)
       ? S.grep(e, function (e, t) {
@@ -1488,7 +1488,7 @@
           : S.filter(n, e, r)
   }
   ;(S.filter = function (e, t, n) {
-    var r = t[0]
+    const r = t[0]
     return (
       n && (e = ':not(' + e + ')'),
       1 === t.length && 1 === r.nodeType
@@ -1505,7 +1505,7 @@
   }),
     S.fn.extend({
       find: function (e) {
-        var t,
+        let t,
           n,
           r = this.length,
           i = this
@@ -1528,10 +1528,10 @@
         return !!D(this, 'string' == typeof e && k.test(e) ? S(e) : e || [], !1).length
       },
     })
-  var j,
+  let j,
     q = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/
   ;((S.fn.init = function (e, t, n) {
-    var r, i
+    let r, i
     if (!e) return this
     if (((n = n || j), 'string' == typeof e)) {
       if (
@@ -1560,7 +1560,7 @@
         : S.makeArray(e, this)
   }).prototype = S.fn),
     (j = S(E))
-  var L = /^(?:parents|prev(?:Until|All))/,
+  const L = /^(?:parents|prev(?:Until|All))/,
     H = {
       children: !0,
       contents: !0,
@@ -1573,14 +1573,14 @@
   }
   S.fn.extend({
     has: function (e) {
-      var t = S(e, this),
+      const t = S(e, this),
         n = t.length
       return this.filter(function () {
-        for (var e = 0; e < n; e++) if (S.contains(this, t[e])) return !0
+        for (let e = 0; e < n; e++) if (S.contains(this, t[e])) return !0
       })
     },
     closest: function (e, t) {
-      var n,
+      let n,
         r = 0,
         i = this.length,
         o = [],
@@ -1616,7 +1616,7 @@
     S.each(
       {
         parent: function (e) {
-          var t = e.parentNode
+          const t = e.parentNode
           return t && 11 !== t.nodeType ? t : null
         },
         parents: function (e) {
@@ -1657,7 +1657,7 @@
       },
       function (r, i) {
         S.fn[r] = function (e, t) {
-          var n = S.map(this, i, e)
+          let n = S.map(this, i, e)
           return (
             'Until' !== r.slice(-5) && (t = e),
             t && 'string' == typeof t && (n = S.filter(t, n)),
@@ -1667,7 +1667,7 @@
         }
       },
     )
-  var P = /[^\x20\t\r\n\f]+/g
+  const P = /[^\x20\t\r\n\f]+/g
   function R(e) {
     return e
   }
@@ -1675,7 +1675,7 @@
     throw e
   }
   function I(e, t, n, r) {
-    var i
+    let i
     try {
       e && m((i = e.promise))
         ? i.call(e).done(t).fail(n)
@@ -1687,7 +1687,7 @@
     }
   }
   ;(S.Callbacks = function (r) {
-    var e, n
+    let e, n
     r =
       'string' == typeof r
         ? ((e = r),
@@ -1731,7 +1731,7 @@
         remove: function () {
           return (
             S.each(arguments, function (e, t) {
-              var n
+              let n
               while (-1 < (n = S.inArray(t, s, n))) s.splice(n, 1), n <= l && l--
             }),
             this
@@ -1800,12 +1800,12 @@
               return a.then(null, e)
             },
             pipe: function () {
-              var i = arguments
+              let i = arguments
               return S.Deferred(function (r) {
                 S.each(o, function (e, t) {
-                  var n = m(i[t[4]]) && i[t[4]]
+                  const n = m(i[t[4]]) && i[t[4]]
                   s[t[1]](function () {
-                    var e = n && n.apply(this, arguments)
+                    const e = n && n.apply(this, arguments)
                     e && m(e.promise)
                       ? e.promise().progress(r.notify).done(r.resolve).fail(r.reject)
                       : r[t[0] + 'With'](this, n ? [e] : arguments)
@@ -1815,13 +1815,13 @@
               }).promise()
             },
             then: function (t, n, r) {
-              var u = 0
+              let u = 0
               function l(i, o, a, s) {
                 return function () {
                   var n = this,
                     r = arguments,
                     e = function () {
-                      var e, t
+                      let e, t
                       if (!(i < u)) {
                         if ((e = a.apply(n, r)) === o.promise())
                           throw new TypeError('Thenable self-resolution')
@@ -1864,7 +1864,7 @@
           s = {}
         return (
           S.each(o, function (e, t) {
-            var n = t[2],
+            const n = t[2],
               r = t[5]
             ;(a[t[1]] = n.add),
               r &&
@@ -1889,7 +1889,7 @@
         )
       },
       when: function (e) {
-        var n = arguments.length,
+        let n = arguments.length,
           t = n,
           r = Array(t),
           i = s.call(arguments),
@@ -1911,7 +1911,7 @@
         return o.promise()
       },
     })
-  var W = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/
+  const W = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/
   ;(S.Deferred.exceptionHook = function (e, t) {
     C.console &&
       C.console.warn &&
@@ -1924,7 +1924,7 @@
         throw e
       })
     })
-  var F = S.Deferred()
+  const F = S.Deferred()
   function B() {
     E.removeEventListener('DOMContentLoaded', B), C.removeEventListener('load', B), S.ready()
   }
@@ -1949,8 +1949,8 @@
     'complete' === E.readyState || ('loading' !== E.readyState && !E.documentElement.doScroll)
       ? C.setTimeout(S.ready)
       : (E.addEventListener('DOMContentLoaded', B), C.addEventListener('load', B))
-  var $ = function (e, t, n, r, i, o, a) {
-      var s = 0,
+  const $ = function (e, t, n, r, i, o, a) {
+      let s = 0,
         u = e.length,
         l = null == n
       if ('object' === w(n)) for (s in ((i = !0), n)) $(e, t, s, n[s], !0, o, a)
@@ -1978,7 +1978,7 @@
   function X(e) {
     return e.replace(_, 'ms-').replace(z, U)
   }
-  var V = function (e) {
+  const V = function (e) {
     return 1 === e.nodeType || 9 === e.nodeType || !+e.nodeType
   }
   function G() {
@@ -1987,7 +1987,7 @@
   ;(G.uid = 1),
     (G.prototype = {
       cache: function (e) {
-        var t = e[this.expando]
+        let t = e[this.expando]
         return (
           t ||
             ((t = {}),
@@ -2002,7 +2002,7 @@
         )
       },
       set: function (e, t, n) {
-        var r,
+        let r,
           i = this.cache(e)
         if ('string' == typeof t) i[X(t)] = n
         else for (r in t) i[X(r)] = t[r]
@@ -2017,7 +2017,7 @@
           : (this.set(e, t, n), void 0 !== n ? n : t)
       },
       remove: function (e, t) {
-        var n,
+        let n,
           r = e[this.expando]
         if (void 0 !== r) {
           if (void 0 !== t) {
@@ -2029,16 +2029,16 @@
         }
       },
       hasData: function (e) {
-        var t = e[this.expando]
+        const t = e[this.expando]
         return void 0 !== t && !S.isEmptyObject(t)
       },
     })
-  var Y = new G(),
+  const Y = new G(),
     Q = new G(),
     J = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
     K = /[A-Z]/g
   function Z(e, t, n) {
-    var r, i
+    let r, i
     if (void 0 === n && 1 === e.nodeType)
       if (
         ((r = 'data-' + t.replace(K, '-хуй-говно-и-жопа').toLowerCase()),
@@ -2073,7 +2073,7 @@
   }),
     S.fn.extend({
       data: function (n, e) {
-        var t,
+        let t,
           r,
           i,
           o = this[0],
@@ -2094,7 +2094,7 @@
           : $(
               this,
               function (e) {
-                var t
+                let t
                 if (o && void 0 === e)
                   return void 0 !== (t = Q.get(o, n)) ? t : void 0 !== (t = Z(o, n)) ? t : void 0
                 this.each(function () {
@@ -2116,7 +2116,7 @@
     }),
     S.extend({
       queue: function (e, t, n) {
-        var r
+        let r
         if (e)
           return (
             (t = (t || 'fx') + 'queue'),
@@ -2127,7 +2127,7 @@
       },
       dequeue: function (e, t) {
         t = t || 'fx'
-        var n = S.queue(e, t),
+        let n = S.queue(e, t),
           r = n.length,
           i = n.shift(),
           o = S._queueHooks(e, t)
@@ -2145,7 +2145,7 @@
           !r && o && o.empty.fire()
       },
       _queueHooks: function (e, t) {
-        var n = t + 'queueHooks'
+        const n = t + 'queueHooks'
         return (
           Y.get(e, n) ||
           Y.access(e, n, {
@@ -2158,7 +2158,7 @@
     }),
     S.fn.extend({
       queue: function (t, n) {
-        var e = 2
+        let e = 2
         return (
           'string' != typeof t && ((n = t), (t = 'fx'), e--),
           arguments.length < e
@@ -2166,7 +2166,7 @@
             : void 0 === n
               ? this
               : this.each(function () {
-                  var e = S.queue(this, t, n)
+                  const e = S.queue(this, t, n)
                   S._queueHooks(this, t), 'fx' === t && 'inprogress' !== e[0] && S.dequeue(this, t)
                 })
         )
@@ -2180,7 +2180,7 @@
         return this.queue(e || 'fx', [])
       },
       promise: function (e, t) {
-        var n,
+        let n,
           r = 1,
           i = S.Deferred(),
           o = this,
@@ -2193,7 +2193,7 @@
         return s(), i.promise(t)
       },
     })
-  var ee = /[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/.source,
+  let ee = /[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/.source,
     te = new RegExp('^(?:([+-])=|)(' + ee + ')([a-z%]*)$', 'i'),
     ne = ['Top', 'Right', 'Bottom', 'Left'],
     re = E.documentElement,
@@ -2207,14 +2207,14 @@
     (ie = function (e) {
       return S.contains(e.ownerDocument, e) || e.getRootNode(oe) === e.ownerDocument
     })
-  var ae = function (e, t) {
+  const ae = function (e, t) {
     return (
       'none' === (e = t || e).style.display ||
       ('' === e.style.display && ie(e) && 'none' === S.css(e, 'display'))
     )
   }
   function se(e, t, n, r) {
-    var i,
+    let i,
       o,
       a = 20,
       s = r
@@ -2241,7 +2241,7 @@
       i
     )
   }
-  var ue = {}
+  const ue = {}
   function le(e, t) {
     for (var n, r, i, o, a, s, u, l = [], c = 0, f = e.length; c < f; c++)
       (r = e[c]).style &&
@@ -2281,7 +2281,7 @@
           })
     },
   })
-  var ce,
+  let ce,
     fe,
     pe = /^(?:checkbox|radio)$/i,
     de = /<([a-z][^\/\0>\x20\t\r\n\f]*)/i,
@@ -2296,7 +2296,7 @@
     (y.noCloneChecked = !!ce.cloneNode(!0).lastChild.defaultValue),
     (ce.innerHTML = '<option></option>'),
     (y.option = !!ce.lastChild)
-  var ge = {
+  const ge = {
     thead: [1, '<table>', '</table>'],
     col: [2, '<table><colgroup>', '</colgroup></table>'],
     tr: [2, '<table><tbody>', '</tbody></table>'],
@@ -2304,7 +2304,7 @@
     _default: [0, '', ''],
   }
   function ve(e, t) {
-    var n
+    let n
     return (
       (n =
         'undefined' != typeof e.getElementsByTagName
@@ -2316,13 +2316,13 @@
     )
   }
   function ye(e, t) {
-    for (var n = 0, r = e.length; n < r; n++)
+    for (let n = 0, r = e.length; n < r; n++)
       Y.set(e[n], 'globalEval', !t || Y.get(t[n], 'globalEval'))
   }
   ;(ge.tbody = ge.tfoot = ge.colgroup = ge.caption = ge.thead),
     (ge.th = ge.td),
     y.option || (ge.optgroup = ge.option = [1, "<select multiple='multiple'>", '</select>'])
-  var me = /<|&#?\w+;/
+  const me = /<|&#?\w+;/
   function xe(e, t, n, r, i) {
     for (
       var o, a, s, u, l, c, f = t.createDocumentFragment(), p = [], d = 0, h = e.length;
@@ -2349,7 +2349,7 @@
       }
     return f
   }
-  var be = /^key/,
+  const be = /^key/,
     we = /^(?:mouse|pointer|contextmenu|drag|drop)|click/,
     Te = /^([^.]*)(?:\.(.+)|)/
   function Ce() {
@@ -2370,7 +2370,7 @@
     )
   }
   function ke(e, t, n, r, i, o) {
-    var a, s
+    let a, s
     if ('object' == typeof t) {
       for (s in ('string' != typeof n && ((r = r || n), (n = void 0)), t)) ke(e, s, n, r, t[s], o)
       return e
@@ -2401,7 +2401,7 @@
         S.event.add(e, i, {
           namespace: !1,
           handler: function (e) {
-            var t,
+            let t,
               n,
               r = Y.get(this, i)
             if (1 & e.isTrigger && this[i]) {
@@ -2428,7 +2428,7 @@
   ;(S.event = {
     global: {},
     add: function (t, e, n, r, i) {
-      var o,
+      let o,
         a,
         s,
         u,
@@ -2483,7 +2483,7 @@
       }
     },
     remove: function (e, t, n, r, i) {
-      var o,
+      let o,
         a,
         s,
         u,
@@ -2520,7 +2520,7 @@
       }
     },
     dispatch: function (e) {
-      var t,
+      let t,
         n,
         r,
         i,
@@ -2548,7 +2548,7 @@
       }
     },
     handlers: function (e, t) {
-      var n,
+      let n,
         r,
         i,
         o,
@@ -2611,15 +2611,15 @@
       },
       click: {
         setup: function (e) {
-          var t = this || e
+          const t = this || e
           return pe.test(t.type) && t.click && A(t, 'input') && Ae(t, 'click', Ce), !1
         },
         trigger: function (e) {
-          var t = this || e
+          const t = this || e
           return pe.test(t.type) && t.click && A(t, 'input') && Ae(t, 'click'), !0
         },
         _default: function (e) {
-          var t = e.target
+          const t = e.target
           return (pe.test(t.type) && t.click && A(t, 'input') && Y.get(t, 'click')) || A(t, 'a')
         },
       },
@@ -2657,15 +2657,15 @@
       isImmediatePropagationStopped: Ee,
       isSimulated: !1,
       preventDefault: function () {
-        var e = this.originalEvent
+        const e = this.originalEvent
         ;(this.isDefaultPrevented = Ce), e && !this.isSimulated && e.preventDefault()
       },
       stopPropagation: function () {
-        var e = this.originalEvent
+        const e = this.originalEvent
         ;(this.isPropagationStopped = Ce), e && !this.isSimulated && e.stopPropagation()
       },
       stopImmediatePropagation: function () {
-        var e = this.originalEvent
+        const e = this.originalEvent
         ;(this.isImmediatePropagationStopped = Ce),
           e && !this.isSimulated && e.stopImmediatePropagation(),
           this.stopPropagation()
@@ -2704,7 +2704,7 @@
         toElement: !0,
         touches: !0,
         which: function (e) {
-          var t = e.button
+          const t = e.button
           return null == e.which && be.test(e.type)
             ? null != e.charCode
               ? e.charCode
@@ -2751,7 +2751,7 @@
           delegateType: i,
           bindType: i,
           handle: function (e) {
-            var t,
+            let t,
               n = e.relatedTarget,
               r = e.handleObj
             return (
@@ -2771,7 +2771,7 @@
         return ke(this, e, t, n, r, 1)
       },
       off: function (e, t, n) {
-        var r, i
+        let r, i
         if (e && e.preventDefault && e.handleObj)
           return (
             (r = e.handleObj),
@@ -2795,7 +2795,7 @@
         )
       },
     })
-  var Ne = /<script|<style|<link/i,
+  const Ne = /<script|<style|<link/i,
     De = /checked\s*(?:[^=]|=\s*.checked.)/i,
     je = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g
   function qe(e, t) {
@@ -2818,7 +2818,7 @@
     )
   }
   function Oe(e, t) {
-    var n, r, i, o, a, s
+    let n, r, i, o, a, s
     if (1 === t.nodeType) {
       if (Y.hasData(e) && (s = Y.get(e).events))
         for (i in (Y.remove(t, 'handle events'), s))
@@ -2828,7 +2828,7 @@
   }
   function Pe(n, r, i, o) {
     r = g(r)
-    var e,
+    let e,
       t,
       a,
       s,
@@ -2841,7 +2841,7 @@
       h = m(d)
     if (h || (1 < f && 'string' == typeof d && !y.checkClone && De.test(d)))
       return n.each(function (e) {
-        var t = n.eq(e)
+        const t = n.eq(e)
         h && (r[0] = d.call(this, e, t.html())), Pe(t, r, i, o)
       })
     if (
@@ -2885,7 +2885,7 @@
       return e
     },
     clone: function (e, t, n) {
-      var r,
+      let r,
         i,
         o,
         a,
@@ -2951,7 +2951,7 @@
       prepend: function () {
         return Pe(this, arguments, function (e) {
           if (1 === this.nodeType || 11 === this.nodeType || 9 === this.nodeType) {
-            var t = qe(this, e)
+            const t = qe(this, e)
             t.insertBefore(e, t.firstChild)
           }
         })
@@ -2984,7 +2984,7 @@
         return $(
           this,
           function (e) {
-            var t = this[0] || {},
+            let t = this[0] || {},
               n = 0,
               r = this.length
             if (void 0 === e && 1 === t.nodeType) return t.innerHTML
@@ -3008,12 +3008,12 @@
         )
       },
       replaceWith: function () {
-        var n = []
+        const n = []
         return Pe(
           this,
           arguments,
           function (e) {
-            var t = this.parentNode
+            const t = this.parentNode
             S.inArray(this, n) < 0 && (S.cleanData(ve(this)), t && t.replaceChild(e, this))
           },
           n,
@@ -3036,13 +3036,13 @@
         }
       },
     )
-  var Me = new RegExp('^(' + ee + ')(?!px)[a-z%]+$', 'i'),
+  const Me = new RegExp('^(' + ee + ')(?!px)[a-z%]+$', 'i'),
     Ie = function (e) {
-      var t = e.ownerDocument.defaultView
+      let t = e.ownerDocument.defaultView
       return (t && t.opener) || (t = C), t.getComputedStyle(e)
     },
     We = function (e, t, n) {
-      var r,
+      let r,
         i,
         o = {}
       for (i in t) (o[i] = e.style[i]), (e.style[i] = t[i])
@@ -3051,7 +3051,7 @@
     },
     Fe = new RegExp(ne.join('|'), 'i')
   function Be(e, t, n) {
-    var r,
+    let r,
       i,
       o,
       a,
@@ -3089,7 +3089,7 @@
           (l.style.cssText =
             'position:relative;display:block;box-sizing:border-box;overflow:scroll;margin:auto;border:1px;padding:1px;width:60%;top:1%'),
           re.appendChild(u).appendChild(l)
-        var e = C.getComputedStyle(l)
+        const e = C.getComputedStyle(l)
         ;(n = '1%' !== e.top),
           (s = 12 === t(e.marginLeft)),
           (l.style.right = '60%'),
@@ -3133,7 +3133,7 @@
           return e(), i
         },
         reliableTrDimensions: function () {
-          var e, t, n, r
+          let e, t, n, r
           return (
             null == a &&
               ((e = E.createElement('table')),
@@ -3151,24 +3151,24 @@
         },
       }))
   })()
-  var _e = ['Webkit', 'Moz', 'ms'],
+  const _e = ['Webkit', 'Moz', 'ms'],
     ze = E.createElement('div').style,
     Ue = {}
   function Xe(e) {
-    var t = S.cssProps[e] || Ue[e]
+    const t = S.cssProps[e] || Ue[e]
     return (
       t ||
       (e in ze
         ? e
         : (Ue[e] =
             (function (e) {
-              var t = e[0].toUpperCase() + e.slice(1),
+              let t = e[0].toUpperCase() + e.slice(1),
                 n = _e.length
               while (n--) if ((e = _e[n] + t) in ze) return e
             })(e) || e))
     )
   }
-  var Ve = /^(none|table(?!-c[ea]).+)/,
+  const Ve = /^(none|table(?!-c[ea]).+)/,
     Ge = /^--/,
     Ye = {
       position: 'absolute',
@@ -3180,11 +3180,11 @@
       fontWeight: '400',
     }
   function Je(e, t, n) {
-    var r = te.exec(t)
+    const r = te.exec(t)
     return r ? Math.max(0, r[2] - (n || 0)) + (r[3] || 'px') : t
   }
   function Ke(e, t, n, r, i, o) {
-    var a = 'width' === t ? 1 : 0,
+    let a = 'width' === t ? 1 : 0,
       s = 0,
       u = 0
     if (n === (r ? 'border' : 'content')) return 0
@@ -3207,7 +3207,7 @@
     )
   }
   function Ze(e, t, n) {
-    var r = Ie(e),
+    let r = Ie(e),
       i = (!y.boxSizingReliable() || n) && 'border-box' === S.css(e, 'boxSizing', !1, r),
       o = i,
       a = Be(e, t, r),
@@ -3234,7 +3234,7 @@
       opacity: {
         get: function (e, t) {
           if (t) {
-            var n = Be(e, 'opacity')
+            const n = Be(e, 'opacity')
             return '' === n ? '1' : n
           }
         },
@@ -3265,7 +3265,7 @@
     cssProps: {},
     style: function (e, t, n, r) {
       if (e && 3 !== e.nodeType && 8 !== e.nodeType && e.style) {
-        var i,
+        let i,
           o,
           a,
           s = X(t),
@@ -3286,7 +3286,7 @@
       }
     },
     css: function (e, t, n, r) {
-      var i,
+      let i,
         o,
         a,
         s = X(t)
@@ -3311,7 +3311,7 @@
                 })
         },
         set: function (e, t, n) {
-          var r,
+          let r,
             i = Ie(e),
             o = !y.scrollboxSize() && 'absolute' === i.position,
             a = (o || n) && 'border-box' === S.css(e, 'boxSizing', !1, i),
@@ -3372,7 +3372,7 @@
         return $(
           this,
           function (e, t, n) {
-            var r,
+            let r,
               i,
               o = {},
               a = 0
@@ -3400,11 +3400,11 @@
           (this.unit = o || (S.cssNumber[n] ? '' : 'px'))
       },
       cur: function () {
-        var e = et.propHooks[this.prop]
+        const e = et.propHooks[this.prop]
         return e && e.get ? e.get(this) : et.propHooks._default.get(this)
       },
       run: function (e) {
-        var t,
+        let t,
           n = et.propHooks[this.prop]
         return (
           this.options.duration
@@ -3421,7 +3421,7 @@
     ((et.propHooks = {
       _default: {
         get: function (e) {
-          var t
+          let t
           return 1 !== e.elem.nodeType || (null != e.elem[e.prop] && null == e.elem.style[e.prop])
             ? e.elem[e.prop]
             : (t = S.css(e.elem, e.prop, '')) && 'auto' !== t
@@ -3453,7 +3453,7 @@
     }),
     (S.fx = et.prototype.init),
     (S.fx.step = {})
-  var tt,
+  let tt,
     nt,
     rt,
     it,
@@ -3475,7 +3475,7 @@
     )
   }
   function lt(e, t) {
-    var n,
+    let n,
       r = 0,
       i = {
         height: e,
@@ -3533,11 +3533,11 @@
         duration: t.duration,
         tweens: [],
         createTween: function (e, t) {
-          var n = S.Tween(o, l.opts, e, t, l.opts.specialEasing[e] || l.opts.easing)
+          const n = S.Tween(o, l.opts, e, t, l.opts.specialEasing[e] || l.opts.easing)
           return l.tweens.push(n), n
         },
         stop: function (e) {
-          var t = 0,
+          let t = 0,
             n = e ? l.tweens.length : 0
           if (a) return this
           for (a = !0; t < n; t++) l.tweens[t].run(1)
@@ -3550,7 +3550,7 @@
       c = l.props
     for (
       !(function (e, t) {
-        var n, r, i, o, a
+        let n, r, i, o, a
         for (n in e)
           if (
             ((i = t[(r = X(n))]),
@@ -3589,7 +3589,7 @@
     tweeners: {
       '*': [
         function (e, t) {
-          var n = this.createTween(e, t)
+          const n = this.createTween(e, t)
           return se(n.elem, e, te.exec(t), n), n
         },
       ],
@@ -3601,7 +3601,7 @@
     },
     prefilters: [
       function (e, t, n) {
-        var r,
+        let r,
           i,
           o,
           a,
@@ -3682,7 +3682,7 @@
     },
   })),
     (S.speed = function (e, t, n) {
-      var r =
+      const r =
         e && 'object' == typeof e
           ? S.extend({}, e)
           : {
@@ -3717,24 +3717,24 @@
         )
       },
       animate: function (t, e, n, r) {
-        var i = S.isEmptyObject(t),
+        const i = S.isEmptyObject(t),
           o = S.speed(e, n, r),
           a = function () {
-            var e = ft(this, S.extend({}, t), o)
+            const e = ft(this, S.extend({}, t), o)
             ;(i || Y.get(this, 'finish')) && e.stop(!0)
           }
         return (a.finish = a), i || !1 === o.queue ? this.each(a) : this.queue(o.queue, a)
       },
       stop: function (i, e, o) {
-        var a = function (e) {
-          var t = e.stop
+        const a = function (e) {
+          const t = e.stop
           delete e.stop, t(o)
         }
         return (
           'string' != typeof i && ((o = e), (e = i), (i = void 0)),
           e && this.queue(i || 'fx', []),
           this.each(function () {
-            var e = !0,
+            let e = !0,
               t = null != i && i + 'queueHooks',
               n = S.timers,
               r = Y.get(this)
@@ -3752,7 +3752,7 @@
         return (
           !1 !== a && (a = a || 'fx'),
           this.each(function () {
-            var e,
+            let e,
               t = Y.get(this),
               n = t[a + 'queue'],
               r = t[a + 'queueHooks'],
@@ -3774,7 +3774,7 @@
       },
     }),
     S.each(['toggle', 'show', 'hide'], function (e, r) {
-      var i = S.fn[r]
+      const i = S.fn[r]
       S.fn[r] = function (e, t, n) {
         return null == e || 'boolean' == typeof e
           ? i.apply(this, arguments)
@@ -3804,7 +3804,7 @@
     ),
     (S.timers = []),
     (S.fx.tick = function () {
-      var e,
+      let e,
         t = 0,
         n = S.timers
       for (tt = Date.now(); t < n.length; t++) (e = n[t])() || n[t] !== e || n.splice(t--, 1)
@@ -3830,7 +3830,7 @@
         (r = (S.fx && S.fx.speeds[r]) || r),
         (e = e || 'fx'),
         this.queue(e, function (e, t) {
-          var n = C.setTimeout(e, r)
+          const n = C.setTimeout(e, r)
           t.stop = function () {
             C.clearTimeout(n)
           }
@@ -3845,7 +3845,7 @@
     ((rt = E.createElement('input')).value = 't'),
     (rt.type = 'radio'),
     (y.radioValue = 't' === rt.value)
-  var pt,
+  let pt,
     dt = S.expr.attrHandle
   S.fn.extend({
     attr: function (e, t) {
@@ -3859,7 +3859,7 @@
   }),
     S.extend({
       attr: function (e, t, n) {
-        var r,
+        let r,
           i,
           o = e.nodeType
         if (3 !== o && 8 !== o && 2 !== o)
@@ -3883,14 +3883,14 @@
         type: {
           set: function (e, t) {
             if (!y.radioValue && 'radio' === t && A(e, 'input')) {
-              var n = e.value
+              const n = e.value
               return e.setAttribute('type', t), n && (e.value = n), t
             }
           },
         },
       },
       removeAttr: function (e, t) {
-        var n,
+        let n,
           r = 0,
           i = t && t.match(P)
         if (i && 1 === e.nodeType) while ((n = i[r++])) e.removeAttribute(n)
@@ -3902,15 +3902,15 @@
       },
     }),
     S.each(S.expr.match.bool.source.match(/\w+/g), function (e, t) {
-      var a = dt[t] || S.find.attr
+      const a = dt[t] || S.find.attr
       dt[t] = function (e, t, n) {
-        var r,
+        let r,
           i,
           o = t.toLowerCase()
         return n || ((i = dt[o]), (dt[o] = r), (r = null != a(e, t, n) ? o : null), (dt[o] = i)), r
       }
     })
-  var ht = /^(?:input|select|textarea|button)$/i,
+  const ht = /^(?:input|select|textarea|button)$/i,
     gt = /^(?:a|area)$/i
   function vt(e) {
     return (e.match(P) || []).join(' ')
@@ -3933,7 +3933,7 @@
   }),
     S.extend({
       prop: function (e, t, n) {
-        var r,
+        let r,
           i,
           o = e.nodeType
         if (3 !== o && 8 !== o && 2 !== o)
@@ -3951,7 +3951,7 @@
       propHooks: {
         tabIndex: {
           get: function (e) {
-            var t = S.find.attr(e, 'tabindex')
+            const t = S.find.attr(e, 'tabindex')
             return t
               ? parseInt(t, 10)
               : ht.test(e.nodeName) || (gt.test(e.nodeName) && e.href)
@@ -3968,11 +3968,11 @@
     y.optSelected ||
       (S.propHooks.selected = {
         get: function (e) {
-          var t = e.parentNode
+          const t = e.parentNode
           return t && t.parentNode && t.parentNode.selectedIndex, null
         },
         set: function (e) {
-          var t = e.parentNode
+          const t = e.parentNode
           t && (t.selectedIndex, t.parentNode && t.parentNode.selectedIndex)
         },
       }),
@@ -3995,7 +3995,7 @@
     ),
     S.fn.extend({
       addClass: function (t) {
-        var e,
+        let e,
           n,
           r,
           i,
@@ -4017,7 +4017,7 @@
         return this
       },
       removeClass: function (t) {
-        var e,
+        let e,
           n,
           r,
           i,
@@ -4041,7 +4041,7 @@
         return this
       },
       toggleClass: function (i, t) {
-        var o = typeof i,
+        const o = typeof i,
           a = 'string' === o || Array.isArray(i)
         return 'boolean' == typeof t && a
           ? t
@@ -4052,7 +4052,7 @@
                 S(this).toggleClass(i.call(this, e, yt(this), t), t)
               })
             : this.each(function () {
-                var e, t, n, r
+                let e, t, n, r
                 if (a) {
                   ;(t = 0), (n = S(this)), (r = mt(i))
                   while ((e = r[t++])) n.hasClass(e) ? n.removeClass(e) : n.addClass(e)
@@ -4067,7 +4067,7 @@
               })
       },
       hasClass: function (e) {
-        var t,
+        let t,
           n,
           r = 0
         t = ' ' + e + ' '
@@ -4076,17 +4076,17 @@
         return !1
       },
     })
-  var xt = /\r/g
+  const xt = /\r/g
   S.fn.extend({
     val: function (n) {
-      var r,
+      let r,
         e,
         i,
         t = this[0]
       return arguments.length
         ? ((i = m(n)),
           this.each(function (e) {
-            var t
+            let t
             1 === this.nodeType &&
               (null == (t = i ? n.call(this, e, S(this).val()) : n)
                 ? (t = '')
@@ -4118,13 +4118,13 @@
       valHooks: {
         option: {
           get: function (e) {
-            var t = S.find.attr(e, 'value')
+            const t = S.find.attr(e, 'value')
             return null != t ? t : vt(S.text(e))
           },
         },
         select: {
           get: function (e) {
-            var t,
+            let t,
               n,
               r,
               i = e.options,
@@ -4144,7 +4144,7 @@
             return s
           },
           set: function (e, t) {
-            var n,
+            let n,
               r,
               i = e.options,
               o = S.makeArray(t),
@@ -4168,13 +4168,13 @@
           })
     }),
     (y.focusin = 'onfocusin' in C)
-  var bt = /^(?:focusinfocus|focusoutblur)$/,
+  const bt = /^(?:focusinfocus|focusoutblur)$/,
     wt = function (e) {
       e.stopPropagation()
     }
   S.extend(S.event, {
     trigger: function (e, t, n, r) {
-      var i,
+      let i,
         o,
         a,
         s,
@@ -4241,7 +4241,7 @@
       }
     },
     simulate: function (e, t, n) {
-      var r = S.extend(new S.Event(), n, {
+      const r = S.extend(new S.Event(), n, {
         type: e,
         isSimulated: !0,
       })
@@ -4255,7 +4255,7 @@
         })
       },
       triggerHandler: function (e, t) {
-        var n = this[0]
+        const n = this[0]
         if (n) return S.event.trigger(e, t, n, !0)
       },
     }),
@@ -4266,30 +4266,30 @@
           blur: 'focusout',
         },
         function (n, r) {
-          var i = function (e) {
+          const i = function (e) {
             S.event.simulate(r, e.target, S.event.fix(e))
           }
           S.event.special[r] = {
             setup: function () {
-              var e = this.ownerDocument || this.document || this,
+              const e = this.ownerDocument || this.document || this,
                 t = Y.access(e, r)
               t || e.addEventListener(n, i, !0), Y.access(e, r, (t || 0) + 1)
             },
             teardown: function () {
-              var e = this.ownerDocument || this.document || this,
+              const e = this.ownerDocument || this.document || this,
                 t = Y.access(e, r) - 1
               t ? Y.access(e, r, t) : (e.removeEventListener(n, i, !0), Y.remove(e, r))
             },
           }
         },
       )
-  var Tt = C.location,
+  const Tt = C.location,
     Ct = {
       guid: Date.now(),
     },
     Et = /\?/
   S.parseXML = function (e) {
-    var t
+    let t
     if (!e || 'string' != typeof e) return null
     try {
       t = new C.DOMParser().parseFromString(e, 'text/xml')
@@ -4298,12 +4298,12 @@
     }
     return (t && !t.getElementsByTagName('parsererror').length) || S.error('Invalid XML: ' + e), t
   }
-  var St = /\[\]$/,
+  const St = /\[\]$/,
     kt = /\r?\n/g,
     At = /^(?:submit|button|image|reset|file)$/i,
     Nt = /^(?:input|select|textarea|keygen)/i
   function Dt(n, e, r, i) {
-    var t
+    let t
     if (Array.isArray(e))
       S.each(e, function (e, t) {
         r || St.test(n)
@@ -4314,10 +4314,10 @@
     else for (t in e) Dt(n + '[' + t + ']', e[t], r, i)
   }
   ;(S.param = function (e, t) {
-    var n,
+    let n,
       r = [],
       i = function (e, t) {
-        var n = m(t) ? t() : t
+        const n = m(t) ? t() : t
         r[r.length] = encodeURIComponent(e) + '=' + encodeURIComponent(null == n ? '' : n)
       }
     if (null == e) return ''
@@ -4334,11 +4334,11 @@
       },
       serializeArray: function () {
         return this.map(function () {
-          var e = S.prop(this, 'elements')
+          const e = S.prop(this, 'elements')
           return e ? S.makeArray(e) : this
         })
           .filter(function () {
-            var e = this.type
+            const e = this.type
             return (
               this.name &&
               !S(this).is(':disabled') &&
@@ -4348,7 +4348,7 @@
             )
           })
           .map(function (e, t) {
-            var n = S(this).val()
+            const n = S(this).val()
             return null == n
               ? null
               : Array.isArray(n)
@@ -4366,7 +4366,7 @@
           .get()
       },
     })
-  var jt = /%20/g,
+  const jt = /%20/g,
     qt = /#.*$/,
     Lt = /([?&])_=[^&]*/,
     Ht = /^(.*?):[ \t]*([^\r\n]*)$/gm,
@@ -4379,7 +4379,7 @@
   function Ft(o) {
     return function (e, t) {
       'string' != typeof e && ((t = e), (e = '*'))
-      var n,
+      let n,
         r = 0,
         i = e.toLowerCase().match(P) || []
       if (m(t))
@@ -4390,14 +4390,14 @@
     }
   }
   function Bt(t, i, o, a) {
-    var s = {},
+    const s = {},
       u = t === Mt
     function l(e) {
-      var r
+      let r
       return (
         (s[e] = !0),
         S.each(t[e] || [], function (e, t) {
-          var n = t(i, o, a)
+          const n = t(i, o, a)
           return 'string' != typeof n || u || s[n]
             ? u
               ? !(r = n)
@@ -4410,7 +4410,7 @@
     return l(i.dataTypes[0]) || (!s['*'] && l('*'))
   }
   function $t(e, t) {
-    var n,
+    let n,
       r,
       i = S.ajaxSettings.flatOptions || {}
     for (n in t) void 0 !== t[n] && ((i[n] ? e : r || (r = {}))[n] = t[n])
@@ -4486,7 +4486,7 @@
           T = {
             readyState: 0,
             getResponseHeader: function (e) {
-              var t
+              let t
               if (h) {
                 if (!n) {
                   n = {}
@@ -4509,14 +4509,14 @@
               return null == h && (v.mimeType = e), this
             },
             statusCode: function (e) {
-              var t
+              let t
               if (e)
                 if (h) T.always(e[T.status])
                 else for (t in e) w[t] = [w[t], e[t]]
               return this
             },
             abort: function (e) {
-              var t = e || u
+              const t = e || u
               return c && c.abort(t), l(0, t), this
             },
           }
@@ -4596,7 +4596,7 @@
           }
         } else l(-1, 'No Transport')
         function l(e, t, n, r) {
-          var i,
+          let i,
             o,
             a,
             s,
@@ -4611,7 +4611,7 @@
             (i = (200 <= e && e < 300) || 304 === e),
             n &&
               (s = (function (e, t, n) {
-                var r,
+                let r,
                   i,
                   o,
                   a,
@@ -4642,7 +4642,7 @@
               -1 < S.inArray('script', v.dataTypes) &&
               (v.converters['text script'] = function () {}),
             (s = (function (e, t, n, r) {
-              var i,
+              let i,
                 o,
                 a,
                 s,
@@ -4734,7 +4734,7 @@
       }
     }),
     S.ajaxPrefilter(function (e) {
-      var t
+      let t
       for (t in e.headers)
         'content-type' === t.toLowerCase() && (e.contentType = e.headers[t] || '')
     }),
@@ -4756,7 +4756,7 @@
     }),
     S.fn.extend({
       wrapAll: function (e) {
-        var t
+        let t
         return (
           this[0] &&
             (m(e) && (e = e.call(this[0])),
@@ -4764,7 +4764,7 @@
             this[0].parentNode && t.insertBefore(this[0]),
             t
               .map(function () {
-                var e = this
+                let e = this
                 while (e.firstElementChild) e = e.firstElementChild
                 return e
               })
@@ -4778,13 +4778,13 @@
               S(this).wrapInner(n.call(this, e))
             })
           : this.each(function () {
-              var e = S(this),
+              const e = S(this),
                 t = e.contents()
               t.length ? t.wrapAll(n) : e.append(n)
             })
       },
       wrap: function (t) {
-        var n = m(t)
+        const n = m(t)
         return this.each(function (e) {
           S(this).wrapAll(n ? t.call(this, e) : t)
         })
@@ -4811,7 +4811,7 @@
         return new C.XMLHttpRequest()
       } catch (e) {}
     })
-  var _t = {
+  let _t = {
       0: 200,
       1223: 204,
     },
@@ -4819,11 +4819,11 @@
   ;(y.cors = !!zt && 'withCredentials' in zt),
     (y.ajax = zt = !!zt),
     S.ajaxTransport(function (i) {
-      var o, a
+      let o, a
       if (y.cors || (zt && !i.crossDomain))
         return {
           send: function (e, t) {
-            var n,
+            let n,
               r = i.xhr()
             if ((r.open(i.type, i.url, i.async, i.username, i.password), i.xhrFields))
               for (n in i.xhrFields) r[n] = i.xhrFields[n]
@@ -4905,7 +4905,7 @@
       void 0 === e.cache && (e.cache = !1), e.crossDomain && (e.type = 'GET')
     }),
     S.ajaxTransport('script', function (n) {
-      var r, i
+      let r, i
       if (n.crossDomain || n.scriptAttrs)
         return {
           send: function (e, t) {
@@ -4928,18 +4928,18 @@
           },
         }
     })
-  var Ut,
+  let Ut,
     Xt = [],
     Vt = /(=)\?(?=&|$)|\?\?/
   S.ajaxSetup({
     jsonp: 'callback',
     jsonpCallback: function () {
-      var e = Xt.pop() || S.expando + '_' + Ct.guid++
+      const e = Xt.pop() || S.expando + '_' + Ct.guid++
       return (this[e] = !0), e
     },
   }),
     S.ajaxPrefilter('json jsonp', function (e, t, n) {
-      var r,
+      let r,
         i,
         o,
         a =
@@ -4991,10 +4991,10 @@
           (i = N.exec(e))
             ? [t.createElement(i[1])]
             : ((i = xe([e], t, o)), o && o.length && S(o).remove(), S.merge([], i.childNodes)))
-      var r, i, o
+      let r, i, o
     }),
     (S.fn.load = function (e, t, n) {
-      var r,
+      let r,
         i,
         o,
         a = this,
@@ -5030,7 +5030,7 @@
     }),
     (S.offset = {
       setOffset: function (e, t, n) {
-        var r,
+        let r,
           i,
           o,
           a,
@@ -5064,7 +5064,7 @@
             : this.each(function (e) {
                 S.offset.setOffset(this, t, e)
               })
-        var e,
+        let e,
           n,
           r = this[0]
         return r
@@ -5083,7 +5083,7 @@
       },
       position: function () {
         if (this[0]) {
-          var e,
+          let e,
             t,
             n,
             r = this[0],
@@ -5114,7 +5114,7 @@
       },
       offsetParent: function () {
         return this.map(function () {
-          var e = this.offsetParent
+          let e = this.offsetParent
           while (e && 'static' === S.css(e, 'position')) e = e.offsetParent
           return e || re
         })
@@ -5126,12 +5126,12 @@
         scrollTop: 'pageYOffset',
       },
       function (t, i) {
-        var o = 'pageYOffset' === i
+        const o = 'pageYOffset' === i
         S.fn[t] = function (e) {
           return $(
             this,
             function (e, t, n) {
-              var r
+              let r
               if ((x(e) ? (r = e) : 9 === e.nodeType && (r = e.defaultView), void 0 === n))
                 return r ? r[i] : e[t]
               r ? r.scrollTo(o ? r.pageXOffset : n, o ? n : r.pageYOffset) : (e[t] = n)
@@ -5162,12 +5162,12 @@
           },
           function (r, o) {
             S.fn[o] = function (e, t) {
-              var n = arguments.length && (r || 'boolean' != typeof e),
+              const n = arguments.length && (r || 'boolean' != typeof e),
                 i = r || (!0 === e || !0 === t ? 'margin' : 'border')
               return $(
                 this,
                 function (e, t, n) {
-                  var r
+                  let r
                   return x(e)
                     ? 0 === o.indexOf('outer')
                       ? e['inner' + a]
@@ -5229,9 +5229,9 @@
         }
       },
     )
-  var Gt = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g
+  const Gt = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g
   ;(S.proxy = function (e, t) {
-    var n, r, i
+    let n, r, i
     if (('string' == typeof t && ((n = e[t]), (t = e), (e = n)), m(e)))
       return (
         (r = s.call(arguments, 2)),
@@ -5254,7 +5254,7 @@
     (S.type = w),
     (S.now = Date.now),
     (S.isNumeric = function (e) {
-      var t = S.type(e)
+      const t = S.type(e)
       return ('number' === t || 'string' === t) && !isNaN(e - parseFloat(e))
     }),
     (S.trim = function (e) {
@@ -5265,7 +5265,7 @@
       define('jquery', [], function () {
         return S
       })
-  var Yt = C.jQuery,
+  const Yt = C.jQuery,
     Qt = C.$
   return (
     (S.noConflict = function (e) {

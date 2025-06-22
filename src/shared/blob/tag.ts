@@ -2,7 +2,7 @@
   try {
     ;(function () {
       function Se(a, c, b, d) {
-        var e = this
+        const e = this
         return C(window, 'c.i', function () {
           function f(G) {
             ;(G = Te(k, l, '', G)(k, l)) && (S(G.then) ? G.then(g) : g(G))
@@ -14,7 +14,7 @@
                 ? m.push(G)
                 : Ma(G) &&
                   z(function (O) {
-                    var X = O[0]
+                    const X = O[0]
                     O = O[1]
                     S(O) && ('u' === X ? m.push(O) : h(O, X))
                   }, ya(G)))
@@ -28,11 +28,11 @@
             m = [],
             p = [gh, Te, hh]
           p.unshift(vl)
-          var q = u(P, f),
+          const q = u(P, f),
             t = A(P, Ab),
             r = N(l)
           l.id || pb(k, r, 'Invalid Metrika id: ' + l.id)
-          var y = Wc.o('counters', {})
+          const y = Wc.o('counters', {})
           if (y[r]) return pb(k, r, 'Duplicate counter ' + r + ' initialization'), y[r]
           y[r] = e
           Wc.C('counters', y)
@@ -48,15 +48,15 @@
         })()
       }
       function yl(a, c) {
-        var b = zl(a),
+        let b = zl(a),
           d = [Al(a) || Bl(a)]
         jh(a) && d.push(b)
-        var e = ha(a)
+        const e = ha(a)
         b = Qa(a)
-        var f = b.o('synced', {})
+        const f = b.o('synced', {})
         d = Z(function (g) {
           if (c[g]) {
-            var h = (f[g] || 1) + 1440 < e(ib)
+            const h = (f[g] || 1) + 1440 < e(ib)
             h && delete f[g]
             return h
           }
@@ -78,7 +78,7 @@
         return El[a] || 'ru'
       }
       function Fl(a, c) {
-        var b = '' + c,
+        let b = '' + c,
           d = {
             id: 1,
             da: '0',
@@ -96,27 +96,27 @@
         Xc[a].push(c)
       }
       function Il(a, c, b, d) {
-        var e = b.H
+        let e = b.H
         if (c.Wj || !e) d()
         else {
-          var f = Ud(a),
+          const f = Ud(a),
             g = zc(a, '')
           e = function () {
-            var r = lh(f)
+            let r = lh(f)
             r = '' + r + Jl(r, g)
             Vd(b, 'gdpr', r)
             d()
           }
           if (3 === c.id) e()
           else {
-            var h = I(a),
+            let h = I(a),
               k = h.o('f1')
             if (k) k(e)
             else if (((k = (k = lh(f)) ? A(v(Wd, n), k.split(',')) : []), mh(k))) e()
             else {
-              var l = Xd(a),
+              let l = Xd(a),
                 m = T(a)
-              var p = /(^|\w+\.)yango(\.yandex)?\.com$/.test(m.hostname)
+              const p = /(^|\w+\.)yango(\.yandex)?\.com$/.test(m.hostname)
                 ? {
                     url: 'https://yastatic.net/s3/taxi-front/yango-gdpr-popup/',
                     Pf: 'ar az be en es et fi fr he hy ka kk ky lt lv no pt ro ru sl sr tg tr uk uz zh'.split(
@@ -125,7 +125,7 @@
                     Yf: '_inversed_buttons',
                   }
                 : void 0
-              var q =
+              const q =
                 (l = l || !!p) && (-1 !== m.href.indexOf('yagdprcheck=1') || g.o('yaGdprCheck'))
               m = g.o('gdpr')
               g.o('yandex_login')
@@ -139,14 +139,14 @@
                       ? k.push('17')
                       : Kl(a) && k.push('28')
                   : k.push('14')
-              var t = v(f, Ll)
+              const t = v(f, Ll)
               mh(k)
                 ? (z(t, k), e())
                 : (Yd.push(e),
                   h.C('f1', function (r, y) {
-                    var G = 0
+                    let G = 0
                     if (y) {
-                      var O = jb(a, y) || ''
+                      const O = jb(a, y) || ''
                       G += O.length
                     }
                     Yd.push(r)
@@ -159,7 +159,7 @@
                         g.C('gdpr_popup', Xe)
                         Ml(a, c)
                         if (cb(a)) return Nl(a, t, c)
-                        var y = nh(a, f)
+                        const y = nh(a, f)
                         if (y) return (r = Ol(a, t, y, c, p)), r.then(F([a, c], Pl)), r
                       }
                       r || t('8')
@@ -186,7 +186,7 @@
       }
       function Pl(a, c) {
         if (Xd(a)) {
-          var b = Ud(a),
+          let b = Ud(a),
             d = Ha(a, c)
           d = d && d.params
           b = A(v(Ql, n), $e(b))
@@ -194,11 +194,11 @@
         }
       }
       function Nl(a, c, b) {
-        var d = Zd(a, b)
+        const d = Zd(a, b)
         return new K(function (e) {
-          var f
+          let f
           if (d) {
-            var g = d.aa,
+            const g = d.aa,
               h = u(v('4', c), v(null, e)),
               k = W(a, h, 2e3, 'gdp.f.t')
             d.pg(((f = {}), (f.type = 'isYandex'), f))
@@ -222,10 +222,10 @@
         })
       }
       function Ml(a, c) {
-        var b = Zd(a, c)
+        const b = Zd(a, c)
         b &&
           b.aa.D(['isYandex'], function () {
-            var d
+            let d
             return (
               (d = {
                 type: 'isYandex',
@@ -237,24 +237,24 @@
         return b
       }
       function Ol(a, c, b, d, e) {
-        var f = void 0 === e ? Rl : e
+        let f = void 0 === e ? Rl : e
         e = f.url
-        var g = f.Yf
+        const g = f.Yf
         f = Sl(a, f.Pf, d.Xj)
-        var h = Zd(a, d)
+        const h = Zd(a, d)
         if (!h)
           return K.resolve({
             value: Ac,
             Wd: !0,
           })
-        var k = hc(a, {
+        const k = hc(a, {
           src: '' + e + f + g + '.js',
         })
         return new K(function (l, m) {
           k
             ? (c('7'),
               (k.onerror = function () {
-                var p
+                let p
                 c('9')
                 h.og(((p = {}), (p.type = 'GDPR-ok-view-default'), p))
                 l(null)
@@ -262,7 +262,7 @@
               (k.onload = function () {
                 c('10')
                 b.D(wa(['GDPR-ok-view-default', 'GDPR-ok-view-detailed'], af), function (p) {
-                  var q
+                  let q
                   p = p.type
                   h.og(((q = {}), (q.type = p), q))
                   l({
@@ -283,7 +283,7 @@
         return H(a, Ub) ? a : Ac
       }
       function ph(a, c, b) {
-        var d = n(a, 'AppMetricaInitializer'),
+        const d = n(a, 'AppMetricaInitializer'),
           e = n(d, 'init')
         if (e)
           try {
@@ -295,7 +295,7 @@
         }
       }
       function Tl(a) {
-        var c = n(a, 'speechSynthesis.getVoices')
+        const c = n(a, 'speechSynthesis.getVoices')
         if (!c) return ''
         a = D(c, a.speechSynthesis)
         return ic(function (b) {
@@ -306,9 +306,9 @@
         return L('x', A(u(P, oa('concat', '' + a), v(b, n)), c))
       }
       function Wl(a, c) {
-        var b = c.lh
+        const b = c.lh
         if (!Xl(a, b)) return ''
-        var d = []
+        const d = []
         a: {
           var e = Yl(a, b)
           try {
@@ -331,7 +331,7 @@
             g = ''
           }
         ;(f = g) && d.push(f)
-        var h = b.getContextAttributes()
+        let h = b.getContextAttributes()
         try {
           var k = Ka(b.getSupportedExtensions, 'getSupportedExtensions')
             ? b.getSupportedExtensions() || []
@@ -344,7 +344,7 @@
         e = bf(b.getParameter(b.ALIASED_POINT_SIZE_RANGE), b)
         g = b.getParameter(b.ALPHA_BITS)
         h = h && h.antialias ? 'yes' : 'no'
-        var l = b.getParameter(b.BLUE_BITS),
+        const l = b.getParameter(b.BLUE_BITS),
           m = b.getParameter(b.DEPTH_BITS),
           p = b.getParameter(b.GREEN_BITS),
           q =
@@ -388,7 +388,7 @@
         cf(d, t, ': ')
         a: {
           try {
-            var r = b.getExtension('WEBGL_debug_renderer_info')
+            const r = b.getExtension('WEBGL_debug_renderer_info')
             if (r) {
               var y = {
                 'webgl unmasked vendor': b.getParameter(r.UNMASKED_VENDOR_WEBGL),
@@ -414,7 +414,7 @@
         c = d.o('cc')
         d = F(['cc', ''], d.C)
         if (c) {
-          var e = c.split('&')
+          let e = c.split('&')
           c = e[0]
           if ((e = (e = e[1]) && Ga(e)) && 1440 < ha(a)(ib) - e) return d()
           b.C('cc', c)
@@ -425,11 +425,11 @@
           if ('0' === n(e, 'settings.pcs') && !Zc(a))
             if (((e = d.o('zzlc')), V(e) || Ta(e) || 'na' === e)) {
               e = 'ru'
-              var f = df(a, 68),
+              let f = df(a, 68),
                 g = ef(a, 79)
               if (f || g) e = 'md'
               if ((f = $a(a))) {
-                var h = f('iframe')
+                const h = f('iframe')
                 x(h.style, {
                   display: 'none',
                   width: '1px',
@@ -457,11 +457,11 @@
         })
       }
       function bm(a, c, b) {
-        var d, e
+        let d, e
         c = eb(v(a, n), cm)
         c = V(c) ? null : n(a, c)
         if (n(a, 'navigator.onLine') && c && c && n(c, 'prototype.constructor.name')) {
-          var f = new c(((d = {}), (d.iceServers = []), d))
+          const f = new c(((d = {}), (d.iceServers = []), d))
           a = n(f, 'createDataChannel')
           S(a) &&
             (D(a, f, 'y.metrika')(),
@@ -472,14 +472,14 @@
               (d = n(a, 'then')),
               S(d) &&
                 D(d, a, function (g) {
-                  var h = n(f, 'setLocalDescription')
+                  const h = n(f, 'setLocalDescription')
                   S(h) && D(h, f, g, B, B)()
                 })(),
               x(
                 f,
                 ((e = {}),
                 (e.onicecandidate = function () {
-                  var g,
+                  let g,
                     h = n(f, 'close')
                   if (S(h)) {
                     h = D(h, f)
@@ -501,32 +501,32 @@
         }
       }
       function dm(a, c, b) {
-        var d,
+        let d,
           e = $c(a, c)
         if (e) {
           e.aa.D(['gpu-get'], function () {
-            var h
+            let h
             return (h = {}), (h.type = 'gpu-get'), (h.pu = b.o('pu')), h
           })
-          var f = n(a, 'opener')
+          const f = n(a, 'opener')
           if (f) {
-            var g = W(a, F([a, c, b], sh), 200, 'pu.m')
+            const g = W(a, F([a, c, b], sh), 200, 'pu.m')
             e.De(f, ((d = {}), (d.type = 'gpu-get'), d), function (h, k) {
-              var l = n(k, 'pu')
+              const l = n(k, 'pu')
               l && (la(a, g), b.C('pu', l))
             })
           } else sh(a, c, b)
         }
       }
       function sh(a, c, b) {
-        var d = n(a, 'location.host')
+        const d = n(a, 'location.host')
         a = $d(a, c)
         b.C('pu', '' + kc(d) + a)
       }
       function th(a, c, b) {
         c = zc(a, void 0, c)
         c = uh(a, c.o('phc_settings') || '')
-        var d = n(c, 'clientId'),
+        const d = n(c, 'clientId'),
           e = n(c, 'orderId'),
           f = n(c, 'service_id'),
           g = n(c, 'phones') || []
@@ -566,7 +566,7 @@
         return !1
       }
       function gm(a, c, b, d, e) {
-        var f
+        let f
         c.Kb &&
           c.Ub &&
           ((c.Kb === a.Kb && c.Ub === a.Ub) ||
@@ -576,19 +576,19 @@
             }),
           0 < e && La(a.ya, [e]),
           z(function (g) {
-            var h,
+            let h,
               k,
               l = g[0]
             g = g[1]
-            var m = +(a.oa[l] && a.oa[l][g] ? a.oa[l][g] : 0)
+            const m = +(a.oa[l] && a.oa[l][g] ? a.oa[l][g] : 0)
             x(a.oa, ((h = {}), (h[l] = ((k = {}), (k[g] = m), k)), h))
           }, d),
           z(function (g) {
-            var h,
+            let h,
               k,
               l = g[0]
             g = g[1]
-            var m = 1 + (a.oa[l] ? a.oa[l][g] : 0)
+            const m = 1 + (a.oa[l] ? a.oa[l][g] : 0)
             x(a.oa, ((h = {}), (h[l] = ((k = {}), (k[g] = m), k)), h))
           }, b),
           a.Mf &&
@@ -612,7 +612,7 @@
         if (!a) return ''
         a = a('video')
         try {
-          var c = oa('canPlayType', a),
+          const c = oa('canPlayType', a),
             b = ic(function (d) {
               return A(u(P, oa('concat', d + '; codecs=')), jm)
             }, vh)
@@ -622,9 +622,9 @@
         }
       }
       function km(a) {
-        var c = n(a, 'matchMedia')
+        const c = n(a, 'matchMedia')
         if (c && Da('matchMedia', c)) {
-          var b = oa('matchMedia', a)
+          const b = oa('matchMedia', a)
           return M(
             function (d, e) {
               d[e] = b('(' + e + ')')
@@ -638,7 +638,7 @@
       function Zl(a) {
         return M(
           function (c, b) {
-            var d = b[0],
+            const d = b[0],
               e = b[1]
             c[d + ' precision'] = n(e, 'precision') || 'n'
             c[d + ' precision rangeMin'] = n(e, 'rangeMin') || 'n'
@@ -698,15 +698,15 @@
       function Yl(a, c) {
         return [
           function () {
-            var b = c.createBuffer()
+            const b = c.createBuffer()
             ;(b && c.getParameter && Da('getParameter', c.getParameter)) || ff()
             c.bindBuffer(c.ARRAY_BUFFER, b)
-            var d = new a.Float32Array(mm)
+            let d = new a.Float32Array(mm)
             c.bufferData(c.ARRAY_BUFFER, d, c.STATIC_DRAW)
             b.Ii = 3
             b.Ui = 3
             d = c.createProgram()
-            var e = c.createShader(c.VERTEX_SHADER)
+            const e = c.createShader(c.VERTEX_SHADER)
             ;(d && e) || ff()
             return {
               ye: d,
@@ -715,7 +715,7 @@
             }
           },
           function (b) {
-            var d = b.ye,
+            let d = b.ye,
               e = b.Uj
             c.shaderSource(
               e,
@@ -729,7 +729,7 @@
             })
           },
           function (b) {
-            var d = b.ye,
+            const d = b.ye,
               e = b.Th
             c.shaderSource(
               e,
@@ -742,7 +742,7 @@
             return b
           },
           function (b) {
-            var d = b.ye
+            const d = b.ye
             b = b.Tj
             d.Sj = c.getAttribLocation(d, 'attrVertex')
             d.Wi = c.getUniformLocation(d, 'uniformOffset')
@@ -756,7 +756,7 @@
       }
       function Xl(a, c) {
         if (!S(a.Float32Array)) return !1
-        var b = n(c, 'canvas')
+        const b = n(c, 'canvas')
         if (!b || !Da('toDataUrl', b.toDataURL)) return !1
         try {
           c.createBuffer()
@@ -774,7 +774,7 @@
       }
       function nm(a) {
         try {
-          var c = Na(a) ? a : []
+          const c = Na(a) ? a : []
           return L(',', [a.name, a.description, u(qa, Bc(Boolean), fb(om), ad(','))(c)])
         } catch (b) {
           return ''
@@ -786,20 +786,20 @@
       function pm(a, c, b) {
         function d(q) {
           return function () {
-            var t = b.o('scip', '') + q
+            const t = b.o('scip', '') + q
             b.C('scip', t)
           }
         }
-        var e,
+        let e,
           f = bd(a, 'ci')
         f = Bb(a, f)
-        var g = gf(a),
+        const g = gf(a),
           h = ha(a)(ib),
           k = ['sync.cook.int'],
           l = wh(g.o('sci'))
         if (!l || 1440 < h - l) {
           b.C('scip', '0')
-          var m = d('a'),
+          const m = d('a'),
             p = Cc(a, c)
           return f(
             {
@@ -816,11 +816,11 @@
               q = n(q.$c, 'CookieMatchUrls')
               ea(q) || (q = [])
               Na(q) ? d('1')() : m()
-              var t = bd(a, 'c'),
+              const t = bd(a, 'c'),
                 r = Bb(a, t)
               q = A(
                 function (y, G) {
-                  var O = '' + y + (lc(y, '?') ? '&' : '?') + 'duid=' + p
+                  const O = '' + y + (lc(y, '?') ? '&' : '?') + 'duid=' + p
                   return r(
                     {
                       Y: {
@@ -836,7 +836,7 @@
               return K.all(q)
             }, m)
             .then(function () {
-              var q = b.o('scip')
+              const q = b.o('scip')
               !q || lc(q, 'a') || lc(q, 'b') || (g.C('sci', h), d('2')())
             }, B)
         }
@@ -846,17 +846,17 @@
         return {
           ca: function (c, b) {
             if (!c.H) return b()
-            var d = I(a).o('fid')
+            const d = I(a).o('fid')
             !yh && d && (Vd(c, 'fid', d), (yh = !0))
             return b()
           },
         }
       }
       function qm(a, c) {
-        var b = a.document
+        const b = a.document
         if (H(b.readyState, ['interactive', 'complete'])) Gb(a, c)
         else {
-          var d = ia(a),
+          const d = ia(a),
             e = d.D,
             f = d.dc,
             g = function () {
@@ -871,9 +871,9 @@
       function hf(a) {
         return {
           ca: function (c, b) {
-            var d = c.H
+            const d = c.H
             if (d) {
-              var e = I(a).o('adBlockEnabled')
+              const e = I(a).o('adBlockEnabled')
               e && d.C('adb', e)
             }
             b()
@@ -881,12 +881,12 @@
         }
       }
       function rm(a) {
-        var c = C(a, 'i.clch', sm)
+        const c = C(a, 'i.clch', sm)
         ia(a).D(a.document, ['click'], D(c, null, a), {
           passive: !1,
         })
         return function (b) {
-          var d = ra.Ua,
+          const d = ra.Ua,
             e = a.Ya[ra.lc],
             f = !!e._informer
           e._informer = x(
@@ -907,7 +907,7 @@
             jf(b)
               ? d()
               : pa(a, c, function (e) {
-                  var f
+                  let f
                   if ((e = n(e, 'settings.hittoken')))
                     (e = ((f = {}), (f.hittoken = e), f)), (b.G = x(b.G || {}, e))
                   d()
@@ -916,11 +916,11 @@
         }
       }
       function tm(a, c) {
-        var b = Qa(a)
+        const b = Qa(a)
         if ('' === b.o('cc')) {
-          var d = v('cc', b.C)
+          const d = v('cc', b.C)
           d(0)
-          var e = ha(a),
+          let e = ha(a),
             f = I(a)
           f = u(
             U(
@@ -950,7 +950,7 @@
             ['catch'](
               u(
                 dd(function () {
-                  var g = e(ib)
+                  const g = e(ib)
                   b.C('cc', '&' + g)
                 }),
                 C(a, 'cc'),
@@ -960,12 +960,12 @@
       }
       function ae(a, c) {
         if (!c) return !1
-        var b = T(a)
+        const b = T(a)
         return new RegExp(c).test('' + b.pathname + b.hash + b.search)
       }
       function um(a, c) {
         return pa(a, c, function (b) {
-          var d = n(b, 'settings.dr')
+          const d = n(b, 'settings.dr')
           return {
             Bh: vm(a, d),
             isEnabled: n(b, 'settings.auto_goals'),
@@ -981,18 +981,18 @@
         ;(b = xm(a, d, b)) && lf(a, c, b)
       }
       function Ah(a, c) {
-        var b = Bh(a, c)
+        const b = Bh(a, c)
         return zm(a, b)
       }
       function Bh(a, c) {
-        var b = kf(a.document.body, c)
+        const b = kf(a.document.body, c)
         return b ? Am(a, b) : ''
       }
       function lf(a, c, b) {
         if ((c = Ha(a, c))) (a = Ec(['dr', b || '' + Ua(a, 10, 99)])), c.params(Ec(['__ym', a]))
       }
       function kf(a, c) {
-        var b = null
+        let b = null
         try {
           b = c ? Fc(c, a) : b
         } catch (d) {}
@@ -1007,7 +1007,7 @@
       }
       function Am(a, c) {
         if (!c) return ''
-        var b = [],
+        const b = [],
           d = n(a, 'document')
         mf(a, c, function (e) {
           if (e.nodeType === d.TEXT_NODE) var f = e.textContent
@@ -1030,12 +1030,12 @@
       }
       function Cm(a, c, b) {
         if (b) {
-          var d = b.version
+          const d = b.version
           ;(b = n(Dm, d + '.' + b.wc)) && ((c && H(b, Em)) || a('ym-' + b + '-' + d))
         }
       }
       function Eh(a, c, b) {
-        var d
+        let d
         a = [
           Fh(a, c, function (e) {
             d = e
@@ -1048,7 +1048,7 @@
         return F([Gh, a], z)
       }
       function Fm(a, c, b, d) {
-        var e, f
+        let e, f
         if (b) {
           a: {
             var g = n(d, 'ecommerce') || {}
@@ -1061,7 +1061,7 @@
           }
           if (!g)
             a: {
-              var k = d
+              let k = d
               !ea(d) && be(a, Na(d)) && (k = Aa(k))
               if (
                 ea(k) &&
@@ -1085,7 +1085,7 @@
         }
       }
       function Gm(a) {
-        var c = n(a, 'ecommerce')
+        const c = n(a, 'ecommerce')
         if (Ma(c))
           return (
             (a = Z(mc(Hm), ca(c))),
@@ -1101,17 +1101,17 @@
           )
       }
       function Im(a, c, b) {
-        var d,
+        let d,
           e = Hh(a, c),
           f = T(a)
         f = ce(f.protocol + '//' + f.hostname + f.pathname)
         c = $d(a, c)
-        var g = ''
+        let g = ''
         do g += Ua(a)
         while (g.length < c.length)
         g = g.slice(0, c.length)
         a = ''
-        for (var h = 0; h < c.length; h += 1) a += (c.charCodeAt(h) + g.charCodeAt(h) - 96) % 10
+        for (let h = 0; h < c.length; h += 1) a += (c.charCodeAt(h) + g.charCodeAt(h) - 96) % 10
         c = [g, a]
         a = c[0]
         c = c[1]
@@ -1124,9 +1124,9 @@
       function Jm(a, c, b, d) {
         a = n(d, 'data')
         if (Ea(a)) {
-          var e = a.split('*')
+          let e = a.split('*')
           a = e[0]
-          var f = e[1]
+          const f = e[1]
           e = e[2]
           'sc.frame' === a
             ? d.source.postMessage('sc.images*' + c, '*')
@@ -1134,7 +1134,7 @@
         }
       }
       function Km(a, c) {
-        var b = Qa(a),
+        let b = Qa(a),
           d = 'wv2rf:' + N(c),
           e = c.jc,
           f = pf(a),
@@ -1143,7 +1143,7 @@
         return V(f) || Ta(g)
           ? Ba(function (k, l) {
               pa(a, c, function (m) {
-                var p = n(m, 'settings.webvisor.forms')
+                let p = n(m, 'settings.webvisor.forms')
                 p = !n(m, 'settings.x3') && p
                 f = pf(a) || n(m, 'settings.eu')
                 b.C(d, ed(p))
@@ -1163,7 +1163,7 @@
             })
       }
       function Lm() {
-        var a = M(
+        const a = M(
           function (c, b) {
             c[b[0]] = {
               pd: 0,
@@ -1196,7 +1196,7 @@
                 type: 'activity',
                 data: M(
                   function (b, d) {
-                    var e = a[d]
+                    const e = a[d]
                     return Math.round(b + e.pd * e.ih)
                   },
                   0,
@@ -1325,7 +1325,7 @@
         return a
       }
       function Nm(a) {
-        var c = x({}, a.data),
+        let c = x({}, a.data),
           b = []
         switch (a.event) {
           case 'tc':
@@ -1352,7 +1352,7 @@
                     id: c.target,
                     Jb: M(
                       function (d, e) {
-                        var f = e[1]
+                        const f = e[1]
                         d[e[0]] = {
                           Qc: '',
                           n: f,
@@ -1416,12 +1416,12 @@
       function Om(a) {
         return {
           Vh: function () {
-            var c = a.document.querySelector('base[href]')
+            const c = a.document.querySelector('base[href]')
             return c ? c.getAttribute('href') : null
           },
           Xh: function () {
             if (a.document.doctype) {
-              var c = x(
+              const c = x(
                   {
                     name: 'html',
                     publicId: '',
@@ -1447,10 +1447,10 @@
           ji: function () {
             try {
               if (!a.sessionStorage) return null
-              var c = a.sessionStorage.getItem('__vw_tab_guid'),
+              let c = a.sessionStorage.getItem('__vw_tab_guid'),
                 b = !1
               try {
-                var d = a.opener ? a.opener.sessionStorage : null
+                const d = a.opener ? a.opener.sessionStorage : null
                 b = !!d && c === d.getItem('__vw_tab_guid')
               } catch (e) {
                 b = !0
@@ -1464,7 +1464,7 @@
         }
       }
       function Pm(a, c, b) {
-        var d = fd(a),
+        let d = fd(a),
           e = ia(a),
           f = cb(a),
           g = c.Id(),
@@ -1489,12 +1489,12 @@
           db(Sa())
         }
         d.D(['sr'], function (t) {
-          var r,
+          let r,
             y = Jh(a, t.source)
           y && rf(a, t.source, ((r = {}), (r.type = '\u043d'), (r.frameId = c.ta().Z(y)), r))
         })
         d.D(['sd'], function (t) {
-          var r = t.data
+          const r = t.data
           t = t.source
           ;(a === t || Jh(a, t)) &&
             d.O('sdr', {
@@ -1503,18 +1503,18 @@
             })
         })
         if (f && !g) {
-          var l = !1,
+          let l = !1,
             m = 0,
             p = function () {
-              var t
+              let t
               rf(a, a.parent, ((t = {}), (t.type = 'sr'), t))
               m = W(a, p, 100, 'if.i')
             }
           p()
-          var q = function (t) {
+          const q = function (t) {
             d.na(['\u043d'], q)
             la(a, m)
-            var r = Gc(a, t.origin).host
+            const r = Gc(a, t.origin).host
             l ||
               t.source !== a.parent ||
               !t.data.frameId ||
@@ -1542,7 +1542,7 @@
           )
         }
         e = e.D(a, ['message'], function (t) {
-          var r = qb(a, t.data)
+          const r = qb(a, t.data)
           r &&
             r.type &&
             H(r.type, Qm) &&
@@ -1555,7 +1555,7 @@
         return {
           Hd: k,
           mg: function (t) {
-            var r
+            let r
             return rf(
               a,
               a.parent,
@@ -1586,7 +1586,7 @@
       }
       function Rm(a, c) {
         if (Ea(c)) return c
-        var b = a.textContent
+        let b = a.textContent
         if (Ea(b)) return b
         b = a.data
         if (Ea(b)) return b
@@ -1596,7 +1596,7 @@
       function Sm(a, c, b, d, e) {
         void 0 === d && (d = {})
         void 0 === e && (e = Ia(c))
-        var f = x(
+        const f = x(
           M(
             function (h, k) {
               h[k.name] = k.value
@@ -1608,10 +1608,10 @@
           d,
         )
         x(f, Tm(c, e, f))
-        var g =
+        const g =
           (d = M(
             function (h, k) {
-              var l = k[0],
+              const l = k[0],
                 m = de(a, c, l, k[1], b, e),
                 p = m.value
               na(p) ? delete f[l] : (f[l] = p)
@@ -1627,13 +1627,13 @@
         }
       }
       function Tm(a, c, b) {
-        var d = {}
+        const d = {}
         sf(a) ? (d.value = a.value || b.value) : 'IMG' !== c || b.src || (d.src = '')
         return d
       }
       function de(a, c, b, d, e, f) {
         void 0 === f && (f = Ia(c))
-        var g = {
+        const g = {
           qb: !1,
           value: d,
         }
@@ -1681,12 +1681,12 @@
           k && k.stop()
         }
         if (!c.Fb) return K.resolve(B)
-        var g = za(a, '4', c),
+        const g = za(a, '4', c),
           h = {
             H: Ca(),
           }
         b = new Xm(a, b, function (l, m, p) {
-          var q
+          let q
           if (!g) return K.resolve()
           m = 'wv-data=' + Kh(l, !0)
           return g(
@@ -1708,7 +1708,7 @@
         })
       }
       function Zm(a, c, b, d) {
-        var e = a.document,
+        let e = a.document,
           f = [],
           g = ia(a),
           h = ':submit' + Math.random(),
@@ -1729,7 +1729,7 @@
             })()
           }),
           p = C(a, 'sfv', function () {
-            var t = b(a),
+            let t = b(a),
               r = $m(a)
             z(function (y) {
               f.push(g.D(y.target, [y.event], m(y.type)))
@@ -1762,11 +1762,11 @@
                 wf(y) && f.push(g.D(y, ['change'], m('formInput')))
               }, t))
             z(function (y) {
-              var G = y.submit
+              const G = y.submit
               if (S(G) || ('object' === typeof G && an.test('' + G)))
                 (y[h] = G),
                   (y.submit = C(a, 'fv', function () {
-                    var O = {
+                    const O = {
                       target: y,
                       type: 'submit',
                     }
@@ -1788,7 +1788,7 @@
         }
       }
       function bn(a, c) {
-        var b = Z(function (e) {
+        const b = Z(function (e) {
             return 0 < e.N.length
           }, c),
           d = Nh({
@@ -1798,14 +1798,14 @@
         return A(u(P, d, cn(a)), b)
       }
       function Oh(a, c) {
-        var b = a.l,
+        let b = a.l,
           d = [],
           e = c.form
         if (!c[Va] && e) {
-          var f = e.elements
+          const f = e.elements
           e = e.length
-          for (var g = 0; g < e; g += 1) {
-            var h = f[g]
+          for (let g = 0; g < e; g += 1) {
+            const h = f[g]
             fe(h) && !h[Va] && La(d, nc(b, h))
           }
         } else La(d, nc(b, c))
@@ -1814,7 +1814,7 @@
       function xf(a) {
         if (jd) {
           jd = !1
-          var c = rb(a.l),
+          const c = rb(a.l),
             b = []
           gb(a.l, b, 15) ? (a = []) : (R(b, c), (a = b))
           return a
@@ -1824,22 +1824,22 @@
         if (!jd) {
           jd = !0
           a = rb(a.l)
-          var c = []
+          const c = []
           Ib(c, 14)
           R(c, a)
           return c
         }
       }
       function dn(a, c, b) {
-        var d = c[Va]
+        const d = c[Va]
         if (d) {
           a: {
-            var e = rb(a),
+            const e = rb(a),
               f = c[Va]
             if (0 < f) {
-              var g = []
+              const g = []
               c = yf(a, c)
-              var h = oc[f],
+              const h = oc[f],
                 k = c[0] + 'x' + c[1],
                 l = c[2] + 'x' + c[3]
               if (k !== h.Xf) {
@@ -1883,7 +1883,7 @@
             Ed: !1,
             Vd: !1,
           }
-        var d = ee(c),
+        const d = ee(c),
           e = zf(c)
         a = Af(a, c) || (b && e)
         return {
@@ -1897,7 +1897,7 @@
       }
       function zf(a) {
         if (!a) return !1
-        var c = a.placeholder,
+        const c = a.placeholder,
           b = a.type
         a = Z(Qh, [a.className, a.id, a.name])
         return (b && H(b, en)) || Oa(Wa(fn), a) || (Qh(c) && gn.test(c))
@@ -1907,10 +1907,10 @@
       }
       function sf(a) {
         try {
-          var c = Ia(a)
+          const c = Ia(a)
           if (H(c, Bf)) {
             if ('INPUT' === c) {
-              var b = a.type
+              const b = a.type
               return !b || H(b.toLocaleLowerCase(), hn)
             }
             return !0
@@ -1945,24 +1945,24 @@
         if (nn.test(c.className)) return !0
         b = Sh(a)
         if (!b) return !1
-        var d = b.call(c, '.ym-hide-content *')
+        const d = b.call(c, '.ym-hide-content *')
         return d && (on.test(c.className) || b.call(c, '.ym-hide-content .ym-show-content *'))
           ? !1
           : d
       }
       function Lh(a, c) {
-        var b = Xb(a),
+        let b = Xb(a),
           d = b.o('visorc')
         H(d, ['w', 'b']) || (d = '')
         ;(Th(a) && Uh(a, ge, 'visorc') && !pn.test(sb(a) || '')) || (d = 'b')
-        var e = n(c, 'settings.webvisor.recp')
+        const e = n(c, 'settings.webvisor.recp')
         if (!a.isFinite(e) || 0 > e || 1 < e) d = 'w'
         d || (d = (I(a).o('hitId') % 1e4) / 1e4 < e ? 'w' : 'b')
         b.C('visorc', d, 30)
         return 'w' === d
       }
       function Vh(a) {
-        var c = Df(a).isEnabled,
+        let c = Df(a).isEnabled,
           b = !1
         try {
           b =
@@ -1972,7 +1972,7 @@
         return Ef(Boolean, [!c, b, a.Uint8Array, n(a, 'Uint8Array.prototype.slice')])
       }
       function Ff(a, c) {
-        var b = c[1][3],
+        let b = c[1][3],
           d = 0,
           e = new a.Uint8Array(c[0])
         return fc([b], function (f, g) {
@@ -1986,14 +1986,14 @@
       function he(a, c, b) {
         a = c(b)
         c = [B, 0, 0]
-        var d = [0, c, c, void 0]
+        const d = [0, c, c, void 0]
         return fc(a, function (e, f) {
-          var g = e[0],
+          let g = e[0],
             h = e[1],
             k = e[2]
           if (0 === g) return k(d, h), d
           if (void 0 === h || null === h) return d
-          var l = g >> 3
+          const l = g >> 3
           if (g & 1) qc(d, lb(l)), (h = k(h)), l & 2 && qc(d, lb(h[1])), qc(d, h)
           else if (g & 4)
             for (g = h.length - 1; 0 <= g; ) {
@@ -2006,7 +2006,7 @@
             }
           else if (g & 2) {
             k = e[2]
-            var p = e[3],
+            const p = e[3],
               q = e[4],
               t = e[5],
               r = ca(h)
@@ -2031,7 +2031,7 @@
         })
       }
       function Hf(a) {
-        var c = a[1],
+        const c = a[1],
           b = a[0],
           d = a[2]
         a[3]
@@ -2374,7 +2374,7 @@
         ]
       }
       function Q(a) {
-        var c = eo({}, a, [], 0)
+        const c = eo({}, a, [], 0)
         return c ? [fo, c, a] : [$h, 0, 0]
       }
       function wn(a) {
@@ -2385,7 +2385,7 @@
       }
       function Zn(a) {
         a = ai(a)
-        var c = a[0],
+        let c = a[0],
           b = a[1],
           d = ((b >>> 28) | (c << 4)) >>> 0
         c >>>= 24
@@ -2474,7 +2474,7 @@
         return jo(a)(a, c, b, d)
       }
       function ko(a, c, b, d) {
-        var e = 0 > c ? 1 : 0
+        const e = 0 > c ? 1 : 0
         e && (c = -c)
         if (0 === c) md(0 < 1 / c ? 0 : 2147483648, b, d)
         else if (a.isNaN(c)) md(2143289344, b, d)
@@ -2482,7 +2482,7 @@
         else if (1.1754943508222875e-38 > c)
           md(((e << 31) | a.Math.round(c / 1.401298464324817e-45)) >>> 0, b, d)
         else {
-          var f = a.Math.floor(a.Math.log(c) / Math.LN2)
+          const f = a.Math.floor(a.Math.log(c) / Math.LN2)
           md(
             ((e << 31) |
               ((f + 127) << 23) |
@@ -2508,9 +2508,9 @@
       }
       function ai(a) {
         if (!a) return [0, 0]
-        var c = 0 > a
+        const c = 0 > a
         c && (a = -a)
-        var b = a >>> 0
+        let b = a >>> 0
         a = ((a - b) / 4294967296) >>> 0
         c &&
           ((a = ~a >>> 0),
@@ -2525,7 +2525,7 @@
             ? a
             : M(
                 function (c, b) {
-                  var d = b[0],
+                  let d = b[0],
                     e = b[1],
                     f = lo[d]
                   V(f) && (f = d)
@@ -2539,7 +2539,7 @@
       }
       function di(a, c, b) {
         return function (d, e, f) {
-          var g
+          let g
           d = x(
             {
               H: Ca(),
@@ -2548,7 +2548,7 @@
           )
           d.H.ac('we', Cb(e.Fb))
           d.G || (d.G = {})
-          var h = d.G,
+          let h = d.G,
             k = d.Oa
           k = void 0 === k ? {} : k
           h.wmode = '0'
@@ -2573,7 +2573,7 @@
       }
       function no(a, c) {
         return pa(a, c, function (b) {
-          var d = I(a)
+          const d = I(a)
           N(c)
           if (!d.o('dSync', !1))
             return (
@@ -2583,12 +2583,12 @@
                 Wc: 's',
                 $d: 'ds',
                 zj: function (e, f, g) {
-                  var h = e.$c
+                  let h = e.$c
                   e = e.host
                   if (n(h, 'settings')) return db(Sa('ds.e'))
                   f = f(aa) - g
                   g = e[1]
-                  var k, l
+                  let k, l
                   h = Ca(((k = {}), (k.di = h), (k.dit = f), (k.dip = g), k))
                   k = ((l = {}), (l['page-url'] = T(a).href), l)
                   return za(
@@ -2608,7 +2608,7 @@
         })
       }
       function ei(a, c, b) {
-        var d = b.hb,
+        const d = b.hb,
           e = ha(a),
           f = oo(a, c.userData, d),
           g = po(a)
@@ -2619,12 +2619,12 @@
           : K.resolve()
       }
       function po(a) {
-        var c = od(a)
+        const c = od(a)
         a = u(Jf, mc(['iPhone', 'iPad']))(a)
         return c ? so : a ? to : []
       }
       function ro(a, c, b, d, e) {
-        var f = e.zj,
+        const f = e.zj,
           g = void 0 === f ? B : f,
           h = e.$d,
           k = d(aa)
@@ -2649,16 +2649,16 @@
         )
       }
       function qo(a, c, b, d, e) {
-        var f = e.$d,
+        const f = e.$d,
           g = e.hb
         return new K(function (h, k) {
-          var l = b.o(f, 0)
+          let l = b.o(f, 0)
           l = parseInt('' + l, 10)
           return 60 >= c(ib) - l ? k() : vo(a) ? h(void 0) : gi(d) ? k() : h(wo(a, g))
         })
       }
       function uo(a, c, b) {
-        var d = b.Wc,
+        const d = b.Wc,
           e = b.data,
           f = za(a, d, b.hb)
         a = x({}, hi)
@@ -2677,7 +2677,7 @@
                   hi,
                 ),
                 A(function (h) {
-                  var k = h[1],
+                  const k = h[1],
                     l = h[2]
                   h = L(
                     '',
@@ -2697,7 +2697,7 @@
         )
       }
       function oo(a, c, b) {
-        var d = c || {},
+        const d = c || {},
           e = za(a, 'u', b),
           f = Qa(a)
         return {
@@ -2705,7 +2705,7 @@
             return V(d[g]) ? f.o(g, h) : d[g]
           },
           C: function (g, h) {
-            var k,
+            let k,
               l = '' + h
             d[g] = l
             f.C(g, l)
@@ -2728,7 +2728,7 @@
       }
       function Bo(a, c) {
         try {
-          var b = c[0]
+          const b = c[0]
           var d = b[1]
         } catch (e) {
           return function () {
@@ -2736,7 +2736,7 @@
           }
         }
         return function (e) {
-          var f,
+          let f,
             g =
               ((f = {}),
               (f['browser-info'] = Co),
@@ -2753,14 +2753,14 @@
       }
       function Eo(a, c) {
         if (a['disableYaCounter' + c.id]) {
-          var b = N(c)
+          const b = N(c)
           delete I(a).o('counters', {})[b]
           db(Sa('oo.e'))
         }
       }
       function Fo(a) {
         if (Yc(a)) return null
-        var c = Go(a),
+        const c = Go(a),
           b = c.$f
         V(b) &&
           ((c.$f = null),
@@ -2774,10 +2774,10 @@
         a = ii(a)
         b = b.G
         if ((void 0 === b ? {} : b).nohit) return null
-        var d = (b = null)
+        let d = (b = null)
         n(a, 'getEntriesByType') && (d = n(a.getEntriesByType('navigation'), '0')) && (b = Jo)
         if (!b) {
-          var e = n(a, 'timing')
+          const e = n(a, 'timing')
           e && ((b = Ko), (d = e))
         }
         if (!b) return null
@@ -2786,9 +2786,9 @@
         return (c = No(c, a)) && L(',', c)
       }
       function No(a, c) {
-        var b = a.length
+        const b = a.length
           ? A(function (d, e) {
-              var f = c[e]
+              const f = c[e]
               return f === d ? null : f
             }, a)
           : c
@@ -2798,11 +2798,11 @@
       }
       function Lo(a, c, b) {
         return A(function (d) {
-          var e = d[0],
+          const e = d[0],
             f = d[1]
           if (S(e)) return e(a, c) || null
           if (S(f)) return null
-          var g = !(!c[e] || !c[f])
+          let g = !(!c[e] || !c[f])
           !g &&
             2 === d.length &&
             (g = 0 === c[e] && 0 === c[f]) &&
@@ -2817,7 +2817,7 @@
       function Kh(a, c) {
         void 0 === c && (c = !1)
         for (var b = a.length, d = b - (b % 3), e = [], f = 0; f < d; f += 3) {
-          var g = (a[f] << 16) + (a[f + 1] << 8) + a[f + 2]
+          const g = (a[f] << 16) + (a[f + 1] << 8) + a[f + 2]
           e.push(
             'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='[(g >> 18) & 63],
             'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='[(g >> 12) & 63],
@@ -2849,13 +2849,13 @@
       }
       function rh(a, c) {
         void 0 === c && (c = !1)
-        var b = a,
+        let b = a,
           d = '',
           e = 0
         if (!b) return ''
         for (c && (b = ki(b)); b.length % 4; ) b += '='
         do {
-          var f = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='.indexOf(
+          let f = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='.indexOf(
               b.charAt(e++),
             ),
             g = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='.indexOf(
@@ -2868,7 +2868,7 @@
               b.charAt(e++),
             )
           if (0 > f || 0 > g || 0 > h || 0 > k) return ''
-          var l = (f << 18) | (g << 12) | (h << 6) | k
+          let l = (f << 18) | (g << 12) | (h << 6) | k
           f = (l >> 16) & 255
           g = (l >> 8) & 255
           l &= 255
@@ -2890,21 +2890,21 @@
           : ''
       }
       function Po(a, c, b, d, e, f, g, h) {
-        var k = b.o(f)
+        let k = b.o(f)
         na(k) && (b.C(f, g), e(a, c, b, d), (k = b.o(f, g)))
         V(h) || h.ac(f, '' + k)
         return k
       }
       function Qo(a, c) {
         if (pd(a)) {
-          var b = sb(a).match(Ro)
+          const b = sb(a).match(Ro)
           if (b && b.length) return b[1] === c
         }
         return !1
       }
       function me(a, c, b) {
         return function (d) {
-          var e,
+          let e,
             f,
             g = Ha(c, b)
           g &&
@@ -2916,10 +2916,10 @@
         }
       }
       function So(a, c, b) {
-        var d = !1,
+        let d = !1,
           e = ''
         if (!Ma(c)) return pb(b, '', 'Ecommerce data should be an object'), d
-        var f = c.goods
+        const f = c.goods
         switch (a) {
           case 'detail':
           case 'add':
@@ -2940,13 +2940,13 @@
         return d
       }
       function of(a, c, b) {
-        var d, e
+        let d, e
         if (c) {
-          var f = c.purchase || c
+          const f = c.purchase || c
           c = ca(f)
-          var g = f[b]
+          const g = f[b]
           if (g) {
-            var h = ((d = {}), (d[a] = ((e = {}), (e.products = A(To, g)), e)), d)
+            const h = ((d = {}), (d[a] = ((e = {}), (e.products = A(To, g)), e)), d)
             1 < c.length &&
               (h[a].actionField = M(
                 function (k, l) {
@@ -2963,9 +2963,9 @@
         }
       }
       function To(a) {
-        var c = {}
+        const c = {}
         z(function (b) {
-          var d = Kf[b] || b
+          let d = Kf[b] || b
           ;-1 !== b.indexOf('item_category')
             ? ((d = Kf.item_category), (c[d] = c[d] ? c[d] + ('/' + a[b]) : a[b]))
             : (c[d] = a[b])
@@ -2985,7 +2985,7 @@
           r.hidden = !r.hidden
         }
         function d(X) {
-          var xa = g()
+          const xa = g()
           x(xa.style, sc('2px', '18px'), Hc, {
             left: '15px',
             top: '7px',
@@ -2996,7 +2996,7 @@
           return xa
         }
         function e(X, xa, sa, Yb, rd) {
-          var ne = g()
+          const ne = g()
           x(ne.style, sc(xa + 'px', sa + 'px'), Hc, {
             left: X + 'px',
             bottom: 0,
@@ -3005,7 +3005,7 @@
           })
           return ne
         }
-        var f = $a(a)
+        let f = $a(a)
         if (!f) return B
         var g = v('div', f),
           h = v('iframe', f),
@@ -3017,7 +3017,7 @@
           maxWidth: 'initial',
           zIndex: '999999999',
         })
-        var l = k.attachShadow
+        let l = k.attachShadow
             ? k.attachShadow({
                 mode: 'open',
               })
@@ -3093,7 +3093,7 @@
         q.appendChild(m)
         l.appendChild(t)
         l.appendChild(r)
-        var G = ['click', 'touchstart']
+        const G = ['click', 'touchstart']
         h = ia(a)
         m = a.document.body
         l = [
@@ -3103,7 +3103,7 @@
           h.D(y, ['load'], D(t.removeChild, t, p)),
           D(m.removeChild, m, k),
         ]
-        var O = F([ja, l], z)
+        const O = F([ja, l], z)
         l.push(
           h.D(a, ['securitypolicyviolation'], function (X) {
             ;(X = n(X, 'blockedURI')) && 0 <= X.indexOf('https://metrika.yandex.ru') && O()
@@ -3123,7 +3123,7 @@
         )
       }
       function sc(a, c) {
-        var b
+        let b
         return (b = {}), (b.width = a), (b.height = c || a), b
       }
       function Vo(a, c) {
@@ -3138,10 +3138,10 @@
           ((b = qb(a, c.data)), 'appendremote' === n(b, 'action') && Wo(a, c, b))
       }
       function mi(a, c, b, d) {
-        var e, f, g, h
+        let e, f, g, h
         void 0 === b && (b = '')
         void 0 === d && (d = '')
-        var k = I(a),
+        const k = I(a),
           l = {}
         l.getCachedTags = Mf
         l.form = ((e = {}), (e.closest = v(a, ni)), (e.select = Xo), (e.getData = v(a, oi)), e)
@@ -3155,11 +3155,11 @@
           })
       }
       function qi(a) {
-        var c = a.lang
+        let c = a.lang
         c = void 0 === c ? '' : c
-        var b = a.appVersion
+        let b = a.appVersion
         b = void 0 === b ? '' : b
-        var d = a.fileId
+        let d = a.fileId
         d = void 0 === d ? '' : d
         a = a.beta
         a = void 0 === a ? !1 : a
@@ -3175,16 +3175,16 @@
         return ri(c) ? c : ''
       }
       function $o(a, c) {
-        var b = $a(a)
+        const b = $a(a)
         if (b) {
-          var d = b('div'),
+          const d = b('div'),
             e = Vb(a)
           if (e) {
             d.innerHTML =
               '<iframe name="RemoteIframe" allowtransparency="true" style="position: absolute; left: -999px; top: -999px; width: 1px; height: 1px;"></iframe>'
-            var f = d.firstChild
+            const f = d.firstChild
             f.onload = function () {
-              var h = b('meta')
+              const h = b('meta')
               h.setAttribute('http-equiv', 'Content-Security-Policy')
               h.setAttribute('content', 'script-src *')
               f.contentWindow.document.head.appendChild(h)
@@ -3195,7 +3195,7 @@
             a._ym__remoteIframeEl = f
             e.appendChild(d)
             d.removeChild(f)
-            var g = null
+            let g = null
             d.attachShadow
               ? (g = d.attachShadow({
                   mode: 'open',
@@ -3208,7 +3208,7 @@
         }
       }
       function Yo(a) {
-        var c,
+        let c,
           b = si(a)
         a = I(a).o('getCounters', sd)()
         a = A(U('id'), a)
@@ -3221,7 +3221,7 @@
         )
       }
       function pi(a, c, b) {
-        var d
+        let d
         c = ti(a, c, {
           Dg: ap,
           Si: ((d = {}), (d.href = !0), d),
@@ -3232,7 +3232,7 @@
             return '*' === f ? f : Kb(f)
           }, b),
         )
-        var e = A(u(P, oa('concat', ['']), ui('reverse'), ja), b)
+        const e = A(u(P, oa('concat', ['']), ui('reverse'), ja), b)
         b = td(a)
         d = vi(a, b, 1e3)
         c = D(c.cg, c, e)
@@ -3242,7 +3242,7 @@
         c()
       }
       function ap(a, c, b) {
-        var d = $a(a),
+        const d = $a(a),
           e = b.yb,
           f = b.Yc,
           g = e.parentNode,
@@ -3250,17 +3250,17 @@
         if ('text' === b.Ae && h && d && g) {
           b = d('small')
           xi(b)
-          var k = h.split(''),
+          const k = h.split(''),
             l = yi(h).length
           z(
             oa('appendChild', b),
             M(
               function (m, p) {
-                var q = m.ma,
+                const q = m.ma,
                   t = m.Jg,
                   r = d('small')
                 r.innerHTML = p
-                var y = cp.test(p)
+                const y = cp.test(p)
                 xi(r)
                 y && (r.style.opacity = '' + (l - t - 1) / l)
                 q.push(r)
@@ -3287,7 +3287,7 @@
         function e() {
           z(v(['style', 'opacity', ''], Ec), qa(b.childNodes))
           if (c) {
-            var k = Ha(a, c)
+            const k = Ha(a, c)
             k && k.extLink('tel:' + d, {})
           }
           g()
@@ -3298,7 +3298,7 @@
           h = B
         g = f.D(b, ['mouseenter'], function (k) {
           if (k.target === b) {
-            var l = W(a, e, 200, 'ph.h.e')
+            const l = W(a, e, 200, 'ph.h.e')
             ;(h || B)()
             h = f.D(b, ['mouseleave'], function (m) {
               m.target === b && la(a, l)
@@ -3309,7 +3309,7 @@
       function wi(a, c) {
         Zb(a)(
           Ra(B, function () {
-            var b,
+            let b,
               d = a.document.body,
               e = ((b = {}), (b.attributes = !0), (b.childList = !0), (b.subtree = !0), b)
             Da('MutationObserver', a.MutationObserver) && new MutationObserver(c.O).observe(d, e)
@@ -3321,13 +3321,13 @@
       }
       function ti(a, c, b) {
         function d(k) {
-          var l
+          let l
           return f(a, c, k) ? (null === (l = h[k.Yc]) || void 0 === l ? void 0 : l.gd) : null
         }
         var e,
           f = b.Dg
         b = b.Si
-        var g = void 0 === b ? ((e = {}), (e.href = !0), (e.text = !0), e) : b,
+        let g = void 0 === b ? ((e = {}), (e.href = !0), (e.text = !0), e) : b,
           h
         return {
           cg: function (k) {
@@ -3344,7 +3344,7 @@
                     l,
                   ),
                   function () {
-                    var p = ha(a),
+                    const p = ha(a),
                       q = p(aa),
                       t = g.href ? ep(a, h) : [],
                       r = g.text ? Ai(a, h) : []
@@ -3360,19 +3360,19 @@
         }
       }
       function ep(a, c) {
-        var b = a.document.body
+        const b = a.document.body
         if (!b) return []
-        var d = Bi(c)
+        const d = Bi(c)
         return M(
           function (e, f) {
-            var g = n(f, 'href')
+            let g = n(f, 'href')
             try {
               var h = decodeURI(g || '')
             } catch (p) {
               h = ''
             }
             if ('tel:' === h.slice(0, 4)) {
-              var k = (d.exec(h) || [])[0],
+              let k = (d.exec(h) || [])[0],
                 l = k ? Kb(k) : '',
                 m = c[l]
               V(m) ||
@@ -3397,16 +3397,16 @@
       function Ai(a, c, b) {
         void 0 === b && (b = a.document.body)
         if (!b) return []
-        var d = [],
+        const d = [],
           e = Bi(c)
         mf(
           a,
           b,
           function (f) {
             if (f !== b && 'script' !== (n(f, 'parentNode.nodeName') || '').toLowerCase()) {
-              var g = Z(Boolean, e.exec(f.textContent || '') || [])
+              const g = Z(Boolean, e.exec(f.textContent || '') || [])
               z(function (h) {
-                var k = Kb(h)
+                const k = Kb(h)
                 V(c[k]) ||
                   d.push({
                     Ae: 'text',
@@ -3427,14 +3427,14 @@
       }
       function zi() {
         return ud(function (a, c) {
-          var b = A(Kb, c),
+          let b = A(Kb, c),
             d = b[0]
           b = b[1]
           a[d] = {
             eb: b,
             gd: c,
           }
-          var e = Di(d)
+          const e = Di(d)
           e !== d &&
             (a[e] = {
               eb: Di(b),
@@ -3449,13 +3449,13 @@
           g < a.length && !(f >= e.length);
           g += 1
         ) {
-          var h = d[g]
+          const h = d[g]
           '0' <= h && '9' >= h ? (b.push(e[f]), (f += 1)) : b.push(d[g])
         }
         return L('', b) + c.slice(f + 1)
       }
       function Di(a) {
-        var c = {
+        const c = {
           7: '8',
           8: '7',
         }
@@ -3466,7 +3466,7 @@
       }
       function Fi(a, c, b, d) {
         if (c) {
-          var e = []
+          const e = []
           c &&
             (a.document.documentElement.contains(c)
               ? mf(a, c, oa('push', e), d)
@@ -3500,14 +3500,14 @@
           );
       }
       function Gi(a, c, b) {
-        var d = [],
+        const d = [],
           e = u(P, oa('push', d))
         S(b) ? ((b = b(c)), (na(b) || b === a.NodeFilter.FILTER_ACCEPT) && e(c)) : e(c)
         if (c.childNodes && 0 < c.childNodes.length) {
           c = c.childNodes
           b = 0
-          for (var f = c.length; b < f; b += 1) {
-            var g = Gi(a, c[b])
+          for (let f = c.length; b < f; b += 1) {
+            const g = Gi(a, c[b])
             z(e, g)
           }
         }
@@ -3516,7 +3516,7 @@
       function fp(a, c, b) {
         if (b && ((b = Nf(a, b)), (b = Pf(a, b)))) {
           b = '?' + vd(b)
-          var d = Db(a, c, 'Button goal. Counter ' + c.id + '. Button: ' + b + '.')
+          const d = Db(a, c, 'Button goal. Counter ' + c.id + '. Button: ' + b + '.')
           oe(a, c, 'btn', d).reachGoal(b)
         }
       }
@@ -3528,7 +3528,7 @@
           (b.push(d), W(a, F([!1, a, c, b, d], Hi), 300))
       }
       function Hi(a, c, b, d, e) {
-        var f = Lb(c)(e, d),
+        const f = Lb(c)(e, d),
           g = -1 !== f
         if (a || g)
           g && d.splice(f, 1),
@@ -3546,11 +3546,11 @@
         return Ji(a, c, ['i', 'n', 'p'], void 0, b)
       }
       function ip(a, c) {
-        var b
+        let b
         a(((b = {}), (b.clickmap = V(c) ? !0 : c), b))
       }
       function jp(a, c, b, d, e) {
-        var f
+        let f
         c = {
           H: Ca(),
           G: ((f = {}), (f['page-url'] = c), (f['pointer-click'] = b), f),
@@ -3576,7 +3576,7 @@
         return !0
       }
       function mp(a, c) {
-        var b = null
+        let b = null
         try {
           if ((b = c.target || c.srcElement))
             !b.ownerDocument && b.documentElement
@@ -3586,12 +3586,12 @@
         return b
       }
       function np(a) {
-        var c = a.which
+        const c = a.which
         a = a.button
         return c || void 0 === a ? c : 1 === a || 3 === a ? 1 : 2 === a ? 3 : 4 === a ? 2 : 0
       }
       function Ki(a, c) {
-        var b = Vb(a),
+        const b = Vb(a),
           d = Qf(a)
         return {
           x: c.pageX || c.clientX + d.x - (b.clientLeft || 0) || 0,
@@ -3600,9 +3600,9 @@
       }
       function op(a, c) {
         if (a.Jj()) {
-          var b = Li(c)
+          let b = Li(c)
           if (b && !pc('ym-disable-tracklink', b)) {
-            var d = a.l,
+            let d = a.l,
               e = a.vh,
               f = a.hb,
               g = a.sender,
@@ -3621,7 +3621,7 @@
             else {
               k = k ? Gc(d, k).hostname : T(d).hostname
               h = RegExp('\\.(' + L('|', A(pp, h)) + ')$', 'i')
-              var p = b.protocol + '//' + b.hostname + b.pathname
+              const p = b.protocol + '//' + b.hostname + b.pathname
               h = Mi.test(p) || Mi.test(l) || h.test(l) || h.test(p)
               b = b.hostname
               qe(k) === qe(b)
@@ -3647,7 +3647,7 @@
         }
       }
       function pe(a, c, b, d) {
-        var e,
+        let e,
           f = Ca()
         b.Jc && f.C('dl', 1)
         b.Qb && f.C('ln', 1)
@@ -3669,13 +3669,13 @@
         return Ic(a, 'cl.p.s', c, b.gb || B, b.l)
       }
       function rp(a, c) {
-        var b,
+        let b,
           d,
           e = ((b = {}), (b.string = !0), (b.object = !0), (b['boolean'] = c), b)[typeof c] || !1
         a(((d = {}), (d.trackLinks = e), d))
       }
       function sp(a, c, b, d) {
-        var e = T(a),
+        let e = T(a),
           f = e.hostname
         e = e.href
         if ((c = xd(c).url)) (a = Gc(a, c)), (f = a.hostname), (e = a.href)
@@ -3688,11 +3688,11 @@
           .split('/')[0]
       }
       function tp(a, c, b, d) {
-        var e
+        let e
         if ((a = Ha(a, b))) {
-          var f = d.data
+          const f = d.data
           b = '' + b.id
-          var g = d.sended || []
+          const g = d.sended || []
           d.sended || (d.sended = g)
           H(b, g) ||
             !a.params ||
@@ -3704,26 +3704,26 @@
       }
       function nh(a, c, b) {
         void 0 === b && (b = P)
-        var d = fd(a)
+        const d = fd(a)
         b(d)
-        var e = v(d, up)
+        const e = v(d, up)
         re(a, c, function (f) {
           f.xa.D(e)
         })
         return d
       }
       function up(a, c) {
-        var b = n(c, 'ymetrikaEvent')
+        const b = n(c, 'ymetrikaEvent')
         b && a.O(n(b, 'type'), b)
       }
       function re(a, c, b, d) {
         void 0 === b && (b = B)
         void 0 === d && (d = !1)
-        var e = td(a)
+        const e = td(a)
         if (c && S(c.push)) {
-          var f = c.push
+          const f = c.push
           c.push = function () {
-            var g = Aa(arguments),
+            let g = Aa(arguments),
               h = g[0]
             d && e.O(h)
             g = f.apply(c, g)
@@ -3743,20 +3743,20 @@
       }
       function Ud(a) {
         a = I(a)
-        var c = a.o('dataLayer', [])
+        const c = a.o('dataLayer', [])
         a.C('dataLayer', c)
         return c
       }
       function Ll(a, c) {
-        var b, d
+        let b, d
         a.push(((b = {}), (b.ymetrikaEvent = ((d = {}), (d.type = c), d)), b))
       }
       function Oi(a, c) {
-        var b = $c(a, c),
+        const b = $c(a, c),
           d = [],
           e = []
         if (!b) return null
-        var f = F([a, b.De], vp),
+        const f = F([a, b.De], vp),
           g = v(f, wp)
         b.aa
           .D(['initToParent'], function (h) {
@@ -3776,7 +3776,7 @@
             })
           },
           og: function (h) {
-            var k = {
+            const k = {
               rg: [],
               Oe: [],
               data: h,
@@ -3785,7 +3785,7 @@
             return f(b.children, k, h)
           },
           pg: function (h) {
-            var k = {
+            const k = {
               rg: [],
               Oe: [],
               data: h,
@@ -3800,21 +3800,21 @@
           return !H(b.info.counterId, d.Oe)
         }, c)
         z(function (d) {
-          var e
+          let e
           b.info.counterId && a(((e = {}), (e[b.info.counterId] = b), e), d, d.data)
         }, c)
       }
       function vp(a, c, b, d, e) {
         return new K(function (f, g) {
-          var h = ca(b),
+          const h = ca(b),
             k = u(d.resolve ? d.resolve : P, dd(f)),
             l = u(d.reject ? d.reject : P, dd(g))
           d.resolve = k
           d.reject = l
           z(function (m) {
-            var p
+            let p
             d.Oe.push(+m)
-            var q = b[m],
+            const q = b[m],
               t = W(a, v(Sa(), l), 5100, 'is.m')
             c(q.window, x(e, ((p = {}), (p.toCounter = Ga(m)), p)), function (r, y) {
               la(a, t)
@@ -3825,13 +3825,13 @@
         })['catch'](C(a, 'if.b'))
       }
       function xp(a) {
-        var c = B,
+        let c = B,
           b = null,
           d = a.length
         if (0 !== a.length && a[0]) {
-          var e = a.slice(-1)[0]
+          const e = a.slice(-1)[0]
           S(e) && ((c = e), (d = a.length + -1))
-          var f = a.slice(-2)[0]
+          const f = a.slice(-2)[0]
           S(f) && ((c = f), (b = e), (d = a.length + -2))
           d = a.slice(0, d)
           return {
@@ -3842,7 +3842,7 @@
         }
       }
       function Ic(a, c, b, d, e) {
-        var f = F([a, d, e], Rf)
+        const f = F([a, d, e], Rf)
         return b.then(f, function (g) {
           f()
           le(a, c, g)
@@ -3851,11 +3851,11 @@
       function Pi(a, c) {
         return {
           ca: function (b, d) {
-            var e = (b.V || {}).ba,
+            let e = (b.V || {}).ba,
               f = b.Y
             f = void 0 === f ? {} : f
             if (e && (Qi(c, e), !f.fa && b.H && b.G)) {
-              var g = jb(a, e),
+              const g = jb(a, e),
                 h = Ri(a),
                 k = b.H.o('pv')
               g &&
@@ -3876,7 +3876,7 @@
             d()
           },
           Ba: function (b, d) {
-            var e = Ri(a),
+            let e = Ri(a),
               f = Ha(a, c),
               g = f && f.params
             g &&
@@ -3907,13 +3907,13 @@
       }
       function Tf(a) {
         a = I(a)
-        var c = a.o('dsjf') || Ba({})
+        const c = a.o('dsjf') || Ba({})
         a.Ra('dsjf', c)
         return c
       }
       function zp(a, c) {
         return function (b) {
-          var d,
+          let d,
             e,
             f = Ha(a, c)
           f &&
@@ -3930,7 +3930,7 @@
         a = ya(a)
         return M(
           function (c, b) {
-            var d = b[0],
+            let d = b[0],
               e = b[1],
               f = Ma(e)
             if (!Ea(e) && !f) return c
@@ -3947,7 +3947,7 @@
         c = ya(c)
         c = M(
           function (d, e) {
-            var f = e[0],
+            let f = e[0],
               g = e[1],
               h = Ma(g)
             if (!Ea(g) && !h) return d
@@ -3970,7 +3970,7 @@
         return K.all(c)
       }
       function Bp(a) {
-        var c = tb(a).toLowerCase().split('@'),
+        let c = tb(a).toLowerCase().split('@'),
           b = c[0]
         c = c[1]
         if (!c) return a
@@ -3987,15 +3987,15 @@
       }
       function Ui(a, c) {
         return new K(function (b, d) {
-          var e = new a.TextEncoder().encode(c)
+          const e = new a.TextEncoder().encode(c)
           a.crypto.subtle.digest('SHA-256', e).then(function (f) {
             f = new a.Blob([f], {
               type: 'application/octet-binary',
             })
-            var g = new a.FileReader()
+            const g = new a.FileReader()
             g.onload = function (h) {
               h = n(h, 'target.result')
-              var k = (h || '').indexOf(',')
+              const k = (h || '').indexOf(',')
               ;-1 !== k ? b(h.substring(k + 1)) : d(Kc('fpm.i'))
             }
             g.readAsDataURL(f)
@@ -4003,16 +4003,16 @@
         })
       }
       function Ha(a, c) {
-        var b = I(a).o('counters', {}),
+        const b = I(a).o('counters', {}),
           d = N(c)
         return b[d]
       }
       function Wi(a, c) {
         I(a).C('dce:' + c, !0)
-        var b = I(a).o('dclq:' + c)
+        const b = I(a).o('dclq:' + c)
         b &&
           (z(function (d) {
-            var e = d[0]
+            const e = d[0]
             d = d[1]
             ja.apply(void 0, wa([yd(a, c)[e]], d))
           }, b),
@@ -4022,12 +4022,12 @@
         return Vf(c) ? B : v(F(wa([a, N(c)], d ? [b + '. Params:', d] : [b]), pb), ja)
       }
       function pb() {
-        var a = Aa(arguments),
+        const a = Aa(arguments),
           c = a.slice(2)
         yd(a[0], a[1]).log.apply(pb, c)
       }
       function Df(a) {
-        var c = '1' === Xb(a).o('debug'),
+        const c = '1' === Xb(a).o('debug'),
           b = -1 < T(a).href.indexOf('_ym_debug=1')
         a = a._ym_debug
         return {
@@ -4045,7 +4045,7 @@
       }
       function Lc(a, c, b, d) {
         return function () {
-          var e = Aa(arguments)
+          const e = Aa(arguments)
           kb(a, {
             ea: b,
             name: 'log',
@@ -4063,7 +4063,7 @@
       }
       function Ep(a, c, b) {
         c = N(c)
-        var d = Wf(a)
+        const d = Wf(a)
         b = x(
           {
             Mh: d(aa),
@@ -4081,7 +4081,7 @@
       }
       function Fp(a, c) {
         return function (b) {
-          var d = b[a]
+          const d = b[a]
           d
             ? ((d.mj = c), (d.fg = !0), d.eg ? d.eg(c) : (d.bb = K.resolve(c)))
             : (b[a] = {
@@ -4103,21 +4103,21 @@
         return $a(a) ? v(a, Gp) : !1
       }
       function Zi(a) {
-        var c = n(a, 'navigator.sendBeacon')
+        const c = n(a, 'navigator.sendBeacon')
         return c && Da('sendBeacon', c) ? F([a, D(c, n(a, 'navigator'))], Hp) : !1
       }
       function Hp(a, c, b, d) {
         return new K(function (e, f) {
-          var g
+          let g
           if (!n(a, 'navigator.onLine')) return f()
-          var h = x(d.Wb, ((g = {}), (g['force-urlencoded'] = 1), g))
+          const h = x(d.Wb, ((g = {}), (g['force-urlencoded'] = 1), g))
           g = b + '?' + vd(h) + (d.fa ? '&' + d.fa : '')
           return 2e3 < g.length ? f(Sa('sb.tlq')) : c(g) ? e('') : f()
         })
       }
       function Gp(a, c, b) {
         return new K(function (d, e) {
-          var f,
+          let f,
             g,
             h = '_ymjsp' + Ua(a),
             k = x(((f = {}), (f.callback = h), f), b.Wb),
@@ -4148,12 +4148,12 @@
         }
       }
       function Ad(a) {
-        var c = $a(a)
+        const c = $a(a)
         return c ? F([a, c], Jp) : !1
       }
       function Jp(a, c, b, d) {
         return new K(function (e, f) {
-          var g = Vb(a),
+          let g = Vb(a),
             h = c('img'),
             k = u(v(h, jc), v(Sa(d.Ca), f)),
             l = ue(a, k, d.Db || 3e3)
@@ -4173,7 +4173,7 @@
         })
       }
       function Mb(a) {
-        var c
+        let c
         if ((c = n(a, 'XMLHttpRequest')))
           if ((c = 'withCredentials' in new a.XMLHttpRequest())) {
             a: {
@@ -4193,7 +4193,7 @@
         return c ? v(a, Lp) : !1
       }
       function Lp(a, c, b) {
-        var d,
+        let d,
           e = new a.XMLHttpRequest(),
           f = b.fa,
           g = x(b.jd ? ((d = {}), (d.wmode = '7'), d) : {}, b.Wb)
@@ -4207,7 +4207,7 @@
               e.setRequestHeader(m[0], m[1])
             }),
           )(b.xb)
-          var l = F([a, e, Sa(b.Ca), b.jd, b.pj, h, k], Mp)
+          const l = F([a, e, Sa(b.Ca), b.jd, b.pj, h, k], Mp)
           e.onreadystatechange = l
           try {
             e.send(f)
@@ -4247,21 +4247,21 @@
         return a
       }
       function Np(a, c, b) {
-        var d = A(Jc, Nb[c] || Ob)
+        const d = A(Jc, Nb[c] || Ob)
         z(function (e) {
           return d.unshift(e)
         }, Yf)
         return A(u(Mc([a, b]), ja), d)
       }
       function bj(a, c) {
-        var b = T(a),
+        let b = T(a),
           d = b.href,
           e = b.host,
           f = -1
         if (!Ea(c) || V(c)) return d
         b = c.replace(cj, '')
         if (-1 !== b.search(Op)) return b
-        var g = b.charAt(0)
+        const g = b.charAt(0)
         if (
           ('?' === g && ((f = d.search(/\?/)), -1 === f)) ||
           ('#' === g && ((f = d.search(/#/)), -1 === f))
@@ -4276,14 +4276,14 @@
       function Zf(a, c) {
         return {
           ca: function (b, d) {
-            var e,
+            let e,
               f = b.H,
               g = b.Bb,
               h = b.G,
               k = b.Y
             k = void 0 === k ? {} : k
             if (f && h) {
-              var l = ha(a)
+              const l = ha(a)
               f.ac('rqnl', 1)
               for (var m = Bd(a), p = 1; m[p]; ) p += 1
               b.V || (b.V = {})
@@ -4313,25 +4313,25 @@
         }
       }
       function dj(a, c) {
-        var b = Bd(a)
+        const b = Bd(a)
         c.H && !Ta(b) && c.V && (delete b[c.V.Xb], $f(a))
       }
       function $f(a) {
-        var c = Bd(a)
+        const c = Bd(a)
         Qa(a).C('retryReqs', c)
       }
       function Cd(a, c) {
         return {
           ca: function (b, d) {
-            var e = ej(c)
+            let e = ej(c)
             e = F([b, e, d], Pp)
             Qp(a, c, e)
           },
           Ba: function (b, d) {
-            var e = b.H,
+            const e = b.H,
               f = ej(c)
             if (e) {
-              var g = f.ua
+              const g = f.ua
               f.rf === e && g && (z(ja, g), (f.ua = null))
             }
             d()
@@ -4339,7 +4339,7 @@
         }
       }
       function Pp(a, c, b) {
-        var d = a.H
+        const d = a.H
         d ? (jf(a) ? ((c.rf = d), b()) : c.ua ? c.ua.push(b) : b()) : b()
       }
       function jf(a) {
@@ -4347,7 +4347,7 @@
       }
       function Qp(a, c, b) {
         if (ag(a) && cb(a)) {
-          var d = Rp(c)
+          const d = Rp(c)
           if (!d.Fi) {
             d.Fi = !0
             c = $c(a, c)
@@ -4356,7 +4356,7 @@
               return
             }
             d.ua = []
-            var e = function () {
+            const e = function () {
               d.ua && (z(ja, d.ua), (d.ua = null))
             }
             W(a, e, 3e3)
@@ -4368,11 +4368,11 @@
       function fj(a, c) {
         return {
           ca: function (b, d) {
-            var e = b.H
+            const e = b.H
             if (e && (!c || c.ng)) {
-              var f = a.document.title
+              let f = a.document.title
               b.V && b.V.title && (f = b.V.title)
-              var g = bc('getElementsByTagName', a.document)
+              const g = bc('getElementsByTagName', a.document)
               'string' !== typeof f &&
                 g &&
                 ((f = g('title')), (f = (f = n(f, '0.innerHtml')) ? f : ''))
@@ -4387,12 +4387,12 @@
         return function (c, b) {
           return {
             ca: function (d, e) {
-              var f = d.H,
+              const f = d.H,
                 g = d.G
               f &&
                 g &&
                 z(function (h) {
-                  var k = bg[h],
+                  let k = bg[h],
                     l = 'bi',
                     m = f
                   k || ((k = cg[h]), (l = 'tel'), (m = Vd(d)))
@@ -4404,9 +4404,9 @@
         }
       }
       function Tp(a, c) {
-        var b = Dd(a)
+        const b = Dd(a)
         c.D(['initToParent'], function (d) {
-          var e = d[0]
+          const e = d[0]
           d = d[1]
           window.window &&
             (b.children[d.counterId] = {
@@ -4415,12 +4415,12 @@
             })
         })
           .D(['initToChild'], function (d) {
-            var e = d[0]
+            const e = d[0]
             d = d[1]
             e.source === a.parent && c.O('parentConnect', [e, d])
           })
           .D(['parentConnect'], function (d) {
-            var e = d[1]
+            const e = d[1]
             e.counterId &&
               (b.Ga[e.counterId] = {
                 info: e,
@@ -4430,7 +4430,7 @@
       }
       function Up(a) {
         if (Da('MutationObserver', a.MutationObserver)) {
-          var c = Dd(a).children,
+          const c = Dd(a).children,
             b = new a.MutationObserver(function () {
               z(function (d) {
                 n(c[d], 'window.window') || delete c[d]
@@ -4448,7 +4448,7 @@
       }
       function Vp(a, c) {
         return function (b, d) {
-          var e,
+          let e,
             f = {
               tc: ha(a)(aa),
               key: a.Math.random(),
@@ -4456,7 +4456,7 @@
             }
           b.length && ((f.tc = Ga(b[0])), (f.key = parseFloat(b[1])), (f.dir = Ga(b[2])))
           x(d, c)
-          var g =
+          const g =
             ((e = {
               data: d,
             }),
@@ -4479,19 +4479,19 @@
         })
       }
       function Cc(a, c) {
-        var b = c.ae,
+        let b = c.ae,
           d = b || 'uid'
         b = b ? a.location.hostname : void 0
-        var e = Xb(a),
+        let e = Xb(a),
           f = Qa(a),
           g = ha(a),
           h = g(ve),
           k = gj(a, c),
           l = k[0]
         k = k[1]
-        var m = e.o('d')
+        const m = e.o('d')
         hj(a, c)
-        var p = !1
+        let p = !1
         !k && l && ((k = l), (p = !0))
         if (!k) (k = L('', [g(ve), Ua(a)])), (p = !0)
         else if (!m || 15768e3 < h - Ga(m)) p = !0
@@ -4503,24 +4503,24 @@
         return !c.rb && hj(a, c)
       }
       function gj(a, c) {
-        var b = Qa(a),
+        const b = Qa(a),
           d = Xb(a),
           e = c.ae || 'uid'
         return [b.o(e), d.o(e)]
       }
       function Th(a, c, b) {
         dg(a, 'metrika_enabled', '1', 0, c, b, !0)
-        var d = ij(a)
+        let d = ij(a)
         ;(d = d && d.metrika_enabled) && jj(a, 'metrika_enabled', c, b, !0)
         return !!d
       }
       function dg(a, c, b, d, e, f, g) {
         void 0 === g && (g = !1)
         if (Uh(a, ge, c)) {
-          var h = c + '=' + encodeURIComponent(b) + ';'
+          let h = c + '=' + encodeURIComponent(b) + ';'
           h += '' + Xp(a)
           if (d) {
-            var k = new Date()
+            const k = new Date()
             k.setTime(k.getTime() + 6e4 * d)
             h += 'expires=' + k.toUTCString() + ';'
           }
@@ -4531,18 +4531,18 @@
         }
       }
       function ge(a, c) {
-        var b = kj(a)
+        const b = kj(a)
         return b ? b[c] || null : null
       }
       function ij(a) {
         try {
-          var c = a.document.cookie
+          const c = a.document.cookie
           if (!na(c)) {
-            var b = {}
+            const b = {}
             z(
               function (d) {
                 d = d.split('=')
-                var e = d[1]
+                const e = d[1]
                 b[tb(d[0])] = tb(lj(e))
               },
               (c || '').split(';'),
@@ -4564,7 +4564,7 @@
             )
       }
       function Hb(a) {
-        var c = I(a),
+        let c = I(a),
           b = c.o('hitId')
         b || ((b = Ua(a)), c.C('hitId', b))
         return b
@@ -4572,7 +4572,7 @@
       function T(a) {
         return M(
           function (c, b) {
-            var d = n(a, 'location.' + b)
+            const d = n(a, 'location.' + b)
             c[b] = d ? '' + d : ''
             return c
           },
@@ -4581,7 +4581,7 @@
         )
       }
       function Vi(a) {
-        var c = a.match(mj)
+        let c = a.match(mj)
         if (c) {
           a = c[1]
           if ((c = c[2])) return H(c, gg) ? c : !1
@@ -4590,13 +4590,13 @@
         return !1
       }
       function Pf(a, c, b) {
-        var d = Ia(c)
+        const d = Ia(c)
         return d && Ji(a, c, Z(Boolean, ['p', $p[d], 'c']), Of, b)
       }
       function Nf(a, c) {
-        var b = $b(hg, a, c)
+        let b = $b(hg, a, c)
         if (!b) {
-          var d = $b('div', a, c)
+          const d = $b('div', a, c)
           d && (ub(hg + ',div', d).length || (b = d))
         }
         return b
@@ -4604,7 +4604,7 @@
       function Ji(a, c, b, d, e) {
         return M(
           function (f, g) {
-            var h = null
+            let h = null
             g in nj
               ? (h = c.getAttribute && c.getAttribute(nj[g]))
               : g in Nc &&
@@ -4618,13 +4618,13 @@
       }
       function Mh(a, c, b) {
         if (Ed(a)) return qa(b.querySelectorAll(c))
-        var d = pj(c.split(' '), b)
+        const d = pj(c.split(' '), b)
         return Z(function (e, f) {
           return Lb(a)(e, d) === f
         }, d)
       }
       function pj(a, c) {
-        var b = wa(a),
+        let b = wa(a),
           d = b.shift()
         if (!d) return []
         d = c.getElementsByTagName(d)
@@ -4632,16 +4632,16 @@
       }
       function Fc(a, c) {
         if (c.querySelector) return c.querySelector(a)
-        var b = ub(a, c)
+        const b = ub(a, c)
         return b && b.length ? b[0] : null
       }
       function ub(a, c) {
         if (!c) return []
-        var b = c.querySelectorAll(a)
+        const b = c.querySelectorAll(a)
         return b ? qa(b) : []
       }
       function Li(a) {
-        var c = null
+        let c = null
         try {
           c = a.target || a.srcElement
         } catch (b) {}
@@ -4659,7 +4659,7 @@
         return null
       }
       function hc(a, c) {
-        var b = a.document,
+        const b = a.document,
           d = x(
             {
               type: 'text/javascript',
@@ -4670,20 +4670,20 @@
           ),
           e = $a(a)
         if (e) {
-          var f = e('script')
+          const f = e('script')
           aj(
             ya,
             fb(function (l) {
-              var m = l[0]
+              const m = l[0]
               l = l[1]
               'async' === m && l ? (f.async = !0) : (f[m] = l)
             }),
           )(d)
           try {
-            var g = bc('getElementsByTagName', b),
+            let g = bc('getElementsByTagName', b),
               h = g('head')[0]
             if (!h) {
-              var k = g('html')[0]
+              const k = g('html')[0]
               h = e('head')
               k && k.appendChild(h)
             }
@@ -4693,7 +4693,7 @@
         }
       }
       function aq(a, c, b) {
-        var d = qj(c)
+        const d = qj(c)
         H(b, d.ub) || d.ub.push(b)
         if (Ta(d.lb)) {
           b = $a(a)
@@ -4714,7 +4714,7 @@
         return d.lb
       }
       function bq(a, c) {
-        var b = ea(a) ? a : [a]
+        let b = ea(a) ? a : [a]
         c = c || document
         if (c.querySelectorAll) {
           var d = L(
@@ -4738,7 +4738,7 @@
       function rj(a, c, b) {
         if ((a = we(a, c))) {
           a = a.childNodes
-          for (var d = c && c.nodeName, e = 0, f = 0; f < a.length; f += 1)
+          for (let d = c && c.nodeName, e = 0, f = 0; f < a.length; f += 1)
             if (d === (a[f] && a[f].nodeName)) {
               if (c === a[f]) return e
               ;(b && a[f] === b) || (e += 1)
@@ -4747,7 +4747,7 @@
         return 0
       }
       function we(a, c) {
-        var b = n(a, 'document')
+        let b = n(a, 'document')
         if (!c || c === b.documentElement) return null
         if (c === tc(a)) return b.documentElement
         b = null
@@ -4757,23 +4757,23 @@
         return b
       }
       function yf(a, c) {
-        var b = kg(a, c),
+        let b = kg(a, c),
           d = b.left
         b = b.top
-        var e = xe(a, c)
+        const e = xe(a, c)
         return [d, b, e[0], e[1]]
       }
       function xe(a, c) {
-        var b = n(a, 'document')
+        let b = n(a, 'document')
         if (c === tc(a) || c === b.documentElement) {
           b = Vb(a)
-          var d = Fd(a)
+          const d = Fd(a)
           return [Math.max(b.scrollWidth, d[0]), Math.max(b.scrollHeight, d[1])]
         }
         return (b = gd(c)) ? [b.width, b.height] : [c.offsetWidth, c.offsetHeight]
       }
       function kg(a, c) {
-        var b = c,
+        let b = c,
           d = n(a, 'document'),
           e = Ia(b)
         if (!b || !b.ownerDocument || 'PARAM' === e || b === tc(a) || b === d.documentElement)
@@ -4799,7 +4799,7 @@
         if (!(c && c.Element && c.Element.prototype && c.document && b)) return null
         if (c.Element.prototype.closest && Da('closest', c.Element.prototype.closest) && b.closest)
           return b.closest(a)
-        var d = Sh(c)
+        const d = Sh(c)
         if (d) {
           for (; b && 1 === b.nodeType && !d.call(b, a); ) b = b.parentElement || b.parentNode
           return b && 1 === b.nodeType ? b : null
@@ -4835,19 +4835,19 @@
       function Ia(a) {
         if (a)
           try {
-            var c = a.nodeName
+            let c = a.nodeName
             if (Ea(c)) return c
             c = a.tagName
             if (Ea(c)) return c
           } catch (b) {}
       }
       function tj(a, c) {
-        var b = a.document.getElementsByTagName('form')
+        const b = a.document.getElementsByTagName('form')
         return Lb(a)(c, qa(b))
       }
       function fq(a, c, b) {
         b = bc('dispatchEvent', b || a.document)
-        var d = null,
+        let d = null,
           e = n(a, 'Event.prototype.constructor')
         if (e && (Da('(Event|Object|constructor)', e) || (lg(a) && '[object Event]' === '' + e)))
           try {
@@ -4879,7 +4879,7 @@
         }
       }
       function Qf(a) {
-        var c = tc(a),
+        const c = tc(a),
           b = n(a, 'document')
         return {
           x:
@@ -4895,22 +4895,22 @@
         }
       }
       function Fd(a) {
-        var c = mg(a)
+        let c = mg(a)
         if (c) {
-          var b = c[2]
+          const b = c[2]
           return [a.Math.round(c[0] * b), a.Math.round(c[1] * b)]
         }
         c = Vb(a)
         return [n(c, 'clientWidth') || a.innerWidth, n(c, 'clientHeight') || a.innerHeight]
       }
       function mg(a) {
-        var c = n(a, 'visualViewport.width'),
+        const c = n(a, 'visualViewport.width'),
           b = n(a, 'visualViewport.height')
         a = n(a, 'visualViewport.scale')
         return na(c) || na(b) ? null : [Math.floor(c), Math.floor(b), a]
       }
       function Vb(a) {
-        var c = n(a, 'document') || {},
+        const c = n(a, 'document') || {},
           b = c.documentElement
         return 'CSS1Compat' === c.compatMode ? b : tc(a) || b
       }
@@ -4930,7 +4930,7 @@
         }
       }
       function uc(a) {
-        var c
+        let c
         try {
           if ((c = a.target || a.srcElement))
             !c.ownerDocument && c.documentElement
@@ -4940,7 +4940,7 @@
         return c
       }
       function jc(a) {
-        var c = a && a.parentNode
+        const c = a && a.parentNode
         c && c.removeChild(a)
       }
       function Pb(a) {
@@ -4953,7 +4953,7 @@
       }
       function tb(a, c) {
         if (a) {
-          var b = uj ? uj.call(a) : ('' + a).replace(cj, '')
+          const b = uj ? uj.call(a) : ('' + a).replace(cj, '')
           return c && b.length > c ? b.substring(0, c) : b
         }
         return ''
@@ -4961,11 +4961,11 @@
       function gf(a, c, b) {
         void 0 === c && (c = '')
         void 0 === b && (b = '_ym')
-        var d = '' + b + c + '_'
+        const d = '' + b + c + '_'
         return {
           Ud: gq(a),
           o: function (e, f) {
-            var g = vj(a, '' + d + e)
+            const g = vj(a, '' + d + e)
             return Ta(g) && !V(f) ? f : g
           },
           C: function (e, f) {
@@ -4979,7 +4979,7 @@
         }
       }
       function wj(a, c, b) {
-        var d = ng(a)
+        const d = ng(a)
         a = jb(a, b)
         if (!Ta(a))
           try {
@@ -4987,14 +4987,14 @@
           } catch (e) {}
       }
       function vj(a, c) {
-        var b = ng(a)
+        const b = ng(a)
         try {
           return qb(a, b.getItem(c))
         } catch (d) {}
         return null
       }
       function xj(a, c) {
-        var b = ng(a)
+        const b = ng(a)
         try {
           b.removeItem(c)
         } catch (d) {}
@@ -5021,10 +5021,10 @@
       function Ae(a) {
         return {
           ca: function (c, b) {
-            var d = a.document,
+            const d = a.document,
               e = c.H
             if (e && og(a)) {
-              var f = ia(a),
+              const f = ia(a),
                 g = function (h) {
                   og(a) || (f.dc(d, zj, g), b())
                   return h
@@ -5037,20 +5037,20 @@
       }
       function Xa(a, c, b) {
         return function (d, e) {
-          var f = La(ke(a, 'w', e), b)
+          const f = La(ke(a, 'w', e), b)
           return nd(a, c, f)(d)
         }
       }
       function nd(a, c, b) {
-        var d = Bb(a, c)
+        const d = Bb(a, c)
         return function (e) {
           return Aj(b, e, !0)
             .then(function () {
-              var f = e.Ia || {},
+              let f = e.Ia || {},
                 g = f.xi,
                 h = void 0 === g ? '' : g
               g = f.Pa
-              var k = void 0 === g ? '' : g
+              const k = void 0 === g ? '' : g
               f = f.xk
               f = void 0 === f ? [hq(a, k)] : f
               f = A(function (l) {
@@ -5059,7 +5059,7 @@
               return d(e, f)
             })
             .then(function (f) {
-              var g = f.$c
+              const g = f.$c
               f = f.Ig
               e.oj = g
               e.Jk = f
@@ -5085,13 +5085,13 @@
             l()
             d()
           }
-          var g = a.slice()
+          const g = a.slice()
           g.push({
             ca: f,
             Ba: f,
           })
           var h = fc(g, function (k, l) {
-            var m = b ? k.ca : k.Ba
+            const m = b ? k.ca : k.Ba
             if (m)
               try {
                 m(c, l)
@@ -5104,10 +5104,10 @@
         })
       }
       function Gb(a, c, b) {
-        var d = b || 'as'
+        let d = b || 'as'
         if (a.postMessage && !a.attachEvent) {
           b = ia(a)
-          var e = '__ym__promise_' + Ua(a) + '_' + Ua(a),
+          let e = '__ym__promise_' + Ua(a) + '_' + Ua(a),
             f = B
           d = C(a, d, function (g) {
             try {
@@ -5134,7 +5134,7 @@
         return Ba(function (e, f) {
           function g() {
             try {
-              var k = c(d(a, b))
+              const k = c(d(a, b))
               h = h.concat(k)
             } catch (l) {
               return e(l)
@@ -5149,7 +5149,7 @@
       }
       function Ej(a) {
         if (qg.length) {
-          var c = qg.shift()
+          const c = qg.shift()
           pg ? c() : W(a, c, 100)
         } else rg = !1
       }
@@ -5167,7 +5167,7 @@
         })
       }
       function lq(a) {
-        var c = [],
+        let c = [],
           b = 0
         return Ba(function (d, e) {
           z(function (f, g) {
@@ -5184,7 +5184,7 @@
         })
       }
       function xo(a) {
-        var c = [],
+        let c = [],
           b = !1
         return Ba(function (d, e) {
           function f(g) {
@@ -5234,7 +5234,7 @@
       }
       function Dj(a, c) {
         return function (b) {
-          var d = ha(a),
+          const d = ha(a),
             e = d(aa)
           return Fj(function (f, g) {
             d(aa) - e >= c && g(Gj)
@@ -5243,7 +5243,7 @@
       }
       function Be(a, c) {
         return function (b) {
-          var d = ha(a),
+          const d = ha(a),
             e = d(aa)
           return Ce(function (f) {
             d(aa) - e >= c && Gj(f)
@@ -5258,7 +5258,7 @@
       }
       function mq(a) {
         Gd(a) && db(Kc('i'))
-        var c = a.Xd(a.Xa[a.wa])
+        const c = a.Xd(a.Xa[a.wa])
         a.wa += 1
         return c
       }
@@ -5280,10 +5280,10 @@
         }
       }
       function Hj(a, c, b, d, e, f) {
-        var g
+        let g
         void 0 === e && (e = 0)
         void 0 === f && (f = 0)
-        var h = x(
+        let h = x(
             {
               Ca: [],
             },
@@ -5292,7 +5292,7 @@
           k = c[f],
           l = k[0]
         k = k[1]
-        var m = b[e]
+        const m = b[e]
         ;(h.xb && h.xb['Content-Type']) ||
           !h.fa ||
           ((h.xb = x(
@@ -5306,7 +5306,7 @@
         h.Ca.push(l)
         x(d.Y, h)
         g = '' + m + (d.Oa && d.Oa.Ti ? '/1' : '')
-        var p = 0
+        let p = 0
         p = oq(a, g, h)
         return k(g, h)
           .then(function (q) {
@@ -5330,14 +5330,14 @@
                 requestId: p,
               },
             })
-            var t = f + 1 >= c.length,
+            const t = f + 1 >= c.length,
               r = e + 1 >= b.length
             t && r && db(q)
             return Hj(a, c, b, d, !r && t ? e + 1 : e, t ? 0 : f + 1)
           })
       }
       function nq(a, c, b) {
-        var d = x({}, c.G)
+        const d = x({}, c.G)
         a = ha(a)
         c.H && (d['browser-info'] = Ca(c.H.l()).C('st', a(ve)).za())
         !d.t && (c = c.Bb) && (c.C('ti', b), (d.t = c.za()))
@@ -5348,7 +5348,7 @@
         return Math.round(a(sg) / 50)
       }
       function sg(a) {
-        var c = a.ya,
+        const c = a.ya,
           b = c[1]
         a = c[0] && b ? b() : aa(a) - a.yi
         return Math.round(a)
@@ -5360,11 +5360,11 @@
         return Math.floor(aa(a) / 1e3 / 60)
       }
       function aa(a) {
-        var c = a.Qe
+        const c = a.Qe
         return 0 !== c ? c : tg(a.l, a.ya)
       }
       function Wf(a) {
-        var c = ia(a),
+        const c = ia(a),
           b = Ij(a),
           d = {
             l: a,
@@ -5409,7 +5409,7 @@
         return ue(a, C(a, 'd.err.' + (d || 'def'), c), b)
       }
       function fd(a) {
-        var c = {}
+        const c = {}
         return {
           D: function (b, d) {
             z(function (e) {
@@ -5430,7 +5430,7 @@
         }
       }
       function td(a) {
-        var c = [],
+        const c = [],
           b = {}
         b.Bk = c
         b.D = u(oa('push', c), v(b, P))
@@ -5444,10 +5444,10 @@
         }
       }
       function C(a, c, b, d, e) {
-        var f = db,
+        const f = db,
           g = b || f
         return function () {
-          var h = d
+          let h = d
           try {
             h = g.apply(e || null, arguments)
           } catch (k) {
@@ -5457,7 +5457,7 @@
         }
       }
       function tg(a, c) {
-        var b = c || Ij(a),
+        let b = c || Ij(a),
           d = b[0]
         b = b[1]
         return !isNaN(d) && S(b)
@@ -5468,7 +5468,7 @@
       }
       function Ij(a) {
         a = ii(a)
-        var c = n(a, 'timing.navigationStart'),
+        let c = n(a, 'timing.navigationStart'),
           b = n(a, 'now')
         b && (b = D(b, a))
         return [c, b]
@@ -5477,7 +5477,7 @@
         return n(a, 'performance') || n(a, 'webkitPerformance')
       }
       function le(a, c, b) {
-        var d = 'u.a.e',
+        let d = 'u.a.e',
           e = ''
         b &&
           ('object' === typeof b
@@ -5490,11 +5490,11 @@
           z(u(P, Mc(['jserrs', d, c, e]), ja), Jj)
       }
       function Ue() {
-        var a = Aa(arguments)
+        const a = Aa(arguments)
         return db(Sa(a))
       }
       function Sa(a) {
-        var c = ''
+        let c = ''
         ea(a) ? (c = L('.', a)) : Ea(a) && (c = a)
         return Kc('err.kn(' + ra.fb + ')' + c)
       }
@@ -5502,7 +5502,7 @@
         this.message = a
       }
       function Kj(a, c, b, d, e) {
-        var f = a.addEventListener && a.removeEventListener,
+        const f = a.addEventListener && a.removeEventListener,
           g = !f && a.attachEvent && a.detachEvent
         if (f || g)
           if (
@@ -5519,7 +5519,7 @@
           else a[e]('on' + c, b)
       }
       function oq(a, c, b) {
-        var d = Ua(a)
+        const d = Ua(a)
         kb(a, {
           name: 'request',
           data: {
@@ -5531,9 +5531,9 @@
         return d
       }
       function kb(a, c) {
-        var b = c.ea
+        let b = c.ea
         if (b) {
-          var d = b.split(':')
+          let d = b.split(':')
           b = d[1]
           d = Lj(wh(d[0]))
           if ('1' === b || d) return
@@ -5547,7 +5547,7 @@
           ? u(
               ya,
               ud(function (c, b) {
-                var d = b[0],
+                const d = b[0],
                   e = b[1]
                 V(e) || na(e) || c.push(d + '=' + ce(e))
                 return c
@@ -5561,7 +5561,7 @@
           ? u(
               fb(function (c) {
                 c = c.split('=')
-                var b = c[1]
+                const b = c[1]
                 return [c[0], na(b) ? void 0 : lj(b)]
               }),
               ud(function (c, b) {
@@ -5572,7 +5572,7 @@
           : {}
       }
       function lj(a) {
-        var c = ''
+        let c = ''
         try {
           c = decodeURIComponent(a)
         } catch (b) {}
@@ -5599,7 +5599,7 @@
       }
       function Oj(a, c, b) {
         for (var d = [c, b], e = -1e4, f = 0; f < a.length; f += 1) {
-          var g = a[f],
+          let g = a[f],
             h = g[0]
           g = g[1]
           if (b === g && h === c) return
@@ -5613,7 +5613,7 @@
       }
       function cc(a) {
         z(function (c) {
-          var b = c[1]
+          const b = c[1]
           Ve[c[0]] = {
             ia: b.ia,
             Za: b.Za,
@@ -5621,7 +5621,7 @@
         }, ya(a))
       }
       function ul(a, c, b, d, e) {
-        var f =
+        const f =
           'object' === typeof a
             ? a
             : {
@@ -5632,7 +5632,7 @@
               }
         a = M(
           function (g, h) {
-            var k = h[1],
+            let k = h[1],
               l = k.Za
             k = f[k.ia]
             g[h[0]] = l ? l(k) : k
@@ -5659,7 +5659,7 @@
         return dc[a] && dc[a].Hj
       }
       function Qi(a, c) {
-        var b = N(a),
+        const b = N(a),
           d = n(c, '__ym.turbo_page'),
           e = n(c, '__ym.turbo_page_id')
         dc[b] || (dc[b] = {})
@@ -5670,13 +5670,13 @@
       }
       function df(a, c) {
         if (Hd(a) && c) {
-          var b = sb(a).match(Aq)
+          const b = sb(a).match(Aq)
           if (b && b.length) return +b[1] >= c
         }
         return !1
       }
       function ef(a, c) {
-        var b = sb(a)
+        let b = sb(a)
         return b && (b = b.match(Bq)) && 1 < b.length ? Ga(b[1]) >= c : !1
       }
       function og(a) {
@@ -5686,7 +5686,7 @@
         )
       }
       function Ua(a, c, b) {
-        var d = V(b)
+        let d = V(b)
         V(c) && d ? ((d = 1), (c = 1073741824)) : d ? (d = 1) : ((d = c), (c = b))
         return a.Math.floor(a.Math.random() * (c - d)) + d
       }
@@ -5750,7 +5750,7 @@
         return b
       }
       function Fq(a, c) {
-        for (var b = 0; b < c.length; b += 1) if (a.call(c, c[b], b)) return c[b]
+        for (let b = 0; b < c.length; b += 1) if (a.call(c, c[b], b)) return c[b]
       }
       function Sj(a) {
         return V(a)
@@ -5785,7 +5785,7 @@
         )
       }
       function Hq() {
-        var a = Aa(arguments),
+        let a = Aa(arguments),
           c = a[0]
         for (a = a.slice(1); a.length; ) {
           var b = a.shift(),
@@ -5796,7 +5796,7 @@
         return c
       }
       function Tj(a) {
-        var c = [],
+        let c = [],
           b
         for (b in a) wd(a, b) && c.push(b)
         return c
@@ -5822,7 +5822,7 @@
       function Rf(a, c, b) {
         try {
           if (S(c)) {
-            var d = Aa(arguments).slice(3)
+            const d = Aa(arguments).slice(3)
             na(b) ? c.apply(void 0, d) : D.apply(void 0, wa([c, b], d))()
           }
         } catch (e) {
@@ -5845,7 +5845,7 @@
         return {}
       }
       function bc(a, c) {
-        var b = n(c, a),
+        const b = n(c, a),
           d = n(c, 'constructor.prototype.' + a) || b
         try {
           if (d && d.apply)
@@ -5859,10 +5859,10 @@
       }
       function vb(a, c) {
         return function () {
-          var b = Aa(arguments),
+          let b = Aa(arguments),
             d = b[0]
           b = b.slice(1)
-          var e = I(d),
+          let e = I(d),
             f = e.o('m952', {}),
             g = n(f, a)
           g || ((g = w(c)), (f[a] = g), e.C('m952', f))
@@ -5900,7 +5900,7 @@
       }
       function Kd(a) {
         a = a.Ya = a.Ya || {}
-        var c = (a._metrika = a._metrika || {})
+        const c = (a._metrika = a._metrika || {})
         return {
           Ra: function (b, d) {
             xg.call(c, b) || (c[b] = d)
@@ -5911,7 +5911,7 @@
             return this
           },
           o: function (b, d) {
-            var e = c[b]
+            const e = c[b]
             return xg.call(c, b) || V(d) ? e : d
           },
         }
@@ -5920,11 +5920,11 @@
         return na(a) ? !1 : xg.call(a, c)
       }
       function w(a, c) {
-        var b = [],
+        const b = [],
           d = []
-        var e = c ? c : P
+        const e = c ? c : P
         return function () {
-          var f = Aa(arguments),
+          let f = Aa(arguments),
             g = e.apply(void 0, f),
             h = Wj(g, d)
           if (-1 !== h) return b[h]
@@ -5936,11 +5936,11 @@
       }
       function Lb(a) {
         if (yg) return yg
-        var c = !1
+        let c = !1
         try {
           c = [].indexOf && 0 === [void 0].indexOf(void 0)
         } catch (d) {}
-        var b = a.Array && a.Array.prototype && Ka(a.Array.prototype.indexOf, 'indexOf')
+        const b = a.Array && a.Array.prototype && Ka(a.Array.prototype.indexOf, 'indexOf')
         return (yg = a =
           c && b
             ? function (d, e) {
@@ -5949,17 +5949,17 @@
             : Kq)
       }
       function Kq(a, c) {
-        for (var b = 0; b < c.length; b += 1) if (c[b] === a) return b
+        for (let b = 0; b < c.length; b += 1) if (c[b] === a) return b
         return -1
       }
       function ja(a, c) {
         return c ? a(c) : a()
       }
       function u() {
-        var a = Aa(arguments),
+        const a = Aa(arguments),
           c = a.shift()
         return function () {
-          var b = c.apply(void 0, arguments)
+          const b = c.apply(void 0, arguments)
           return M(Xj, b, a)
         }
       }
@@ -5979,12 +5979,12 @@
         return D.apply(void 0, wa([c, null], a))
       }
       function Lq() {
-        var a = Aa(arguments),
+        const a = Aa(arguments),
           c = a[0],
           b = a[1],
           d = a.slice(2)
         return function () {
-          var e = wa(d, Aa(arguments))
+          let e = wa(d, Aa(arguments))
           if (Function.prototype.call) return Function.prototype.call.apply(c, wa([b], e))
           if (b) {
             for (var f = '_b'; b[f]; ) f += '_' + f.length
@@ -5999,10 +5999,10 @@
       function Yj(a, c, b) {
         void 0 === c && (c = [])
         b = b || {}
-        var d = c.length,
+        let d = c.length,
           e = a
         S(e) && ((e = 'd'), (b[e] = a))
-        var f
+        let f
         d
           ? 1 === d
             ? (f = b[e](c[0]))
@@ -6071,7 +6071,7 @@
         else
           a: {
             b = 0
-            for (var d = a.length - c.length, e = 0; e < a.length; e += 1) {
+            for (let d = a.length - c.length, e = 0; e < a.length; e += 1) {
               b = a[e] === c[b] ? b + 1 : 0
               if (b === c.length) {
                 b = e - c.length + 1
@@ -6110,19 +6110,19 @@
               b.__proto__ = d
             }) ||
           function (b, d) {
-            for (var e in d) d.hasOwnProperty(e) && (b[e] = d[e])
+            for (const e in d) d.hasOwnProperty(e) && (b[e] = d[e])
           }
         return zg(a, c)
       }
       function Id(a, c, b) {
-        for (var d = 0, e = b.length; d < e; ) (c = a(c, b[d], d)), (d += 1)
+        for (let d = 0, e = b.length; d < e; ) (c = a(c, b[d], d)), (d += 1)
         return c
       }
       function Ka(a, c) {
         return Da(c, a) && a
       }
       function Da(a, c) {
-        var b = Fe(a, c)
+        const b = Fe(a, c)
         c && !b && Ag.push([a, c])
         return b
       }
@@ -6133,9 +6133,9 @@
         } catch (h) {
           return !1
         }
-        var d = b.length
+        const d = b.length
         if (d > 35 + a.length) return !1
-        for (var e = d - 13, f = 0, g = 8; g < d; g += 1) {
+        for (let e = d - 13, f = 0, g = 8; g < d; g += 1) {
           f = '[native code]'[f] === b[g] || (7 === f && '-' === b[g]) ? f + 1 : 0
           if (12 === f) return !0
           if (!f && g > e) break
@@ -6162,9 +6162,9 @@
       function wa() {
         for (var a = 0, c = 0, b = arguments.length; c < b; c++) a += arguments[c].length
         a = Array(a)
-        var d = 0
+        let d = 0
         for (c = 0; c < b; c++)
-          for (var e = arguments[c], f = 0, g = e.length; f < g; f++, d++) a[d] = e[f]
+          for (let e = arguments[c], f = 0, g = e.length; f < g; f++, d++) a[d] = e[f]
         return a
       }
       function Oq() {}
@@ -6188,7 +6188,7 @@
           ? a.Gb.push(c)
           : ((a.Xe = !0),
             Fa.Ye(function () {
-              var b = 1 === a.Ja ? c.Yi : c.bj
+              const b = 1 === a.Ja ? c.Yi : c.bj
               if (null === b) (1 === a.Ja ? Bg : Ld)(c.bb, a.Ta)
               else {
                 try {
@@ -6205,7 +6205,7 @@
         try {
           if (c === a) throw new TypeError('A promise cannot be resolved with itself.')
           if (c && ('object' === typeof c || 'function' === typeof c)) {
-            var b = c.then
+            const b = c.then
             if (c instanceof Fa) {
               a.Ja = 3
               a.Ta = c
@@ -6235,7 +6235,7 @@
           Fa.Ye(function () {
             a.Xe || Fa.Zg(a.Ta)
           })
-        for (var c = 0, b = a.Gb.length; c < b; c++) bk(a, a.Gb[c])
+        for (let c = 0, b = a.Gb.length; c < b; c++) bk(a, a.Gb[c])
         a.Gb = null
       }
       function Qq(a, c, b) {
@@ -6244,7 +6244,7 @@
         this.bb = b
       }
       function ak(a, c) {
-        var b = !1
+        let b = !1
         try {
           a(
             function (d) {
@@ -6296,7 +6296,7 @@
       function zc(a, c, b) {
         void 0 === c && (c = '_ym_')
         void 0 === b && (b = '')
-        var d = Rq(a),
+        const d = Rq(a),
           e = 1 === (d || '').split('.').length ? d : '.' + d,
           f = b ? '_' + b : ''
         return {
@@ -6314,15 +6314,15 @@
         }
       }
       function vl(a, c, b, d) {
-        var e = ck[b]
+        const e = ck[b]
         return e
           ? function () {
-              var f = Aa(arguments)
+              const f = Aa(arguments)
               try {
                 var g = d.apply(void 0, f)
-                var h = I(a)
+                const h = I(a)
                 h.Ra('mt', {})
-                var k = h.o('mt'),
+                const k = h.o('mt'),
                   l = k[e]
                 k[e] = l ? l + 1 : 1
               } catch (m) {
@@ -6333,7 +6333,7 @@
           : d
       }
       function Gc(a, c) {
-        var b = Sq(a)
+        const b = Sq(a)
         return b
           ? ((b.href = c),
             {
@@ -6354,11 +6354,11 @@
         return (a = T(a).hash.split('#')[1]) ? a.split('?')[0] : ''
       }
       function Tq(a, c) {
-        var b = dk(a)
+        let b = dk(a)
         ek = rq(
           a,
           function () {
-            var d = dk(a)
+            const d = dk(a)
             d !== b && (c(), (b = d))
           },
           200,
@@ -6367,7 +6367,7 @@
         return D(qq, null, a, ek)
       }
       function Uq(a, c, b) {
-        var d,
+        let d,
           e,
           f = c.da,
           g = c.Te,
@@ -6399,13 +6399,13 @@
           la(a, h)
           if (k) g(!1)
           else {
-            var O = Math.max(0, b - (q ? t : t + l(aa) - r))
+            const O = Math.max(0, b - (q ? t : t + l(aa) - r))
             O ? (h = W(a, e, O, 'u.t.d.c')) : e()
           }
         }
         function g(O) {
           z(function (X) {
-            var xa = X[0],
+            const xa = X[0],
               sa = X[1]
             X = X[2]
             O ? y.D(xa, sa, X) : y.dc(xa, sa, X)
@@ -6458,7 +6458,7 @@
       function Te(a, c, b, d) {
         return function () {
           if (Ha(a, c)) {
-            var e = Aa(arguments)
+            const e = Aa(arguments)
             return d.apply(void 0, e)
           }
         }
@@ -6466,7 +6466,7 @@
       function mb(a, c) {
         a = [a[0] >>> 16, a[0] & 65535, a[1] >>> 16, a[1] & 65535]
         c = [c[0] >>> 16, c[0] & 65535, c[1] >>> 16, c[1] & 65535]
-        var b = [0, 0, 0, 0]
+        const b = [0, 0, 0, 0]
         b[3] += a[3] * c[3]
         b[2] += b[3] >>> 16
         b[3] &= 65535
@@ -6492,7 +6492,7 @@
       function ec(a, c) {
         a = [a[0] >>> 16, a[0] & 65535, a[1] >>> 16, a[1] & 65535]
         c = [c[0] >>> 16, c[0] & 65535, c[1] >>> 16, c[1] & 65535]
-        var b = [0, 0, 0, 0]
+        const b = [0, 0, 0, 0]
         b[3] += a[3] + c[3]
         b[2] += b[3] >>> 16
         b[3] &= 65535
@@ -6533,7 +6533,7 @@
       }
       function Wq(a, c) {
         void 0 === c && (c = 210)
-        var b = a || '',
+        let b = a || '',
           d = c || 0,
           e = b.length - (b.length % 16)
         d = {
@@ -6637,7 +6637,7 @@
         )
       }
       function Md(a, c, b) {
-        var d = c.getAttribute('itemtype')
+        const d = c.getAttribute('itemtype')
         b = ub('[itemprop~="' + b + '"]', c)
         return d
           ? Z(function (e) {
@@ -6672,7 +6672,7 @@
           : !1
       }
       function ik(a, c) {
-        var b = Math.max(0, Math.min(c, 65535))
+        const b = Math.max(0, Math.min(c, 65535))
         La(a, [b >> 8, b & 255])
       }
       function Ib(a, c) {
@@ -6687,24 +6687,24 @@
       }
       function Dg(a, c) {
         R(a, c.length)
-        for (var b = 0; b < c.length; b += 1) R(a, c.charCodeAt(b))
+        for (let b = 0; b < c.length; b += 1) R(a, c.charCodeAt(b))
       }
       function Eg(a, c) {
-        var b = c
+        let b = c
         255 < b.length && (b = b.substr(0, 255))
         a.push(b.length)
-        for (var d = 0; d < b.length; d += 1) ik(a, b.charCodeAt(d))
+        for (let d = 0; d < b.length; d += 1) ik(a, b.charCodeAt(d))
       }
       function Yq(a, c) {
-        var b = []
+        const b = []
         if (gb(a, b, 27)) return []
         R(b, c)
         return b
       }
       function Zq(a, c) {
-        var b = Ia(c)
+        let b = Ia(c)
         if (!b) return (c[Va] = -1), null
-        var d = +c[Va]
+        const d = +c[Va]
         if (!isFinite(d) || 0 >= d) return null
         if (c.attributes)
           for (var e = c; e; ) {
@@ -6712,15 +6712,15 @@
             e = e.parentElement
           }
         e = 64
-        var f = we(a, c),
+        let f = we(a, c),
           g = f && f[Va] ? f[Va] : 0
         0 > g && (g = 0)
         b = (b || '').toUpperCase()
-        var h = $q()[b]
+        const h = $q()[b]
         h || (e |= 2)
-        var k = rj(a, c)
+        const k = rj(a, c)
         k || (e |= 4)
-        var l = yf(a, c)
+        const l = yf(a, c)
         ;(f = f ? yf(a, f) : null) &&
           l[0] === f[0] &&
           l[1] === f[1] &&
@@ -6743,9 +6743,9 @@
         return f
       }
       function ar(a, c) {
-        var b = c[Va]
+        const b = c[Va]
         if (!b || 0 > b || !wf(c) || !c.form || Rh(a, c.form)) return []
-        var d = tj(a, c.form)
+        const d = tj(a, c.form)
         if (0 > d) return []
         if (ye(c)) {
           var e = {
@@ -6799,14 +6799,14 @@
         return g
       }
       function br(a, c, b) {
-        var d = tj(a, b)
+        const d = tj(a, b)
         if (0 > d) return []
-        var e = b.elements,
+        let e = b.elements,
           f = e.length
         b = []
-        for (var g = 0; g < f; g += 1)
+        for (let g = 0; g < f; g += 1)
           if (!sj(e[g])) {
-            var h = e[g][Va]
+            const h = e[g][Va]
             h && 0 < h && b.push(h)
           }
         e = []
@@ -6822,7 +6822,7 @@
         for (var d = []; c && !dn(a, c, b); c = we(a, c)) d.push(c)
         z(function (e) {
           oc.ud += 1
-          var f = oc.ud
+          let f = oc.ud
           e[Va] = f
           oc[f] = {}
           f = Zq(a, e)
@@ -6832,40 +6832,40 @@
         return b
       }
       function dr(a) {
-        var c = a.ra
+        const c = a.ra
         if (!jd || (c && !c.fromElement)) return Ph(a)
       }
       function er(a) {
-        var c = a.ra
+        const c = a.ra
         if (c && !c.toElement) return xf(a)
       }
       function jk(a) {
-        var c = uc(a.ra)
+        const c = uc(a.ra)
         if (c && fe(c)) {
-          var b = Oh(a, c)
-          var d = rb(a.l),
+          const b = Oh(a, c)
+          const d = rb(a.l),
             e = []
           gb(a.l, e, 17) ? (a = []) : (R(e, d), R(e, c[Va]), (a = e))
           return wa(b, a)
         }
       }
       function kk(a) {
-        var c = a.l,
+        let c = a.l,
           b = a.ra.target
         if (b && fe(b)) {
           c = nc(c, b)
-          var d = rb(a.l),
+          const d = rb(a.l),
             e = []
           gb(a.l, e, 18) ? (a = []) : (R(e, d), R(e, b[Va]), (a = e))
           return wa(c, a)
         }
       }
       function lk(a) {
-        var c = a.l,
+        let c = a.l,
           b = uc(a.ra)
         if (!b || tf(c, b) || kd(c, b)) return []
         if (wf(b)) {
-          var d = I(c).o('isEU'),
+          let d = I(c).o('isEU'),
             e = id(c, b, d),
             f = e.tb
           d = e.Vd
@@ -6883,22 +6883,22 @@
         }
       }
       function Ie(a) {
-        var c = a.l,
+        let c = a.l,
           b = a.ra,
           d = uc(b)
         if (!d || 'SCROLLBAR' === d.nodeName) return []
-        var e = [],
+        let e = [],
           f = v(e, La)
         d && fe(d) ? f(Oh(a, d)) : f(nc(c, d))
-        var g = Ki(c, b)
+        let g = Ki(c, b)
         a = rb(a.l)
         f = b.type
-        var h = [g.x, g.y]
+        const h = [g.x, g.y]
         g = b.which
         b = b.button
-        var k
-        var l = xe(c, d)
-        var m = l[0]
+        let k
+        let l = xe(c, d)
+        let m = l[0]
         for (l = l[1]; d && (!m || !l); ) if ((d = we(c, d))) (l = xe(c, d)), (m = l[0]), (l = l[1])
         d
           ? ((m = d[Va]),
@@ -6928,7 +6928,7 @@
         return wa(e, c)
       }
       function fr(a) {
-        var c = null,
+        let c = null,
           b = a.l,
           d = b.document
         if (b.getSelection) {
@@ -6954,7 +6954,7 @@
         if (!c) return []
         d = id(b, c).tb || kd(b, c, !0)
         c = c.getElementsByTagName('*')
-        for (var f = 0; f < c.length && !d; )
+        for (let f = 0; f < c.length && !d; )
           (d = c[f]), (d = id(b, d).tb || kd(b, d, !0)), (f += 1)
         if (e !== Fg)
           return (
@@ -6986,7 +6986,7 @@
         )
       }
       function ok(a) {
-        var c = []
+        const c = []
         Gg ||
           ((Gg = !0),
           Fg && c.push.apply(c, Yq(a.l, rb(a.l))),
@@ -7000,12 +7000,12 @@
         return c
       }
       function pk(a, c, b, d) {
-        var e = uc(c)
+        const e = uc(c)
         if (!e || Af(a, e)) return []
-        var f = ee(e),
+        let f = ee(e),
           g = zf(e)
         c = id(a, e).tb
-        var h = I(a)
+        let h = I(a)
         if (!f && ((g && h.o('isEU')) || kd(a, e))) a = []
         else {
           f = nc(a, e)
@@ -7027,7 +7027,7 @@
         return a
       }
       function hr(a) {
-        var c = a.l,
+        let c = a.l,
           b = a.ra,
           d = b.keyCode,
           e = nk(b),
@@ -7082,9 +7082,9 @@
         return f
       }
       function ir(a) {
-        var c = a.l
+        const c = a.l
         a = a.ra
-        var b = []
+        const b = []
         Hg &&
           !Ig &&
           0 !== a.which &&
@@ -7100,32 +7100,32 @@
         return b
       }
       function qk(a) {
-        var c = a.l,
+        const c = a.l,
           b = uc(a.ra)
         if (!b || Rh(c, b)) return []
-        var d = []
+        const d = []
         if ('FORM' === b.nodeName) {
-          for (var e = b.elements, f = 0; f < e.length; f += 1)
+          for (let e = b.elements, f = 0; f < e.length; f += 1)
             sj(e[f]) || d.push.apply(d, nc(c, e[f]))
           d.push.apply(d, br(c, rb(a.l), b))
         }
         return d
       }
       function jr(a) {
-        var c = a.flush
+        const c = a.flush
         a = uc(a.ra)
         'BODY' === Ia(a) && c()
       }
       function sm(a, c) {
-        var b,
+        let b,
           d = uc(c),
           e = ra.lc,
           f = Kd(a)
         if (d && pc('ym-advanced-informer', d)) {
-          var g = f.o('ifc', 0) + 1
+          let g = f.o('ifc', 0) + 1
           f.C('ifc', g)
           g = d.getAttribute('data-lang')
-          var h = Ga(d.getAttribute('data-cid') || '')
+          const h = Ga(d.getAttribute('data-cid') || '')
           if (h || 0 === h)
             (e = n(a, 'Ya.' + e + '.informer'))
               ? e(((b = {}), (b.i = d), (b.id = h), (b.lang = g), b))
@@ -7136,7 +7136,7 @@
       }
       function hh(a, c, b, d) {
         return function () {
-          var e = Aa(arguments)
+          let e = Aa(arguments)
           e = d.apply(void 0, e)
           return V(e) ? Ha(a, c) : e
         }
@@ -7188,7 +7188,7 @@
         sk = Ka(Function.prototype.bind, 'bind'),
         D = sk
           ? function () {
-              var a = Aa(arguments)
+              const a = Aa(arguments)
               return sk.apply(a[0], wa([a[1]], a.slice(2)))
             }
           : Lq,
@@ -7245,7 +7245,7 @@
         mc = Qb(H),
         Jg = w(function (a) {
           a = n(a, 'navigator') || {}
-          var c = n(a, 'userAgent') || ''
+          const c = n(a, 'userAgent') || ''
           return {
             Jf: -1 < (n(a, 'vendor') || '').indexOf('Apple'),
             Re: c,
@@ -7253,7 +7253,7 @@
         }),
         sb = w(U('navigator.userAgent')),
         Hd = w(function (a) {
-          var c = n(a, 'document.documentElement.style')
+          const c = n(a, 'document.documentElement.style')
           a = n(a, 'InstallTrigger')
           return !(!(c && 'MozAppearance' in c) || na(a))
         }),
@@ -7277,7 +7277,7 @@
             return Array.prototype.some.call(c, a)
           },
           function (a, c) {
-            for (var b = 0; b < c.length; b += 1) if (b in c && a.call(c, c[b], b)) return !0
+            for (let b = 0; b < c.length; b += 1) if (b in c && a.call(c, c[b], b)) return !0
             return !1
           },
           Da('some', Array.prototype.some),
@@ -7315,18 +7315,18 @@
             ' ',
           ),
         Ye = w(function (a) {
-          var c = Jg(a)
+          let c = Jg(a)
           a = c.Re
           if (c.Jf) {
             c = oa('indexOf', a)
-            var b = /YaBrowser\/[\d.]+\sSA\/3|CFNetwork\/[0-9][0-9.]*.*Darwin\/[0-9][0-9.]*/
+            const b = /YaBrowser\/[\d.]+\sSA\/3|CFNetwork\/[0-9][0-9.]*.*Darwin\/[0-9][0-9.]*/
             return Oa(u(c, ma(-1), Rb), nr) || b.test(a) || (!/Safari/.test(a) && /Mobile/.test(a))
           }
           return !1
         }),
         pd = w(function (a) {
           a = Jg(a)
-          var c = a.Re
+          const c = a.Re
           return a.Jf && !c.match('CriOS')
         }),
         or = Wa(
@@ -7335,7 +7335,7 @@
         pr = Wa(/; wv\)/),
         qr = ['YangoEats'],
         Yc = w(function (a) {
-          var c = sb(a)
+          const c = sb(a)
           a = Jg(a).Re
           a = oa('indexOf', a)
           return Oa(u(a, ma(-1), Rb), qr) || pr(c) || or(c)
@@ -7347,7 +7347,7 @@
             : !1
         }),
         od = w(function (a) {
-          var c = (sb(a) || '').toLowerCase()
+          const c = (sb(a) || '').toLowerCase()
           a = Jf(a)
           return !(
             -1 === c.indexOf('android') ||
@@ -7357,14 +7357,14 @@
         }),
         tr = 'other none unknown wifi ethernet bluetooth cellular wimax mixed'.split(' '),
         ur = w(function (a) {
-          var c = n(a, 'navigator.connection.type')
+          const c = n(a, 'navigator.connection.type')
           if (V(c)) return null
           a = se(a)(c, tr)
           return -1 === a ? c : '' + a
         }),
         lg = w(u(U('document.addEventListener'), Rb)),
         zk = w(function (a) {
-          var c = n(a, 'navigator') || {}
+          const c = n(a, 'navigator') || {}
           return M(
             function (b, d) {
               return b || n(c, d)
@@ -7374,40 +7374,40 @@
           )
         }),
         kh = w(function (a) {
-          var c = n(a, 'navigator') || {}
+          let c = n(a, 'navigator') || {}
           a = zk(a)
           Ea(a) || ((a = ''), (c = n(c, 'languages.0')), Ea(c) && (a = c))
           return a.toLowerCase().split('-')[0]
         }),
         cb = w(function (a) {
-          var c = !1
+          let c = !1
           try {
             c = a.top !== a
           } catch (b) {}
           return c
         }),
         vr = w(function (a) {
-          var c = !1
+          let c = !1
           try {
             c = a.top.contentWindow
           } catch (b) {}
           return c
         }),
         wr = w(function (a) {
-          var c = !1
+          let c = !1
           try {
             c = a.navigator.javaEnabled()
           } catch (b) {}
           return c
         }),
         xr = w(function (a) {
-          var c =
+          let c =
               '__webdriver_evaluate __selenium_evaluate __webdriver_script_function __webdriver_script_func __webdriver_script_fn __fxdriver_evaluate __driver_unwrapped __webdriver_unwrapped __driver_evaluate __selenium_unwrapped __fxdriver_unwrapped'.split(
                 ' ',
               ),
             b = n(a, 'external')
           b = -1 !== (n(b, 'toString') ? '' + b.toString() : '').indexOf('Sequentum')
-          var d = n(a, 'document.documentElement'),
+          const d = n(a, 'document.documentElement'),
             e = ['selenium', 'webdriver', 'driver']
           return !!(
             Oa(v(a, n), ['_selenium', 'callSelenium', '_Selenium_IDE_Recorder']) ||
@@ -7441,7 +7441,7 @@
         ),
         Kl = w(u(U('navigator.userAgent'), Wa(Br))),
         Nd = w(function (a) {
-          var c = sb(a) || '',
+          let c = sb(a) || '',
             b = c.match(/Mac OS X ([0-9]+)_([0-9]+)/)
           b = b ? [+b[1], +b[2]] : [0, 0]
           c = c.match(/iPhone OS ([1-9]+)_([0-9]+)/)
@@ -7522,7 +7522,7 @@
       Sb.Ch = 'enableAll'
       var Ve = M(
           function (a, c) {
-            var b = c[0]
+            const b = c[0]
             a[b] = {
               ia: c[1],
               Za: Qc[b],
@@ -7533,11 +7533,11 @@
           ya(Sb),
         ),
         Ak = ka(function (a, c) {
-          var b = c || {}
+          const b = c || {}
           return {
             l: v(b, P),
             o: function (d, e) {
-              var f = b[d]
+              const f = b[d]
               return V(f) && !V(e) ? e : f
             },
             C: function (d, e) {
@@ -7551,10 +7551,10 @@
           }
         }),
         Ca = Ak(function (a) {
-          var c = ''
+          let c = ''
           a = M(
             function (b, d) {
-              var e = d[0],
+              const e = d[0],
                 f = '' + e + ':' + d[1]
               't' === e ? (c = f) : b.push(f)
               return b
@@ -7573,7 +7573,7 @@
               function (a, c) {
                 return {
                   ca: function (b, d) {
-                    var e,
+                    let e,
                       f = b.G
                     f =
                       ((e = {}),
@@ -7583,7 +7583,7 @@
                     '0' !== c.da && (f['cnt-class'] = c.da)
                     b.H || (b.H = Ca())
                     e = b.H
-                    var g = b.Y
+                    const g = b.Y
                     f = {
                       Ia: {
                         Pa: 'watch/' + c.id,
@@ -7613,10 +7613,10 @@
         Je = [],
         xq = vb('debuggerEvents', sd),
         Er = w(function (a) {
-          var c = !1
+          let c = !1
           if (!a.addEventListener) return c
           try {
-            var b = Object.defineProperty({}, 'passive', {
+            const b = Object.defineProperty({}, 'passive', {
               get: function () {
                 c = !0
                 return 1
@@ -7639,19 +7639,19 @@
         }),
         ia = w(function (a) {
           a = Er(a)
-          var c = Fr(a),
+          const c = Fr(a),
             b = {}
           return x(b, {
             D: function (d, e, f, g) {
               z(function (h) {
-                var k = c(g)
+                const k = c(g)
                 Kj(d, h, f, k, !1)
               }, e)
               return D(b.dc, b, d, e, f, g)
             },
             dc: function (d, e, f, g) {
               z(function (h) {
-                var k = c(g)
+                const k = c(g)
                 Kj(d, h, f, k, !0)
               }, e)
             },
@@ -7682,12 +7682,12 @@
         return this.then(null, a)
       }
       Fa.prototype.then = function (a, c) {
-        var b = new this.constructor(Oq)
+        const b = new this.constructor(Oq)
         bk(this, new Qq(a, c, b))
         return b
       }
       Fa.prototype['finally'] = function (a) {
-        var c = this.constructor
+        const c = this.constructor
         return this.then(
           function (b) {
             return c.resolve(a()).then(function () {
@@ -7706,7 +7706,7 @@
           function d(h, k) {
             try {
               if (k && ('object' === typeof k || 'function' === typeof k)) {
-                var l = k.then
+                const l = k.then
                 if ('function' === typeof l) {
                   l.call(
                     k,
@@ -7747,7 +7747,7 @@
         return new Fa(function (c, b) {
           if (!a || 'undefined' === typeof a.length)
             return b(new TypeError('Promise.race accepts an array'))
-          for (var d = 0, e = a.length; d < e; d++) Fa.resolve(a[d]).then(c, b)
+          for (let d = 0, e = a.length; d < e; d++) Fa.resolve(a[d]).then(c, b)
         })
       }
       Fa.Ye =
@@ -7770,7 +7770,7 @@
         Ek = Ka(n(K, 'all'), 'all')
       if (H(!1, [Hr, Ck, Dk, Ek])) K = Fa
       else {
-        var Ke = function (a) {
+        const Ke = function (a) {
           return new Promise(a)
         }
         Ke.resolve = D(Ck, K)
@@ -7780,7 +7780,7 @@
       }
       var Fj = ka(function (a, c) {
           for (var b = []; !Gd(c); ) {
-            var d = mq(c)
+            const d = mq(c)
             a(d, function (e) {
               return e(c)
             })
@@ -7820,7 +7820,7 @@
           return L(
             '',
             A(function (c) {
-              var b = c[0]
+              const b = c[0]
               c = c[1]
               return Ta(c) ? '' : b + '(' + c + ')'
             }, a),
@@ -7865,7 +7865,7 @@
           (Pa.enableAll = 'ea'),
           Pa),
         Ir = w(function () {
-          var a = 0
+          let a = 0
           return function () {
             return (a += 1)
           }
@@ -7886,7 +7886,7 @@
               : null
           },
           clc: function (a) {
-            var c = I(a).o('cls', {
+            let c = I(a).o('cls', {
                 kc: 0,
                 x: 0,
                 y: 0,
@@ -7907,7 +7907,7 @@
         ed = F([1, 0], wg),
         gq = w(function (a) {
           wj(a, '_ymBRC', '1')
-          var c = '1' !== vj(a, '_ymBRC')
+          const c = '1' !== vj(a, '_ymBRC')
           c || xj(a, '_ymBRC')
           return c
         }),
@@ -7928,7 +7928,7 @@
         }),
         $a = w(u(U('document'), v('createElement', bc))),
         Sh = w(function (a) {
-          var c = n(a, 'Element.prototype')
+          const c = n(a, 'Element.prototype')
           return c
             ? (a = eb(
                 function (b) {
@@ -8024,7 +8024,7 @@
           /^(.*\.)?((yandex(-team)?)\.(com?\.)?[a-z]+|(auto|kinopoisk|beru|bringly)\.ru|ya\.(ru|cc)|yadi\.sk|yastatic\.net|meteum\.(ai|es|io)|.*\.yandex|turbopages\.org|turbo\.site)$/,
         Xd = w(function (a) {
           a = T(a).hostname
-          var c = !1
+          let c = !1
           a && (c = -1 !== a.search(Or))
           return c
         }),
@@ -8032,13 +8032,13 @@
           /^(.*\.)?((yandex(-team)?)\.(com?\.)?[a-z]+|(auto|kinopoisk|beru|bringly)\.ru|ya\.(ru|cc)|yadi\.sk|.*\.yandex|turbopages\.org|turbo\.site)$/,
         vo = w(function (a) {
           a = T(a).hostname
-          var c = !1
+          let c = !1
           a && (c = -1 !== a.search(Pr))
           return c
         }),
         Qr = w(function (a) {
           a = T(a).hostname
-          var c = !1
+          let c = !1
           a && (c = -1 !== a.search(mj))
           return c
         }),
@@ -8087,7 +8087,7 @@
         kj = vb('gsc', ij),
         Yp = /:\d+$/,
         Rq = w(function (a) {
-          var c = (T(a).host || '').split('.')
+          const c = (T(a).host || '').split('.')
           return 1 === c.length
             ? c[0]
             : M(
@@ -8102,7 +8102,7 @@
         }),
         Xb = w(zc),
         hj = vb('r', function (a, c) {
-          var b = gj(a, c),
+          const b = gj(a, c),
             d = b[0]
           return !b[1] && d
         }),
@@ -8116,7 +8116,7 @@
         Pg = U('postMessage'),
         Vr = E('s.f', function (a, c, b, d, e) {
           c = c(d)
-          var f = Dd(a),
+          const f = Dd(a),
             g = L(':', [c.$.tc, c.$.key])
           if (Pg(b)) {
             f.pending[g] = e
@@ -8137,7 +8137,7 @@
           }
         }),
         Wr = E('s.fh', function (a, c, b, d, e, f) {
-          var g = null,
+          let g = null,
             h = null,
             k = Dd(a),
             l = null
@@ -8183,7 +8183,7 @@
         }),
         $c = w(
           function (a, c) {
-            var b,
+            let b,
               d = bc('getElementsByTagName', n(a, 'document')),
               e = Dd(a),
               f = Pg(a),
@@ -8196,9 +8196,9 @@
             Tp(a, g)
             Up(a)
             b = Vp(a, f)
-            var k = F([a, v([], b)], Vr)
+            const k = F([a, v([], b)], Vr)
             z(function (l) {
-              var m = null
+              let m = null
               try {
                 m = l.contentWindow
               } catch (p) {}
@@ -8236,7 +8236,7 @@
         $d = w(
           function (a, c) {
             if (!ag(a) || !cb(a)) return Cc(a, c)
-            var b = $c(a, c)
+            const b = $c(a, c)
             return b && b.Ga[c.id] ? b.Ga[c.id].info.duid || Cc(a, c) : Cc(a, c)
           },
           function (a, c) {
@@ -8246,7 +8246,7 @@
         Xr = w(
           function (a) {
             a = I(a)
-            var c = a.o('counterNum', 0) + 1
+            const c = a.o('counterNum', 0) + 1
             a.C('counterNum', c)
             return c
           },
@@ -8263,7 +8263,7 @@
             b = Ur(a)
             if (b[c]) return null
             a: {
-              var d = Jk(a),
+              let d = Jk(a),
                 e = n(a, 'performance.getEntriesByType')
               if (S(e)) {
                 if (
@@ -8292,7 +8292,7 @@
             return a ? ((b[c] = a), Math.round(a)) : null
           }),
           (fa.fu = function (a, c, b) {
-            var d = b.G
+            let d = b.G
             if (!d) return null
             c = (n(a, 'document.referrer') || '').replace(Ik, '')
             b = (d['page-ref'] || '').replace(Ik, '')
@@ -8306,7 +8306,7 @@
           (fa.en = Kr),
           (fa.la = zk),
           (fa.ut = function (a, c, b) {
-            var d = b.V
+            let d = b.V
             b = b.G
             d = d && d.Oc
             b && (Qr(a) || c.Te || d) && (b.ut = ra.Vg)
@@ -8315,10 +8315,10 @@
           (fa.v = v(ra.fb, P)),
           (fa.cn = Xr),
           (fa.dp = function (a) {
-            var c = I(a),
+            const c = I(a),
               b = c.o('bt', {})
             if (V(c.o('bt'))) {
-              var d = n(a, 'navigator.getBattery')
+              const d = n(a, 'navigator.getBattery')
               try {
                 b.p = d && d.call(a.navigator)
               } catch (e) {}
@@ -8334,7 +8334,7 @@
             return ed(b.Rj)
           }),
           (fa.ls = w(function (a, c) {
-            var b = Rc(a, c.id),
+            let b = Rc(a, c.id),
               d = ha(a),
               e = b.o('lsid')
             return +e ? e : ((d = Ua(a, 0, d(aa))), b.C('lsid', d), d)
@@ -8342,9 +8342,9 @@
           (fa.hid = Hb),
           (fa.phid = function (a, c) {
             if (!cb(a)) return null
-            var b = $c(a, c)
+            const b = $c(a, c)
             if (!b) return null
-            var d = ca(b.Ga)
+            const d = ca(b.Ga)
             return d.length ? b.Ga[d[0]].info.hid : null
           }),
           (fa.z = Rr),
@@ -8374,10 +8374,10 @@
             return a[0] + 'x' + a[1]
           }),
           (fa.s = function (a) {
-            var c = n(a, 'screen')
+            let c = n(a, 'screen')
             if (c) {
               a = n(c, 'width')
-              var b = n(c, 'height')
+              const b = n(c, 'height')
               c = n(c, 'colorDepth') || n(c, 'pixelDepth')
               return L('x', [a, b, c])
             }
@@ -8404,13 +8404,13 @@
           return Qa(a).o('retryReqs', {})
         }),
         Yr = E('g.r', function (a) {
-          var c = ha(a),
+          const c = ha(a),
             b = Bd(a),
             d = c(aa),
             e = Hb(a)
           return M(
             function (f, g) {
-              var h = g[0],
+              let h = g[0],
                 k = g[1]
               k &&
                 !k.d &&
@@ -8458,9 +8458,9 @@
       xb(function (a) {
         return {
           ca: function (c, b) {
-            var d = c.G
+            const d = c.G
             if (!c.H || !d) return b()
-            var e = d['page-ref'],
+            const e = d['page-ref'],
               f = d['page-url']
             e && f !== e ? (d['page-ref'] = bj(a, e)) : delete d['page-ref']
             d['page-url'] = bj(a, f).slice(0, ra.Tg)
@@ -8474,7 +8474,7 @@
         function (a) {
           return {
             ca: function (c, b) {
-              var d = c.H,
+              let d = c.H,
                 e = void 0 === d ? Ca() : d,
                 f = c.V.Xb,
                 g = Bd(a)
@@ -8496,16 +8496,16 @@
         ac = [],
         Sg = {}
       ac.push(Yi, 0, Mb, Xf, Ad)
-      var Kk = [Mb]
+      const Kk = [Mb]
       Kk.push(Xf)
-      var Lk = Eb(Kk),
+      const Lk = Eb(Kk),
         Tc = Eb([Ad]),
         Zr = Eb([Yi, Ad]),
         Me = Eb([0, Mb, Xf, Ad]),
         ua = ((Rg = {}), (Rg.h = Lk), Rg)
       ua.r = Me
       var bd = w(function (a, c) {
-          var b = Sg['*'] ? Sg['*'] : c && Sg[c]
+          let b = Sg['*'] ? Sg['*'] : c && Sg[c]
           b || (b = c ? ua[c] || [] : ac)
           b = M(
             function (d, e, f) {
@@ -8525,15 +8525,15 @@
       var za = E(
           'g.sen',
           function (a, c, b) {
-            var d = bd(a, c)
+            const d = bd(a, c)
             b = b ? Np(a, c, b) : []
-            var e = va[c],
+            const e = va[c],
               f = e ? e(a, d, b) : Xa(a, d, b)
             return function () {
-              var g = Aa(arguments),
+              let g = Aa(arguments),
                 h = g[0]
               g = g.slice(1)
-              var k = h.Y
+              const k = h.Y
               h = x(h, {
                 Y: x(void 0 === k ? {} : k, {
                   Ca: [c],
@@ -8546,7 +8546,7 @@
         ),
         Dp = ka(function (a, c) {
           if (!c[a]) {
-            var b,
+            let b,
               d = new K(function (e) {
                 b = e
               })
@@ -8560,12 +8560,12 @@
         }),
         Xi = w(u(vc, Ba)),
         Pd = w(function (a, c) {
-          var b = n(a, 'console'),
+          let b = n(a, 'console'),
             d = n(b, 'log')
           d = Fe('log', d) ? D(d, b) : B
-          var e = n(b, 'warn')
+          let e = n(b, 'warn')
           e = Fe('warn', e) ? D(e, b) : d
-          var f = n(b, 'error')
+          const f = n(b, 'error')
           b = Fe('error', f) ? D(f, b) : d
           return {
             log: Lc(a, 'log', c, d),
@@ -8584,7 +8584,7 @@
           var d = T(a),
             e = Pd(a, c)
           I(a).Ra('dclq:' + c, [])
-          var f = Xb(a),
+          let f = Xb(a),
             g = Df(a),
             h = g.Di
           g = g.ui
@@ -8599,12 +8599,12 @@
         }),
         yd = w(as, wb),
         bs = E('p.dc', function (a, c) {
-          var b = N(c)
+          const b = N(c)
           Wi(a, '')
           Wi(a, b)
         }),
         wl = C(window, 'h.p', function (a, c) {
-          var b,
+          let b,
             d,
             e = za(a, 'h', c),
             f = c.Ac || '' + T(a).href,
@@ -8636,7 +8636,7 @@
           'yandex_metrika_callbacks' + Pc.callbackPostfix,
         ],
         cs = E('cb.i', function (a) {
-          var c = Ug[0],
+          const c = Ug[0],
             b = Ug[1]
           if (S(a[c])) a[c]()
           'object' === typeof a[b] &&
@@ -8662,9 +8662,9 @@
         }),
         ds = E('fpm', function (a, c) {
           if (!Hk(a)) return B
-          var b = N(c)
+          const b = N(c)
           if (!Mk(a)) return pb(a, b, 'Not supported'), B
-          var d = Ha(a, c)
+          const d = Ha(a, c)
           return d
             ? function (e) {
                 return new K(function (f, g) {
@@ -8672,7 +8672,7 @@
                     ? ca(e).length
                       ? f(
                           Ti(a, e).then(function (h) {
-                            var k, l
+                            let k, l
                             h &&
                               h.length &&
                               d.params(((k = {}), (k.__ym = ((l = {}), (l.fpp = h), l)), k))
@@ -8685,22 +8685,22 @@
             : B
         }),
         Ne = ka(function (a, c) {
-          var b = {}
+          let b = {}
           Tf(a)(function (d) {
             b = d[c] || {}
           })
           return b
         }),
         es = E('c.c.cc', function (a) {
-          var c = I(a),
+          const c = I(a),
             b = u(Ne(a), function (d) {
-              var e
+              let e
               return x({}, d, ((e = {}), (e.oldCode = !!a.ya_cid), (e.clickmap = !!d.clickmap), e))
             })
           return C(a, 'g.c.cc', u(D(c.o, c, 'counters', {}), ca, fb(b)))
         }),
         fs = E('gt.c.rs', function (a, c) {
-          var b,
+          let b,
             d = N(c),
             e = c.id,
             f = c.da,
@@ -8714,32 +8714,32 @@
         xd = w(vc, N),
         gs = ['ecommerce', 'user_id', 'fpp'],
         hs = E('pa.int', function (a, c) {
-          var b
+          let b
           return (
             (b = {}),
             (b.params = function () {
-              var d,
+              let d,
                 e,
                 f = Aa(arguments),
                 g = xp(f)
               if (!g) return null
               f = g.xh
-              var h = g.ba
+              const h = g.ba
               g = g.gb
               if (!Ma(h) && !ea(h)) return null
-              var k = za(a, '1', c),
+              let k = za(a, '1', c),
                 l = xd(c).url,
                 m = n(h, '__ym.user_id'),
                 p = ca(h),
                 q = H('__ymu', p),
                 t = H('__ym', p) && m
               p = !Vf(c)
-              var r = h
+              let r = h
               r.__ym &&
                 ((r = x({}, h)),
                 (r.__ym = M(
                   function (y, G) {
-                    var O = n(h, '__ym.' + G)
+                    const O = n(h, '__ym.' + G)
                     O && (y[G] = O)
                     return y
                   },
@@ -8771,9 +8771,9 @@
         }),
         Zd = w(Oi, u(wb, N)),
         is = E('y.p', function (a, c) {
-          var b = Oi(a, c)
+          const b = Oi(a, c)
           if (b) {
-            var d = Ud(a),
+            const d = Ud(a),
               e = F([a, b, c], tp)
             nh(a, d, function (f) {
               f.D(['params'], e)
@@ -8788,20 +8788,20 @@
           vk: Wa(/[/&=?#]/),
         },
         oe = E('go.in', function (a, c, b, d) {
-          var e
+          let e
           void 0 === b && (b = 'goal')
           return (
             (e = {}),
             (e.reachGoal = function (f, g, h, k) {
-              var l, m
+              let l, m
               if (!f || (Nk[b] && Nk[b](f))) return null
-              var p = g,
+              let p = g,
                 q = h || B
               S(g) && ((q = g), (p = void 0), (k = h))
-              var t = Db(a, c, 'Reach goal. Counter: ' + c.id + '. Goal id: ' + f, p),
+              const t = Db(a, c, 'Reach goal. Counter: ' + c.id + '. Goal id: ' + f, p),
                 r = 'goal' === b
               g = za(a, 'g', c)
-              var y = sp(a, c, f, b)
+              let y = sp(a, c, f, b)
               h = y[0]
               y = y[1]
               p = g(
@@ -8831,11 +8831,11 @@
           )
         }),
         js = E('guid.int', function (a, c) {
-          var b
+          let b
           return (
             (b = {}),
             (b.getClientID = function (d) {
-              var e = Cc(a, c)
+              const e = Cc(a, c)
               d && Rf(a, d, null, e)
               return e
             }),
@@ -8855,7 +8855,7 @@
             k = B
           c.Ne && (b(), (g = !0))
           e = C(a, 'tr.hs.h', function (l) {
-            var m
+            let m
             l ? b() : k()
             g = !!l
             f(((m = {}), (m.trackHash = g), m))
@@ -8901,7 +8901,7 @@
           h = C(a, 'cl.p.c', v(h, op))
           h = ia(a).D(a, ['click'], h)
           c.Cg && k(c.Cg)
-          var l = C(a, 'file.clc', F([!0, !1], b)),
+          const l = C(a, 'file.clc', F([!0, !1], b)),
             m = C(a, 'e.l.l.clc', F([!1, !0], b))
           f = C(a, 'add.f.e.clc', ls(f))
           return (
@@ -8920,15 +8920,15 @@
           }
           function d(G) {
             return function (O) {
-              var X, xa, sa
+              let X, xa, sa
               void 0 === O && (O = ((X = {}), (X.ctx = {}), (X.callback = B), X))
               if (G || (!t && !k.Ud)) {
                 t = !0
                 m()
                 y && y()
-                var Yb = p(aa)
+                let Yb = p(aa)
                 X = (Ga(k.o('lastHit')) || 0) < Yb - 18e5
-                var rd = 0.1 > Math.random()
+                const rd = 0.1 > Math.random()
                 k.C('lastHit', Yb)
                 Yb = Ca(((xa = {}), (xa.nb = 1), (xa.cl = r), (xa.ar = 1), xa))
                 xa = xd(c)
@@ -8973,7 +8973,7 @@
         lp = ka(pc)('(ym-disable-clickmap|ym-clickmap-ignore)'),
         os = E('clm.p', function (a, c) {
           if (Zc(a)) return B
-          var b = za(a, 'm', c),
+          let b = za(a, 'm', c),
             d = N(c),
             e = ha(a),
             f = e(aa),
@@ -8981,9 +8981,9 @@
             h,
             k = null
           d = C(a, 'clm.p.c', function (l) {
-            var m = g()
+            let m = g()
             if (m) {
-              var p = I(a),
+              let p = I(a),
                 q = p.o('cls', {
                   kc: 0,
                   x: 0,
@@ -8997,11 +8997,11 @@
               p = 'object' === typeof m ? m : {}
               q = p.filter
               m = p.isTrackHash || !1
-              var t = A(function (y) {
+              let t = A(function (y) {
                 return ('' + y).toUpperCase()
               }, p.ignoreTags || [])
               V(h) && (h = p.quota || null)
-              var r = !!p.quota
+              let r = !!p.quota
               l = {
                 element: mp(a, l),
                 position: Ki(a, l),
@@ -9047,7 +9047,7 @@
           c.Eg && Gb(a, F([a, 'yacounter' + c.id + 'inited'], fq), 't.i')
         }),
         qs = E('c.m.p', function (a, c) {
-          var b,
+          let b,
             d = N(c)
           return (b = {}), (b.clickmap = v(te(a, d), ip)), b
         }),
@@ -9058,7 +9058,7 @@
         }, wb),
         rs = v(!0, Hi),
         ss = E('s.f.i', function (a, c) {
-          var b = []
+          const b = []
           ia(a).D(a, ['click'], C(a, 's.f.c', F([a, c, b], gp)))
           ia(a).D(a, ['submit'], C(a, 's.f.e', u(U('target'), F([a, c, b], rs))))
           Ii(a, c, 'Form goal. Counter ' + c.id + '. Init.')
@@ -9092,7 +9092,7 @@
             ? null
             : pa(a, c, function (b) {
                 if (!n(b, 'settings.phchange')) {
-                  var d = zc(a, '').o('yaHidePhones')
+                  let d = zc(a, '').o('yaHidePhones')
                   d = d ? qb(a, d) : ''
                   ;(b = n(b, 'settings.phhide') || d) && pi(a, c, b)
                 }
@@ -9117,7 +9117,7 @@
             z(u(Mc([a, c, b]), ja), Vg)
             if (b.inline) {
               c = qi(b)
-              var d = b.data
+              const d = b.data
               b = b.id
               mi(a, c, void 0 === b ? '' : b, void 0 === d ? '' : d)
             } else
@@ -9133,20 +9133,20 @@
           },
         ),
         ws = E('cs.init', function (a, c) {
-          var b,
+          let b,
             d = si(a)
           if (d && c.id === d && '0' === c.da) {
-            var e = qi(((b = {}), (b.lang = vs(a)), (b.fileId = 'status'), b))
+            const e = qi(((b = {}), (b.lang = vs(a)), (b.fileId = 'status'), b))
             W(a, F([a, e, '' + d], mi), 0, 'cs')
           }
         }),
         xs = E('suid.int', function (a, c) {
-          var b
+          let b
           return (
             (b = {}),
             (b.setUserID = function (d, e, f) {
               if (Ea(d) || be(a, d)) {
-                var g = Ha(a, c)
+                const g = Ha(a, c)
                 d = Ec(['__ym', 'user_id', d])
                 g.params(d, e || B, f)
               } else Pd(a, N(c)).error('Incorrect user ID')
@@ -9183,11 +9183,11 @@
             )
         }),
         As = E('up.int', function (a, c) {
-          var b
+          let b
           return (
             (b = {}),
             (b.userParams = C(a, 'up.c', function (d, e, f) {
-              var g,
+              let g,
                 h = Ha(a, c),
                 k = yd(a, N(c)).warn
               h
@@ -9202,7 +9202,7 @@
         Bs = /[*.?()]/g,
         Cs = w(function (a, c, b) {
           try {
-            var d = b.replace('\\s', ' ').replace(Bs, '')
+            const d = b.replace('\\s', ' ').replace(Bs, '')
             yd(a, '').warn(
               'Function "' +
                 d +
@@ -9220,7 +9220,7 @@
             })
         }),
         Es = E('e.a.p', function (a, c) {
-          var b,
+          let b,
             d = Ha(a, c)
           d = F(
             [
@@ -9257,7 +9257,7 @@
         Hm = 'currencyCode add delete remove purchase checkout detail'.split(' '),
         Fh = E('dl.w', function (a, c, b) {
           function d() {
-            var g = n(a, c)
+            const g = n(a, c)
             ;(e = ea(g) && re(a, g, b)) || (f = W(a, d, 1e3, 'ec.dl'))
           }
           var e,
@@ -9273,10 +9273,10 @@
         Is = v('purchase', me),
         Js = E('p.cd', function (a, c) {
           if (od(a) || De(a)) {
-            var b = Qa(a)
+            const b = Qa(a)
             if (na(b.o('jn'))) {
               b.C('jn', !1)
-              var d = a.ik || pd(a) ? function () {} : /./,
+              const d = a.ik || pd(a) ? function () {} : /./,
                 e = Pd(a, N(c))
               d.toString = function () {
                 b.C('jn', !0)
@@ -9289,7 +9289,7 @@
         Ro = /([0-9\\.]+) Safari/,
         Ks = /\sYptp\/\d\.(\d+)\s/,
         Qk = w(function (a) {
-          var c
+          let c
           a: {
             if ((c = sb(a)) && (c = Ks.exec(c)) && 1 < c.length) {
               c = Ga(c[1])
@@ -9305,12 +9305,12 @@
           ),
         Ls = w(function (a) {
           a = $a(a)('canvas')
-          var c = n(a, 'getContext')
+          const c = n(a, 'getContext')
           if (!c) return null
           try {
-            var b = D(c, a)('2d')
+            const b = D(c, a)('2d')
             b.font = '72px mmmmmmmmmmlli'
-            var d = b.measureText('mmmmmmmmmmlli').width
+            const d = b.measureText('mmmmmmmmmmlli').width
             return function (e) {
               b.font = '72px ' + e
               return b.measureText('mmmmmmmmmmlli').width === d
@@ -9346,7 +9346,7 @@
         }),
         Ns = /(\?|&)turbo_uid=([\w\d]+)($|&)/,
         Os = w(function (a, c) {
-          var b = Xb(a),
+          let b = Xb(a),
             d = T(a).search.match(Ns)
           return d && 2 <= d.length
             ? ((d = d[2]), c.rb || b.C('turbo_uid', d), d)
@@ -9405,11 +9405,11 @@
         Mo = w(sd),
         Go = w(vc),
         Ho = w(function (a) {
-          var c = n(a, 'webkitRequestFileSystem')
+          let c = n(a, 'webkitRequestFileSystem')
           if (S(c) && !od(a))
             return new K(D(c, a, 0, 0))
               .then(function () {
-                var d = n(a, 'navigator.storage') || {}
+                const d = n(a, 'navigator.storage') || {}
                 return d.estimate ? d.estimate() : {}
               })
               .then(function (d) {
@@ -9419,7 +9419,7 @@
           if (Hd(a)) return (c = n(a, 'navigator.serviceWorker')), K.resolve(V(c))
           c = n(a, 'openDatabase')
           if (pd(a) && S(c)) {
-            var b = !1
+            let b = !1
             try {
               c(null, null, null, null)
             } catch (d) {
@@ -9433,12 +9433,12 @@
           return S(n(a, 'yandex.getSiteUid')) ? a.yandex.getSiteUid() : null
         }),
         Qs = E('pa.plgn', function (a, c) {
-          var b = Zd(a, c)
+          const b = Zd(a, c)
           b &&
             b.aa.D(
               ['pluginInfo'],
               C(a, 'c.plgn', function () {
-                var d = I(a)
+                const d = I(a)
                 d.C('cmc', d.o('cmc', 0) + 1)
                 return zq(c, Ve)
               }),
@@ -9483,14 +9483,14 @@
         Do = ra.Ua + '//' + rc + '/watch/' + ra.Og,
         Uk = {},
         Rs = E('exps.int', function (a, c) {
-          var b
+          let b
           return (
             (b = {}),
             (b.experiments = function (d, e, f) {
-              var g, h
+              let g, h
               void 0 === e && (e = B)
               if (d && 0 < d.length) {
-                var k = za(a, 'e', c),
+                const k = za(a, 'e', c),
                   l = xd(c).url
                 d = k(
                   {
@@ -9507,9 +9507,9 @@
         }),
         Ze = [],
         Ss = E('p.fh', function (a, c) {
-          var b, d
+          let b, d
           void 0 === c && (c = !0)
-          var e = Qa(a),
+          const e = Qa(a),
             f = ha(a),
             g = e.o('wasSynced'),
             h = {
@@ -9534,7 +9534,7 @@
                 h,
               )
                 .then(function (k) {
-                  var l
+                  let l
                   k =
                     ((l = {}),
                     (l.time = f(aa)),
@@ -9622,20 +9622,20 @@
             this.l = c
           }
           a.prototype.za = function (c) {
-            var b = je(c)
+            const b = je(c)
             c = A(D(this.Qa, this), b)
             return qf(
               jb(
                 this.l,
                 A(function (d, e) {
-                  var f
+                  let f
                   return x({}, b[e], ((f = {}), (f.data = d), f))
                 }, c),
               ),
             )
           }
           a.prototype.Qa = function (c) {
-            var b = c.data
+            let b = c.data
             'string' !== typeof b && (b = jb(this.l, je(c.data)))
             return b
           }
@@ -9702,7 +9702,7 @@
             )(Us)
           }
           a.prototype.zg = function (c) {
-            var b,
+            let b,
               d = this.se(c.data)
             return {
               L: ha(this.l)(sg),
@@ -9710,14 +9710,14 @@
             }
           }
           a.prototype.se = function (c) {
-            var b = this
+            const b = this
             return ea(c)
               ? A(D(this.se, this), c)
               : Ma(c)
                 ? u(
                     ya,
                     ud(function (d, e) {
-                      var f = e[0]
+                      const f = e[0]
                       d[b.Rb[f] || f] = b.se(e[1])
                       return d
                     }, {}),
@@ -9734,7 +9734,7 @@
             return [c]
           }
           a.prototype.za = function (c) {
-            var b = this
+            const b = this
             c = he(this.l, Wh, {
               buffer: A(D(this.zg, this), c),
             })
@@ -9763,7 +9763,7 @@
         Xg = ((Qd = {}), (Qd[1] = 500), (Qd[2] = 500), (Qd[3] = 0), Qd),
         Yg = (function () {
           function a(c, b) {
-            var d,
+            let d,
               e = this
             this.id = 'a'
             this.Sd = !1
@@ -9789,7 +9789,7 @@
             return c.element
           }
           a.prototype.yf = function (c, b) {
-            var d = this,
+            let d = this,
               e
             C(this.l, 'P.s.' + b, function () {
               e = d.Mb[b].call(d, c)
@@ -9797,7 +9797,7 @@
             return e
           }
           a.prototype.jj = function (c) {
-            var b = x({}, c)
+            const b = x({}, c)
             this.Sd &&
               !b.id &&
               H(c.type, [3, 2]) &&
@@ -9812,7 +9812,7 @@
             return b
           }
           a.prototype.Da = function (c) {
-            var b = this,
+            let b = this,
               d = {},
               e = this.La(c)
             if (!e) return null
@@ -9820,7 +9820,7 @@
             z(function (g) {
               d[g] = b.yf(c, g)
             }, ca(this.Mb))
-            var f = ha(this.l)
+            const f = ha(this.l)
             d.stamp = f(sg)
             d.element = c.element
             d.nc = e
@@ -9832,13 +9832,13 @@
             return d
           }
           a.prototype.ki = function (c) {
-            for (var b = 1; 5 >= b; b += 1) {
-              var d = Ya(Fc('h' + b, c))
+            for (let b = 1; 5 >= b; b += 1) {
+              const d = Ya(Fc('h' + b, c))
               if (d) return d
             }
           }
           a.prototype.hi = function () {
-            var c = Fc('[rel="canonical"]', this.root)
+            const c = Fc('[rel="canonical"]', this.root)
             if (c) return c.href
           }
           a.prototype.Df = function () {
@@ -9848,12 +9848,12 @@
             return []
           }
           a.prototype.Lh = function () {
-            var c = this,
+            let c = this,
               b = this.zc(),
               d = 1
             return M(
               function (e, f) {
-                var g =
+                let g =
                   c.Da({
                     element: f,
                     type: c.Df(f),
@@ -9861,7 +9861,7 @@
                 ea(g) || (g = [g])
                 g = M(
                   function (h, k) {
-                    var l = h.values,
+                    const l = h.values,
                       m = h.Gf
                     k && k.chars > Xg[k.type] && !H(k.id, m)
                       ? (l.push(k), m.push(k.id))
@@ -9879,7 +9879,7 @@
                 ).values
                 return e.concat(
                   A(function (h) {
-                    var k
+                    let k
                     h = x(
                       ((k = {
                         index: d,
@@ -9902,7 +9902,7 @@
         })(),
         Vk = (function (a) {
           function c() {
-            var b,
+            let b,
               d = (null !== a && a.apply(this, arguments)) || this
             d.id = 'j'
             d.Sd = !0
@@ -9915,7 +9915,7 @@
             d.Mb =
               ((b = {}),
               (b.id = function (e) {
-                var f = e.data['@id']
+                let f = e.data['@id']
                 e = e.data.mainEntity || e.data.mainEntityOfPage
                 !f && e && (f = e['@id'])
                 return f
@@ -9924,13 +9924,13 @@
                 return 'string' === typeof e.data.text ? e.data.text.length : Pb(this.La(e)).length
               }),
               (b.authors = function (e) {
-                var f = []
+                let f = []
                 f = f.concat(this.yc(e.data, 'author'))
                 f = f.concat(this.yc(e.data.mainEntity, 'author'))
                 return f.concat(this.yc(e.data.mainEntityOfPage, 'author'))
               }),
               (b.pageTitle = function (e) {
-                var f = e.data.headline || ''
+                let f = e.data.headline || ''
                 e.data.fk && (f += ' ' + e.data.alternativeHeadline)
                 '' === f &&
                   (e.data.name
@@ -9952,14 +9952,14 @@
                 return this.yc(e.data, 'about', ['name', 'alternateName'])
               }),
               (b.rubric = function (e) {
-                var f = this,
+                const f = this,
                   g = this.La(e)
                 e = Z(
                   Boolean,
                   A(
                     function (h) {
                       if ((h = qb(f.l, Pb(h)))) {
-                        var k = f.zf(h)
+                        const k = f.zf(h)
                         if (k)
                           return M(
                             function (l, m) {
@@ -10016,12 +10016,12 @@
               }, b),
             )
             return A(function (f) {
-              var g
+              let g
               return (g = {}), (g.name = f), g
             }, b)
           }
           c.prototype.La = function (b) {
-            var d = b.element,
+            let d = b.element,
               e = b.data['@id'],
               f = b.data.url
             b = null
@@ -10034,9 +10034,9 @@
           }
           c.prototype.qf = function (b) {
             try {
-              var d = Gc(this.l, b).hash
+              const d = Gc(this.l, b).hash
               if (d) {
-                var e = Fc(d, this.l.document.body)
+                const e = Fc(d, this.l.document.body)
                 if (e) return e
               }
             } catch (f) {}
@@ -10046,7 +10046,7 @@
             return this.Pe[b['@type']] || 1
           }
           c.prototype.Da = function (b) {
-            var d = this,
+            const d = this,
               e = b.element
             if (
               !b.data &&
@@ -10054,7 +10054,7 @@
               !b.data || (!/schema\.org/.test(b.data['@context']) && !ea(b.data)))
             )
               return null
-            var f = this.zf(b.data)
+            const f = this.zf(b.data)
             if (f)
               return A(function (h) {
                 if (!H(h['@type'], d.zb['schema.org'])) return null
@@ -10073,7 +10073,7 @@
             return g
               ? ((b = ic(v(g, n), ['acceptedAnswer', 'suggestedAnswer'])),
                 A(function (h) {
-                  var k
+                  let k
                   if (!h || !H(h['@type'], d.zb['schema.org'])) return null
                   h = {
                     element: e,
@@ -10101,7 +10101,7 @@
         })(Yg),
         Zg = (function (a) {
           function c() {
-            var b,
+            let b,
               d = (null !== a && a.apply(this, arguments)) || this
             d.id = 's'
             d.Sd = !0
@@ -10110,7 +10110,7 @@
               ((b = {}),
               (b.id = function (e) {
                 e = e.element
-                var f = ab(this.l, e, 'identifier')
+                let f = ab(this.l, e, 'identifier')
                 return f
                   ? Ya(f)
                   : (f = ab(this.l, e, 'mainEntityOfPage')) && f.getAttribute('itemid')
@@ -10118,10 +10118,10 @@
                     : null
               }),
               (b.chars = function (e) {
-                var f = 0
+                let f = 0
                 e = e.element
                 for (
-                  var g = [
+                  let g = [
                       'articleBody',
                       'reviewBody',
                       'recipeInstructions',
@@ -10132,7 +10132,7 @@
                   h < g.length;
                   h += 1
                 ) {
-                  var k = ab(this.l, e, g[h])
+                  const k = ab(this.l, e, g[h])
                   if (k) {
                     f = Ya(k).length
                     break
@@ -10143,10 +10143,10 @@
                 return f
               }),
               (b.topics = function (e) {
-                var f = this,
+                let f = this,
                   g = Md(this.l, e.element, 'about')
                 return A(function (h) {
-                  var k = {
+                  const k = {
                     name: Ya(h),
                   }
                   if ((g = ab(f.l, h, 'name'))) k.name = Ya(g)
@@ -10154,7 +10154,7 @@
                 }, g)
               }),
               (b.rubric = function (e) {
-                var f = this
+                const f = this
                 ;(e = Fc('[itemtype$="schema.org/BreadcrumbList"]', e.element)) ||
                   (e = Fc('[itemtype$="schema.org/BreadcrumbList"]', this.root))
                 return e
@@ -10178,13 +10178,13 @@
               (b.pageUrlCanonical = function (e) {
                 e = Md(this.l, e.element, 'url')
                 if (e.length) {
-                  var f = e[0]
+                  const f = e[0]
                   return f.href ? f.href : Ya(e)
                 }
                 return null
               }),
               (b.pageTitle = function (e) {
-                var f = '',
+                let f = '',
                   g = e.element,
                   h = ab(this.l, g, 'headline')
                 h && (f += Ya(h))
@@ -10199,10 +10199,10 @@
                 return f
               }),
               (b.authors = function (e) {
-                var f = this
+                const f = this
                 e = Md(this.l, e.element, 'author')
                 return A(function (g) {
-                  var h,
+                  let h,
                     k = ((h = {}), (h.name = ''), h)
                   ;/.+schema.org\/(Person|Organization)/.test(g.getAttribute('itemtype') || '') &&
                     (h = ab(f.l, g, 'name')) &&
@@ -10223,7 +10223,7 @@
             return b.element && Pb(b.element).length ? a.prototype.Da.call(this, b) : null
           }
           c.prototype.zc = function () {
-            var b = L(
+            const b = L(
               ',',
               A(function (d) {
                 return '[itemtype$="schema.org/' + d + '"]'
@@ -10235,7 +10235,7 @@
         })(Yg),
         Wk = (function (a) {
           function c(b, d) {
-            var e,
+            let e,
               f = a.call(this, b, d) || this
             f.id = 'o'
             f.Mb =
@@ -10271,11 +10271,11 @@
           }
           Ja(c, a)
           c.prototype.Gd = function (b) {
-            var d
+            let d
             return b
               ? ea(b)
                 ? A(function (e) {
-                    var f
+                    let f
                     return (f = {}), (f.name = e), f
                   }, b)
                 : [((d = {}), (d.name = b), d)]
@@ -10285,11 +10285,11 @@
             return ea(b) ? (b.length ? b[0] : null) : b
           }
           c.prototype.zc = function () {
-            var b = ub('meta[property="og:type"]', this.l.document.body)
+            const b = ub('meta[property="og:type"]', this.l.document.body)
             return [this.l.document.head].concat(b)
           }
           c.prototype.Yh = function (b) {
-            var d = this,
+            let d = this,
               e = b.element,
               f = {},
               g = this.La(b)
@@ -10298,7 +10298,7 @@
               z(function (h) {
                 try {
                   if (h.parentNode === g || h.parentNode === d.l.document.head) {
-                    var k = h.getAttribute('property').replace(d.Dh, ''),
+                    const k = h.getAttribute('property').replace(d.Dh, ''),
                       l = Ya(h)
                     f[k] ? (ea(f[k]) ? f[k].push(l) : (f[k] = [f[k], l])) : (f[k] = l)
                   }
@@ -10315,7 +10315,7 @@
           }
           c.prototype.La = function (b) {
             b = b.element
-            var d = this.l.document
+            const d = this.l.document
             return b === d.head ? d.body : b.parentNode
           }
           c.prototype.Da = function (b) {
@@ -10333,7 +10333,7 @@
           ),
         Xs = (function () {
           function a(c, b, d, e, f) {
-            var g = this
+            const g = this
             this.Kc = !1
             this.$ = {}
             this.scroll = {
@@ -10352,9 +10352,9 @@
             this.Pg = Ws
             this.flush = function () {
               g.Ee = W(g.l, g.flush, 2500)
-              var h = g.Kd()
+              const h = g.Kd()
               if (g.buffer.length || h) {
-                var k = zd(g.buffer)
+                const k = zd(g.buffer)
                 h && k.push(h)
                 g.Zf = g.de
                 g.qa.za(k)(
@@ -10380,22 +10380,22 @@
             this.Nd = I(this.l)
           }
           a.prototype.start = function () {
-            var c = this
+            const c = this
             this.Ee = W(this.l, this.flush, 2500)
             if (!this.Kc) {
               this.yj()
-              var b = this.Nd.o(this.Yd, []),
+              const b = this.Nd.o(this.Yd, []),
                 d = !b.length
               b.push(D(this.Ji, this))
               this.Nd.Ra(this.Yd, b)
               d && this.hg()
-              var e = function (f, g) {
+              const e = function (f, g) {
                 return (f.Be || 0) <= (g.Be || 0) ? g : f
               }
               ia(this.l).D(this.l, ['click'], function (f) {
                 if (c.ha.length) {
                   f = Li(f)
-                  var g = T(c.l).hostname,
+                  let g = T(c.l).hostname,
                     h
                   if ((h = f)) h = qe(f.hostname) === qe(g)
                   h &&
@@ -10420,13 +10420,13 @@
             return $b('html', this.l, c) !== this.l.document.documentElement
           }
           a.prototype.hg = function () {
-            var c = this
+            const c = this
             C(this.l, 'p.ic' + this.Zb.id, function () {
               if (!c.Kc) {
-                var b = c.Nd.o(c.Yd),
+                const b = c.Nd.o(c.Yd),
                   d = c.Zb.Lh()
                 z(function (e) {
-                  var f = A(function (g) {
+                  const f = A(function (g) {
                     return x({}, g)
                   }, d)
                   S(e) && e(f)
@@ -10439,7 +10439,7 @@
             this.Kc || (this.Oj(c), this.Qj(), this.nh())
           }
           a.prototype.fc = function (c) {
-            var b = this
+            const b = this
             C(this.l, 'p.ec.' + this.Zb.id, function () {
               try {
                 var d = c.type
@@ -10447,26 +10447,26 @@
               } catch (l) {
                 return
               }
-              var f = 'page' === d
+              const f = 'page' === d
               if ('scroll' === d || f) {
-                var g = [b.l, b.l.document, b.l.document.documentElement, tc(b.l)]
+                const g = [b.l, b.l.document, b.l.document.documentElement, tc(b.l)]
                 H(e, g) && b.Nb()
               }
               ;('resize' === d || f) && b.Hg()
               d = b.time(aa)
-              var h = Math.min(d - b.Qf, 5e3)
+              const h = Math.min(d - b.Qf, 5e3)
               b.Ma += Math.round(h)
               b.Qf = d
               if (b.$ && b.scroll && b.Eb) {
-                var k = b.Eb.Wa * b.Eb.Ve
+                const k = b.Eb.Wa * b.Eb.Ve
                 b.ha = A(function (l) {
-                  var m = x({}, l),
+                  let m = x({}, l),
                     p = b.$[m.id],
                     q = gd(l.nc)
                   if (!p || b.Nf(m.element) || !q) return m
                   l = b.l.Math
                   p = l.max((b.scroll.y + b.Eb.Wa - p.y) / p.height, 0)
-                  var t = q.height * q.width
+                  const t = q.height * q.width
                   q = b.jh(q)
                   m.Be = q / k
                   m.visibility = q / t
@@ -10486,18 +10486,18 @@
             })()
           }
           a.prototype.jh = function (c) {
-            var b = c.top,
+            let b = c.top,
               d = c.bottom,
               e = c.left,
               f = this.Eb,
               g = f.Ve
             f = f.Wa
-            var h = this.l.Math
+            const h = this.l.Math
             c = h.min(h.max(c.right, 0), g) - h.min(h.max(e, 0), g)
             return (h.min(h.max(d, 0), f) - h.min(h.max(b, 0), f)) * c
           }
           a.prototype.Oj = function (c) {
-            var b = A(function (d) {
+            const b = A(function (d) {
               return d.id
             }, this.ha)
             this.ha = this.ha.concat(
@@ -10507,23 +10507,23 @@
             )
           }
           a.prototype.Hg = function () {
-            var c = mg(this.l) || Fd(this.l)
+            const c = mg(this.l) || Fd(this.l)
             this.Eb = {
               Ve: c[0],
               Wa: c[1],
             }
           }
           a.prototype.Qj = function () {
-            var c = this
+            const c = this
             C(this.l, 'p.um.' + this.Zb.id, function () {
-              var b = []
+              const b = []
               c.Nb()
               c.$ = M(
                 function (d, e) {
-                  var f
+                  let f
                   if (c.Nf(e.element)) b.push(e), delete d[e.id]
                   else {
-                    var g =
+                    const g =
                       ((f = {}),
                       (f.id = e.id),
                       (f.involvedTime = Math.max(e.involvedTime, 0)),
@@ -10550,7 +10550,7 @@
             })()
           }
           a.prototype.Kd = function () {
-            var c,
+            let c,
               b,
               d = A(v(this.$, n), ca(this.$))
             return d.length && ((this.de = jb(this.l, d)), this.Zf !== this.de)
@@ -10561,11 +10561,11 @@
               : null
           }
           a.prototype.nh = function () {
-            var c = this
+            const c = this
             if (this.ha.length) {
-              var b = A(
+              const b = A(
                 function (d) {
-                  var e,
+                  let e,
                     f = M(
                       function (g, h) {
                         d[h] && (g[h] = d[h])
@@ -10606,19 +10606,19 @@
       Wk && (Rd.opengraph = Wk)
       var Ys = E('p.p', function (a, c) {
           function b(l) {
-            var m = x({}, k)
+            const m = x({}, k)
             m.Y.fa = l
             return e(m, c)['catch'](C(a, 's.ww.p'))
           }
           if (!Da('querySelectorAll', a.document.querySelectorAll)) return K.resolve()
-          var d = [new Pe(a)]
+          let d = [new Pe(a)]
           d.unshift(new Vs(a))
           var e = za(a, 'p', c),
             f = eb(function (l) {
               return l.isEnabled()
             }, d)
           d = Ca()
-          var g = Rc(a, c.id),
+          const g = Rc(a, c.id),
             h = g.o('pai')
           h && (g.uc('pai'), d.C('pai', h))
           var k = {
@@ -10635,9 +10635,9 @@
             C(a, 'ps.s', function (l) {
               if ((l = n(l, 'settings.publisher.schema'))) {
                 l = Pj(c) ? 'microdata' : l
-                var m = Rd[l]
+                let m = Rd[l]
                 if (m && f) {
-                  var p = N(c)
+                  const p = N(c)
                   m = new m(a, p)
                   new Xs(a, m, f, b, p).start()
                   pb(a, p, 'Publishers analytics schema "' + l + '"')
@@ -10655,7 +10655,7 @@
             return qf(ic(D(this.Qa, this), c))
           }
           a.prototype.Qa = function (c, b) {
-            var d = this,
+            let d = this,
               e = [],
               f = this.Wh(this.l, b && b.type, c.type)
             f &&
@@ -10693,7 +10693,7 @@
             this.hf = W(this.l, u(D(this.flush, this), D(this.cd, this)), this.kd, 'b.f')
           }
           a.prototype.send = function (c, b) {
-            var d = this.$b(c, b || [], this.pe)
+            const d = this.$b(c, b || [], this.pe)
             this.pe += 1
             return d
           }
@@ -10712,12 +10712,12 @@
           }
           Ja(c, a)
           c.prototype.push = function (b, d) {
-            var e = this.qa.Qa(b, d)
+            const e = this.qa.Qa(b, d)
             La(this.buffer, e)
             this.qa.Va(this.buffer) > this.Qg && this.flush()
           }
           c.prototype.flush = function () {
-            var b = this.buffer
+            const b = this.buffer
             b.length && (this.send(b), (this.buffer = []))
           }
           return c
@@ -10757,7 +10757,7 @@
           ud: 0,
         },
         $q = w(function () {
-          var a
+          let a
           return (
             (a = {}),
             (a.A = 1),
@@ -10857,7 +10857,7 @@
         }),
         Xq = [17, 18, 38, 32, 39, 15, 11, 7, 1],
         $s = (function () {
-          var a =
+          const a =
             'first(-|\\.|_|\\s){0,2}name last(-|\\.|_|\\s){0,2}name zip postal phone address passport (bank|credit)(-|\\.|_|\\s){0,2}card card(-|\\.|_|\\s){0,2}number card(-|\\.|_|\\s){0,2}holder cvv card(-|\\.|_|\\s){0,2}exp card(-|\\.|_|\\s){0,2}name card.*month card.*year card.*month card.*year password email birth(-|\\.|_|\\s){0,2}(day|date) second(-|\\.|_|\\s){0,2}name third(-|\\.|_|\\s){0,2}name patronymic middle(-|\\.|_|\\s){0,2}name birth(-|\\.|_|\\s){0,2}place house street city flat state'.split(
               ' ',
             )
@@ -10888,12 +10888,12 @@
         Hg = !0,
         Ig = !1,
         cn = ka(function (a, c) {
-          var b = F([a, 'efv.' + c.event], C)
+          const b = F([a, 'efv.' + c.event], C)
           c.N = A(u(P, b), c.N)
           return c
         }),
         $k = w(function (a) {
-          var c = [],
+          let c = [],
             b = [],
             d = []
           a.document.attachEvent && !a.opera && (c.push(xf), b.push(dr), b.push(er))
@@ -11015,7 +11015,7 @@
         }),
         at = ['submit', 'beforeunload', 'unload'],
         bt = w(function (a, c) {
-          var b = c(a)
+          const b = c(a)
           return M(
             function (d, e) {
               d[e.type + ':' + e.event] = e.N
@@ -11030,12 +11030,12 @@
         }),
         an = /^\s*function submit\(\)/,
         dt = E('fw.p', function (a, c) {
-          var b
+          let b
           if (!(b = c.Ah || !c.Fb)) {
-            var d = I(a),
+            let d = I(a),
               e = !1
             b = d.o('hitParam', {})
-            var f = N(c)
+            const f = N(c)
             b[f] && ((d = d.o('counters', {})), (e = !(!We(c.da) || d[f])))
             b[f] = 1
             b = e
@@ -11065,7 +11065,7 @@
               return Z(Boolean, this.aa.O('ag', b))
             }
             c.prototype.uf = function (b, d) {
-              var e = this
+              const e = this
               b(
                 Ra(C(this.l, 'wv2.b.st'), function (f) {
                   e.send(f, d)
@@ -11073,12 +11073,12 @@
               )
             }
             c.prototype.wj = function (b, d) {
-              var e = this
+              const e = this
               la(this.l, this.hf)
-              var f = Math.ceil(this.qa.Va(d) / 63e4),
+              const f = Math.ceil(this.qa.Va(d) / 63e4),
                 g = this.qa.dd(d, f)
               z(function (h, k) {
-                var l,
+                let l,
                   m = x(
                     {},
                     b,
@@ -11090,7 +11090,7 @@
               this.cd()
             }
             c.prototype.send = function (b, d) {
-              var e = this
+              const e = this
               this.aa.O('se', d)
               return a.prototype.send.call(this, b, d).then(P, function () {
                 e.aa.O('see', d)
@@ -11104,10 +11104,10 @@
               return this.Le && this.Me >= this.Le
             }
             c.prototype.push = function (b) {
-              var d = this
+              const d = this
               if (!this.Hi()) {
                 this.aa.O('p', b)
-                var e = this.qa.Qa(b),
+                let e = this.qa.Qa(b),
                   f = this.qa.Va(e)
                 7e5 < f
                   ? this.wj(b, e)
@@ -11131,12 +11131,12 @@
               this.aa.na([b], d)
             }
             c.prototype.flush = function () {
-              var b = this.buffer.concat(this.wf(this.buffer))
+              const b = this.buffer.concat(this.wf(this.buffer))
               if (b.length) {
                 this.buffer = []
                 this.Me += this.Hb
                 this.Hb = 0
-                var d = this.qa.za(b)
+                const d = this.qa.za(b)
                 this.uf(d, b)
               }
             }
@@ -11157,9 +11157,9 @@
             this.stop = this.K.J(this.stop, 'sp')
           }
           a.prototype.start = function () {
-            var c = this
+            const c = this
             this.Tb = A(function (b) {
-              var d = b[0],
+              const d = b[0],
                 e = b[2]
               b = D(c.K.J(b[1], d[0]), c)
               return c.ib.D(e || c.l, d, b)
@@ -11209,18 +11209,18 @@
             this.xa.disconnect()
           }
           c.prototype.ld = function (b) {
-            var d = b.target
+            const d = b.target
             b = b.attributeName
-            var e = this.sa.elements.indexOf(d)
+            let e = this.sa.elements.indexOf(d)
             ;-1 === e && ((e = this.sa.elements.push(d) - 1), (this.sa.attributes[e] = {}))
             this.sa.attributes[e] || (this.sa.attributes[e] = {})
             e = this.sa.attributes[e]
-            var f = d.getAttribute(b)
+            const f = d.getAttribute(b)
             e[b] = de(this.l, d, b, f, this.F.Cc()).value
           }
           c.prototype.wd = function (b) {
             function d(k) {
-              var l = Lb(e.l)(k, f)
+              const l = Lb(e.l)(k, f)
               return -1 === l
                 ? (f.push(k),
                   (k = {
@@ -11234,7 +11234,7 @@
               f = [],
               g = []
             z(function (k) {
-              var l = k.attributeName,
+              const l = k.attributeName,
                 m = k.removedNodes,
                 p = k.oldValue,
                 q = k.target,
@@ -11262,18 +11262,18 @@
                   ;(y = d(q)), y.tf || (y.tf = p)
               }
             }, b)
-            var h = this.F.ta()
+            const h = this.F.ta()
             z(function (k, l) {
               h.Fe(k, g[l])
             }, f)
           }
           c.prototype.ie = function (b) {
-            var d = this
+            const d = this
             if (ah(this.l)) {
-              var e = this.F.L()
+              const e = this.F.L()
               this.wd(b)
               z(function (f) {
-                var g = f.addedNodes,
+                const g = f.addedNodes,
                   h = f.removedNodes,
                   k = f.target
                 switch (f.type) {
@@ -11289,9 +11289,9 @@
             } else this.stop()
           }
           c.prototype.ue = function (b) {
-            var d = this
+            const d = this
             z(function (e, f) {
-              var g = d.Bc()
+              const g = d.Bc()
               d.F.X(
                 'mutation',
                 {
@@ -11307,7 +11307,7 @@
             this.sa.attributes = []
           }
           c.prototype.we = function (b, d) {
-            var e = this,
+            const e = this,
               f = this.Bc()
             this.F.ta().Gc({
               ma: b,
@@ -11330,11 +11330,11 @@
             })
           }
           c.prototype.xe = function (b, d) {
-            var e = this,
+            const e = this,
               f = this.Bc(),
               g = this.F.ta(),
               h = A(function (k) {
-                var l = g.removeNode(k)
+                const l = g.removeNode(k)
                 Fi(e.l, k, function (m) {
                   g.removeNode(m)
                 })
@@ -11351,7 +11351,7 @@
             )
           }
           c.prototype.ve = function (b, d) {
-            var e = this.Bc()
+            const e = this.Bc()
             this.F.X(
               'mutation',
               {
@@ -11364,7 +11364,7 @@
             )
           }
           c.prototype.Bc = function () {
-            var b = this.index
+            const b = this.index
             this.index += 1
             return b
           }
@@ -11372,7 +11372,7 @@
         })(Za),
         ft = (function () {
           function a(c, b) {
-            var d = this
+            const d = this
             this.xc = []
             this.jb = []
             this.ee = 1
@@ -11383,7 +11383,7 @@
               return d.jb.length ? H(f, d.jb) : !1
             }
             this.removeNode = function (f) {
-              var g = d.Z(f),
+              let g = d.Z(f),
                 h = Ia(f)
               if (h)
                 return (
@@ -11399,9 +11399,9 @@
                 )
             }
             this.ob = function (f) {
-              var g = Ia(f)
+              let g = Ia(f)
               if (g) {
-                var h = f.__ym_indexer
+                let h = f.__ym_indexer
                 h ||
                   ((h = d.ee),
                   (f.__ym_indexer = h),
@@ -11419,7 +11419,7 @@
               return null
             }
             this.l = c
-            var e = vf(c, this, 'i')
+            const e = vf(c, this, 'i')
             this.aa = fd(c)
             this.options = b
             this.start = e.J(this.start, 'st')
@@ -11431,7 +11431,7 @@
             this.ga = e.J(this.ga, 's')
           }
           a.prototype.Fe = function (c, b) {
-            var d = this.ob(c)
+            const d = this.ob(c)
             Ta(d) || (this.Ic[d] && this.Z(c), (this.Ic[d] = b))
           }
           a.prototype.D = function (c, b, d) {
@@ -11441,7 +11441,7 @@
             this.aa.D([c], d)
           }
           a.prototype.na = function (c, b, d) {
-            var e = '' + b + c
+            const e = '' + b + c
             this.jb = Z(function (f) {
               return f !== e
             }, this.jb)
@@ -11456,7 +11456,7 @@
             this.xc = []
           }
           a.prototype.Gc = function (c) {
-            var b = this,
+            let b = this,
               d = [],
               e = 0,
               f = {
@@ -11468,7 +11468,7 @@
             this.xc.push(f)
             z(function (g) {
               Fi(b.l, g, function (h) {
-                var k = b.ob(h)
+                const k = b.ob(h)
                 Ta(k) ||
                   (d.push(h),
                   b.sb[k] && b.Z(h),
@@ -11483,7 +11483,7 @@
           }
           a.prototype.Z = function (c) {
             if (c === this.l) return 0
-            var b = this.ob(c),
+            let b = this.ob(c),
               d = this.sb[b],
               e = this.Uh(b),
               f = e.sf,
@@ -11494,15 +11494,15 @@
             if (d) {
               e = d.event
               d = d.Kj
-              var m = this.l.document.documentElement === c
+              let m = this.l.document.documentElement === c
               k = k || c.nextSibling
-              var p = l || c.previousSibling
+              let p = l || c.previousSibling
               l = !m && k ? this.ob(k) : null
               p = !m && p ? this.ob(p) : null
               m = this.l
               k = this.options
               f = this.ob(f || c.parentNode || c.parentElement) || 0
-              var q = g,
+              let q = g,
                 t = void 0
               void 0 === p && (p = null)
               void 0 === l && (l = null)
@@ -11541,9 +11541,9 @@
             this.ga(!0)
           }
           a.prototype.ga = function (c) {
-            var b = this
+            const b = this
             if (ah(this.l)) {
-              var d = ca(this.sb)
+              let d = ca(this.sb)
               d = A(function (e) {
                 return b.sb[e].node
               }, d)
@@ -11557,7 +11557,7 @@
           }
           a.prototype.Uh = function (c) {
             if (Ta(c)) return {}
-            var b = this.Ic[c]
+            const b = this.Ic[c]
             return b ? (delete this.Ic[c], b) : {}
           }
           return a
@@ -11578,7 +11578,7 @@
           }
           Ja(c, a)
           c.prototype.start = function () {
-            var b = this,
+            const b = this,
               d = this.F.ta()
             this.zd = this.oh()
             z(function (e) {
@@ -11600,7 +11600,7 @@
           }
           c.prototype.hd = function (b) {
             if (this.zd) {
-              var d = this.inputs[b]
+              let d = this.inputs[b]
               d &&
                 ((b = d.ej), (d = d.element), b && this.l.Object.defineProperty(d, this.Dc(d), b))
             }
@@ -11616,16 +11616,16 @@
           }
           c.prototype.Od = function (b) {
             if ((b = b.target)) {
-              var d = this.Dc(b)
+              const d = this.Dc(b)
               this.Fc(b[d], b)
             }
           }
           c.prototype.Fc = function (b, d) {
-            var e = this.Z(d),
+            let e = this.Z(d),
               f = this.inputs[e]
             if (!f && ((f = this.Xc(f, e)), !f)) return
             e = f.qh
-            var g = f.value,
+            let g = f.value,
               h = this.Dc(d)
             ;(b && !H(typeof b, ['string', 'boolean', 'number'])) ||
               b === g ||
@@ -11653,10 +11653,10 @@
               (f.value = b))
           }
           c.prototype.Xc = function (b, d) {
-            var e = this
+            const e = this
             if (!sf(b) || '__ym_input_override_test' === b.getAttribute('class') || this.inputs[d])
               return null
-            var f = ze(b),
+            const f = ze(b),
               g = this.Dc(b),
               h = {
                 element: b,
@@ -11666,7 +11666,7 @@
             this.inputs[d] = h
             this.zd &&
               Gb(this.l, function () {
-                var k = e.l.Object.getOwnPropertyDescriptor(Object.getPrototypeOf(b), g) || {},
+                const k = e.l.Object.getOwnPropertyDescriptor(Object.getPrototypeOf(b), g) || {},
                   l = e.l.Object.getOwnPropertyDescriptor(b, g) || {},
                   m = x({}, k, l)
                 if (Da('((set)?(\\s?' + g + ')?)?', m.set)) {
@@ -11689,7 +11689,7 @@
             return h
           }
           c.prototype.oh = function () {
-            var b = !0,
+            let b = !0,
               d = $a(this.l)('input')
             try {
               d = $a(this.l)('input')
@@ -11697,7 +11697,7 @@
               d.style.setProperty('display', 'none', 'important')
               d.setAttribute('type', 'text')
               d.setAttribute('class', '__ym_input_override_test')
-              var e =
+              const e =
                   this.l.Object.getOwnPropertyDescriptor(Object.getPrototypeOf(d), 'value') || {},
                 f = this.l.Object.getOwnPropertyDescriptor(d, 'value') || {},
                 g = x({}, e, f)
@@ -11741,11 +11741,11 @@
             this.kg()
           }
           c.prototype.cj = function () {
-            var b = this.Md()
+            const b = this.Md()
             this.vi(b) && ((this.ab = b), this.lg(b))
           }
           c.prototype.aj = function () {
-            var b = this.Md()
+            const b = this.Md()
             this.ab.orientation !== b.orientation && ((this.ab = b), this.uj(b))
           }
           c.prototype.Of = function (b) {
@@ -11755,7 +11755,7 @@
             return b.height !== this.ab.height || b.width !== this.ab.width
           }
           c.prototype.Md = function () {
-            var b = this.F.mb(),
+            let b = this.F.mb(),
               d = Fd(this.l),
               e = d[0]
             d = d[1]
@@ -11769,7 +11769,7 @@
             }
           }
           c.prototype.uj = function (b) {
-            var d
+            let d
             void 0 === d && (d = this.F.L())
             this.F.X(
               'event',
@@ -11797,7 +11797,7 @@
             )
           }
           c.prototype.kg = function () {
-            var b = this.Md()
+            const b = this.Md()
             this.Of(b)
               ? W(this.l, D(this.kg, this), 300)
               : (this.Of(this.ab) && (this.ab = b), this.lg(b, 0))
@@ -11812,7 +11812,7 @@
           }
           a.prototype.rc = function (c, b, d) {
             void 0 === d && (d = {})
-            var e = ha(this.l),
+            const e = ha(this.l),
               f = this.index
             this.index += 1
             this.Cb[f] = {
@@ -11822,15 +11822,15 @@
               Ib: [],
               Zd: e(aa),
             }
-            var g = this
+            const g = this
             return function () {
-              var h = Aa(arguments),
+              const h = Aa(arguments),
                 k = d.kb && !g.Cb[f].Yb,
                 l = g.Cb[f]
               la(g.l, l.Sa)
               l.Ib = h
               l.Yb = !0
-              var m = e(aa)
+              const m = e(aa)
               if (k || m - l.Zd >= b) c.apply(void 0, h), (l.Zd = m)
               l.Sa = W(
                 g.l,
@@ -11845,9 +11845,9 @@
             }
           }
           a.prototype.flush = function () {
-            var c = this
+            const c = this
             z(function (b) {
-              var d = c.Cb[b],
+              const d = c.Cb[b],
                 e = d.Sa,
                 f = d.Oh,
                 g = d.Ib
@@ -11891,7 +11891,7 @@
           c.prototype.dj = function (b) {
             if (this.F.mb().If()) this.Vc(b)
             else {
-              var d = b.target,
+              let d = b.target,
                 e = Z(function (f) {
                   return f[0] === d
                 }, this.Ag).pop()
@@ -11905,11 +11905,11 @@
             }
           }
           c.prototype.Vc = function (b) {
-            var d = this.F.mb().Ld()
+            let d = this.F.mb().Ld()
             b = b.target
-            var e = this.Nb(b)
+            let e = this.Nb(b)
             d = Oa(ma(b), [d, this.l, this.l.document])
-            var f = Math.max(e.left, 0)
+            const f = Math.max(e.left, 0)
             e = Math.max(e.top, 0)
             if (d) {
               if (this.We.x === f && this.We.y === e) return
@@ -11930,7 +11930,7 @@
             )
           }
           c.prototype.Nb = function (b) {
-            var d = {
+            const d = {
               left: 0,
               top: 0,
             }
@@ -11940,7 +11940,7 @@
                 top: b.scrollY || 0,
                 left: b.scrollX || 0,
               }
-            var e = b.ownerDocument || b,
+            const e = b.ownerDocument || b,
               f = b.documentElement,
               g = e.defaultView || e.parentWindow,
               h = e.body
@@ -11974,7 +11974,7 @@
             this.Aa.flush()
           }
           c.prototype.$i = function (b) {
-            var d = null
+            let d = null
             try {
               d = b.type
             } catch (e) {
@@ -11983,10 +11983,10 @@
             'mousemove' === d ? this.Cj(b) : this.Pc(b)
           }
           c.prototype.Pc = function (b) {
-            var d = b.type,
+            let d = b.type,
               e = b.clientX
             e = void 0 === e ? null : e
-            var f = b.clientY
+            let f = b.clientY
             f = void 0 === f ? null : f
             b = b.target || this.l.document.elementFromPoint(e, f)
             this.F.X(
@@ -12010,7 +12010,7 @@
           }
           Ja(c, a)
           c.prototype.Ph = function (b) {
-            var d = b.target
+            const d = b.target
             b = b.type
             this.F.X(
               'event',
@@ -12023,7 +12023,7 @@
           return c
         })(Za),
         ot = w(function (a) {
-          var c = Ka(a.getSelection, 'getSelection')
+          const c = Ka(a.getSelection, 'getSelection')
           return c ? D(c, a) : B
         }),
         pt = u(ot, ja),
@@ -12038,7 +12038,7 @@
           }
           Ja(c, a)
           c.prototype.si = function (b) {
-            var d = this.F,
+            let d = this.F,
               e = b.type,
               f = b.which
             b = b.target
@@ -12057,10 +12057,10 @@
                   ))
           }
           c.prototype.gi = function () {
-            var b = pt(this.l)
+            let b = pt(this.l)
             if (b && 0 < b.rangeCount) {
               b = b.getRangeAt(0) || this.l.document.createRange()
-              var d = this.Z(b.startContainer),
+              const d = this.Z(b.startContainer),
                 e = this.Z(b.endContainer)
               if (!V(d) && !V(e))
                 return {
@@ -12073,7 +12073,7 @@
           }
           c.prototype.ii = function (b) {
             if (rt.test(b.type || '')) {
-              var d = this.Z(b)
+              const d = this.Z(b)
               if (!V(d))
                 return {
                   start: b.selectionStart,
@@ -12156,7 +12156,7 @@
           }
           Ja(c, a)
           c.prototype.sj = function () {
-            var b = this
+            const b = this
             this.scrolling = !0
             la(this.l, this.ig)
             this.ig = W(
@@ -12168,12 +12168,12 @@
             )
           }
           c.prototype.Gj = function (b) {
-            var d = this,
+            const d = this,
               e = 'touchcancel' === b.type || 'touchend' === b.type
             b.changedTouches &&
               0 < b.changedTouches.length &&
               z(function (f) {
-                var g = d.li(f)
+                const g = d.li(f)
                 f.__ym_touch_id = g
                 e && delete d.fd[f.identifier]
               }, qa(b.changedTouches))
@@ -12189,7 +12189,7 @@
           }
           c.prototype.Sb = function (b, d) {
             void 0 === d && (d = this.F.L())
-            var e = b.type,
+            const e = b.type,
               f = A(function (g) {
                 return {
                   id: g.__ym_touch_id,
@@ -12246,7 +12246,7 @@
             if (this.Ef()) {
               a.prototype.start.call(this)
               this.ic()
-              var b = this.ib.D(n(this.l, 'visualViewport'), ['resize'], this.Aa.rc(this.ic, 10))
+              const b = this.ib.D(n(this.l, 'visualViewport'), ['resize'], this.Aa.rc(this.ic, 10))
               this.Tb.push(b)
             }
           }
@@ -12255,15 +12255,15 @@
             this.Aa.flush()
           }
           c.prototype.ic = function () {
-            var b = this.Ef()
+            const b = this.Ef()
             b && b !== this.Mg && ((this.Mg = b), this.vj(b))
           }
           c.prototype.Ef = function () {
-            var b = mg(this.l)
+            const b = mg(this.l)
             return b ? b[2] : null
           }
           c.prototype.vj = function (b) {
-            var d = Qf(this.l)
+            const d = Qf(this.l)
             this.F.X(
               'event',
               {
@@ -12359,7 +12359,7 @@
           Ja(c, a)
           c.prototype.ni = function (b) {
             if (this.Lc(b) && !this.Gi(b)) {
-              var d = b.keyCode
+              const d = b.keyCode
               b.repeat ||
                 this.pb[d] ||
                 ((this.pb[b.keyCode] = !0),
@@ -12372,7 +12372,7 @@
           }
           c.prototype.oi = function (b) {
             if (this.Lc(b)) {
-              var d = b.keyCode,
+              const d = b.keyCode,
                 e = Re[b.keyCode]
               this.pb[b.keyCode] && (this.pb[d] = !1)
               e && this.Na && ((this.Na = 0), (this.pb = {}))
@@ -12383,7 +12383,7 @@
             }
           }
           c.prototype.Lc = function (b) {
-            var d = this.l.document.activeElement
+            const d = this.l.document.activeElement
             b = b.target
             return !Oa(Boolean, [
               d && 'OBJECT' === d.nodeName && At.test(d.getAttribute('type') || ''),
@@ -12400,7 +12400,7 @@
           c.prototype.ad = function (b, d) {
             void 0 === d && (d = !1)
             if (1 < b.length || d) {
-              var e = this.Jd(b)
+              const e = this.Jd(b)
               this.F.X(
                 'event',
                 {
@@ -12411,10 +12411,10 @@
             }
           }
           c.prototype.Jd = function (b) {
-            var d = this
+            const d = this
             b = A(function (e) {
               e = e.keyCode
-              var f = Re[e],
+              const f = Re[e],
                 g = d.ai(e)
               return {
                 id: e,
@@ -12485,7 +12485,7 @@
             }, this.bc)
           }
           c.prototype.le = function (b) {
-            var d = b.pop().target
+            const d = b.pop().target
             if (
               (b = eb(function (f) {
                 return f.Hf === d
@@ -12494,7 +12494,7 @@
               this.bc = Z(function (f) {
                 return f.Hf !== d
               }, this.bc)
-              var e = b.F.Id()
+              const e = b.F.Id()
               try {
                 b.F.stop()
               } catch (f) {}
@@ -12503,7 +12503,7 @@
           }
           c.prototype.je = function (b) {
             if (b) {
-              var d = b.data.node
+              const d = b.data.node
               this.xa.observe(d, {
                 attributes: !0,
                 attributeFilter: ['src'],
@@ -12512,14 +12512,14 @@
             }
           }
           c.prototype.qc = function (b, d) {
-            var e = this
+            const e = this
             this.Ci(b) &&
               Zb(
                 this.l,
                 b,
               )(
                 Ra(B, function () {
-                  var f = e.F.qc(b.contentWindow, d)
+                  const f = e.F.qc(b.contentWindow, d)
                   e.bc.push({
                     F: f,
                     Hf: b,
@@ -12528,14 +12528,14 @@
               )
           }
           c.prototype.ke = function (b) {
-            var d = this,
+            const d = this,
               e = b.M
             b = b.data
             this.Fd[e] ||
               (this.Fd[e] = {
                 data: [],
               })
-            var f = this.Fd[e]
+            const f = this.Fd[e]
             f.data = f.data.concat(b)
             this.l.isNaN(f.yd) &&
               z(function (g) {
@@ -12552,7 +12552,7 @@
               (f.data = []))
           }
           c.prototype.Ci = function (b) {
-            var d = b.getAttribute('src'),
+            let d = b.getAttribute('src'),
               e = b.getAttribute('sandbox')
             return b.getAttribute('_ym_ignore') ||
               (e && !e.match(Et)) ||
@@ -12576,13 +12576,13 @@
             })
           }
           c.prototype.Ce = function (b) {
-            var d = this.F.ei(),
+            let d = this.F.ei(),
               e = d.Vh(),
               f = T(this.l),
               g = f.host,
               h = f.protocol
             f = f.pathname
-            var k = Fd(this.l),
+            let k = Fd(this.l),
               l = k[0]
             k = k[1]
             this.F.X(
@@ -12639,15 +12639,15 @@
               }
               Ja(c, a)
               c.prototype.start = function () {
-                var b = this.F.ta()
+                const b = this.F.ta()
                 b.D('style', 'NA:', this.Tc)
                 b.D('style', 'NR:', this.Uc)
                 this.ga()
               }
               c.prototype.stop = function () {
-                var b = this
+                const b = this
                 a.prototype.stop.call(this)
-                var d = this.F.ta()
+                const d = this.F.ta()
                 d.na('style', 'NA:', this.Tc)
                 d.na('style', 'NR:', this.Uc)
                 this.ga()
@@ -12658,13 +12658,13 @@
                 this.cb = {}
               }
               c.prototype.ga = function () {
-                var b = this
+                const b = this
                 z(function (d) {
-                  var e = d[0]
+                  const e = d[0]
                   d = d[1]
                   if (d.length) {
                     for (var f = [], g = d[0].L, h = [], k = 0; k < d.length; k += 1) {
-                      var l = d[k],
+                      const l = d[k],
                         m = l.L
                       delete l.L
                       m <= g + 50 ? f.push(l) : (h.push(f), (g = m), (f = [l]))
@@ -12699,7 +12699,7 @@
                 })
               }
               c.prototype.fj = function (b, d) {
-                var e = this,
+                const e = this,
                   f = b.addRule,
                   g = b.removeRule,
                   h = b.insertRule,
@@ -12726,9 +12726,9 @@
                   })
               }
               c.prototype.gg = function (b) {
-                var d = this
+                const d = this
                 z(function (e) {
-                  var f = d.l.CSSStyleSheet.prototype[e]
+                  const f = d.l.CSSStyleSheet.prototype[e]
                   S(f) && (b[e] = D(f, b))
                 }, Ht)
               }
@@ -12740,11 +12740,11 @@
                 }
               }
               c.prototype.Tc = function (b) {
-                var d = b.data
+                let d = b.data
                 b = d.id
                 d = d.node
                 if (d.sheet && !d.getAttribute('src') && !d.innerText) {
-                  var e = d.sheet,
+                  const e = d.sheet,
                     f = this.Hh(e)
                   if (f && f.length) {
                     for (var g = [], h = 0; h < f.length; h += 1)
@@ -12768,7 +12768,7 @@
               }
               c.prototype.Uc = function (b) {
                 b = b.data.id
-                var d = this.cb[b]
+                const d = this.cb[b]
                 d && (delete this.cb[b], d.sheet && this.gg(d.sheet))
               }
               return c
@@ -12791,17 +12791,17 @@
       bh.push([Ft, 'if'])
       bh.push([Gt, 'pa'])
       var It = w(function (a) {
-          var c = a.document
+          const c = a.document
           return {
             Ld: function () {
               if (c.scrollingElement) return c.scrollingElement
-              var b = 0 === c.compatMode.indexOf('CSS1') ? c.documentElement : c.body
+              const b = 0 === c.compatMode.indexOf('CSS1') ? c.documentElement : c.body
               return n(c, 'documentElement.scrollHeight') >= n(c, 'body.scrollHeight') ? b : null
             },
             bi: function () {
-              var b = a.screen
+              const b = a.screen
               if (!b) return 0
-              var d = eb(v(b, n), ['orientation', 'mozOrientation', 'msOrientation'])
+              const d = eb(v(b, n), ['orientation', 'mozOrientation', 'msOrientation'])
               return n(b, d + '.angle') || 0
             },
             Ak: v(a, cb),
@@ -12811,7 +12811,7 @@
         }),
         Jt = (function () {
           function a(c, b) {
-            var d = this
+            const d = this
             this.Pb = 0
             this.xd = []
             this.Ob = null
@@ -12882,7 +12882,7 @@
                 : (d.xd = d.xd.concat(f))
             }
             this.l = c
-            var e = vf(c, this, 'R')
+            let e = vf(c, this, 'R')
             this.He = e.J(this.He, 's')
             this.ga = e.J(this.ga, 'sd')
             e = I(c)
@@ -12914,7 +12914,7 @@
               this.va || this.X('event', {}, 'eof'))
           }
           a.prototype.qc = function (c, b) {
-            var d = new a(
+            const d = new a(
               c,
               x({}, this.options, {
                 M: b,
@@ -12924,11 +12924,11 @@
             return d
           }
           a.prototype.Ai = function () {
-            var c = this
+            const c = this
             this.va = !!this.options.M
             this.Pb = this.options.M || 0
             this.ec = !this.va
-            var b = this.options.Fg || []
+            let b = this.options.Fg || []
             b.push(T(this.l).host)
             this.Ob = Pm(this.l, this, b)
             b = this.Ob.Hd()
@@ -12943,7 +12943,7 @@
               : (this.ec = this.va = !1)
           }
           a.prototype.jg = function () {
-            var c = zd(this.xd)
+            const c = zd(this.xd)
             this.ga(c)
           }
           a.prototype.He = function () {
@@ -12991,12 +12991,12 @@
           (da.stylechange = 28),
           da),
         ch = ka(function (a, c) {
-          var b
+          let b
           return (b = {}), (b[cd(a)] = c), b
         }),
         Lt = (function () {
           function a(c) {
-            var b
+            let b
             this.isSync = !1
             this.Lb = []
             this.nf = []
@@ -13111,16 +13111,16 @@
             ]
           }
           a.prototype.Eh = function (c) {
-            var b,
+            let b,
               d,
               e = c.type,
               f = eb(u(Jc, v(e, H)), this.nf)
             f || db(Kc('vem.' + e))
             'eof' === e && (this.isSync = !0)
-            var g = f[1],
+            const g = f[1],
               h = f[2]
             f = f[3]
-            var k = c.$
+            const k = c.$
             return {
               event:
                 ((b = {
@@ -13133,10 +13133,10 @@
             }
           }
           a.prototype.za = function (c, b) {
-            var d = this
+            const d = this
             void 0 === b && (b = !1)
-            var e = fc(c, function (h) {
-                var k = !V(h.partNum)
+            let e = fc(c, function (h) {
+                const k = !V(h.partNum)
                 return {
                   data: k ? void 0 : d.Rb[h.type](h.data),
                   rh: k ? h.data : void 0,
@@ -13147,7 +13147,7 @@
               }),
               f = this.isSync || b ? Infinity : 10
             e = gc(this.l, e, f)
-            var g = [e]
+            const g = [e]
             this.Lb.push(e)
             return e(
               Le(function (h) {
@@ -13200,7 +13200,7 @@
         })(),
         Mt = (function () {
           return function (a, c, b, d) {
-            var e = this
+            const e = this
             this.nd = this.Vb = !1
             this.$a = []
             this.Rf = []
@@ -13219,7 +13219,7 @@
               e.$a = vg(function (h, k) {
                 return h[4].partNum - k[4].partNum
               }, e.$a)
-              var f = M(
+              const f = M(
                   function (h, k, l) {
                     k = k[4]
                     return h && l + 1 === k.partNum
@@ -13248,7 +13248,7 @@
             this.ph = function (f) {
               return M(
                 function (g, h) {
-                  var k = 'page' === h.type && !h.M,
+                  const k = 'page' === h.type && !h.M,
                     l = 'eof' === h.data.type,
                     m = k && !!h.partNum
                   return {
@@ -13272,7 +13272,7 @@
               return f
             }
             this.mi = function (f) {
-              var g
+              let g
               return e.Ei
                 ? ((g = {}),
                   (g['wv-type'] = Oa(function (h) {
@@ -13304,11 +13304,11 @@
             this.Ri = function (f, g, h) {
               f = e.Cf(!0, f, g)
               if (e.Vb) return e.send(f, h)
-              var k = e.ph(g),
+              let k = e.ph(g),
                 l = k.rd,
                 m = k.qd
               k = k.sd
-              var p
+              let p
               l && (p = e.ri(f, h, g, k))
               e.nd
                 ? l || (p = e.send(f, h))
@@ -13324,10 +13324,10 @@
         })(),
         dl = w(
           function (a) {
-            var c = I(a),
+            let c = I(a),
               b = c.o('isEU')
             if (V(b)) {
-              var d = Ga(ge(a, 'is_gdpr') || '')
+              const d = Ga(ge(a, 'is_gdpr') || '')
               if (H(d, [0, 1])) c.C('isEU', d), (b = !!d)
               else if (((a = Qa(a).o('wasSynced')), (a = n(a, 'params.eu'))))
                 c.C('isEU', a), (b = !!a)
@@ -13346,7 +13346,7 @@
           function b() {
             h = !0
           }
-          var d = I(a),
+          const d = I(a),
             e = N(c)
           if (!c.Fb || Zc(a) || !a.MutationObserver || !Da('Element', a.Element)) return B
           Da('MutationObserver', a.MutationObserver) ||
@@ -13364,13 +13364,13 @@
             h = !1
           lq([g, f])(
             Ra(C(a, 'wv2.R.c'), function (k) {
-              var l = k[0]
+              const l = k[0]
               k = k[1]
               if (!h) {
                 b = function () {
                   h || ((h = !0), l && l.stop())
                 }
-                var m = d.o('wv2Counter')
+                let m = d.o('wv2Counter')
                 if (!Lh(a, k) || m) b()
                 else if (
                   (ia(a).D(a, ['beforeunload', 'unload'], b),
@@ -13383,14 +13383,14 @@
                   }, k)))
                 ) {
                   m = new Mt(a, c, !(k instanceof Pe), 0)
-                  var p = al.xf(e, 'm', D(m.Ri, m), k, a),
+                  const p = al.xf(e, 'm', D(m.Ri, m), k, a),
                     q = al.xf(e, 'e', D(m.Fh, m), k, a)
                   k = Lm()
                   m = k.Xi
                   q.D('ag', k.ah)
                   q.D('p', m)
                   p.D('see', function (r) {
-                    var y = !1
+                    let y = !1
                     z(function (G) {
                       'page' === G.type && (y = !0)
                     }, r)
@@ -13409,7 +13409,7 @@
                         }),
                       b())
                   })
-                  var t = fb(function (r) {
+                  const t = fb(function (r) {
                     'eof' === n(r, 'data.type')
                       ? (q.push(r), p.push(r), q.flush(), p.flush())
                       : ('event' === r.type ? q : p).push(r)
@@ -13434,7 +13434,7 @@
           }
         }),
         Pt = E('w2.cs', function (a, c) {
-          var b,
+          let b,
             d = N(c)
           Sf(a, d, ((b = {}), (b.webvisor = !!c.Fb), b))
         }),
@@ -13449,7 +13449,7 @@
         Rt = vb('isp.stat', function (a, c) {
           return new K(function (b, d) {
             if (aq(a, gl, 'isp')) {
-              var e = function (f) {
+              const e = function (f) {
                 ;('1' === f ? b : d)()
                 jl()
                 f = qj(gl)
@@ -13463,14 +13463,14 @@
         }),
         St = vb('isp', function (a, c) {
           pa(a, c, function (b) {
-            var d = eb(
+            let d = eb(
               function (g) {
                 return n(b, 'settings.' + g)
               },
               ['rt', 'mf'],
             )
             if (d && Nd(a)) {
-              var e = gi(b) && !Xd(a),
+              let e = gi(b) && !Xd(a),
                 f = el(c)
               x(f, {
                 Wc: d,
@@ -13488,10 +13488,10 @@
           })['catch'](C(a, 'l.isp'))
         }),
         kl = E('fbq.o', function (a, c, b) {
-          var d = n(a, 'fbq')
+          const d = n(a, 'fbq')
           if (d && d.callMethod) {
-            var e = function () {
-              var g = Aa(arguments),
+            const e = function () {
+              const g = Aa(arguments),
                 h = d.apply(void 0, g)
               c(g)
               return h
@@ -13504,11 +13504,11 @@
         })
       yk(nf)
       var Tt = E('p.e', function (a, c) {
-          var b = Ha(a, c)
+          let b = Ha(a, c)
           if (b) {
-            var d = I(a)
+            const d = I(a)
             b = b.params
-            var e = C(a, 'h.ee', F([a, N(c), b], Fm))
+            const e = C(a, 'h.ee', F([a, N(c), b], Fm))
             return c.Ad
               ? (d.C('ecs', 0), Eh(a, c.Ad, e))
               : pa(a, c, function (f) {
@@ -13541,7 +13541,7 @@
         Dm = ((Vc = {}), (Vc['1'] = dh), (Vc['2'] = dh), (Vc['3'] = dh), (Vc['0'] = eh), Vc),
         Em = [eh.AddToCart, eh.Purchase],
         Ut = ka(function (a, c) {
-          var b = n(c, 'ecommerce'),
+          let b = n(c, 'ecommerce'),
             d = n(c, 'event') || ''
           if (
             !(b = b &&
@@ -13569,13 +13569,13 @@
           b && a(b)
         }),
         Vt = E('ag.e', function (a, c) {
-          var b = [],
+          const b = [],
             d = C(a, 'ag.s', F([ja, b], z))
           '0' === c.da &&
             pa(a, c, function (e) {
               if (n(e, 'settings.auto_goals') && Ha(a, c) && (e = oe(a, c, 'autogoal').reachGoal)) {
                 e = F([e, c.Ad], Cm)
-                var f = Ut(e)
+                const f = Ut(e)
                 e = F([a, e], Bm)
                 b.push(kl(a, e))
                 b.push(
@@ -13594,8 +13594,8 @@
           a: {
             var b = c.replace(Wt, '').replace(Xt, '')
             var d = '0' === b[b.length - 1]
-            for (var e = b.length; 0 < e && !(3 < b.length - e + 1 && d); --e) {
-              var f = b[e - 1]
+            for (let e = b.length; 0 < e && !(3 < b.length - e + 1 && d); --e) {
+              const f = b[e - 1]
               if (H(f, [',', '.'])) {
                 d = f
                 break a
@@ -13633,7 +13633,7 @@
         }),
         $t = E('ep.cp', function (a) {
           if (!a) return '643'
-          var c = yi(a)
+          const c = yi(a)
           return (a = eb(function (b) {
             return Zt(b[0]).test(c)
           }, Yt))
@@ -13642,7 +13642,7 @@
         }),
         au = w(function () {
           function a() {
-            var k = h + '0',
+            const k = h + '0',
               l = h + '1'
             f[k]
               ? f[l]
@@ -13651,7 +13651,7 @@
               : ((e[k] = b(8)), (f[k] = 1))
           }
           function c() {
-            var k = h + '1'
+            const k = h + '1'
             f[h + '0']
               ? f[k]
                 ? ((h = h.slice(0, -1)), --g)
@@ -13660,7 +13660,7 @@
           }
           function b(k) {
             void 0 === k && (k = 1)
-            var l = d.slice(g, g + k)
+            const l = d.slice(g, g + k)
             g += k
             return l
           }
@@ -13680,7 +13680,7 @@
         }),
         vm = E('ep.dec', function (a, c) {
           if (!c || Zc(a)) return []
-          var b = Ch(c),
+          let b = Ch(c),
             d = b[1],
             e = b[2],
             f = b.slice(3)
@@ -13688,9 +13688,9 @@
           b = au()
           f = f.join('')
           e = Kg(d + e)
-          var g = ''
+          let g = ''
           d = ''
-          for (var h = 0; d.length < e && f[h]; )
+          for (let h = 0; d.length < e && f[h]; )
             (g += f[h]), b[g] && ((d += String.fromCharCode(Kg(b[g]))), (g = '')), (h += 1)
           b = ''
           for (f = 0; f < d.length; )
@@ -13722,12 +13722,12 @@
         }),
         ll = u(Bh, $t),
         ml = E('ep.ctp', function (a, c, b, d) {
-          var e = ll(a, b),
+          let e = ll(a, b),
             f = Ah(a, d)
           zh(a, c, e, f)
           Da('MutationObserver', a.MutationObserver) &&
             new a.MutationObserver(function () {
-              var g = ll(a, b),
+              const g = ll(a, b),
                 h = Ah(a, d)
               if (e !== g || f !== h) (e = g), (f = h), zh(a, c, e, f)
             }).observe(a.document.body, {
@@ -13744,7 +13744,7 @@
         fu = E('ep.i', function (a, c) {
           return Ed(a)
             ? um(a, c).then(function (b) {
-                var d = b.Bh,
+                const d = b.Bh,
                   e = d[0],
                   f = d[1],
                   g = d[2],
@@ -13762,7 +13762,7 @@
                   X = d[14],
                   xa = d[15]
                 if (!b.isEnabled) return K.resolve(B)
-                var sa = ae(a, e),
+                const sa = ae(a, e),
                   Yb = ae(a, h),
                   rd = ae(a, m),
                   ne = ae(a, q),
@@ -13781,23 +13781,23 @@
         }),
         cm = ['RTCPeerConnection', 'mozRTCPeerConnection', 'webkitRTCPeerConnection'],
         gu = E('cc.i', function (a, c) {
-          var b = F([a, c], tm)
+          let b = F([a, c], tm)
           b = F([a, b, 300, void 0], W)
           pa(a, c, b)
         }),
         hu = v('9-d5ve+.r%7', P),
         iu = E('ad', function (a, c) {
           if (!c.rb) {
-            var b = I(a)
+            const b = I(a)
             if (!b.o('adBlockEnabled')) {
-              var d = function (m) {
+              const d = function (m) {
                   H(m, ['2', '1']) && b.C('adBlockEnabled', m)
                 },
                 e = Xb(a),
                 f = e.o('isad')
               if (f) d(f)
               else {
-                var g = v('adStatus', b.C),
+                const g = v('adStatus', b.C),
                   h = function (m) {
                     m = m ? '1' : '2'
                     d(m)
@@ -13808,7 +13808,7 @@
                   k = za(a, 'adb', c)
                 if (!b.o('adStatus')) {
                   g('process')
-                  var l = 'metrika/a' + hu().replace(/[^a-v]+/g, '') + 't.gif'
+                  const l = 'metrika/a' + hu().replace(/[^a-v]+/g, '') + 't.gif'
                   qm(a, function () {
                     return k({
                       Ia: {
@@ -13824,9 +13824,9 @@
           }
         }),
         ju = E('pr.p', function (a, c) {
-          var b, d
+          let b, d
           if (og(a)) {
-            var e = za(a, '5', c),
+            const e = za(a, '5', c),
               f = Ca(((b = {}), (b.pq = 1), (b.ar = 1), b))
             e(
               {
@@ -13843,13 +13843,13 @@
         }),
         yh = !1,
         ku = E('fid', function (a) {
-          var c,
+          let c,
             b = B
           if (!S(a.PerformanceObserver)) return b
-          var d = I(a)
+          const d = I(a)
           if (d.o('fido')) return b
           d.C('fido', !0)
-          var e = new a.PerformanceObserver(
+          const e = new a.PerformanceObserver(
             C(a, 'fid', function (f) {
               f = f.getEntries()[0]
               d.C('fid', a.Math.round(100 * (f.processingStart - f.startTime)))
@@ -13888,7 +13888,7 @@
         lu = w(function () {
           return M(
             function (a, c) {
-              var b = kc(c + '/tag.js')
+              const b = kc(c + '/tag.js')
               nl[b] || (a[b] = 1)
               return a
             },
@@ -13897,7 +13897,7 @@
           )
         }),
         mu = E('p.sci', function (a, c) {
-          var b = I(a)
+          const b = I(a)
           return b.o('scip')
             ? K.resolve()
             : pa(a, c, P).then(
@@ -13911,9 +13911,9 @@
         nu = E(
           'lt.p',
           vb('lt.p', function (a) {
-            var c
+            let c
             if (Da('PerformanceObserver', a.PerformanceObserver)) {
-              var b = 0,
+              let b = 0,
                 d = new a.PerformanceObserver(
                   C(a, 'lt.o', function (e) {
                     e &&
@@ -13965,11 +13965,11 @@
           return Ok(a)
             ? B
             : pa(a, c, function (b) {
-                var d = c.id,
+                let d = c.id,
                   e = zc(a, void 0, d),
                   f = e.o('phc_settings') || ''
                 if ((b = n(b, 'settings.phchange'))) {
-                  var g = jb(a, b) || ''
+                  const g = jb(a, b) || ''
                   g !== f && e.C('phc_settings', g)
                 } else f && (b = uh(a, f))
                 e = n(b, 'clientId')
@@ -14002,12 +14002,12 @@
         }),
         fh = w(
           function (a, c) {
-            var b = I(a),
+            const b = I(a),
               d = Qa(a),
               e = [],
               f = F([a, c, b, d], Po)
             Yc(a) || Qo(a, '14.1') || e.push(F([bm, 'pp', ''], f))
-            var g = Qk(a) && !df(a, 68)
+            const g = Qk(a) && !df(a, 68)
             g || e.push(F([dm, 'pu', ''], f))
             g || d.Ud || Nd(a) || (e.push(F([am, 'zzlc', 'na'], f)), e.push(F([$l, 'cc', ''], f)))
             return e.length
@@ -14020,7 +14020,7 @@
                     k()
                   },
                   ca: function (h, k) {
-                    var l = h.H
+                    const l = h.H
                     if (l && 0 === b.o('isEU'))
                       try {
                         z(Ba(l), e)
@@ -14049,10 +14049,10 @@
         }, ad(',')),
         uu = (function (a) {
           return function (c) {
-            var b = $a(c)
+            let b = $a(c)
             if (!b) return ''
             b = b('canvas')
-            var d = [],
+            let d = [],
               e = a(),
               f = e.Ih
             e = e.yh
@@ -14077,11 +14077,11 @@
         }),
         Ul = ['name', 'lang', 'localService', 'voiceURI', 'default'],
         vu = E('p.tfs', function (a) {
-          var c = I(a)
+          let c = I(a)
           if (!c.o('tfs')) {
             c.C('tfs', !0)
             c = ia(a)
-            var b = B
+            let b = B
             b = c.D(a, ['message'], function (d) {
               try {
                 var e = d.origin
@@ -14099,7 +14099,7 @@
                     ))
                 ) {
                   d.C('tfsc', 1)
-                  var f, g
+                  let f, g
                   I(a).C(
                     '_u',
                     ((f = {}),
@@ -14122,20 +14122,20 @@
         }),
         wu = Wa(/[a-z\u0430-\u044f,.]/gi),
         xu = E('ice', function (a, c, b) {
-          var d = Ha(a, c)
+          const d = Ha(a, c)
           if (d) {
-            var e = n(b, 'target')
+            const e = n(b, 'target')
             if (e && ((c = n(e, 'value')), (c = tb(c)) && !(100 <= Na(c)))) {
               b = Kb(c)
-              var f = 0 < c.indexOf('@'),
+              let f = 0 < c.indexOf('@'),
                 g = 'tel' === n(e, 'type') || (!f && Na(b))
               if (f || g) {
                 if (g) {
                   if (wu(c)) return
                   g = c[0]
-                  var h = b[0]
+                  const h = b[0]
                   if (g !== h && '+' !== g) return
-                  var k = c[1]
+                  const k = c[1]
                   if ('+' === g && k !== h) return
                   c = c[Na(c) - 1]
                   g = b[Na(b) - 1]
@@ -14148,7 +14148,7 @@
                   Na(c) > g ||
                   Ui(a, c).then(
                     function (l) {
-                      var m,
+                      let m,
                         p,
                         q,
                         t = jg(a, e)
@@ -14180,10 +14180,10 @@
                     a,
                     c,
                     function (b) {
-                      var d = n(b, 'settings.cf')
+                      let d = n(b, 'settings.cf')
                       b = pf(a) || n(b, 'settings.eu')
                       if (d && !b) {
-                        var e = ia(a)
+                        const e = ia(a)
                         d = ub('input', a.document.body)
                         z(function (f) {
                           Af(a, f) ||
@@ -14206,7 +14206,7 @@
             ;(Yc(a) || Ye(a)) &&
               b(
                 pa(a, c, function (d) {
-                  var e
+                  let e
                   return (d = n(d, 'settings.sbp'))
                     ? ph(a, x({}, d, ((e = {}), (e.c = c.id), e)), 10)
                     : B
@@ -14249,21 +14249,21 @@
         lh = u($e, fb(kr(Wd)), ad(',')),
         mh = u(Bc(mc(Wd)), Na, Boolean),
         Jl = w(function (a, c) {
-          var b = c.o('gdpr')
+          const b = c.o('gdpr')
           return H(b, Ub) ? '-' + b : ''
         }),
         Xc = {},
         ol = w(vc),
         Gl = u(oa('exec', /counterID=(\d+)/), U('1')),
         pl = ka(function (a, c) {
-          var b = ol(a),
+          let b = ol(a),
             d = qa(c),
             e = d[0],
             f = d[1],
             g = d.slice(2)
           if (f) {
             d = Fl(a, e)
-            var h = d[0],
+            const h = d[0],
               k = d[1]
             d = N(k)
             b[d] || (b[d] = {})
@@ -14288,7 +14288,7 @@
           }
         }),
         Fu = vb('is', function (a) {
-          var c = -1 < T(a).href.indexOf('_ym_debug=200500'),
+          const c = -1 < T(a).href.indexOf('_ym_debug=200500'),
             b = Xb(a),
             d = b.o('debug_build') === ra.fb
           if (c || d)
@@ -14302,7 +14302,7 @@
       'function' == typeof Promise && Promise.resolve()
       var ql = w(sd),
         Gu = w(function () {
-          var a = M(
+          const a = M(
             function (c, b) {
               'ru' !== b && (c[b] = il + '.' + b)
               return c
@@ -14321,16 +14321,16 @@
         }),
         rl = (function (a, c) {
           return function (b, d) {
-            var e = N(d)
+            let e = N(d)
             e = Gu(e)
-            var f = yl(b, e),
+            const f = yl(b, e),
               g = I(b),
               h = cb(b)
             return Nd(b) || Hd(b)
               ? {}
               : {
                   ca: function (k, l) {
-                    var m = k.H,
+                    let m = k.H,
                       p = jh(b)
                     m = !(m && m.o('pv'))
                     if (!p || h || m || !f.length) return l()
@@ -14349,22 +14349,22 @@
                 }
           }
         })(function (a, c, b, d) {
-          var e = ha(a),
+          const e = ha(a),
             f = I(a),
             g = Qa(a)
           b = bd(a, 'c')
-          var h = Bb(a, b)
+          const h = Bb(a, b)
           return M(
             function (k, l) {
               function m() {
-                var t = g.o('synced')
+                let t = g.o('synced')
                 f.C('startSync', !1)
                 t && ((t[l.Mi] = p), g.C('synced', t))
                 t = ql(a)
                 z(ja, t)
                 zd(t)
               }
-              var p,
+              let p,
                 q = h(
                   {
                     Y: {
@@ -14391,7 +14391,7 @@
         }, 'sy.c'),
         xl = E('destruct.e', function (a, c, b) {
           return function () {
-            var d = I(a),
+            const d = I(a),
               e = c.id
             z(function (f, g) {
               return S(f) && C(a, 'dest.fr.' + g, f)()
@@ -14405,12 +14405,12 @@
       Wc.Ra('lastReferrer', window.location.href)
       ;(function () {
         Y.push(function (a, c) {
-          var b
+          let b
           return (b = {}), (b.firstPartyParams = ds(a, c)), (b.firstPartyParamsHashed = zp(a, c)), b
         })
       })()
       ;(function () {
-        var a = I(window)
+        const a = I(window)
         a.Ra('getCounters', es(window))
         yc.push(fs)
         Ng.push(function (c, b) {
@@ -14438,12 +14438,12 @@
       ]
       Y.push(is)
       Y.push(function (a, c) {
-        var b,
+        let b,
           d = za(a, 'a', c)
         return (
           (b = {}),
           (b.hit = function (e, f, g, h, k, l) {
-            var m,
+            let m,
               p,
               q = {
                 G: {},
@@ -14510,7 +14510,7 @@
       va['2'] = Xa
       ua['2'] = ac
       Ab.push(function (a, c) {
-        var b = Yr(a),
+        const b = Yr(a),
           d = za(a, 'r', c),
           e = C(a, 'rts.p')
         return pa(
@@ -14520,7 +14520,7 @@
             M,
             null,
             function (f, g) {
-              var h = {
+              let h = {
                 id: g.uh,
                 da: g.da,
               }
@@ -14562,7 +14562,7 @@
       Y.push(os)
       va.m = function (a, c, b) {
         return function (d, e) {
-          var f,
+          let f,
             g = d.G
           g = ((f = {}), (f['page-url'] = (g && g['page-url']) || ''), f)
           f = x(d, {
@@ -14595,9 +14595,9 @@
       xb(function (a, c) {
         return {
           Ba: function (b, d) {
-            var e = Ha(a, c)
+            let e = Ha(a, c)
             e = e && e.userParams
-            var f = (b.V || {}).Se
+            const f = (b.V || {}).Se
             e && f && e(f)
             d()
           },
@@ -14607,11 +14607,11 @@
       Y.push(Ds)
       Y.push(Es)
       Je.push(function (a) {
-        var c = I(a)
+        const c = I(a)
         c.o('i') || (c.C('i', !0), ia(a).D(a, ['message'], v(a, Vo)))
       })
       Y.push(function (a, c) {
-        var b
+        let b
         return (
           (b = {}),
           (b.ecommerceAdd = E('ecm.a', Fs(a, c))),
@@ -14622,7 +14622,7 @@
         )
       })
       ;(function () {
-        var a,
+        let a,
           c = {}
         c.bu = Ps
         c.pri = Fo
@@ -14659,7 +14659,7 @@
             else {
               b = tb(Jf(b), 100)
               for (var d = [], e = 0; e < b.length; e++) {
-                var f = b.charCodeAt(e)
+                const f = b.charCodeAt(e)
                 128 > f
                   ? d.push(f)
                   : (127 < f && 2048 > f
@@ -14676,15 +14676,15 @@
         x(bg, c)
       })()
       ;(function () {
-        var a = {}
+        const a = {}
         a.oo = xc('oo')
         a.pmc = xc('cmc')
         a.lt = function (c) {
-          var b = Kd(c).o('lt', null)
+          const b = Kd(c).o('lt', null)
           return b ? c.Math.round(100 * b) : b
         }
         a.yu = function (c) {
-          var b = T(c)
+          const b = T(c)
           return H(b.hostname, ['dzen.ru', 'ya.ru'])
             ? (zc(c, '').o('yandexuid') || '').substring(0, 25)
             : null
@@ -14703,10 +14703,10 @@
       ua.er = Tc
       ;(function (a) {
         try {
-          var c = bd(a, 'er'),
+          const c = bd(a, 'er'),
             b = Bo(a, c)
           Jj.push(function (d, e, f, g) {
-            var h, k, l, m, p
+            let h, k, l, m, p
             0.01 >= a.Math.random() ||
               b(
                 ((h = {}),
@@ -14729,7 +14729,7 @@
         Td.push(Eo)
         Yf.unshift(Ao)
         Vg.push(function (a) {
-          var c = void 0
+          let c = void 0
           void 0 === c && (c = !0)
           I(a).C('oo', c)
         })
@@ -14737,7 +14737,7 @@
       xb(function (a, c) {
         return {
           ca: function (b, d) {
-            var e = b.G,
+            const e = b.G,
               f = b.H
             !Uk[c.id] && f.o('pv') && c.exp && !e.nohit && ((e.exp = c.exp), (Uk[c.id] = !0))
             d()
@@ -14755,7 +14755,7 @@
       })
       ck.experiments = 'ex'
       ;(function () {
-        var a
+        let a
         Ze.push(Ss)
         va.f = Xa
         x(ua, ((a = {}), (a.f = Lk), a))
@@ -14763,7 +14763,7 @@
         ba('f', fj, 2)
       })()
       Td.push(function (a, c) {
-        var b = {
+        let b = {
             ea: N(c),
             vd: Ha(a, c),
             Bg: ha(a),
@@ -14771,13 +14771,13 @@
           },
           d = b.Bg(ib)
         if (!b.ce.Ud) {
-          var e = b.ce.o('ymoo' + b.ea)
+          const e = b.ce.o('ymoo' + b.ea)
           if (e && 30 > d - e) (b = b.ea), delete I(a).o('counters', {})[b], db(Sa('uws'))
           else pa(a, c, Ts(b))['catch'](C(a, 'd.f'))
         }
       })
       ;(function () {
-        var a,
+        let a,
           c,
           b = Eb([Mb])
         x(ua, ((a = {}), (a.s = b), (a.S = b), (a.u = Tc), a))
@@ -14791,7 +14791,7 @@
       ua['8'] = [Zi]
       Y.push(function (a, c) {
         return pa(a, c, function (b) {
-          var d,
+          let d,
             e = n(b, 'settings.sbp')
           return (
             e &&
@@ -14807,7 +14807,7 @@
       ba('p', Fb(Wg), 1)
       va.p = function (a, c, b) {
         return function (d, e) {
-          var f,
+          let f,
             g = x(
               {
                 H: Ca(),
@@ -14815,7 +14815,7 @@
               d,
             )
           g.G || (g.G = {})
-          var h = g.G,
+          let h = g.G,
             k = g.Oa
           k = void 0 === k ? {} : k
           h['wv-hit'] = h['wv-hit'] || '' + Hb(a)
@@ -14889,7 +14889,7 @@
           return {
             ca: function (b, d) {
               if (b.H) {
-                var e = el(c),
+                const e = el(c),
                   f = e.status
                 'rt' === e.Wc &&
                   f &&
@@ -14953,7 +14953,7 @@
           return {
             Ba: function (b, d) {
               if (!b.V || !b.V.force) {
-                var e = 0.002,
+                let e = 0.002,
                   f = c.id === ra.Ug ? 1 : 0.002,
                   g,
                   h,
@@ -14962,7 +14962,7 @@
                   m
                 void 0 === e && (e = 1)
                 void 0 === f && (f = 1)
-                var p = a.performance
+                let p = a.performance
                 if (
                   p &&
                   S(p.getEntriesByType) &&
@@ -14970,7 +14970,7 @@
                 ) {
                   p = a.performance.getEntriesByType('resource')
                   for (var q = {}, t = {}, r = {}, y = lu(a), G = 0; G < p.length; G += 1) {
-                    var O = p[G],
+                    const O = p[G],
                       X = O.name.replace(/^https?:\/\//, '').split('?')[0],
                       xa = kc(X),
                       sa =
@@ -15031,9 +15031,9 @@
         (function (a) {
           return E('fip', function (c) {
             if (!Qk(c) || Hd(c)) {
-              var b = Qa(c)
+              const b = Qa(c)
               if (!b.o('fip')) {
-                var d = u(
+                const d = u(
                   fb(
                     u(
                       function (e, f) {
@@ -15052,7 +15052,7 @@
           uu,
           tu,
           function (a) {
-            var c = n(a, 'ApplePaySession'),
+            let c = n(a, 'ApplePaySession'),
               b = T(a).protocol
             a = c && 'https:' === b && !cb(a) ? c : void 0
             c = ''
@@ -15060,8 +15060,8 @@
             try {
               c = '' + a.canMakePayments()
               b = ''
-              var d = a.supportsVersion
-              if (S(d)) for (var e = 1; 20 >= e; e += 1) b += d.call(a, e) ? '' + e : '0'
+              const d = a.supportsVersion
+              if (S(d)) for (let e = 1; 20 >= e; e += 1) b += d.call(a, e) ? '' + e : '0'
               return b + c
             } catch (f) {
               return c
@@ -15075,7 +15075,7 @@
             if ((a = Ls(a)))
               try {
                 for (var c = [], b = 0; b < Rk.length; b += 1) {
-                  var d = a(Rk[b])
+                  const d = a(Rk[b])
                   c.push(d)
                 }
                 var e = c
@@ -15086,13 +15086,13 @@
             return e ? L('x', e) : ''
           },
           function (a) {
-            var c = void 0
+            let c = void 0
             void 0 === c && (c = qu)
-            var b = n(a, 'navigator') || {}
+            const b = n(a, 'navigator') || {}
             c = A(v(b, n), c)
             c = L('x', c)
             try {
-              var d = n(a, 'navigator.getGamepads')
+              const d = n(a, 'navigator.getGamepads')
               var e = (Ka(d, 'getGamepads') && a.navigator.getGamepads()) || []
             } catch (f) {
               e = []
@@ -15121,7 +15121,7 @@
       xb(function (a) {
         return {
           ca: function (c, b) {
-            var d = c.H,
+            const d = c.H,
               e = Qa(a).o('fip')
             e && d && (d.C('fip', e), Vd(c, 'fip', ed(e)))
             b()
@@ -15133,7 +15133,7 @@
         function (a) {
           return {
             Ba: function (c, b) {
-              var d = c.oj
+              const d = c.oj
               jf(c) && d && I(a).C('isEU', n(d, 'settings.eu'))
               b()
             },
@@ -15160,20 +15160,20 @@
       })
       fg.push('gdpr', 'gdpr_popup')
       eg.push(function (a, c) {
-        var b = Ud(a)
+        let b = Ud(a)
         b = $e(b)
         if (Z(mc(Eu), b).length) return !0
         b = c(a, 'gdpr')
         return H(b, [Ac, Du])
       })
       Bj.push(function (a) {
-        var c = n(a, 'document.referrer')
+        const c = n(a, 'document.referrer')
         if (c) return (a = Gc(a, c).host), (a = Vi(a)), il + '.' + (a || Qt)
       })
       ;(function () {
         fg.push('_ym_debug_build')
         Hl('init', function (a, c) {
-          var b = '1' === c.da,
+          const b = '1' === c.da,
             d = Vf(c)
           return cb(a) || b || d || !Fu(a) ? !1 : !0
         })
@@ -15183,7 +15183,7 @@
       ua.c = Tc
       va.c = Bb
       Y.push(function (a, c) {
-        var b = ol(a),
+        let b = ol(a),
           d = N(c),
           e = b[d]
         e || ((e = {}), (b[d] = e))
@@ -15191,11 +15191,11 @@
         if ((b = e.ug)) (d = pl(a)), z(d, b)
       })
       Je.push(function (a) {
-        var c = n(a, 'ym')
+        const c = n(a, 'ym')
         if (c) {
-          var b = n(c, 'a')
+          let b = n(c, 'a')
           b || ((c.a = []), (b = c.a))
-          var d = pl(a)
+          const d = pl(a)
           re(
             a,
             b,
@@ -15207,7 +15207,7 @@
         }
       })
       if (window.Ya && Se) {
-        var sl = ra.lc
+        const sl = ra.lc
         window.Ya[sl] = Se
         cs(window)
         z(u(Mc([window, window.Ya[sl]]), ja), Ng)
