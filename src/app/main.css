@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* Шрифты */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,400;1,600;1,800&display=swap');
 
@@ -13,27 +14,16 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* TODO: Дальше всё надо переписывать и может даже удалять */
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-fieldset,
-img {
-  border: 0;
-}
-
-address,
-caption,
-cite,
-code,
-dfn,
-em,
-strong,
-th,
-var {
-  font-style: normal;
-  font-weight: normal;
 }
 
 li {
@@ -52,7 +42,6 @@ h4,
 h5,
 h6 {
   font-size: 100%;
-  font-weight: normal;
 }
 
 q:before,
@@ -123,7 +112,6 @@ body.ovfh {
 
 .h3 {
   font-family: 'Inter', sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 32px;
   line-height: 39px;
@@ -132,7 +120,6 @@ body.ovfh {
 }
 
 .h4 {
-  font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
@@ -141,16 +128,12 @@ body.ovfh {
 }
 
 .p4 {
-  font-style: normal;
-  font-weight: normal;
   font-size: 24px;
   line-height: 30px;
   margin-bottom: 18px;
 }
 
 p {
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 24px;
 }
@@ -1105,7 +1088,7 @@ p {
   width: 100%;
   position: relative;
   height: 570px;
-  /*background: url(/images/fon.jpg) 0 0 no-repeat;*/
+  /* background: url(/images/fon.jpg) 0 0 no-repeat; */
   background-size: 100% 634px;
   margin-bottom: 97px;
 }
@@ -1314,7 +1297,6 @@ video[controls] {
 }
 
 .TitlePage {
-  font-style: normal;
   font-weight: 600;
   font-size: 32px;
   line-height: 39px;
@@ -1346,8 +1328,7 @@ video[controls] {
 
 .TitlePageTxt {
   max-width: 1044px;
-  font-style: normal;
-  font-weight: normal;
+
   font-size: 24px;
   line-height: 36px;
 }
@@ -1375,8 +1356,7 @@ video[controls] {
   min-height: 34vh;
   margin: 0 auto;
   color: #1a2248;
-  font-style: normal;
-  font-weight: normal;
+
   display: grid;
   grid-gap: 0;
   grid-template-columns: repeat(auto-fill, minmax(500px, 50%));
@@ -1437,7 +1417,6 @@ video[controls] {
 }
 
 .ContentSPage404 .title404 {
-  font-style: normal;
   font-weight: 600;
   font-size: 32px;
   line-height: 39px;
@@ -1489,7 +1468,6 @@ video[controls] {
 }
 
 .ContentSPage404 .title404 {
-  font-style: normal;
   font-weight: 600;
   font-size: 32px;
   line-height: 39px;
@@ -1818,8 +1796,7 @@ video[controls] {
 .icon:before,
 .icon:after {
   font-family: 'fontawesome';
-  font-style: normal;
-  font-weight: normal;
+
   font-variant: normal;
   text-transform: none;
   line-height: 1;
@@ -2259,7 +2236,6 @@ html .container,
   background-repeat: no-repeat;
   padding: 0 60px 0 32px;
   height: 220px;
-  font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
@@ -2361,8 +2337,6 @@ html .container,
   text-align: center;
   color: #1a2248;
   font-family: 'Open Sans', sans-serif;
-  font-style: normal;
-  font-weight: normal;
 }
 
 .CatalogCategoriya .Catalog__item_IMG {
@@ -2527,7 +2501,6 @@ html .container,
 .Filters.OPEN .FiltersWRP:before {
   content: 'Фильтр';
   display: block;
-  font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
@@ -2659,7 +2632,6 @@ html .container,
     box-shadow: 0px 8px 16px rgba(22, 32, 46, 0.04);
     border-radius: 40px;
     text-align: center;
-    font-style: normal;
     font-weight: 600;
     font-size: 12px;
     line-height: 24px;
@@ -2691,7 +2663,6 @@ html .container,
   border-radius: 40px;
   padding: 0 20px;
   cursor: pointer;
-  font-style: normal;
   font-weight: 600;
   font-size: 16px;
   color: #1a2248;
@@ -2721,7 +2692,6 @@ html .container,
   height: 48px;
   line-height: 48px;
   background: transparent;
-  font-style: normal;
   font-weight: 600;
   font-size: 16px;
   color: #db2a4a;
@@ -2779,7 +2749,6 @@ html .container,
 .Filters__input {
   height: 52px;
   line-height: 52px;
-  font-style: normal;
   font-weight: bold;
   font-size: 16px;
   padding-left: 15px;
@@ -2957,7 +2926,6 @@ html .container,
 .selectingCategory__item {
   display: block;
   position: relative;
-  font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 56px;
@@ -3148,7 +3116,6 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
   position: absolute;
   white-space: nowrap;
   text-align: center;
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 22px;
@@ -3255,7 +3222,6 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 
 .Card__switch {
   display: inline-block;
-  font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -3369,8 +3335,6 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 .Card .bottleColor:before {
   content: 'Цвет';
   display: block;
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 32px;
   color: #898da2;
@@ -3425,8 +3389,6 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .Card__DataItem {
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
   line-height: 32px;
   color: #1a2248;
@@ -3450,8 +3412,6 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .Card__DataItemTitle {
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 32px;
   color: #898da2;
@@ -3490,8 +3450,6 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 .NaviBottomPagination__left,
 .NaviBottomPagination__right {
   display: inline-block;
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 48px;
   vertical-align: top;
@@ -3851,8 +3809,6 @@ input[type='radio'] {
 
 input[type='checkbox'] + label,
 input[type='radio'] + label {
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   line-height: 22px;
   color: #1a2248;
@@ -3865,8 +3821,6 @@ input[type='radio'] + label {
 
 input[type='checkbox']:checked + label {
   color: #778ca2;
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
 }
 
@@ -3980,7 +3934,6 @@ button[disabled] {
 
 .ContactUsModal__title {
   padding: 87px 0 0 146px;
-  font-style: normal;
   font-weight: 600;
   font-size: 32px;
   line-height: 44px;
@@ -3997,7 +3950,6 @@ button[disabled] {
   margin: 46px 0 0 146px;
   width: 258px;
   text-align: center;
-  font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 48px;
@@ -4038,7 +3990,6 @@ button[disabled] {
   height: 48px;
   line-height: 48px;
   color: #ffffff;
-  font-style: normal;
   font-weight: bold;
   font-size: 14px;
   letter-spacing: 0.12em;
@@ -4134,7 +4085,6 @@ button[disabled] {
 }
 
 .ContactFormModal__title {
-  font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
@@ -4144,8 +4094,6 @@ button[disabled] {
 }
 
 .ContactFormModal__txt {
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
@@ -4155,8 +4103,6 @@ button[disabled] {
 }
 
 .ContactFormModal__btn {
-  font-style: normal;
-  font-weight: normal;
   font-size: 24px;
   line-height: 84px;
   height: 84px;
@@ -4235,7 +4181,6 @@ button[disabled] {
   width: 180px;
   height: 48px;
   display: block;
-  font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 48px;
@@ -4747,13 +4692,11 @@ button[disabled] {
 }
 
 .slick-ManePage__title {
-  /*border: 1px solid gold;*/
   text-shadow:
     1px 1px 2px white,
     -1px 1px 2px white,
     1px -1px 2px white,
     -1px -1px 2px white;
-  font-style: normal;
   font-weight: 600;
   font-size: 72px;
   line-height: 80px;
@@ -4797,7 +4740,6 @@ button[disabled] {
 
 .slick-ManePage__textLeft {
   text-align: center;
-  font-style: normal;
   font-weight: 600;
   font-size: 60px;
   line-height: 60px;
@@ -4815,9 +4757,6 @@ button[disabled] {
     -1px 1px 2px white,
     1px -1px 2px white,
     -1px -1px 2px white;
-
-  font-style: normal;
-  font-weight: normal;
   font-size: 24px;
   padding: 0 0 0 20px;
 }
@@ -4877,7 +4816,6 @@ button[disabled] {
   width: calc(640px - 291px);
   height: calc(155px - 45px);
   padding: 45px 0 0 291px;
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -5255,7 +5193,6 @@ footer {
 }
 
 .PrideCompany__item {
-  /* border: 2px solid blue; */
   width: 100%;
   height: 500px;
   position: relative;
@@ -5263,13 +5200,11 @@ footer {
   background-repeat: no-repeat;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
-  font-style: normal;
   font-weight: 600;
   overflow: hidden;
 }
 
 .PrideCompany__item_1 {
-  /* border: 2px solid blueviolet; */
   background-image: url(/images/slides/company/slide_1/pridecompany_mp_1.jpg);
   background-size: 100% 100%;
   transition: all 0.3s;
@@ -5517,7 +5452,6 @@ footer {
 
 .yearFoundation {
   vertical-align: top;
-  font-style: normal;
   font-weight: 600;
   font-size: 68px;
   line-height: 73px;
@@ -5529,7 +5463,6 @@ footer {
 .yearFoundationText {
   vertical-align: top;
   display: inline-block;
-  font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
@@ -5636,7 +5569,6 @@ footer {
 
 .item_3 p {
   max-width: 528px;
-  font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
@@ -5644,8 +5576,6 @@ footer {
 
 .item_4 p {
   max-width: 528px;
-  font-style: normal;
-  font-weight: normal;
   font-size: 24px;
   line-height: 36px;
   position: relative;
@@ -5653,7 +5583,6 @@ footer {
 }
 
 .item_4 .percent {
-  font-style: normal;
   font-weight: 600;
   font-size: 68px;
   line-height: 82px;
@@ -5694,7 +5623,6 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, 280px);
   grid-column-gap: 170px;
-  font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
@@ -5818,8 +5746,6 @@ footer {
 }
 
 .complexShape__txt {
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 30px;
 }
