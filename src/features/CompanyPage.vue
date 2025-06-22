@@ -121,10 +121,10 @@
         </div>
 
         <div class="complexShape__item complexShape__item_slick complexShapeSlider">
-          <img src="/images/slides/company/slide_2/fin_1.jpg" alt class="complexShapeSlider__img" />
-          <img src="/images/slides/company/slide_2/fin_2.jpg" alt class="complexShapeSlider__img" />
-          <img src="/images/slides/company/slide_2/fin_3.jpg" alt class="complexShapeSlider__img" />
-          <img src="/images/slides/company/slide_2/fin_4.jpg" alt class="complexShapeSlider__img" />
+          <img src="/images/slides/company/slide_2/fin_1.jpg" class="complexShapeSlider__img" />
+          <img src="/images/slides/company/slide_2/fin_2.jpg" class="complexShapeSlider__img" />
+          <img src="/images/slides/company/slide_2/fin_3.jpg" class="complexShapeSlider__img" />
+          <img src="/images/slides/company/slide_2/fin_4.jpg" class="complexShapeSlider__img" />
         </div>
       </div>
 

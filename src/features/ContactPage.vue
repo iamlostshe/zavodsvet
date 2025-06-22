@@ -11,7 +11,6 @@
             class="iframe_company_map"
             src="https://api-maps.yandex.ru/frame/v1/-/mozhga/?from=mapframe&ll=52.232933%2C56.451264&mode=usermaps&source=mapframe&um=constructor%3Afe59bbdfd52d066f7d231aa96559a673cbb852214da9d84f51d5626de0e40373&utm_source=mapframe&z=15"
             height="350.59"
-            allowfullscreen=""
             loading="lazy"
           ></iframe>
         </div>
