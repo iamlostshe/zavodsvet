@@ -7,33 +7,10 @@ html {
   font-family: 'Inter', sans-serif;
 }
 
-body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-code,
-form,
-fieldset,
-legend,
-input,
-textarea,
-p,
-blockquote,
-th,
-td {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 table {
@@ -1205,7 +1182,6 @@ p {
 
 /*Главная панель меню*/
 .TopPanel {
-  /*border: 1px solid blue;*/
   height: 54px;
   line-height: 80px;
   width: 100%;
@@ -1471,7 +1447,6 @@ video[controls] {
 }
 
 .Company_svet {
-  /*border: 1px solid violet;*/
   width: 95%;
 }
 
@@ -1583,10 +1558,8 @@ video[controls] {
 }
 
 .TopPanel__item_tel {
-  /*border: 1px solid yellow;*/
   width: 140px;
   height: 54px;
-  /*margin-left: 125px;*/
 }
 
 @media only screen and (min-width: 319px) and (max-width: 640px) {
@@ -1602,7 +1575,6 @@ video[controls] {
 }
 
 .TopPanel .LinkTelefon {
-  /*border: 1px solid darkmagenta;*/
   text-decoration: none;
   color: #ffffff;
 }
@@ -2108,22 +2080,6 @@ span.nav-close:before {
   overflow: hidden;
 }
 
-/* @media only screen and (min-width: 319px) and (max-width: 640px) {
-    .paraWrapper {
-        display: none;
-        width: 0;
-        height: 0;
-    }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-    .paraWrapper {
-        display: none;
-        width: 0;
-        height: 0;
-    }
-} */
-
 .paraWrapper__item {
   position: absolute;
   right: 0;
@@ -2131,30 +2087,6 @@ span.nav-close:before {
   width: 100%;
   height: 100%;
 }
-
-/* @media only screen and (min-width: 319px) and (max-width: 640px) {
-    .paraWrapper__item {
-        position: relative !important;
-        display: none !important;
-        width: 0;
-        height: 0;
-    }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-    .paraWrapper__item {
-        position: relative !important;
-        display: none !important;
-        width: 0;
-        height: 0;
-    }
-}
-
-@media only screen and (min-width: 960px) and (max-width: 1174px) {
-    .paraWrapper__item {
-        background-size: 100% 455px;
-    }
-} */
 
 .button-container,
 .custom-button-wrapper,
@@ -3783,10 +3715,8 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .burgerWRP {
-  /*border: 1px solid red;*/
   height: 54px;
   line-height: 80px;
-  /*margin-right: 50px;*/
   margin-left: 60px;
 }
 
@@ -3826,7 +3756,6 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .burger {
-  /*border: 1px solid yellow;*/
   display: none;
   width: 24px;
   height: 14px;
@@ -4743,7 +4672,6 @@ button[disabled] {
   }
 }
 
-/*Стрелки на главной странице вправо и влево*/
 .slick-ManePage .slick-next {
   right: 40px;
 }
@@ -4753,91 +4681,31 @@ button[disabled] {
 }
 
 .slick-ManePage__item {
-  /*border: 2px solid darkred;*/
   width: 100%;
   max-width: 1312px;
   height: 729px;
   position: relative;
   background-position: -130px bottom;
   background-repeat: no-repeat;
-  /*     display: grid !important; */
   font-family: 'Inter', sans-serif;
   color: #92285a;
-  /*     grid-template-columns: minmax(200px, 60%) 1fr;
-    grid-column-gap: 0; */
   transition: all 1s;
 }
-
-/* @media only screen and (min-width: 319px) and (max-width: 640px) {
-    .slick-ManePage__item {
-       display: block !important;
-         height: 490px;
-    }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-    .slick-ManePage__item {
-        display: block !important;
-    }
-}
-
-@media only screen and (min-width: 960px) and (max-width: 1174px) {
-    .slick-ManePage__item {
-        height: 504px;
-        background-size: 100% 450px;
-    }
-} */
 
 .slick-ManePage__item_1 {
   background-image: url(/images/slides/slide_1/1.jpg);
   background-size: 100% 100%;
 }
 
-/* @media only screen and (min-width: 319px) and (max-width: 640px) {
-    .slick-ManePage__item_1 {
-        background-size: 100% 178px;
-    }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-    .slick-ManePage__item_1 {
-        background-size: 100% 356px;
-    }
-} */
-
 .slick-ManePage__item_2 {
   background-image: url(/images/slides/slide_2/fire.gif);
   background-size: 100% 100%;
 }
 
-/* @media only screen and (min-width: 319px) and (max-width: 640px) {
-    .slick-ManePage__item_2 {
-        background-size: 100% 200px;
-    }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-    .slick-ManePage__item_2 {
-        background-size: 100% 250px;
-    }
-} */
-
 .slick-ManePage__item_3 {
   background-image: url(/images/slides/slide_3/mixer2.gif);
   background-size: 100% 100%;
 }
-
-/* @media only screen and (min-width: 319px) and (max-width: 640px) {
-    .slick-ManePage__item_3 {
-        background-size: 100% 200px;
-    }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-    .slick-ManePage__item_3 {
-        background-size: 100% 300px;
-    }
-} */
 
 .slick-ManePage__item_4 {
   background-image: url(/images/slides/slide_4/kap.gif);

@@ -13,41 +13,31 @@ export const router = createRouter({
     {
       path: '/company',
       name: 'Company',
-      component: () => {
-        import('@/features/CompanyPage.vue')
-      },
+      component: () => import('@/features/CompanyPage.vue'),
       meta: { title: 'Компания | АО "СВЕТ"' },
     },
     {
       path: '/kontakty',
       name: 'Contact',
-      component: () => {
-        import('@/features/ContactPage.vue')
-      },
+      component: () => import('@/features/ContactPage.vue'),
       meta: { title: 'Контакты | АО "СВЕТ"' },
     },
     {
       path: '/contact',
       name: 'Contact',
-      component: () => {
-        import('@/features/ContactPage.vue')
-      },
+      component: () => import('@/features/ContactPage.vue'),
       meta: { title: 'Контакты | АО "СВЕТ"' },
     },
     {
       path: '/document',
       name: 'Document',
-      component: () => {
-        import('@/features/DocumentPage.vue')
-      },
+      component: () => import('@/features/DocumentPage.vue'),
       meta: { title: 'Документы | АО "СВЕТ"' },
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
-      component: () => {
-        import('@/features/NotFoundPage.vue')
-      },
+      component: () => import('@/features/NotFoundPage.vue'),
       meta: { title: 'Страница не найдена | АО "СВЕТ"' },
     },
   ],
