@@ -98,7 +98,6 @@ var AjaxForm = {
   },
 }
 
-//noinspection JSUnusedGlobalSymbols
 AjaxForm.Message = {
   success: function (message, sticky) {
     if (message) {

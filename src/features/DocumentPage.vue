@@ -1,4 +1,4 @@
-// TODO: Создать шаблон vue для прикрепляемых файлов
+<!-- TODO: Создать шаблон vue для прикрепляемых файлов -->
 
 <template>
   <div class="ContactInformationPage">
