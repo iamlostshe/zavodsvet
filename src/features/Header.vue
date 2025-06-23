@@ -17,7 +17,7 @@
           <a class="Menu__item first" href="/">Главная</a>
           <a href="https://rusglass.net/katalog/" class="Menu__item">Каталог</a>
           <a class="Menu__item" href="/company/">Компания</a>
-          <a class="Menu__item" href="/kontakty/">Контакты</a>
+          <a class="Menu__item" href="/contact/">Контакты</a>
           <a class="Menu__item" href="/document/">Документы</a>
         </div>
 

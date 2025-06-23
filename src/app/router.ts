@@ -17,12 +17,6 @@ export const router = createRouter({
       meta: { title: 'Компания | АО "СВЕТ"' },
     },
     {
-      path: '/kontakty',
-      name: 'Contact',
-      component: () => import('@/features/ContactPage.vue'),
-      meta: { title: 'Контакты | АО "СВЕТ"' },
-    },
-    {
       path: '/contact',
       name: 'Contact',
       component: () => import('@/features/ContactPage.vue'),
