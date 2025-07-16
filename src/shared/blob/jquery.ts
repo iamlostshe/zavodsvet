@@ -1471,7 +1471,7 @@
   function A(e, t) {
     return e.nodeName && e.nodeName.toLowerCase() === t.toLowerCase()
   }
-  const N = /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i
+  const N = /^<([a-z][^/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i
   function D(e, n, r) {
     return m(n)
       ? S.grep(e, function (e, t) {
@@ -2284,7 +2284,7 @@
   let ce,
     fe,
     pe = /^(?:checkbox|radio)$/i,
-    de = /<([a-z][^\/\0>\x20\t\r\n\f]*)/i,
+    de = /<([a-z][^/\0>\x20\t\r\n\f]*)/i,
     he = /^$|^module$|\/(?:java|ecma)script/i
   ;(ce = E.createDocumentFragment().appendChild(E.createElement('div'))),
     (fe = E.createElement('input')).setAttribute('type', 'radio'),

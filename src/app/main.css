@@ -1031,7 +1031,6 @@ p {
 }
 
 #header {
-  /* border: 5px solid pink; */
   width: 100%;
   position: relative;
   background: url(/images/fon.jpg) 0 0 no-repeat;
@@ -1118,27 +1117,6 @@ p {
     background-size: 100% 824px !important;
     padding: 0;
     width: 100% !important;
-  }
-}
-
-.wrpBNRS {
-  /*border: 1px solid green;*/
-  position: relative;
-  width: 100%;
-  max-width: 1312px;
-  height: auto;
-  margin: 0 auto;
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  .wrpBNRS {
-    padding-bottom: 130px;
-  }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-  .wrpBNRS {
-    padding-bottom: 130px;
   }
 }
 
@@ -1883,8 +1861,6 @@ span.nav-close:before {
 }
 
 .paraWrapper {
-  /*     height: 548px;
-    align-items: center; */
   position: absolute;
   bottom: 0;
   right: 0;
@@ -4516,122 +4492,6 @@ button[disabled] {
   font-size: 50px;
 }
 
-.slick-ManePage__btnVideo {
-  display: block;
-  position: absolute;
-  width: calc(640px - 291px);
-  height: calc(155px - 45px);
-  padding: 45px 0 0 291px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
-  background: url(/images/slides/all.jpg) 0 -1px no-repeat #db2a4a;
-  color: #ffffff;
-  text-decoration: none;
-  outline: none;
-  cursor: pointer;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  .slick-ManePage__btnVideo {
-    background-image: none;
-    width: calc(100% - 137px);
-    height: calc(130px - 45px);
-    padding: 40px 0 5px 137px;
-  }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-  .slick-ManePage__btnVideo {
-    background-image: none;
-    width: calc(100% - 35vw);
-    height: calc(130px - 45px);
-    padding: 40px 0 5px 35vw;
-  }
-}
-
-@media only screen and (min-width: 960px) and (max-width: 1174px) {
-  .slick-ManePage__btnVideo {
-    width: calc(513px - 237px);
-    height: calc(125px - 40px);
-    padding: 40px 0 0 237px;
-    background-size: contain;
-  }
-}
-
-.slick-ManePage__btnVideo:before {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 60px;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  background-color: #ffffff;
-  position: absolute;
-  z-index: 1;
-  top: 40px;
-  left: 193px;
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  .slick-ManePage__btnVideo:before {
-    top: 35px;
-    left: 43px;
-  }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-  .slick-ManePage__btnVideo:before {
-    top: 35px;
-    left: 26vw;
-  }
-}
-
-@media only screen and (min-width: 960px) and (max-width: 1174px) {
-  .slick-ManePage__btnVideo:before {
-    top: 34px;
-    left: 145px;
-  }
-}
-
-.slick-ManePage__btnVideo:after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border-top: 12px solid transparent;
-  border-left: 17px solid #1a2248;
-  border-bottom: 12px solid transparent;
-  position: absolute;
-  z-index: 1;
-  top: 59px;
-  left: 217px;
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  .slick-ManePage__btnVideo:after {
-    top: 55px;
-    left: 69px;
-  }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-  .slick-ManePage__btnVideo:after {
-    top: 55px;
-    left: 29vw;
-  }
-}
-
-@media only screen and (min-width: 960px) and (max-width: 1174px) {
-  .slick-ManePage__btnVideo:after {
-    top: 53px;
-    left: 170px;
-  }
-}
-
 .activeStart .slick-slide:nth-child(1) {
   opacity: 1;
   -webkit-animation: bounceInUp 1s both 0s;
@@ -4947,7 +4807,6 @@ footer {
 }
 
 .PrideCompany__item:before {
-  /* border: 2px solid blue; */
   content: '';
   display: block;
   position: absolute;
@@ -4963,7 +4822,6 @@ footer {
   .PrideCompany__item:before {
     width: 100%;
     height: 20%;
-    /* padding: 40px 0 5px 137vw; */
   }
 }
 
