@@ -1,5 +1,4 @@
 <!-- TODO: Применить tailwindcss для оптимизации стилей -->
-<!-- TODO: Портировать js код из blob/main.ts -->
 <!-- TODO: Здесь задний фон используется дальше для main блока, перенести это в main -->
 
 <template>
@@ -41,12 +40,10 @@
 
 <style lang="css" scoped>
 #header {
-  /* border: 5px solid pink; */
   width: 100%;
   position: relative;
   background: url(/images/fon.jpg) 0 0 no-repeat;
   background-size: 100% 634px;
-  margin-bottom: 97px;
 }
 
 @media only screen and (min-width: 641px) and (max-width: 959px) {

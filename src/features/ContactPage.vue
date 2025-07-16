@@ -108,6 +108,7 @@
 <style>
 .iframe_company_map {
   width: 99%;
+  border-radius: 8px;
 }
 
 @media only screen and (min-width: 319px) and (max-width: 520px) {

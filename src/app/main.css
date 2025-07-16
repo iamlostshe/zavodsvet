@@ -4,19 +4,28 @@
 
 @import 'tailwindcss';
 
-:root {
-  font-family: 'Inter', sans-serif;
-}
-
 * {
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-style: normal;
-  font-weight: normal;
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h1 {
+  font-weight: 550;
+  font-size: 32px;
+  line-height: 39px;
+  color: #1a2248;
+  width: 100%;
+  max-width: 1312px;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  margin: 0 auto;
 }
 
 /* TODO: Дальше всё надо переписывать и может даже удалять */
@@ -94,54 +103,10 @@ a:focus {
 
 body {
   color: #1a2248;
-  font-family: 'Inter', sans-serif;
 }
 
 body.ovfh {
   overflow: hidden;
-}
-
-h1 {
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 39px;
-  color: #1a2248;
-  width: 100%;
-  max-width: 1312px;
-  margin: 0 auto;
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  h1 {
-  }
-}
-
-.h3 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 39px;
-  color: #1a2248;
-  margin-bottom: 33px;
-}
-
-.h4 {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 36px;
-  color: #1a2248;
-  margin-bottom: 33px;
-}
-
-.p4 {
-  font-size: 24px;
-  line-height: 30px;
-  margin-bottom: 18px;
-}
-
-p {
-  font-size: 16px;
-  line-height: 24px;
 }
 
 .animate__fadeOutLeft {
@@ -1039,14 +1004,6 @@ p {
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7),
       -1.8em -1.8em 0 0em #db2a4a;
   }
-}
-
-#header {
-  width: 100%;
-  position: relative;
-  background: url(/images/fon.jpg) 0 0 no-repeat;
-  background-size: 100% 634px;
-  margin-bottom: 97px;
 }
 
 @media only screen and (min-width: 641px) and (max-width: 959px) {
@@ -4247,7 +4204,6 @@ button[disabled] {
   position: relative;
   background-position: -130px bottom;
   background-repeat: no-repeat;
-  font-family: 'Inter', sans-serif;
   color: #92285a;
   transition: all 1s;
 }
@@ -4664,7 +4620,6 @@ button[disabled] {
   background-position: center 0;
   background-repeat: no-repeat;
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
   font-weight: 600;
   overflow: hidden;
 }
