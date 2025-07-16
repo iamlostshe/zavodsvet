@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="ContentSPage ContentSPage404">
+    <div class="main_content_wrapper ContentSPage404">
       <p class="title404">Упс..</p>
       <p>
         <img class="img404" src="/images/404.png" width="636" height="250" alt="" />

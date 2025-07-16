@@ -14,6 +14,19 @@ export default {
 </script>
 
 <template>
-  <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
-  <a :href="filename" target="_blank">{{ title }}</a>
+  <a class="file_picker_wrapper" :href="filename" target="_blank">
+    <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
+    {{ title }}
+  </a>
 </template>
+
+<style>
+img {
+  object-fit: contain;
+}
+.file_picker_wrapper {
+  display: flex;
+  gap: 0.5rem;
+  padding: 10px;
+}
+</style>

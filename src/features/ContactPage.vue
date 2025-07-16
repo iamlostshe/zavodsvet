@@ -1,10 +1,10 @@
 <template>
   <div class="ContactInformationPage">
     <div class="BredTitleWRP">
-      <h1 class="TitlePage">Контактная информация</h1>
+      <h1>Контактная информация</h1>
     </div>
     <div class="wrapper">
-      <div class="ContentSPage">
+      <div class="main_content_wrapper">
         <!-- Фрагмент с картой -->
         <div class="company_map">
           <iframe
@@ -51,7 +51,6 @@
             <a href="tel:+73413938031" class="LinkTelefon LinkContakt">+7(341-39) 3-80-31</a><br />
             <a href="mailto:okmanager@zavodsvet.ru" class="LinkContakt">okmanager@zavodsvet.ru</a
             ><br />
-            <!--                <a href="mailto:okspec@zavodsvet.ru" class="LinkContakt">okspec@zavodsvet.ru</a><br>-->
           </div>
         </div>
 
@@ -77,10 +76,7 @@
           <div class="Company__contakts">
             <a href="tel:+73413933061" class="LinkTelefon LinkContakt">+7(341-39) 3-30-61</a><br />
             <a href="tel:+73413933062" class="LinkTelefon LinkContakt">+7(341-39) 3-30-62</a><br />
-            <!--                <a href="tel:+73413930007" class="LinkTelefon LinkContakt">+7(341-39) 3-00-07</a><br>-->
-            <!--                <a href="tel:+73413930008" class="LinkTelefon LinkContakt">+7(341-39) 3-00-08</a><br>-->
             <a href="mailto:sav@zavodsvet.ru" class="LinkContakt">sav@zavodsvet.ru</a><br />
-            <!--                <a href="mailto:opvedspec@zavodsvet.ru" class="LinkContakt">opvedspec@zavodsvet.ru</a><br>-->
             <a href="mailto:opzam@zavodsvet.ru" class="LinkContakt">opzam@zavodsvet.ru</a><br />
           </div>
         </div>
@@ -108,3 +104,15 @@
     <div class="br br_100"></div>
   </div>
 </template>
+
+<style>
+.iframe_company_map {
+  width: 99%;
+}
+
+@media only screen and (min-width: 319px) and (max-width: 520px) {
+  .iframe_company_map {
+    width: auto;
+  }
+}
+</style>

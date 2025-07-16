@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="BredTitleWRP">
-      <h1 class="TitlePage">Компания</h1>
+      <h1>Компания</h1>
       <div class="TitlePageTxtWRP">
         <p class="TitlePageTxt">
           Сюгинский стекольный завод был основан в 1835 году купцом 1-й гильдии Ф.Г.Черновым,
