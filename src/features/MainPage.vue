@@ -157,30 +157,37 @@ const mainPageSlides: MainPageSlide[] = [
 /* Фоновые изображения для слайдов */
 :deep(.slick-ManePage__item_1) {
   background-image: url(/images/slides/slide_1/1.jpg);
+  border-radius: 12px;
 }
 
 :deep(.slick-ManePage__item_2) {
   background-image: url(/images/slides/slide_2/fire.gif);
+  border-radius: 12px;
 }
 
 :deep(.slick-ManePage__item_3) {
   background-image: url(/images/slides/slide_3/mixer2.gif);
+  border-radius: 12px;
 }
 
 :deep(.slick-ManePage__item_4) {
   background-image: url(/images/slides/slide_4/kap.gif);
+  border-radius: 12px;
 }
 
 :deep(.slick-ManePage__item_5) {
   background-image: url(/images/slides/slide_5/Kaplya2.gif);
+  border-radius: 12px;
 }
 
 :deep(.slick-ManePage__item_6) {
   background-image: url(/images/slides/slide_6/loop.gif);
+  border-radius: 12px;
 }
 
 :deep(.slick-ManePage__item_7) {
   background-image: url(/images/slides/slide_7/palitra.gif);
+  border-radius: 12px;
 }
 
 /* Анимации для текста */

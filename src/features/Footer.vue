@@ -56,9 +56,9 @@ export default defineComponent({
       <div>© 2025 АО "СВЕТ".</div>
       <div>
         Разработчики:
-        <a href="https://t.me/iamlostshe"> iamlostshe </a>
+        <a href="https://t.me/iamlostshe" class="developer-link"> iamlostshe </a>
         и
-        <a href="https://t.me/milinuri"> milinuri. </a>
+        <a href="https://t.me/milinuri" class="developer-link"> milinuri. </a>
       </div>
     </div>
   </footer>
@@ -137,5 +137,17 @@ iframe.vkvideo {
   bottom: 0;
   left: 0;
   z-index: 1;
+}
+
+/* Стили для ссылок разработчиков */
+.developer-link {
+  text-decoration: underline;
+  color: rgb(224, 224, 224);
+  transition: color 0.3s ease;
+}
+
+.developer-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 </style>

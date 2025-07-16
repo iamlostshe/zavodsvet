@@ -28,7 +28,6 @@
       class="carousel-arrow carousel-arrow--prev"
       :class="arrowsClass"
       @click="prevSlide"
-      :disabled="currentIndex === 0"
       aria-label="Предыдущий слайд"
     >
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -47,7 +46,6 @@
       class="carousel-arrow carousel-arrow--next"
       :class="arrowsClass"
       @click="nextSlide"
-      :disabled="currentIndex === slides.length - 1"
       aria-label="Следующий слайд"
     >
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -292,15 +290,10 @@ defineExpose({
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.carousel-arrow:hover:not(:disabled) {
+.carousel-arrow:hover {
   background: rgba(255, 255, 255, 1);
   transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-arrow:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
 }
 
 .carousel-arrow--prev {

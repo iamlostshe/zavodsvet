@@ -66,11 +66,14 @@ watch(
   { immediate: true },
 )
 
-watch(() => props.value, (newValue) => {
-  if (props.isActive) {
-    animateNumber(newValue)
-  }
-})
+watch(
+  () => props.value,
+  (newValue) => {
+    if (props.isActive) {
+      animateNumber(newValue)
+    }
+  },
+)
 
 onMounted(() => {
   if (props.isActive) {

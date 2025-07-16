@@ -378,6 +378,7 @@ onMounted(async () => {
   color: #ffffff;
   font-weight: 600;
   overflow: hidden;
+  border-radius: 12px;
 }
 
 :deep(.carousel-slide:before) {
@@ -634,6 +635,7 @@ onMounted(async () => {
   position: relative;
   z-index: 1;
   display: block;
+  border-radius: 12px;
 }
 
 /* Стили для анимированного счетчика */
