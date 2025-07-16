@@ -1,389 +1,324 @@
-<!-- TODO: Применить tailwindcss для оптимизации стилей -->
-<!-- TODO: Здесь задний фон используется дальше для main блока, перенести это в main -->
-
 <template>
-  <header id="header" class="h-16 md:h-32">
-    <div class="headerWRP">
-      <!-- FIXME: Надо портировать код из blob/main.ts (jq) -->
-      <div class="TopPanel">
-        <div>
-          <a href="/" id="Logo"><img alt="zavodsvet.ru" src="/images/svet_logo.png" /></a>
-        </div>
-
-        <!-- Главное меню -->
-        <!-- FIXME: Надо портировать код из blob/main.ts (jq) -->
-        <div id="Menu">
-          <a class="Menu__item first" href="/">Главная</a>
-          <a href="https://rusglass.net/katalog/" class="Menu__item">Каталог</a>
-          <a class="Menu__item" href="/company/">Компания</a>
-          <a class="Menu__item" href="/contact/">Контакты</a>
-          <a class="Menu__item" href="/document/">Документы</a>
-        </div>
-
-        <!-- Номер телефона -->
-        <!-- TODO: Выносим в отдельный компонент -->
-        <div class="TopPanel__item_tel">
-          <span itemprop="telephone">
-            <a class="LinkTelefon" href="tel:+73413933050">+7 341 393 30 50</a></span
-          >
-        </div>
-
-        <!-- Бургер, когда сжимается сайт -->
-        <div class="burgerWRP">
-          <!-- FIXME: Надо портировать код из blob/main.ts (jq) -->
-          <div class="burger"></div>
-        </div>
+  <header id="header" class="header">
+    <div class="header__container">
+      <!-- Логотип -->
+      <div class="header__logo">
+        <a href="/" class="logo">
+          <img src="/images/svet_logo.png" alt="zavodsvet.ru" class="logo__image" />
+        </a>
       </div>
+
+      <!-- Главное меню -->
+      <nav class="header__nav" :class="{ 'header__nav--active': isMenuOpen }">
+        <a class="nav__item" href="/" @click="closeMenu">Главная</a>
+        <a class="nav__item" href="https://rusglass.net/katalog/" @click="closeMenu">Каталог</a>
+        <a class="nav__item" href="/company/" @click="closeMenu">Компания</a>
+        <a class="nav__item" href="/contact/" @click="closeMenu">Контакты</a>
+        <a class="nav__item" href="/document/" @click="closeMenu">Документы</a>
+      </nav>
+
+      <!-- Номер телефона -->
+      <div class="header__phone">
+        <a class="phone__link" href="tel:+73413933050">+7 341 393 30 50</a>
+      </div>
+
+      <!-- Бургер меню -->
+      <button
+        class="header__burger"
+        :class="{ 'header__burger--active': isMenuOpen }"
+        @click="toggleMenu"
+        aria-label="Открыть меню"
+      >
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
     </div>
   </header>
 </template>
 
-<style lang="css" scoped>
-#header {
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const isMenuOpen = ref(false)
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+  document.body.style.overflow = isMenuOpen.value ? 'hidden' : ''
+}
+
+const closeMenu = () => {
+  isMenuOpen.value = false
+  document.body.style.overflow = ''
+}
+
+// Закрытие меню при клике вне его
+const handleClickOutside = (event: Event) => {
+  const target = event.target as HTMLElement
+  if (!target.closest('.header__nav') && !target.closest('.header__burger')) {
+    closeMenu()
+  }
+}
+
+// Закрытие меню при изменении размера экрана
+const handleResize = () => {
+  if (window.innerWidth > 768) {
+    closeMenu()
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+  window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside)
+  window.removeEventListener('resize', handleResize)
+  document.body.style.overflow = ''
+})
+</script>
+
+<style scoped>
+.header {
   width: 100%;
-  position: relative;
   background: url(/images/fon.jpg) 0 0 no-repeat;
-  background-size: 100% 634px;
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-  #header {
-    height: auto;
-  }
-}
-
-@media only screen and (min-width: 960px) and (max-width: 1174px) {
-  #header {
-    height: 664px;
-  }
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  #header {
-    transition: all 0.5s;
-    height: auto;
-  }
-
-  #header.showHeader {
-    transition: all 0.5s;
-  }
-}
-
-/*Общая главная панель меню сверху*/
-.headerWRP {
-  max-width: 1312px;
-  padding: 15px 0 0 0;
-  margin: 0 auto;
-  color: #ffffff;
-}
-
-@media only screen and (min-width: 1175px) and (max-width: 1365px) {
-  .headerWRP {
-    max-width: auto;
-    padding: 32px 32px 0 32px;
-  }
-}
-
-@media only screen and (min-width: 960px) and (max-width: 1174px) {
-  .headerWRP {
-    max-width: auto;
-    padding: 32px 32px 0 32px;
-  }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-  .headerWRP {
-    max-width: auto;
-    padding: 32px 32px 0 32px;
-  }
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  .headerWRP {
-    max-width: auto;
-    padding: 0 32px 0 32px;
-  }
-}
-
-/*Главная панель меню*/
-.TopPanel {
-  height: 54px;
-  line-height: 80px;
-  width: 100%;
-  max-width: 1312px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns:
-    minmax(190px, 224px) minmax(35%, 674px) minmax(160px, 310px)
-    minmax(50px, 78px) minmax(25px, 25px);
-  grid-column-gap: 0;
-  transition: all 0.5s;
-}
-
-@media only screen and (min-width: 1175px) and (max-width: 1365px) {
-  .TopPanel {
-    grid-template-columns:
-      minmax(190px, 204px) minmax(35%, 654px) minmax(160px, 300px)
-      minmax(50px, 68px) minmax(25px, 25px);
-  }
-}
-
-@media only screen and (min-width: 960px) and (max-width: 1174px) {
-  .TopPanel {
-    grid-template-columns:
-      minmax(190px, 204px) minmax(35%, 620px) minmax(160px, 238px)
-      minmax(50px, 68px) minmax(25px, 25px);
-  }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-  .TopPanel {
-    grid-template-columns:
-      minmax(190px, 204px) 1fr minmax(160px, 238px) minmax(50px, 68px)
-      minmax(40px, 50px) minmax(25px, 25px);
-  }
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  .TopPanel {
-    grid-template-columns:
-      minmax(180px, 204px) 1fr 1fr minmax(60px, 1fr)
-      minmax(40px, 50px) minmax(25px, 25px);
-    padding-top: 6px;
-  }
-}
-
-.TopPanel__item_tel {
-  width: 140px;
-  height: 54px;
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  .TopPanel__item_tel {
-    font-size: 0;
-    display: none;
-  }
-}
-
-.TopPanel .LinkTelefon {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-#Menu {
-  transition: all 0.5s;
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-  #Menu {
-    background-color: #ffffff;
-    width: calc(100% - 20vw);
-    padding: 40px 10vw;
-    position: absolute;
-    z-index: -1;
-    top: -100vh;
-    left: 0;
-    transition: all 0.7s;
-  }
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  #Menu {
-    background-color: #ffffff;
-    width: calc(100% - 30vw);
-    padding: 27px 20vw 55px 10vw;
-    position: absolute;
-    z-index: -1;
-    top: -100vh;
-    left: 0;
-    transition: all 0.7s;
-  }
-}
-
-#Menu.active {
-  top: 0;
-  z-index: 99;
-  transition: all 0.5s;
-}
-
-.Menu__item {
+  background-size: cover;
+  background-position: center;
   position: relative;
-  cursor: pointer;
+  z-index: 100;
+}
+
+.header__container {
+  max-width: 1312px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Логотип */
+.header__logo {
+  flex-shrink: 0;
+}
+
+.logo__image {
+  height: 40px;
+  width: auto;
+  max-width: 200px;
+}
+
+/* Навигация */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav__item {
   color: #ffffff;
-  display: inline-block;
-  width: 18%;
-  transition: all 0.5s;
+  text-decoration: none;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-  text-align: center;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav__item:hover {
+  color: #db2a4a;
+  text-decoration: underline;
+}
+
+.nav__item.active {
+  color: #db2a4a;
+  text-decoration: underline;
+}
+
+/* Телефон */
+.header__phone {
+  flex-shrink: 0;
+}
+
+.phone__link {
+  color: #ffffff;
   text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.Menu__item:hover {
-  text-decoration: underline;
-}
-
-@media only screen and (min-width: 960px) and (max-width: 1174px) {
-  .Menu__item {
-    width: 22%;
-  }
-}
-
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-  .Menu__item {
-    color: #1a2248;
-    width: 49%;
-    text-align: center;
-    display: inline-block;
-    line-height: 20px;
-    margin: 10px 0;
-  }
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  .Menu__item {
-    color: #1a2248;
-    width: 100px;
-    text-align: center;
-    display: inline-block;
-    line-height: 20px;
-    margin: 20px;
-    font-size: 20px;
-  }
-}
-
-.Menu__item.active {
-  text-decoration: underline;
+.phone__link:hover {
   color: #db2a4a;
 }
 
-.burgerWRP {
-  height: 54px;
-  line-height: 80px;
-  margin-left: 60px;
-}
-
-@media only screen and (min-width: 319px) and (max-width: 369px) {
-  .burgerWRP {
-    display: inline-block;
-    margin-left: 20px;
-  }
-}
-
-@media only screen and (min-width: 370px) and (max-width: 419px) {
-  .burgerWRP {
-    display: inline-block;
-    margin-left: 120px;
-  }
-}
-
-@media only screen and (min-width: 420px) and (max-width: 519px) {
-  .burgerWRP {
-    display: inline-block;
-    margin-left: 180px;
-  }
-}
-
-@media only screen and (min-width: 519px) and (max-width: 526px) {
-  .burgerWRP {
-    display: inline-block;
-    margin-left: 275px;
-  }
-}
-
-@media only screen and (min-width: 526px) and (max-width: 619px) {
-  .burgerWRP {
-    display: inline-block;
-    margin-left: 295px;
-  }
-}
-
-.burger {
+/* Бургер меню */
+.header__burger {
   display: none;
-  width: 24px;
-  height: 14px;
-  border-top: 1px solid #ffffff;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: none;
+  border: none;
   cursor: pointer;
-  -webkit-transform: translateY(6px);
-  transform: translateY(6px);
-  transition: all 0.3s;
+  padding: 0;
+  position: relative;
+  z-index: 101;
 }
 
-.burger:before {
-  display: block;
-  content: '';
+.burger__line {
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: #ffffff;
-  margin: 4px 0;
-  transition: all 0.4s;
+  transition: all 0.3s ease;
+  transform-origin: center;
 }
 
-.burger:after {
-  display: block;
-  content: '';
-  width: 50%;
-  height: 1px;
-  background-color: #ffffff;
-  transition: all 0.5s;
+.header__burger:hover .burger__line {
+  background-color: #db2a4a;
 }
 
-@media only screen and (min-width: 641px) and (max-width: 959px) {
-  .burger {
-    display: inline-block;
+.header__burger--active .burger__line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.header__burger--active .burger__line:nth-child(2) {
+  opacity: 0;
+}
+
+.header__burger--active .burger__line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Медиа-запросы для планшетов */
+@media (max-width: 1024px) {
+  .header__container {
+    padding: 12px 16px;
+  }
+
+  .header__nav {
+    gap: 20px;
+  }
+
+  .nav__item {
+    font-size: 14px;
+  }
+
+  .phone__link {
+    font-size: 14px;
   }
 }
 
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  .burger {
-    display: inline-block;
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+  .header__container {
+    padding: 10px 16px;
+  }
+
+  .logo__image {
+    height: 32px;
+  }
+
+  /* Скрываем навигацию и телефон на мобильных */
+  .header__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.98);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 20px 20px;
+    gap: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+  }
+
+  .header__nav--active {
+    transform: translateX(0);
+  }
+
+  .nav__item {
+    color: #1a2248;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px 0;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .nav__item:last-child {
+    border-bottom: none;
+  }
+
+  .nav__item:hover {
+    color: #db2a4a;
+    background-color: #f8f8f8;
+    padding-left: 10px;
+  }
+
+  .header__phone {
+    display: none;
+  }
+
+  .header__burger {
+    display: flex;
   }
 }
 
-.burger:hover {
-  position: relative;
-  z-index: 101;
-  border-top: 1px solid #db2a4a;
-  transition: all 0.5s;
+/* Медиа-запросы для очень маленьких экранов */
+@media (max-width: 480px) {
+  .header__container {
+    padding: 8px 12px;
+  }
+
+  .logo__image {
+    height: 28px;
+  }
+
+  .header__nav {
+    padding: 70px 16px 16px;
+  }
+
+  .nav__item {
+    font-size: 16px;
+    padding: 12px 0;
+  }
+
+  .header__burger {
+    width: 26px;
+    height: 18px;
+  }
 }
 
-.burger:hover:before {
-  background-color: #db2a4a;
-  transition: all 0.5s;
-}
+/* Медиа-запросы для больших экранов */
+@media (min-width: 1366px) {
+  .header__container {
+    padding: 20px 32px;
+  }
 
-.burger:hover:after {
-  background-color: #db2a4a;
-  transition: all 0.5s;
-}
+  .logo__image {
+    height: 48px;
+  }
 
-.burger.active {
-  position: relative;
-  z-index: 101;
-  border-top: 0px solid transparent;
-  transition: all 0.5s;
-}
+  .nav__item {
+    font-size: 18px;
+  }
 
-.burger.active:before {
-  display: block;
-  content: '';
-  width: 24px;
-  height: 1px;
-  background-color: #db2a4a;
-  margin: 4px 0;
-  -webkit-transform: rotate(45deg) translateY(4px) translateX(3px);
-  transform: rotate(45deg) translateY(4px) translateX(3px);
-  transition: all 0.6s;
-}
-
-.burger.active:after {
-  display: block;
-  content: '';
-  width: 24px;
-  height: 1px;
-  background-color: #db2a4a;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  transition: all 0.5s;
+  .phone__link {
+    font-size: 18px;
+  }
 }
 </style>
+
