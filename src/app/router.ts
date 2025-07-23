@@ -29,6 +29,12 @@ export const router = createRouter({
       meta: { title: 'Документы | АО "СВЕТ"' },
     },
     {
+      path: '/tour',
+      name: 'Tour',
+      component: () => import('@/features/TourPage.vue'),
+      meta: { title: 'Экскурсия по заводу | АО "СВЕТ"' },
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
       component: () => import('@/features/NotFoundPage.vue'),

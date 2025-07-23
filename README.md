@@ -26,7 +26,7 @@ Compile and Hot-Reload for Development:
 bun dev
 ```
 
-Type-Check, Compile and Minify for ProductionЖ
+Type-Check, Compile and Minify for Production:
 
 ```sh
 bun run build

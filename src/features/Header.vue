@@ -15,6 +15,7 @@
         <a class="nav__item" href="/company/" @click="closeMenu">Компания</a>
         <a class="nav__item" href="/contact/" @click="closeMenu">Контакты</a>
         <a class="nav__item" href="/document/" @click="closeMenu">Документы</a>
+        <a class="nav__item" href="/tour" @click="closeMenu">Экскурсия</a>
       </nav>
 
       <!-- Номер телефона -->
