@@ -23,7 +23,8 @@ const panoramas = [
   { file: 'PANO_20250723_030927.jpg', label: 'Музей 1' },
   { file: 'PANO_20250723_031503.jpg', label: 'Музей 2' },
   { file: 'PANO_20250712_185003.jpg', label: 'Здание Администрации' },
-  { file: 'PANO_20250723_004904.jpg', label: 'Вход (памятник)' },
+  { file: 'PANO_20250723_211650.jpg', label: 'Аллея' },
+  { file: 'PANO_20250723_212247.jpg', label: 'Вход (памятник)' },
   { file: 'PANO_20250712_191349.jpg', label: 'Проходная' },
   { file: 'PANO_20250723_004125.jpg', label: 'Цех № 4' },
   { file: 'PANO_20250723_004625.jpg', label: 'Ремонтно-механический цех' },
@@ -32,9 +33,8 @@ const panoramas = [
   { file: 'PANO_20250723_011538.jpg', label: 'Зона погрузки 3' },
   { file: 'PANO_20250723_011822.jpg', label: 'Цех № 5' },
   { file: 'PANO_20250723_012101.jpg', label: 'Зона погрузки 4' },
-  { file: 'PANO_20250723_014124.jpg', label: 'Тяжелые 1' },
-  { file: 'PANO_20250723_015108.jpg', label: 'Тяжелые 2' },
-  { file: 'PANO_20250723_022713.jpg', label: 'Тяжелые 3' },
+  { file: 'PANO_20250723_015108.jpg', label: 'Тяжелые 1' },
+  { file: 'PANO_20250723_022713.jpg', label: 'Тяжелые 2' },
 ]
 const currentIdx = ref(0)
 const currentPanoramaUrl = computed(() => `/images/panoram/${panoramas[currentIdx.value].file}`)
