@@ -9,6 +9,18 @@
 import { onMounted, onBeforeUnmount, watch, ref } from 'vue'
 import { nanoid } from 'nanoid'
 
+// Типизация pannellum для TS
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+interface Pannellum {
+  viewer: (id: string, config: any) => any
+}
+declare global {
+  interface Window {
+    pannellum?: Pannellum
+  }
+}
+
 const props = defineProps<{ imageUrl: string }>()
 const viewerId = `pannellum_${nanoid()}`
 let viewerInstance: any = null
