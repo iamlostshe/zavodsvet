@@ -54,12 +54,11 @@ export default defineComponent({
   <footer>
     <div class="footer_wrapper">
       <div>© 2025 АО "СВЕТ".</div>
-      <div>
-        Разработчики:
-        <a href="https://t.me/iamlostshe" class="developer-link"> iamlostshe </a>
-        и
-        <a href="https://t.me/milinuri" class="developer-link"> milinuri. </a>
-      </div>
+      <!--
+        Creators:
+          https://t.me/iamlostshe
+          https://t.me/milinuri
+      -->
     </div>
   </footer>
 </template>
