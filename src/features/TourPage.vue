@@ -20,21 +20,20 @@ import { ref, computed } from 'vue'
 import PanoramaViewer from '@/components/PanoramaViewer.vue'
 
 const panoramas = [
-  { file: 'PANO_20250723_030927.jpg', label: 'Музей 1' },
-  { file: 'PANO_20250723_031503.jpg', label: 'Музей 2' },
-  { file: 'PANO_20250712_185003.jpg', label: 'Здание Администрации' },
-  { file: 'PANO_20250723_211650.jpg', label: 'Аллея' },
-  { file: 'PANO_20250723_212247.jpg', label: 'Вход (памятник)' },
-  { file: 'PANO_20250712_191349.jpg', label: 'Проходная' },
-  { file: 'PANO_20250723_004125.jpg', label: 'Цех № 4' },
-  { file: 'PANO_20250723_004625.jpg', label: 'Ремонтно-механический цех' },
-  { file: 'PANO_20250723_010125.jpg', label: 'Зона погрузки 1' },
-  { file: 'PANO_20250723_011104.jpg', label: 'Зона погрузки 2' },
-  { file: 'PANO_20250723_011538.jpg', label: 'Зона погрузки 3' },
-  { file: 'PANO_20250723_011822.jpg', label: 'Цех № 5' },
-  { file: 'PANO_20250723_012101.jpg', label: 'Зона погрузки 4' },
-  { file: 'PANO_20250723_015108.jpg', label: 'Тяжелые 1' },
-  { file: 'PANO_20250723_022713.jpg', label: 'Тяжелые 2' },
+  { file: '1.jpg', label: 'Музей 1' },
+  { file: '2.jpg', label: 'Музей 2' },
+  { file: '3.jpg', label: 'Здание Администрации' },
+  { file: '4.jpg', label: 'Аллея' },
+  { file: '5.jpg', label: 'Вход (памятник)' },
+  { file: '6.jpg', label: 'Проходная' },
+  { file: '7.jpg', label: 'Ремонтно-механический цех' },
+  { file: '8.jpg', label: 'Цех 4' },
+  { file: '9.jpg', label: 'Цех 5' },
+  { file: '10.jpg', label: 'Цех 7' },
+  { file: '11.jpg', label: 'Зона погрузки 1' },
+  { file: '12.jpg', label: 'Зона погрузки 2' },
+  { file: '13.jpg', label: 'Зона погрузки 3' },
+  { file: '14.jpg', label: 'Зона погрузки 4' },
 ]
 const currentIdx = ref(0)
 const currentPanoramaUrl = computed(() => `/images/panoram/${panoramas[currentIdx.value].file}`)
