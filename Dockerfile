@@ -1,28 +1,26 @@
-# Build stage
+# Insall Bun
 FROM oven/bun:latest AS builder
 
-WORKDIR /app
-
-# Copy source code
+# Copy all app
 COPY . .
 
 # Install dependencies
 RUN bun i
 
-# Build the application
+# Build the app
 RUN bun run build-only
 
-# Production stage
-FROM nginx:alpine
+# Insall Nginx
+FROM nginx:latest
 
-# Copy built application
-COPY --from=builder /app/dist /var/www/html/
+# Copy the built files from the builder stage
+COPY dist/ /usr/share/nginx/html
 
-# Set proper permissions
-RUN chown -R nginx:nginx /var/www/html /var/cache/nginx /var/run /var/log/nginx
+# Copy custom Nginx configuration file
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Expose ports
-EXPOSE 80 443
+# Expose the port Nginx is running on
+EXPOSE 80
 
-# Start nginx
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
