@@ -1,5 +1,4 @@
 <template>
-  <div class="tour-page">
     <h1>Экскурсия по заводу</h1>
     <div class="panorama-switcher">
       <button
@@ -12,12 +11,15 @@
       </button>
     </div>
     <PanoramaViewer :image-url="currentPanoramaUrl" />
-  </div>
+    <div class="br br_75"></div>
+    <h2 class="gallery-title">Фотографии внутри завода</h2>
+    <FactoryGallery :images="factoryImages" />
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import PanoramaViewer from '@/components/PanoramaViewer.vue'
+import FactoryGallery from '@/components/FactoryGallery.vue'
 
 const panoramas = [
   { file: '1.jpg', label: 'Музей 1' },
@@ -41,13 +43,35 @@ const currentPanoramaUrl = computed(() => `/images/panoram/${panoramas[currentId
 function selectPanorama(idx: number) {
   currentIdx.value = idx
 }
+
+// Список фотографий цехов из public/images/factory
+const factoryImages = [
+  '/images/factory/IMG_3729.JPG',
+  '/images/factory/IMG_3730.JPG',
+  '/images/factory/IMG_3732.JPG',
+  '/images/factory/IMG_3733.JPG',
+  '/images/factory/IMG_3734.JPG',
+  '/images/factory/IMG_3735.JPG',
+  '/images/factory/IMG_3736.JPG',
+  '/images/factory/IMG_3737.JPG',
+  '/images/factory/IMG_3740.JPG',
+  '/images/factory/IMG_3744.JPG',
+  '/images/factory/IMG_3746.JPG',
+  '/images/factory/IMG_3747.JPG',
+  '/images/factory/IMG_3748.JPG',
+  '/images/factory/IMG_3751.JPG',
+  '/images/factory/IMG_3752.JPG',
+  '/images/factory/IMG_3753.JPG',
+]
 </script>
 
 <style scoped>
-.tour-page {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 32px 16px;
+.gallery-title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a2248;
 }
 .panorama-switcher {
   display: flex;
