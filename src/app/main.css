@@ -20,98 +20,14 @@ h1 {
   font-weight: 550;
   font-size: 32px;
   line-height: 39px;
-  color: #1a2248;
   width: 100%;
-  max-width: 1312px;
   padding-top: 25px;
   padding-bottom: 10px;
   margin: 0 auto;
 }
 
-/* TODO: Дальше всё надо переписывать и может даже удалять */
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-li {
-  list-style: none;
-}
-
-caption,
-th {
-  text-align: left;
-}
-
-q:before,
-q:after {
-  content: '';
-}
-
-abbr,
-acronym {
-  border: 0;
-  font-variant: normal;
-}
-
-sup {
-  vertical-align: text-top;
-}
-
-sub {
-  vertical-align: text-bottom;
-}
-
-input,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-input,
-textarea,
-select {
-  font-size: 100%;
-}
-
-input:active,
-input:focus,
-textarea:active,
-textarea:focus,
-select:active,
-select:focus {
-  outline: none !important;
-}
-
-legend {
-  color: #000;
-}
-
-a {
-  outline: none;
-}
-
-a:active,
-a:hover,
-a:focus {
-  outline: 0 !important;
-  outline-offset: 0;
-}
-
 body {
   color: #1a2248;
-}
-
-body.ovfh {
-  overflow: hidden;
-}
-
-.animate__fadeOutLeft {
-  -webkit-animation-name: fadeOutLeft;
-  animation-name: fadeOutLeft;
 }
 
 .br_75 {
@@ -121,6 +37,8 @@ body.ovfh {
 .br_100 {
   margin-bottom: 100px;
 }
+
+/* TODO: Дальше всё надо переписывать и может даже удалять */
 
 @-webkit-keyframes hide {
   0% {
@@ -229,15 +147,6 @@ body.ovfh {
   }
 }
 
-.animate__fadeOutLeft {
-  -webkit-animation-name: fadeOutLeft;
-  animation-name: fadeOutLeft;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
 @-webkit-keyframes fadeOutColor {
   0% {
     color: #fff;
@@ -289,24 +198,6 @@ body.ovfh {
   100% {
     opacity: 1;
   }
-}
-
-.animate__fadeInColor {
-  -webkit-animation-name: fadeInColor;
-  animation-name: fadeInColor;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.bounceInUp {
-  -webkit-animation-name: bounceInUp;
-  animation-name: bounceInUp;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
 }
 
 @-webkit-keyframes bounceInUp {
@@ -806,20 +697,6 @@ body.ovfh {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
-}
-
-.loader {
-  margin: 10px auto;
-  font-size: 25px;
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  position: relative;
-  text-indent: -9999em;
-  -webkit-animation: load5 1.1s infinite ease;
-  animation: load5 1.1s infinite ease;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 @-webkit-keyframes load5 {
@@ -1644,48 +1521,6 @@ span.nav-close:before {
   }
 }
 
-#videoBlock {
-  width: 100%;
-  max-width: 560px;
-  display: block;
-  position: relative;
-  z-index: 2;
-  margin: 0 auto;
-  -webkit-transform: translateY(12%);
-  transform: translateY(12%);
-  outline: none;
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  #videoBlock {
-    -webkit-transform: translateY(25%);
-    transform: translateY(25%);
-  }
-}
-
-#close-modal,
-#close-modal2 {
-  display: block;
-  position: absolute;
-  z-index: 3;
-  left: auto;
-  right: 30px;
-  top: 30px;
-  width: 30px;
-  height: 30px;
-  background: url(/icons/ico_close.svg) center center no-repeat #f8f8f8;
-  background-size: 60%;
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 50%;
-}
-
-#close-modal:hover,
-#close-modal2:hover {
-  background: url(/icons/ico_close2.svg) center center no-repeat #db2a4a;
-  background-size: 60%;
-}
-
 #modal {
   width: 100%;
   height: 100vh;
@@ -2284,14 +2119,6 @@ html .container,
   border-bottom: 1px solid #dbdde3;
   border-right: 1px solid #dbdde3;
   padding: 0 2vw 6vh 2vw;
-}
-
-.Filters.OPEN .Filters__item_1 input[type='checkbox'] + label,
-.Filters.OPEN .Filters__item_1 input[type='radio'] + label {
-  display: inline-block;
-  min-width: 220px;
-  height: 22px;
-  margin: 0 0 17px 0;
 }
 
 .Filters.OPEN .Filters__item_2 {
@@ -3317,90 +3144,9 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 /* Удаляем старые стили бургер-меню, так как они переопределены в компоненте Header.vue */
-
-input[type='checkbox'],
-input[type='radio'] {
-  display: none;
-}
-
-input[type='checkbox'] + label,
-input[type='radio'] + label {
-  font-size: 14px;
-  line-height: 22px;
-  color: #1a2248;
-  cursor: pointer;
-  display: block;
-  min-width: 250px;
-  height: 22px;
-  margin: 11px 0;
-}
-
-input[type='checkbox']:checked + label {
-  color: #778ca2;
-  font-size: 14px;
-}
-
-input[type='checkbox'] + label::before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: #e8ecef;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  margin: 0 15px 0 0;
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);
-}
-
-input[type='checkbox']:checked + label::before {
-  background: url(/icons/ico_checkbox.svg) 4px 5px #db2a4a no-repeat;
-  background-size: 59%;
-}
-
-input.ContactFormModalForm__input[type='email'],
-input.ContactFormModalForm__input[type='tel'] {
-  position: relative;
-}
-
-input.ContactFormModalForm__input[type='email']:after,
-input.ContactFormModalForm__input[type='tel']:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  display: block;
-  z-index: 2;
-  pointer-events: none;
-}
-
-button.ContactFormModalForm__submit {
-  outline: none;
-  cursor: pointer;
-}
-
 button:disabled,
 button[disabled] {
   opacity: 0.4;
-}
-
-.Amount {
-  width: 100%;
-  text-align: center;
-  border: 0;
-}
-
-.ContactFormModalForm__submit {
-  outline: none;
-  cursor: pointer;
-}
-
-.ContactFormModalForm__submit:active {
-  -webkit-transform: translateY(5px);
-  transform: translateY(5px);
 }
 
 .ContactUsModal {
@@ -3572,34 +3318,6 @@ button[disabled] {
   animation-fill-mode: both;
 }
 
-.ContactFormModal__wrp {
-  width: 100%;
-  max-width: 864px;
-  margin: 11vh auto 0 auto;
-  background-color: #ffffff;
-  height: auto;
-  position: relative;
-}
-
-@media only screen and (min-width: 319px) and (max-width: 640px) {
-  .ContactFormModal__wrp {
-    margin: 0 auto 0 auto;
-    height: 100%;
-  }
-}
-
-.ContactFormModal__wrp #close-modal {
-  right: 20px;
-  top: 20px;
-  background: url(/icons/ico_close.svg) center center no-repeat;
-  background-size: 60%;
-}
-
-.ContactFormModal__wrp #close-modal:hover {
-  background: url(/icons/ico_close2.svg) center center no-repeat #db2a4a;
-  background-size: 50%;
-}
-
 .ContactFormModal__title {
   font-weight: 600;
   font-size: 24px;
@@ -3691,64 +3409,6 @@ button[disabled] {
   background: #ffffff;
   border: 1px solid #9094a7;
   border-radius: 3px;
-}
-
-.ContactFormModalForm__submit {
-  width: 180px;
-  height: 48px;
-  display: block;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 48px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #ffffff;
-  box-sizing: border-box;
-  margin: 32px auto 0 auto;
-  background: #db2a4a;
-  border: 1px solid transparent;
-  box-shadow: 0px 8px 16px rgba(22, 32, 46, 0.04);
-  border-radius: 40px;
-}
-
-.ContactFormModalForm__textarea {
-  display: block;
-  width: 100%;
-  max-width: 768px;
-  height: 130px;
-  padding: 10px 10px 14px 10px;
-  font-size: 20px;
-  box-sizing: border-box;
-  margin-top: 10px;
-  background: #ffffff;
-  border: 1px solid #9094a7;
-  border-radius: 3px;
-}
-
-.ContactInformationPage .ContactFormModal {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  margin-bottom: 70px;
-}
-
-.ContactInformationPage .ContactFormModal:before {
-  display: none;
-}
-
-.ContactInformationPage #close-modal {
-  display: none;
-}
-
-.ContactInformationPage .ContactFormModal__wrp {
-  background: #ffffff;
-  border: 1px solid #dbdde3;
-  box-sizing: border-box;
-  box-shadow: 0px 8px 24px rgba(22, 32, 46, 0.12);
 }
 
 .btn-tertiary {
@@ -4237,42 +3897,6 @@ button[disabled] {
   }
 }
 
-.mobile .slick-ManePage__itemRight {
-  text-align: left;
-}
-
-.mobile .slick-ManePage__img_2 {
-  width: 81px;
-  height: 345px;
-  margin-right: auto;
-  margin-left: 10%;
-  margin-top: 34px;
-  background-size: cover;
-}
-
-.mobile .slick-ManePage__img_3 {
-  width: 100px;
-  height: 349px;
-  margin-right: auto;
-  margin-left: 10%;
-  margin-top: 31px;
-  background-size: cover;
-}
-
-.mobile .slick-ManePage__title {
-  font-size: calc(1.5rem + 1vw);
-  line-height: calc(2rem + 1vw);
-  height: 90px;
-}
-
-.mobile .slick-ManePage__text {
-  display: none !important;
-}
-
-.mobile .slick-ManePage__textLeft {
-  font-size: 50px;
-}
-
 .activeStart .slick-slide:nth-child(1) {
   opacity: 1;
   -webkit-animation: bounceInUp 1s both 0s;
@@ -4445,10 +4069,6 @@ button[disabled] {
   }
 }
 
-.ContactInformationPage #footer {
-  background-size: 100% 424px;
-}
-
 .desktop #TabsTabsList {
   position: relative;
   top: 1px;
@@ -4462,10 +4082,6 @@ button[disabled] {
   z-index: 1;
   background-color: #ffffff;
   padding-top: 5px;
-}
-
-.mobile {
-  display: block;
 }
 
 .custom_footer {

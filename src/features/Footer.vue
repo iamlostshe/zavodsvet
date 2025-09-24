@@ -121,32 +121,28 @@ iframe.vkvideo {
 }
 
 .vk_video_button {
-  display: block;
-  width: 100%;
-  height: calc(155px - 45px);
-  padding: 45px 0 0 291px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
   background: url(/images/slides/all.jpg) 0 -1px no-repeat #db2a4a;
   color: #ffffff;
-  text-decoration: none;
-  outline: none;
+  line-height: 24px;
   cursor: pointer;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
+  font-size: 18px;
 }
 
-/* Стили для ссылок разработчиков */
-.developer-link {
-  text-decoration: underline;
-  color: rgb(224, 224, 224);
-  transition: color 0.3s ease;
+@media (min-width: 600px) {
+  .vk_video_button {
+    padding: 3% 0 3% 20%;
+  }
 }
 
-.developer-link:hover {
-  color: #ffffff;
-  text-decoration: underline;
+@media (min-width: 601px) and (max-width: 1200px) {
+  .vk_video_button {
+    padding: 5% 0 5% 30%;
+  }
+}
+
+@media (max-width: 800px) {
+  .vk_video_button {
+    padding: 7% 0 7% 55%;
+  }
 }
 </style>

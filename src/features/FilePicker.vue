@@ -16,13 +16,18 @@ export default {
 <template>
   <a class="file_picker_wrapper" :href="filename" target="_blank">
     <img src="/images/pdf_ico.png" width="25" height="25" alt="pdf" />
-    {{ title }}
+    <p>
+      {{ title }}
+    </p>
   </a>
 </template>
 
 <style>
 img {
   object-fit: contain;
+}
+p {
+  max-width: 100%;
 }
 .file_picker_wrapper {
   display: flex;

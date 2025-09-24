@@ -6,6 +6,17 @@ import { RouterView } from 'vue-router'
 
 <template>
   <Header />
-  <RouterView />
+  <div class="standart-page">
+    <RouterView />
+  </div>
   <Footer />
+
 </template>
+
+<style>
+  .standart-page {
+    max-width: 1312px;
+    margin: 0 auto;
+    padding: 32px 16px;
+  }
+</style>

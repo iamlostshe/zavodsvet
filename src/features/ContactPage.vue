@@ -1,5 +1,4 @@
 <template>
-  <div class="ContactInformationPage">
     <div class="BredTitleWRP">
       <h1>Контактная информация</h1>
     </div>
@@ -18,14 +17,12 @@
         <div class="Company Company_svet">
           <h3>АО «СВЕТ»</h3>
           <p>
-            Российская Федерация, Удмуртская Республика,<br />
-            427792, г. Можга,<br />
-            Свердловский бульвар, 39
+            Российская Федерация, Удмуртская Республика, 427792, г. Можга, Свердловский бульвар, 39.
+          </p>
+          <p>
+            ПН-ПТ: 08:00-17:00, обед: 12:30 - 13:30.
           </p>
           <div class="Company__contakts">
-            <img width="38" height="38" src="/icons/clock.svg" alt="" />&ensp;&#32;ПН-ПТ:
-            08:00-17:00, обед: 12:30-13:30<br />
-
             <a href="tel:+73413933060" class="LinkTelefon LinkContakt">+7(341-39) 3-30-50</a><br />
             <a href="mailto:steklo@zavodsvet.ru" class="LinkContakt">steklo@zavodsvet.ru</a><br />
             <a href="http://vk.com/zavodsvet" target="_blank" class="LinkContakt"
@@ -101,8 +98,6 @@
         </div>
       </div>
     </div>
-    <div class="br br_100"></div>
-  </div>
 </template>
 
 <style>
